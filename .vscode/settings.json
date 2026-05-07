@@ -1,0 +1,8 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:conda",
+    "python-envs.defaultPackageManager": "ms-python.python:conda",
+    "python.defaultInterpreterPath": "/home/ziyiguo/miniconda3/envs/IonConductivity/bin/python",
+    "python.analysis.extraPaths": [
+        "/home/ziyiguo/miniconda3/envs/IonConductivity/lib/python3.11/site-packages"
+    ]
+}
