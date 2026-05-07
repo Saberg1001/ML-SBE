@@ -16,6 +16,7 @@ ORGANIC_MARKER_ELEMENTS = frozenset({"C", "H"})
 ORGANIC_NEUTRAL_ELEMENTS = frozenset({"C", "H", "N", "O"})
 ELEMENTARY_CHARGE_C = 1.602e-19
 PM_TO_M = 1e-12
+CHARGE_RESIDUAL_LIMIT = 1.0
 HALIDE_ELEMENTS = frozenset({"F", "Cl", "Br", "I"})
 ANION_ELEMENTS = frozenset({"O", "S", "Se", "Te", "N", "P", "F", "Cl", "Br", "I"})
 BASE_COLUMNS = [
@@ -142,6 +143,50 @@ def oxidation_state_guesses(
     return [best_guess], integer_formula, note, "config_charge_balance"
 
 
+def charge_residual(
+    amounts: dict[str, float],
+    oxidation_guess: dict[str, float],
+) -> float:
+    return sum(
+        amounts[symbol] * charge
+        for symbol, charge in oxidation_guess.items()
+    )
+
+
+def valence_residual(
+    formula: str,
+    amounts: dict[str, float],
+    oxidation_guess: dict[str, float],
+) -> float:
+    return charge_residual(amounts, oxidation_guess)
+
+
+def charge_balance_failures(
+    formulas: pd.Series,
+    ids: pd.Series | None = None,
+) -> list[dict[str, object]]:
+    failures: list[dict[str, object]] = []
+    for index, formula in formulas.items():
+        composition = Composition(formula)
+        amounts = {
+            symbol: float(composition.get_el_amt_dict()[symbol])
+            for symbol in (elem.symbol for elem in composition.elements)
+        }
+        oxidation_guesses, _, _, _ = oxidation_state_guesses(composition)
+        oxidation_guess = oxidation_guesses[0] if oxidation_guesses else {}
+        residual = charge_residual(amounts, oxidation_guess)
+        if abs(residual) >= CHARGE_RESIDUAL_LIMIT:
+            failure: dict[str, object] = {
+                "formula": formula,
+                "residual_charge": residual,
+                "oxidation_guess": element_value_list(oxidation_guess),
+            }
+            if ids is not None:
+                failure["ID"] = ids.loc[index]
+            failures.append(failure)
+    return failures
+
+
 # ---------------------------------------------------------------------------
 # 离子半径
 # ---------------------------------------------------------------------------
@@ -202,14 +247,14 @@ def safe_ratio(a: float | None, b: float | None) -> float | None:
 
 
 def charge_density_c_m3(charge: float, radius_pm: float | None) -> float | None:
-    if radius_pm is None or radius_pm <= 0:
+    if radius_pm is None:
         return None
     radius_m = radius_pm * PM_TO_M
     return 3 * abs(charge) * ELEMENTARY_CHARGE_C / (4 * math.pi * radius_m**3)
 
 
 def ionic_potential(charge: float, radius_pm: float | None) -> float | None:
-    if radius_pm is None or radius_pm <= 0:
+    if radius_pm is None:
         return None
     return abs(charge) / radius_pm
 
@@ -234,6 +279,8 @@ def classify_elements(
     for symbol in elements:
         if symbol == "Li":
             classification[symbol] = "Li"
+        elif symbol == "H" and oxidation_guess.get(symbol, 0) > 0:
+            classification[symbol] = "proton"
         elif symbol in HALIDE_ELEMENTS:
             classification[symbol] = "halide"
         elif oxidation_guess.get(symbol, 0) < 0 or symbol in ANION_ELEMENTS:
@@ -259,6 +306,7 @@ def composition_features(formula: str) -> pd.Series:
     # 氧化态猜测
     oxidation_guesses, _, _, _ = oxidation_state_guesses(composition)
     ox = oxidation_guesses[0] if oxidation_guesses else {}
+    residual = valence_residual(formula, amounts, ox)
 
     # 每元素基础属性
     en_map: dict[str, float | None] = {}
@@ -312,6 +360,7 @@ def composition_features(formula: str) -> pd.Series:
         {
             # --- 氧化态 Z ---
             "Z_by_element": element_value_list(ox),
+            "valence_residual": residual,
             # --- 电负性 χ ---
             "χ_all": chi_all,
             "χ-": chi_minus,
@@ -375,6 +424,24 @@ def main() -> None:
     removed_count = organic_mask.sum()
     selected = selected[~organic_mask].reset_index(drop=True)
     print(f"Removed {removed_count} organic-containing rows")
+
+    failures = charge_balance_failures(
+        selected["True Composition"],
+        selected["ID"],
+    )
+    if failures:
+        print(
+            "Warning: charge balance residual is high for "
+            f"{len(failures)} rows with abs(residual_charge) >= "
+            f"{CHARGE_RESIDUAL_LIMIT:g}:"
+        )
+        for failure in failures:
+            print(
+                f"ID={failure.get('ID', '')}; "
+                f"formula={failure['formula']}; "
+                f"residual_charge={failure['residual_charge']:.6g}; "
+                f"oxidation_guess={failure['oxidation_guess']}"
+            )
 
     total = len(selected)
     start = pd.Timestamp.now()

@@ -1,1 +1,4 @@
-/home/ziyiguo/project/IonConductivity/rawdata/all_randomized_cifs
+rawdata/all_randomized_cifs
+outputs
+__pycache__
+rawdata/train.csv:Zone.Identifier
