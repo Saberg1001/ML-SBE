@@ -1,0 +1,29 @@
+{
+  "description": "Ionic radius overrides and fallback rules used before mendeleev ionic radii.",
+  "ionic_radius_overrides_pm": [
+    {
+      "element": "P",
+      "charge": 4,
+      "fallback_charge": 5,
+      "note": "P4+ has no available ionic radius in mendeleev; use the P5+ radius as a project fallback."
+    },
+    {
+      "element": "H",
+      "charge": 1,
+      "radius_pm": 0.0,
+      "note": "Project convention: H+ radius is set to 0 pm instead of using negative Shannon effective radii; charge density is treated as 0 when radius is 0."
+    },
+    {
+      "element": "H",
+      "charge": -1,
+      "radius_pm": 140.0,
+      "source": "Baur, 1976; also used in some bond-valence parameter libraries."
+    },
+    {
+      "element": "P",
+      "charge": -3,
+      "radius_pm": 212.0,
+      "source": "Brese & O'Keeffe, Acta Cryst. B 1991."
+    }
+  ]
+}

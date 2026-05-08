@@ -11,12 +11,23 @@ from pymatgen.core.periodic_table import Element
 
 INPUT_CSV = Path("rawdata/all.csv")
 OUTPUT_CSV = Path("rawdata/all_selected_features.csv")
+ABNORMAL_CHARGE_CSV = Path("rawdata/abnormal_charge_residual.csv")
 OXIDATION_CONFIG = Path("config/oxidation_states.json")
+IONIC_RADIUS_CONFIG = Path("config/ionic_radius_overrides.json")
 ORGANIC_MARKER_ELEMENTS = frozenset({"C", "H"})
 ORGANIC_NEUTRAL_ELEMENTS = frozenset({"C", "H", "N", "O"})
 ELEMENTARY_CHARGE_C = 1.602e-19
 PM_TO_M = 1e-12
 CHARGE_RESIDUAL_LIMIT = 1.0
+CHARGE_RESIDUAL_EXCLUDE_LIMIT = 6.0
+MANUAL_ABNORMAL_CHARGE_IDS = frozenset({
+    "mtr",
+    "s2v",
+    "5z8",
+    "ueu",
+    "uwh",
+    "a6v",
+})
 HALIDE_ELEMENTS = frozenset({"F", "Cl", "Br", "I"})
 ANION_ELEMENTS = frozenset({"O", "S", "Se", "Te", "N", "P", "F", "Cl", "Br", "I"})
 BASE_COLUMNS = [
@@ -187,15 +198,63 @@ def charge_balance_failures(
     return failures
 
 
+def charge_balance_records(frame: pd.DataFrame) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for _, row in frame.iterrows():
+        formula = row["True Composition"]
+        composition = Composition(formula)
+        amounts = {
+            symbol: float(composition.get_el_amt_dict()[symbol])
+            for symbol in (elem.symbol for elem in composition.elements)
+        }
+        oxidation_guesses, _, _, _ = oxidation_state_guesses(composition)
+        oxidation_guess = oxidation_guesses[0] if oxidation_guesses else {}
+        residual = charge_residual(amounts, oxidation_guess)
+        records.append(
+            {
+                "ID": row["ID"],
+                "True Composition": formula,
+                "Ionic conductivity (S cm-1)": row["Ionic conductivity (S cm-1)"],
+                "residual_charge": residual,
+                "oxidation_guess": element_value_list(oxidation_guess),
+            }
+        )
+    return records
+
+
+def abnormal_charge_records(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    abnormal: list[dict[str, object]] = []
+    for record in records:
+        residual = float(record["residual_charge"])
+        reasons = []
+        if abs(residual) > CHARGE_RESIDUAL_EXCLUDE_LIMIT:
+            reasons.append(f"abs(residual_charge) > {CHARGE_RESIDUAL_EXCLUDE_LIMIT:g}")
+        if str(record["ID"]) in MANUAL_ABNORMAL_CHARGE_IDS:
+            reasons.append("manual abnormal charge screening")
+        if reasons:
+            abnormal.append(record | {"abnormal_reason": "; ".join(reasons)})
+    return abnormal
+
+
 # ---------------------------------------------------------------------------
 # 离子半径
 # ---------------------------------------------------------------------------
 
 @lru_cache(maxsize=None)
-def ionic_radius_pm(symbol: str, charge: float) -> float | None:
-    if charge == 0 or not float(charge).is_integer():
-        return None
-    charge_int = int(charge)
+def ionic_radius_overrides() -> dict[tuple[str, int], dict[str, object]]:
+    if not IONIC_RADIUS_CONFIG.exists():
+        return {}
+    with IONIC_RADIUS_CONFIG.open("r", encoding="utf-8") as file:
+        data = json.load(file)
+    overrides: dict[tuple[str, int], dict[str, object]] = {}
+    for item in data.get("ionic_radius_overrides_pm", []):
+        symbol = str(item["element"])
+        charge = int(item["charge"])
+        overrides[(symbol, charge)] = item
+    return overrides
+
+
+def mendeleev_ionic_radius_pm(symbol: str, charge_int: int) -> float | None:
     radii = [
         r
         for r in element(symbol).ionic_radii
@@ -210,6 +269,20 @@ def ionic_radius_pm(symbol: str, charge: float) -> float | None:
     ]
     values = [float(v) for v in reliable] if reliable else [float(r.ionic_radius) for r in radii]
     return float(sum(values) / len(values))
+
+
+@lru_cache(maxsize=None)
+def ionic_radius_pm(symbol: str, charge: float) -> float | None:
+    if charge == 0 or not float(charge).is_integer():
+        return None
+    charge_int = int(charge)
+    override = ionic_radius_overrides().get((symbol, charge_int))
+    if override is not None:
+        if "radius_pm" in override:
+            return float(override["radius_pm"])
+        if "fallback_charge" in override:
+            return mendeleev_ionic_radius_pm(symbol, int(override["fallback_charge"]))
+    return mendeleev_ionic_radius_pm(symbol, charge_int)
 
 
 # ---------------------------------------------------------------------------
@@ -249,12 +322,14 @@ def safe_ratio(a: float | None, b: float | None) -> float | None:
 def charge_density_c_m3(charge: float, radius_pm: float | None) -> float | None:
     if radius_pm is None:
         return None
+    if radius_pm == 0:
+        return 0.0
     radius_m = radius_pm * PM_TO_M
     return 3 * abs(charge) * ELEMENTARY_CHARGE_C / (4 * math.pi * radius_m**3)
 
 
 def ionic_potential(charge: float, radius_pm: float | None) -> float | None:
-    if radius_pm is None:
+    if radius_pm is None or radius_pm == 0:
         return None
     return abs(charge) / radius_pm
 
@@ -277,13 +352,18 @@ def classify_elements(
 ) -> dict[str, str]:
     classification: dict[str, str] = {}
     for symbol in elements:
+        charge = oxidation_guess.get(symbol)
         if symbol == "Li":
             classification[symbol] = "Li"
-        elif symbol == "H" and oxidation_guess.get(symbol, 0) > 0:
+        elif charge is not None and symbol == "H" and charge > 0:
             classification[symbol] = "proton"
+        elif charge is not None and charge < 0:
+            classification[symbol] = "halide" if symbol in HALIDE_ELEMENTS else "anion"
+        elif charge is not None and charge > 0:
+            classification[symbol] = "host_cation"
         elif symbol in HALIDE_ELEMENTS:
             classification[symbol] = "halide"
-        elif oxidation_guess.get(symbol, 0) < 0 or symbol in ANION_ELEMENTS:
+        elif symbol in ANION_ELEMENTS:
             classification[symbol] = "anion"
         else:
             classification[symbol] = "host_cation"
@@ -306,7 +386,6 @@ def composition_features(formula: str) -> pd.Series:
     # 氧化态猜测
     oxidation_guesses, _, _, _ = oxidation_state_guesses(composition)
     ox = oxidation_guesses[0] if oxidation_guesses else {}
-    residual = valence_residual(formula, amounts, ox)
 
     # 每元素基础属性
     en_map: dict[str, float | None] = {}
@@ -360,44 +439,43 @@ def composition_features(formula: str) -> pd.Series:
         {
             # --- 氧化态 Z ---
             "Z_by_element": element_value_list(ox),
-            "valence_residual": residual,
             # --- 电负性 χ ---
-            "χ_all": chi_all,
-            "χ-": chi_minus,
-            "χ+(incl Li+)": chi_plus_incl,
-            "χ+(excl Li+)": chi_plus_excl,
-            "χ+(incl Li+) - χ-": safe_diff(chi_plus_incl, chi_minus),
-            "χ+(excl Li+) - χ-": safe_diff(chi_plus_excl, chi_minus),
-            "χ_max - χ_min": chi_max_min,
+            "χₐₗₗ": chi_all,
+            "χ⁻": chi_minus,
+            "χ⁺(incl Li⁺)": chi_plus_incl,
+            "χ⁺(excl Li⁺)": chi_plus_excl,
+            "χ⁺(incl Li⁺) - χ⁻": safe_diff(chi_plus_incl, chi_minus),
+            "χ⁺(excl Li⁺) - χ⁻": safe_diff(chi_plus_excl, chi_minus),
+            "χₘₐₓ - χₘᵢₙ": chi_max_min,
             # --- 半径 r ---
-            "r_all (pm)": r_all,
-            "r- (pm)": r_minus,
-            "r+(incl Li+) (pm)": r_plus_incl,
-            "r+(excl Li+) (pm)": r_plus_excl,
-            "r+(excl Li+) - r-": safe_diff(r_plus_excl, r_minus),
-            "r+(incl Li+) - r-": safe_diff(r_plus_incl, r_minus),
-            "r+(excl Li+) / r-": safe_ratio(r_plus_excl, r_minus),
-            "r+(incl Li+) / r-": safe_ratio(r_plus_incl, r_minus),
+            "rₐₗₗ (pm)": r_all,
+            "r⁻ (pm)": r_minus,
+            "r⁺(incl Li⁺) (pm)": r_plus_incl,
+            "r⁺(excl Li⁺) (pm)": r_plus_excl,
+            "r⁺(excl Li⁺) - r⁻": safe_diff(r_plus_excl, r_minus),
+            "r⁺(incl Li⁺) - r⁻": safe_diff(r_plus_incl, r_minus),
+            "r⁺(excl Li⁺) / r⁻": safe_ratio(r_plus_excl, r_minus),
+            "r⁺(incl Li⁺) / r⁻": safe_ratio(r_plus_incl, r_minus),
             # --- 电荷密度 ρ ---
-            "ρ_all (C m⁻³)": rho_all,
-            "ρ- (C m⁻³)": rho_minus,
-            "ρ+(incl Li+) (C m⁻³)": rho_plus_incl,
-            "ρ+(excl Li+) (C m⁻³)": rho_plus_excl,
-            "ρ+(incl Li+) / ρ-": safe_ratio(rho_plus_incl, rho_minus),
-            "ρ+(incl Li+) - ρ-": safe_diff(rho_plus_incl, rho_minus),
+            "ρₐₗₗ (C m⁻³)": rho_all,
+            "ρ⁻ (C m⁻³)": rho_minus,
+            "ρ⁺(incl Li⁺) (C m⁻³)": rho_plus_incl,
+            "ρ⁺(excl Li⁺) (C m⁻³)": rho_plus_excl,
+            "ρ⁺(incl Li⁺) / ρ⁻": safe_ratio(rho_plus_incl, rho_minus),
+            "ρ⁺(incl Li⁺) - ρ⁻": safe_diff(rho_plus_incl, rho_minus),
             # --- 离子势 Φ（仅阳离子）---
-            "Φ+(incl Li+) (|Z| pm⁻¹)": phi_plus_incl,
-            "Φ+(excl Li+) (|Z| pm⁻¹)": phi_plus_excl,
+            "Φ⁺(incl Li⁺) (|Z| pm⁻¹)": phi_plus_incl,
+            "Φ⁺(excl Li⁺) (|Z| pm⁻¹)": phi_plus_excl,
             # --- 组分占比 n ---
-            "n_halide": (
+            "nₕₐₗᵢdₑ": (
                 sum(amounts.get(s, 0) for s in halide_sym) / total_atoms
                 if total_atoms > 0 else None
             ),
-            "n_host_cation": (
+            "nₕₒₛₜ cₐₜᵢₒₙ": (
                 sum(amounts.get(s, 0) for s in cat_excl_sym) / total_atoms
                 if total_atoms > 0 else None
             ),
-            "n_anion": (
+            "nₐₙᵢₒₙ": (
                 sum(amounts.get(s, 0) for s in non_halide_anion_sym) / total_atoms
                 if total_atoms > 0 else None
             ),
@@ -425,10 +503,12 @@ def main() -> None:
     selected = selected[~organic_mask].reset_index(drop=True)
     print(f"Removed {removed_count} organic-containing rows")
 
-    failures = charge_balance_failures(
-        selected["True Composition"],
-        selected["ID"],
-    )
+    charge_records = charge_balance_records(selected)
+    failures = [
+        record
+        for record in charge_records
+        if abs(float(record["residual_charge"])) >= CHARGE_RESIDUAL_LIMIT
+    ]
     if failures:
         print(
             "Warning: charge balance residual is high for "
@@ -438,10 +518,33 @@ def main() -> None:
         for failure in failures:
             print(
                 f"ID={failure.get('ID', '')}; "
-                f"formula={failure['formula']}; "
+                f"formula={failure['True Composition']}; "
                 f"residual_charge={failure['residual_charge']:.6g}; "
                 f"oxidation_guess={failure['oxidation_guess']}"
             )
+
+    abnormal = abnormal_charge_records(charge_records)
+    if abnormal:
+        abnormal_df = pd.DataFrame(abnormal)
+        abnormal_df.to_csv(ABNORMAL_CHARGE_CSV, index=False)
+        abnormal_ids = set(abnormal_df["ID"])
+        selected = selected[~selected["ID"].isin(abnormal_ids)].reset_index(drop=True)
+        print(
+            f"Removed {len(abnormal)} charge-abnormal rows -> "
+            f"{ABNORMAL_CHARGE_CSV}"
+        )
+    else:
+        pd.DataFrame(
+            columns=[
+                "ID",
+                "True Composition",
+                "Ionic conductivity (S cm-1)",
+                "residual_charge",
+                "oxidation_guess",
+                "abnormal_reason",
+            ]
+        ).to_csv(ABNORMAL_CHARGE_CSV, index=False)
+        print(f"Removed 0 charge-abnormal rows -> {ABNORMAL_CHARGE_CSV}")
 
     total = len(selected)
     start = pd.Timestamp.now()
