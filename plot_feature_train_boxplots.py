@@ -10,7 +10,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_INPUT = ROOT / "rawdata" / "feature_train.csv"
+DEFAULT_INPUT = ROOT / "features" / "ionic_26_features_train.csv"
 DEFAULT_OUTPUT_DIR = ROOT / "outputs" / "feature_train_boxplots"
 NON_NUMERIC_COLUMNS = {"ID", "True Composition", r"$Z_{\mathrm{by}\ \mathrm{element}}$"}
 CONDUCTIVITY_COLUMN = "Ionic conductivity (S cm-1)"

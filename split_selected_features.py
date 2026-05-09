@@ -7,12 +7,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 RAWDATA = ROOT / "rawdata"
-DEFAULT_FEATURES = RAWDATA / "all_selected_features.csv"
+FEATURE_DIR = ROOT / "features"
+DEFAULT_FEATURES = FEATURE_DIR / "ionic_26_features_all.csv"
 DEFAULT_ALL = RAWDATA / "all.csv"
 DEFAULT_TRAIN = RAWDATA / "train.csv"
 DEFAULT_TEST = RAWDATA / "test.csv"
-DEFAULT_FEATURE_TRAIN = RAWDATA / "feature_train.csv"
-DEFAULT_FEATURE_TEST = RAWDATA / "feature_test.csv"
+DEFAULT_FEATURE_TRAIN = FEATURE_DIR / "ionic_26_features_train.csv"
+DEFAULT_FEATURE_TEST = FEATURE_DIR / "ionic_26_features_test.csv"
 
 
 def read_rows(path: Path, *, required: bool = True) -> tuple[list[dict[str, str]], list[str]] | None:
@@ -39,6 +40,7 @@ def read_id_set(path: Path, *, required: bool = True) -> set[str] | None:
 
 
 def write_rows(path: Path, fieldnames: list[str], rows: list[dict[str, str]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()

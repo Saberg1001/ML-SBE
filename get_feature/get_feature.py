@@ -1,4 +1,5 @@
 from __future__ import annotations
+import argparse
 import json
 import math
 from functools import lru_cache
@@ -9,11 +10,14 @@ from mendeleev import element
 from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 
-INPUT_CSV = Path("rawdata/all.csv")
-OUTPUT_CSV = Path("rawdata/all_selected_features.csv")
-ABNORMAL_CHARGE_CSV = Path("rawdata/abnormal_charge_residual.csv")
-OXIDATION_CONFIG = Path("config/oxidation_states.json")
-IONIC_RADIUS_CONFIG = Path("config/ionic_radius_overrides.json")
+ROOT = Path(__file__).resolve().parents[1]
+RAWDATA = ROOT / "rawdata"
+FEATURE_DIR = ROOT / "features"
+INPUT_CSV = RAWDATA / "all.csv"
+OUTPUT_CSV = FEATURE_DIR / "ionic_26_features_all.csv"
+ABNORMAL_CHARGE_CSV = FEATURE_DIR / "abnormal_charge_residual.csv"
+OXIDATION_CONFIG = ROOT / "config" / "oxidation_states.json"
+IONIC_RADIUS_CONFIG = ROOT / "config" / "ionic_radius_overrides.json"
 ORGANIC_MARKER_ELEMENTS = frozenset({"C", "H"})
 ORGANIC_NEUTRAL_ELEMENTS = frozenset({"C", "H", "N", "O"})
 ELEMENTARY_CHARGE_C = 1.602e-19
@@ -491,8 +495,22 @@ def composition_features(formula: str) -> pd.Series:
 # 主流程
 # ---------------------------------------------------------------------------
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Generate the base 26 ionic-conductivity descriptors."
+    )
+    parser.add_argument("--input", type=Path, default=INPUT_CSV)
+    parser.add_argument("--output", type=Path, default=OUTPUT_CSV)
+    parser.add_argument("--abnormal-output", type=Path, default=ABNORMAL_CHARGE_CSV)
+    return parser.parse_args()
+
+
 def main() -> None:
-    df = pd.read_csv(INPUT_CSV)
+    args = parse_args()
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    args.abnormal_output.parent.mkdir(parents=True, exist_ok=True)
+
+    df = pd.read_csv(args.input)
     selected = df.loc[:, BASE_COLUMNS].copy()
 
     # 删除含有机物的行
@@ -526,12 +544,12 @@ def main() -> None:
     abnormal = abnormal_charge_records(charge_records)
     if abnormal:
         abnormal_df = pd.DataFrame(abnormal)
-        abnormal_df.to_csv(ABNORMAL_CHARGE_CSV, index=False)
+        abnormal_df.to_csv(args.abnormal_output, index=False)
         abnormal_ids = set(abnormal_df["ID"])
         selected = selected[~selected["ID"].isin(abnormal_ids)].reset_index(drop=True)
         print(
             f"Removed {len(abnormal)} charge-abnormal rows -> "
-            f"{ABNORMAL_CHARGE_CSV}"
+            f"{args.abnormal_output}"
         )
     else:
         pd.DataFrame(
@@ -543,8 +561,8 @@ def main() -> None:
                 "oxidation_guess",
                 "abnormal_reason",
             ]
-        ).to_csv(ABNORMAL_CHARGE_CSV, index=False)
-        print(f"Removed 0 charge-abnormal rows -> {ABNORMAL_CHARGE_CSV}")
+        ).to_csv(args.abnormal_output, index=False)
+        print(f"Removed 0 charge-abnormal rows -> {args.abnormal_output}")
 
     total = len(selected)
     start = pd.Timestamp.now()
@@ -571,8 +589,8 @@ def main() -> None:
         ],
         axis=1,
     )
-    output.to_csv(OUTPUT_CSV, index=False)
-    print(f"Wrote {len(output)} rows to {OUTPUT_CSV}")
+    output.to_csv(args.output, index=False)
+    print(f"Wrote {len(output)} rows to {args.output}")
 
 
 if __name__ == "__main__":

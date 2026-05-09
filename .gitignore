@@ -2,3 +2,6 @@ rawdata/all_randomized_cifs
 outputs
 __pycache__
 rawdata/train.csv:Zone.Identifier
+rawdata/ref
+.matplotlib_cache
+
