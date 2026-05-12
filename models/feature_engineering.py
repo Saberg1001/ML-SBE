@@ -140,13 +140,13 @@ def engineer_features(
             df['log_rho_ratio'] = np.log10(rho_ratio.clip(lower=1e-3))
             feature_cols.append('log_rho_ratio')
         
-        # Interaction 3: Li channel size proxy (Li content × anion radius)
+        # Interaction 3: Li content × anion radius
         if 'n_Li' in df.columns and 'r⁻ (pm)' in df.columns:
-            df['Li_channel_size'] = (
+            df['n_Li × r⁻ (pm)'] = (
                 pd.to_numeric(df['n_Li'], errors='coerce') * 
                 pd.to_numeric(df['r⁻ (pm)'], errors='coerce')
             )
-            feature_cols.append('Li_channel_size')
+            feature_cols.append('n_Li × r⁻ (pm)')
         
         # Interaction 4: Electronegativity range × average radius
         if 'χₘₐₓ - χₘᵢₙ' in df.columns and 'rₐₗₗ (pm)' in df.columns:

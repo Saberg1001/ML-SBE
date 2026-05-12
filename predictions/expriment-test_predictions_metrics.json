@@ -1,0 +1,16 @@
+{
+  "metric": "pairwise_inversion_rate",
+  "scale": "log10 conductivity",
+  "n_items": 16,
+  "n_comparable_pairs": 120,
+  "n_inverted_pairs": 49,
+  "n_predicted_tie_pairs": 0,
+  "inversion_rate": 0.4083333333333333,
+  "mean_log10_error_pred_minus_true": -2.0619960860264093,
+  "mean_abs_log10_error": 2.0619960860264093,
+  "median_abs_log10_error": 2.089396903097811,
+  "excluded_elements": [
+    "As"
+  ],
+  "n_excluded_rows": 8
+}

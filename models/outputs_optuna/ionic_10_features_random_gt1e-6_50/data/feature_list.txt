@@ -1,0 +1,11 @@
+n_Li
+χ⁻
+χ⁺(excl Li⁺)
+r⁺(excl Li⁺) (pm)
+r⁻ (pm)
+r⁺(incl Li⁺) (pm)
+nₕₒₛₜ cₐₜᵢₒₙ
+ρ⁺(excl Li⁺) (C m⁻³)
+Φ⁺(excl Li⁺) (|Z| pm⁻¹)
+chi_range_x_r_avg
+n_Li × r⁻ (pm)

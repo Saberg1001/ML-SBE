@@ -8,6 +8,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from models.feature_labels import display_feature_label
+
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_INPUT = ROOT / "features" / "ionic_26_features_train.csv"
@@ -162,7 +164,7 @@ def plot_raw_boxplots(data: pd.DataFrame, output_path: Path, plt) -> None:
                 "alpha": 0.75,
             },
         )
-        ax.set_title(column, fontsize=19)
+        ax.set_title(display_feature_label(column), fontsize=19)
         ax.tick_params(axis="x", which="both", bottom=False, labelbottom=False)
         ax.tick_params(axis="y", labelsize=17)
         ax.grid(axis="y", linestyle=":", linewidth=1.0, alpha=0.7)
@@ -224,7 +226,7 @@ def plot_robust_boxplot(data: pd.DataFrame, output_path: Path, plt) -> None:
             "alpha": 0.7,
         },
     )
-    ax.set_yticks(range(1, len(columns) + 1), columns, fontsize=18)
+    ax.set_yticks(range(1, len(columns) + 1), [display_feature_label(column) for column in columns], fontsize=18)
     ax.set_xscale("symlog", linthresh=5)
     ax.axvline(0, color="#343a40", linewidth=1.4, alpha=0.8)
     ax.grid(axis="x", which="both", linestyle=":", linewidth=1.0, alpha=0.65)

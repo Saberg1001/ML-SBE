@@ -1,0 +1,26 @@
+χₐₗₗ
+χ⁻
+χ⁺(excl Li⁺)
+χ⁺(incl Li⁺) - χ⁻
+χ⁺(excl Li⁺) - χ⁻
+χₘₐₓ - χₘᵢₙ
+rₐₗₗ (pm)
+r⁻ (pm)
+r⁺(incl Li⁺) (pm)
+r⁺(excl Li⁺) (pm)
+r⁺(excl Li⁺) - r⁻
+r⁺(incl Li⁺) - r⁻
+r⁺(incl Li⁺) / r⁻
+ρ⁻ (C m⁻³)
+ρ⁺(incl Li⁺) (C m⁻³)
+ρ⁺(excl Li⁺) (C m⁻³)
+ρ⁺(incl Li⁺) / ρ⁻
+Φ⁺(incl Li⁺) (|Z| pm⁻¹)
+Φ⁺(excl Li⁺) (|Z| pm⁻¹)
+nₕₒₛₜ cₐₜᵢₒₙ
+n_Li
+r_ratio_x_chi_diff
+log_rho_ratio
+n_Li × r⁻ (pm)
+chi_range_x_r_avg
+field_x_r_diff

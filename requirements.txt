@@ -5,3 +5,4 @@ mendeleev
 pymatgen
 lightgbm
 ngboost
+optuna
