@@ -171,9 +171,14 @@ figures/                        训练和评估图
 - `True Composition`
 - `status`
 - `message`
+- `oxidation_guess`
+- `valence_contributions`
+- `valence_sum`
 - `charge_residual`
 - `pred_log10_conductivity`
 - `pred_conductivity_S_cm-1`
 - `n_missing_features_filled`
 
+`valence_sum` 为各元素 `amount * oxidation_state` 的总和，理想电中性公式应接近 0；
+`valence_contributions` 会列出每个元素的数量、推断化合价和贡献值，便于检查化学式或价态判断。
 `status` 为 `ok` 表示正常预测；`skipped` 或 `error` 表示该行未生成有效预测。

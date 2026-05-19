@@ -19,6 +19,7 @@ DEFAULT_MODEL_DIR = ROOT / "models" / "outputs_optuna" / "ionic_26_features_rand
 DEFAULT_OUTPUT = ROOT / "predictions" / "expriment-test_predictions.csv"
 TARGET_COLUMN = "Ionic conductivity (S cm-1)"
 DUMMY_CONDUCTIVITY = 1e-6
+CHARGE_ZERO_TOLERANCE = 1e-8
 
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
@@ -27,6 +28,7 @@ from get_feature.get_feature import (  # noqa: E402
     charge_residual,
     composition_features,
     contains_organic_molecule,
+    element_value_list,
     oxidation_state_guesses,
 )
 from models.feature_engineering import engineer_features  # noqa: E402
@@ -64,7 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--true-conductivity-scale",
         type=float,
-        default=0.01,
+        default=0.001,
         help="Multiplier applied to input conductivity before comparing with S/cm predictions.",
     )
     parser.add_argument(
@@ -221,7 +223,24 @@ def make_ids(count: int) -> list[str]:
     return [f"exp_{index:0{width}d}" for index in range(1, count + 1)]
 
 
-def charge_balance_info(formula: str) -> tuple[float, str]:
+def valence_contribution_list(
+    amounts: dict[str, float],
+    oxidation_guess: dict[str, float],
+) -> str:
+    items = [
+        {
+            "element": symbol,
+            "amount": amounts[symbol],
+            "oxidation_state": oxidation_guess[symbol],
+            "contribution": amounts[symbol] * oxidation_guess[symbol],
+        }
+        for symbol in amounts
+        if symbol in oxidation_guess
+    ]
+    return json.dumps(items, ensure_ascii=False)
+
+
+def charge_balance_info(formula: str) -> tuple[float, str, str, str]:
     composition = Composition(formula)
     amounts = {
         elem.symbol: float(composition.get_el_amt_dict()[elem.symbol])
@@ -230,9 +249,13 @@ def charge_balance_info(formula: str) -> tuple[float, str]:
     guesses, _, _, _ = oxidation_state_guesses(composition)
     guess = guesses[0] if guesses else {}
     residual = charge_residual(amounts, guess)
+    if abs(residual) < CHARGE_ZERO_TOLERANCE:
+        residual = 0.0
+    oxidation_guess = element_value_list(guess)
+    valence_contributions = valence_contribution_list(amounts, guess)
     if abs(residual) >= 1.0:
-        return residual, f"charge_residual={residual:.6g}"
-    return residual, ""
+        return residual, oxidation_guess, valence_contributions, f"valence_sum={residual:.6g}"
+    return residual, oxidation_guess, valence_contributions, ""
 
 
 def build_base_features(
@@ -259,6 +282,9 @@ def build_base_features(
             "true_log10_conductivity": row.get("true_log10_conductivity", math.nan),
             "status": "ok",
             "message": "",
+            "oxidation_guess": "",
+            "valence_contributions": "",
+            "valence_sum": math.nan,
             "charge_residual": math.nan,
         }
 
@@ -268,7 +294,15 @@ def build_base_features(
                 status["status"] = "skipped"
                 status["message"] = "organic-like formula; pass --allow-organic to predict"
             else:
-                residual, message = charge_balance_info(formula)
+                (
+                    residual,
+                    oxidation_guess,
+                    valence_contributions,
+                    message,
+                ) = charge_balance_info(formula)
+                status["oxidation_guess"] = oxidation_guess
+                status["valence_contributions"] = valence_contributions
+                status["valence_sum"] = residual
                 status["charge_residual"] = residual
                 if message:
                     status["message"] = message

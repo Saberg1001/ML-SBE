@@ -1,39 +1,86 @@
 """
-Add Top 10 non-redundant features from Small (Kong 2025) paper.
+Add non-redundant Small/Kong-style composition features.
 
-Excluded (redundant with existing features):
-  - Li_content_ratio ↔ n_Li (r=1.00)
-  - O_content_ratio ↔ r⁻/χ⁻/ρ⁻ (r>0.92)
-  - covalent_radius_std_nonLi ↔ r⁺(excl Li⁺) - r⁻ (r=0.976)
-
-Replaced with independent alternatives:
-  - atomic_mass_mean_nonLi (原子量均值)
-  - ir_std_nonLi (离子半径标准差)
-  - n_elements (元素数量 → 组成复杂度代理)
+Pattern suffixes:
+  - all: all elements
+  - l: all elements except Li
+  - c: cations including Li
+  - c_l: non-Li host cations
+  - a: anions only
 """
 
 from __future__ import annotations
 
 import argparse
+import math
+from functools import lru_cache
 from pathlib import Path
 import warnings
 
 import pandas as pd
 import numpy as np
+from mendeleev import element as mendeleev_element
 from pymatgen.core import Composition, Element
+
+try:
+    from get_feature import classify_elements, ionic_radius_pm, oxidation_state_guesses
+except ImportError:
+    from get_feature.get_feature import classify_elements, ionic_radius_pm, oxidation_state_guesses
+
 warnings.filterwarnings('ignore')
 
 
 ROOT = Path(__file__).resolve().parents[1]
 FEATURE_DIR = ROOT / "features"
 DEFAULT_INPUT = FEATURE_DIR / "ionic_26_features_all.csv"
-DEFAULT_OUTPUT = FEATURE_DIR / "ionic_36_features_small_all.csv"
+DEFAULT_OUTPUT = FEATURE_DIR / "ionic_34_features_small_all.csv"
+BOHR_RADIUS_PM = 52.9177210903
+
+FEATURE_SPECS = [
+    ("ir_mean_square_all", "ionic_radius", "mean_square", "all"),
+    ("d_mean_c", "d_electrons", "mean", "c"),
+    ("r_mean_l", "bond_radius", "mean", "l"),
+    ("s_mean_square_c", "s_electrons", "mean_square", "c"),
+    ("entropy_c_l", None, "entropy", "c_l"),
+    ("Vs_variance_c_l", "s_orbital_volume", "variance", "c_l"),
+    ("mp_variance_c_l", "melting_point", "variance", "c_l"),
+    ("atwt_geometric_mean_all", "atomic_mass", "geometric_mean", "all"),
+]
 
 
 # ====================================================================
 # Element property lookup
 # ====================================================================
 
+@lru_cache(maxsize=None)
+def s_orbital_radius_pm(symbol):
+    """Estimate valence s orbital radius from Clementi effective charge."""
+    el = mendeleev_element(symbol)
+    s_shells = [item.n for item in el.screening_constants if item.s == "s"]
+    if not s_shells:
+        return 0
+    n = max(s_shells)
+    zeff = el.zeff(n=n, o="s", method="clementi")
+    if zeff is None or zeff == 0:
+        zeff = el.zeff(n=n, o="s", method="slater")
+    if zeff is None or zeff == 0:
+        return 0
+    return BOHR_RADIUS_PM * n**2 / zeff
+
+
+@lru_cache(maxsize=None)
+def bond_radius_pm(symbol):
+    """Covalent radius for nonmetals and metallic radius for metals."""
+    pymatgen_element = Element(symbol)
+    mendeleev_el = mendeleev_element(symbol)
+    if pymatgen_element.is_metal and mendeleev_el.metallic_radius is not None:
+        return float(mendeleev_el.metallic_radius)
+    if mendeleev_el.covalent_radius is not None:
+        return float(mendeleev_el.covalent_radius)
+    return pymatgen_element.atomic_radius * 100 if pymatgen_element.atomic_radius else 0
+
+
+@lru_cache(maxsize=None)
 def get_element_property(element, property_name):
     """Get element property with fallback to 0."""
     try:
@@ -44,13 +91,33 @@ def get_element_property(element, property_name):
             return sum(c for (_, orb, c) in el.full_electronic_structure if orb == 's')
         elif property_name == 'p_electrons':
             return sum(c for (_, orb, c) in el.full_electronic_structure if orb == 'p')
-        elif property_name == 'covalent_radius':
-            return el.atomic_radius * 100 if el.atomic_radius else 0  # pm
+        elif property_name == 'bond_radius':
+            return bond_radius_pm(element)
         elif property_name == 'ionic_radius':
             ox = el.common_oxidation_states[0] if el.common_oxidation_states else 0
             return el.ionic_radii.get(ox, 0) * 100  # pm
         elif property_name == 'atomic_mass':
             return float(el.atomic_mass)
+        elif property_name == 'atomic_number':
+            return float(el.Z)
+        elif property_name == 'mendeleev_no':
+            value = el.data.get("Mendeleev no")
+            return float(value) if value is not None else 0
+        elif property_name == 'thermal_conductivity':
+            value = el.data.get("Thermal conductivity")
+            return float(value) if value is not None else 0
+        elif property_name == 'density_solid':
+            value = el.data.get("Density of solid")
+            return float(value) if value is not None else 0
+        elif property_name == 'first_ionization_energy':
+            values = el.data.get("Ionization energies") or []
+            return float(values[0]) if values else 0
+        elif property_name == 's_orbital_volume':
+            radius_pm = s_orbital_radius_pm(element)
+            return math.pi * radius_pm**3
+        elif property_name == 'melting_point':
+            value = el.data.get("Melting point")
+            return float(value) if value is not None else 0
         else:
             return 0
     except:
@@ -61,41 +128,90 @@ def get_element_property(element, property_name):
 # Statistical aggregation
 # ====================================================================
 
-def compute_weighted_stats(comp, property_name, exclude_elements=None):
-    """
-    Compute weighted mean/std/min/max/range for an elemental property
-    over the composition, excluding specified elements.
-    """
-    if exclude_elements is None:
-        exclude_elements = []
+def composition_groups(comp):
+    """Return element groups for Small composition patterns."""
+    elements = [el.symbol for el in comp.elements]
+    oxidation_guesses, _, _, _ = oxidation_state_guesses(comp)
+    oxidation_guess = oxidation_guesses[0] if oxidation_guesses else {}
+    classification = classify_elements(elements, oxidation_guess)
+    return {
+        "all": set(elements),
+        "l": {symbol for symbol in elements if symbol != "Li"},
+        "c": {
+            symbol for symbol in elements
+            if classification.get(symbol) in ("Li", "host_cation")
+        },
+        "c_l": {
+            symbol for symbol in elements
+            if classification.get(symbol) == "host_cation"
+        },
+        "a": {
+            symbol for symbol in elements
+            if classification.get(symbol) in ("anion", "halide")
+        },
+    }
 
+
+def weighted_values(comp, property_name, pattern):
+    """Collect property values and composition weights for one pattern."""
+    allowed = composition_groups(comp)[pattern]
+    oxidation_guesses, _, _, _ = oxidation_state_guesses(comp)
+    oxidation_guess = oxidation_guesses[0] if oxidation_guesses else {}
     values, weights = [], []
     for el, amt in comp.items():
-        if el.symbol not in exclude_elements:
-            values.append(get_element_property(el.symbol, property_name))
+        if el.symbol in allowed:
+            if property_name == "ionic_radius":
+                charge = oxidation_guess.get(el.symbol)
+                value = ionic_radius_pm(el.symbol, charge) if charge is not None else None
+                if value is None:
+                    value = get_element_property(el.symbol, property_name)
+            else:
+                value = get_element_property(el.symbol, property_name)
+            values.append(value)
             weights.append(amt)
+    return values, weights
 
+
+def compute_weighted_stat(comp, property_name, statistic, pattern):
+    """Compute one weighted statistic for a Small-style feature."""
+    values, weights = weighted_values(comp, property_name, pattern)
     if not values:
-        return {'mean': 0, 'std': 0, 'min': 0, 'max': 0, 'range': 0}
+        return 0.0
 
     values = np.array(values, dtype=float)
     weights = np.array(weights, dtype=float)
     weights /= weights.sum()
 
-    mean = np.average(values, weights=weights)
-    std = np.sqrt(np.average((values - mean) ** 2, weights=weights))
-    return {'mean': mean, 'std': std, 'min': values.min(),
-            'max': values.max(), 'range': values.max() - values.min()}
+    if statistic == "mean":
+        return float(np.average(values, weights=weights))
+    if statistic == "mean_square":
+        return float(np.average(values ** 2, weights=weights))
+    if statistic == "variance":
+        mean = np.average(values, weights=weights)
+        return float(np.average((values - mean) ** 2, weights=weights))
+    if statistic == "geometric_mean":
+        if np.any(values <= 0):
+            return 0.0
+        return float(np.exp(np.average(np.log(values), weights=weights)))
+    raise ValueError(f"Unsupported statistic: {statistic}")
 
 
-def compute_cation_entropy(comp):
-    """Configurational entropy of non-Li cations: -Sigma p_i ln(p_i)."""
-    cations = {el.symbol: amt for el, amt in comp.items()
-                if el.is_metal and el.symbol != 'Li'}
-    if len(cations) <= 1:
+def compute_entropy(comp, pattern):
+    """Configurational entropy for one Small composition pattern."""
+    allowed = composition_groups(comp)[pattern]
+    amounts = {
+        el.symbol: amt for el, amt in comp.items()
+        if el.symbol in allowed
+    }
+    if len(amounts) <= 1:
         return 0.0
-    total = sum(cations.values())
-    return -sum((a / total) * np.log(a / total) for a in cations.values() if a > 0)
+    total = sum(amounts.values())
+    return -sum((a / total) * np.log(a / total) for a in amounts.values() if a > 0)
+
+
+def compute_count(comp, pattern):
+    """Count distinct elements in one Small composition pattern."""
+    return float(len(composition_groups(comp)[pattern]))
 
 
 # ====================================================================
@@ -104,24 +220,13 @@ def compute_cation_entropy(comp):
 
 def add_small_top10_features(df):
     """
-    Add 10 non-redundant features inspired by Small (Kong 2025) paper.
+    Add 10 non-redundant features inspired by Small (Kong 2025).
 
-    New features (10):
-      1. ir_mean_nonLi          - Effective ionic radius mean (non-Li)
-      2. d_electrons_mean_nonLi - d-orbital electrons mean (non-Li)
-      3. covalent_radius_mean_nonLi - Covalent radius mean (non-Li)
-      4. cation_entropy         - Configurational entropy of non-Li cations
-      5. d_electrons_std_nonLi  - d-orbital electrons std (non-Li)
-      6. s_electrons_mean_nonLi - s-orbital electrons mean (non-Li)
-      7. p_electrons_mean_nonLi - p-orbital electrons mean (non-Li)
-      8. atomic_mass_mean_nonLi - Atomic mass mean (non-Li)
-      9. ir_std_nonLi           - Effective ionic radius std (non-Li)
-     10. n_elements             - Number of distinct elements
-
-    NOT added (redundant with existing features):
-      - Li_content_ratio       <-> n_Li (r=1.00)
-      - O_content_ratio        <-> r-/chi-/rho- (r>0.92)
-      - covalent_radius_std    <-> r+(excl Li+)-r- (r=0.976)
+    The feature scopes follow the requested pattern mapping:
+      - mean of d and mean square of s: c
+      - mean of r: l
+      - variance of Vs = pi * rs^3 and mp: c_l
+      - remaining selected features: all
     """
 
     print("Parsing compositions...")
@@ -130,68 +235,22 @@ def add_small_top10_features(df):
     valid = compositions.notna().sum()
     print(f"  Valid: {valid}/{len(df)}")
 
-    print("\nComputing 10 new features...")
+    print(f"\nComputing {len(FEATURE_SPECS)} new features...")
+    new_cols = []
+    total_new_features = len(FEATURE_SPECS)
+    for index, (column, property_name, statistic, pattern) in enumerate(FEATURE_SPECS, start=1):
+        print(f" {index:2d}/{total_new_features}  {column}")
+        if statistic == "entropy":
+            df[column] = compositions.apply(
+                lambda c: compute_entropy(c, pattern) if c else 0.0)
+        elif statistic == "count":
+            df[column] = compositions.apply(
+                lambda c: compute_count(c, pattern) if c else 0.0)
+        else:
+            df[column] = compositions.apply(
+                lambda c: compute_weighted_stat(c, property_name, statistic, pattern) if c else 0.0)
+        new_cols.append(column)
 
-    # 1. Effective ionic radius mean (non-Li)
-    print("  1/10  ir_mean_nonLi")
-    ir_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 'ionic_radius', ['Li']) if c else {})
-    df['ir_mean_nonLi'] = ir_stats.apply(lambda x: x.get('mean', 0))
-
-    # 2. d-electrons mean (non-Li)
-    print("  2/10  d_electrons_mean_nonLi")
-    d_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 'd_electrons', ['Li']) if c else {})
-    df['d_electrons_mean_nonLi'] = d_stats.apply(lambda x: x.get('mean', 0))
-
-    # 3. Covalent radius mean (non-Li)
-    print("  3/10  covalent_radius_mean_nonLi")
-    cr_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 'covalent_radius', ['Li']) if c else {})
-    df['covalent_radius_mean_nonLi'] = cr_stats.apply(lambda x: x.get('mean', 0))
-
-    # 4. Cation entropy
-    print("  4/10  cation_entropy")
-    df['cation_entropy'] = compositions.apply(
-        lambda c: compute_cation_entropy(c) if c else 0)
-
-    # 5. d-electrons std (non-Li)
-    print("  5/10  d_electrons_std_nonLi")
-    df['d_electrons_std_nonLi'] = d_stats.apply(lambda x: x.get('std', 0))
-
-    # 6. s-electrons mean (non-Li)
-    print("  6/10  s_electrons_mean_nonLi")
-    s_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 's_electrons', ['Li']) if c else {})
-    df['s_electrons_mean_nonLi'] = s_stats.apply(lambda x: x.get('mean', 0))
-
-    # 7. p-electrons mean (non-Li)
-    print("  7/10  p_electrons_mean_nonLi")
-    p_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 'p_electrons', ['Li']) if c else {})
-    df['p_electrons_mean_nonLi'] = p_stats.apply(lambda x: x.get('mean', 0))
-
-    # 8. Atomic mass mean (non-Li)  [replaces redundant Li_content_ratio]
-    print("  8/10  atomic_mass_mean_nonLi")
-    am_stats = compositions.apply(
-        lambda c: compute_weighted_stats(c, 'atomic_mass', ['Li']) if c else {})
-    df['atomic_mass_mean_nonLi'] = am_stats.apply(lambda x: x.get('mean', 0))
-
-    # 9. Ionic radius std (non-Li)  [replaces redundant O_content_ratio]
-    print("  9/10  ir_std_nonLi")
-    df['ir_std_nonLi'] = ir_stats.apply(lambda x: x.get('std', 0))
-
-    # 10. Number of distinct elements  [replaces redundant covalent_radius_std]
-    print(" 10/10  n_elements")
-    df['n_elements'] = compositions.apply(
-        lambda c: len(c) if c else 0)
-
-    new_cols = [
-        'ir_mean_nonLi', 'd_electrons_mean_nonLi', 'covalent_radius_mean_nonLi',
-        'cation_entropy', 'd_electrons_std_nonLi', 's_electrons_mean_nonLi',
-        'p_electrons_mean_nonLi', 'atomic_mass_mean_nonLi', 'ir_std_nonLi',
-        'n_elements'
-    ]
     print(f"\n+ Added {len(new_cols)} features -> total columns: {len(df.columns)}")
     return df, new_cols
 
@@ -202,7 +261,7 @@ def add_small_top10_features(df):
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Add 10 Small-paper-inspired features to the base 26-feature table."
+        description="Add non-redundant Small-paper-inspired features to a base feature table."
     )
     parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
@@ -214,7 +273,7 @@ if __name__ == '__main__':
     args.output.parent.mkdir(parents=True, exist_ok=True)
 
     print("=" * 65)
-    print("Small Paper Feature Extraction (non-redundant Top 10)")
+    print("Small Paper Feature Extraction (non-redundant top features)")
     print("=" * 65)
 
     df = pd.read_csv(args.input)
