@@ -1,0 +1,12 @@
+{
+  "rows": 113,
+  "mae_log10": 1.2632509269613712,
+  "rmse_log10": 1.3933110508234607,
+  "r2_log10": -9.949390294451657,
+  "spearman_rank_correlation": 0.12543094665220791,
+  "kendall_rank_correlation": 0.08097422514828366,
+  "n_comparable_pairs": 6321,
+  "n_inverted_pairs": 2904,
+  "n_predicted_tie_pairs": 1,
+  "pairwise_inversion_rate": 0.45942097769340295
+}

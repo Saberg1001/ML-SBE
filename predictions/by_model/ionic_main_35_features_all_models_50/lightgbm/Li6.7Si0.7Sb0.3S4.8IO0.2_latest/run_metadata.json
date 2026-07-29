@@ -1,0 +1,17 @@
+{
+  "training_run": "ionic_main_35_features_all_models_50",
+  "model_name": "lightgbm",
+  "model_output_dir": "/home/ziyiguo/project/IonConductivity/outputs/models/current/ionic_main_35_features_all_models_50",
+  "dataset_name": "Li6.7Si0.7Sb0.3S4.8IO0.2_latest",
+  "input_path": "/home/ziyiguo/project/IonConductivity/rawdata/Li6.7Si0.7Sb0.3S4.8IO0.2.csv",
+  "input_sha256": "e8887084d4d56cd4f1790472607e07df837dc09032c75b764c4bc7f0fce6fa67",
+  "model_path": "/home/ziyiguo/project/IonConductivity/outputs/models/current/ionic_main_35_features_all_models_50/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Compare latest 35-feature LightGBM recommendations with legacy recommendations",
+  "rows": 60,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

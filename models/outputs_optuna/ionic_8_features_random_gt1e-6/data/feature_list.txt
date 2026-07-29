@@ -1,8 +1,0 @@
-n_Li
-χ⁻
-χ⁺(excl Li⁺)
-r⁺(excl Li⁺) (pm)
-r⁻ (pm)
-nₕₒₛₜ cₐₜᵢₒₙ
-ρ⁺(excl Li⁺) (C m⁻³)
-Φ⁺(excl Li⁺) (|Z| pm⁻¹)

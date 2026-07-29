@@ -1,0 +1,14 @@
+{
+  "metric": "pairwise_inversion_rate",
+  "scale": "log10 conductivity",
+  "n_items": 0,
+  "n_comparable_pairs": 0,
+  "n_inverted_pairs": 0,
+  "n_predicted_tie_pairs": 0,
+  "inversion_rate": NaN,
+  "mean_log10_error_pred_minus_true": NaN,
+  "mean_abs_log10_error": NaN,
+  "median_abs_log10_error": NaN,
+  "excluded_elements": [],
+  "n_excluded_rows": 0
+}

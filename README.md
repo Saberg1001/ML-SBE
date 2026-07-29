@@ -4,42 +4,16 @@
 `log10(Ionic conductivity (S cm-1))`，输出时同时给出 log10 预测值和换算后的
 `S cm-1` 电导率。
 
-## 当前推荐模型
-
-目前项目中效果最好的模型是：
-
-```text
-models/outputs_optuna/ionic_26_features_random_gt1e-6_50
-```
-
-该模型为 26 特征、随机划分、`Ionic conductivity > 1e-6 S cm-1` 数据集上的
-LightGBM + Optuna 50 次 trial 版本。当前预测脚本
-`predict_internal_formulas.py` 的默认模型目录已经指向这个路径，因此不额外指定
-`--model-dir` 时，预测会默认使用该模型。
-
-关键模型文件：
-
-```text
-models/outputs_optuna/ionic_26_features_random_gt1e-6_50/lightgbm/model.joblib
-```
-
-当前记录的主要指标：
-
-- 5-fold CV MAE: `0.4863`
-- Test MAE: `0.4698`
-- Test RMSE: `0.6591`
-- Test R2: `0.5400`
-
 ## 目录结构
 
 ```text
 config/                 氧化态和离子半径修正规则
 rawdata/                原始数据和待预测输入
-features/               已生成的特征表
-get_feature/            特征生成、筛选和划分脚本
-models/                 特征工程、训练脚本和模型输出
-predictions/            预测结果
-predict_internal_formulas.py  公式预测入口
+main/                   数据处理、特征、划分、训练和预测代码
+outputs/models/current/ 当前模型输出
+outputs/models/legacy/  重构前模型输出（只读保留）
+outputs/analyses/       图表和其他分析结果
+predictions/            历史和当前预测结果
 requirements.txt        Python 依赖
 ```
 
@@ -54,131 +28,97 @@ pip install -r requirements.txt
 主要依赖包括 `pandas`、`scikit-learn`、`pymatgen`、`mendeleev`、`lightgbm`、
 `optuna`、`ngboost` 和 `matplotlib`。
 
-## 使用当前最佳模型预测
+## 完整流程
 
-默认输入文件为：
+统一 API 位于 `main`：
+
+```python
+from main import PipelineConfig, run_training_pipeline
+
+result = run_training_pipeline(PipelineConfig())
+print(result.train.output_dir)
+```
+
+默认流程依次执行原始数据清理、组成特征生成、训练/测试划分和 Optuna 训练，
+模型保存到 `outputs/models/current/`。可通过各阶段的配置对象修改阈值、划分方法、
+模型类型和 trial 数。
+
+完整特征表不再单独写入顶层 `features/`。特征生成和数据划分在内存中完成后，
+每次训练都会在模型运行目录的 `data/train.csv` 和 `data/test.csv` 中保存完整的
+训练/测试特征表，并同时保存实际入模特征列表和缺失值填充信息。
+
+每次训练都会在运行目录的 `figures/` 中强制生成与旧版相同格式和文件名的训练/测试
+拟合图、指标表、Top 10 特征重要性占比图及组合汇总图，便于与历史实验直接比较。
+残差、Optuna 优化历史和 Top 20 原始重要性图作为额外诊断保留。
+
+预测使用同一套特征实现：
+
+```python
+from main import PredictConfig, predict_formulas
+
+result = predict_formulas(
+    "rawdata/experimental-data",
+    "outputs/models/current/<run_name>",
+    PredictConfig(
+        dataset_name="experimental-data",
+        prediction_purpose="Evaluate predictions against experimental conductivity",
+    ),
+)
+```
+
+预测默认按模型和数据集保存到稳定路径：
 
 ```text
-rawdata/expriment-test
+predictions/by_model/<training_run>/<model_name>/<dataset_name>/
+├── predictions.csv
+├── features.csv
+├── evaluation.json
+└── run_metadata.json
 ```
 
-默认输出文件为：
-
-```text
-predictions/expriment-test_predictions.csv
-```
-
-直接运行：
-
-```bash
-python predict_internal_formulas.py
-```
-
-等价于显式指定当前最佳模型：
-
-```bash
-python predict_internal_formulas.py \
-  --input rawdata/expriment-test \
-  --model-dir models/outputs_optuna/ionic_26_features_random_gt1e-6_50 \
-  --output predictions/expriment-test_predictions.csv
-```
-
-预测脚本会同时写出：
-
-- 预测结果 CSV：包含 `pred_log10_conductivity` 和 `pred_conductivity_S_cm-1`
-- 特征表 CSV：默认保存为 `*_features.csv`
-- 排名指标 JSON：默认保存为 `*_metrics.json`
-
-输入可以是纯公式列表，也可以是 CSV/TSV。带表头时脚本会自动识别常见列名：
-`True Composition`、`formula`、`composition`、`ID`、`conductivity` 等。
-
-常用参数：
-
-```bash
-python predict_internal_formulas.py \
-  --input path/to/formulas.csv \
-  --output predictions/my_predictions.csv \
-  --formula-column "True Composition" \
-  --id-column ID
-```
-
-默认会跳过同时含 C 和 H 的有机样公式；如需预测这类公式，可添加：
-
-```bash
---allow-organic
-```
-
-## 训练模型
-
-Optuna 训练入口为：
-
-```bash
-python models/train_models_optuna.py
-```
-
-复现当前推荐模型对应的数据配置和 trial 数：
-
-```bash
-python models/train_models_optuna.py \
-  --model lightgbm \
-  --train features/ionic_26_features_random_gt1e-6_train.csv \
-  --test features/ionic_26_features_random_gt1e-6_test.csv \
-  --n-trials 50
-```
-
-训练结果会保存到：
-
-```text
-models/outputs_optuna/<feature_set_name>/
-```
-
-其中 LightGBM 模型位于：
-
-```text
-models/outputs_optuna/<feature_set_name>/lightgbm/model.joblib
-```
+相同训练运行、模型和数据集再次预测时更新同一目录，不按时间重复保存。
+`run_metadata.json` 说明模型、输入数据和预测用途；`evaluation.json` 在输入含有
+`reference_mS_cm` 时记录误差及排序指标，否则明确记录缺少真实值、无法评估。
 
 ## 特征工程
 
-训练和预测都会调用 `models/feature_engineering.py` 中的特征处理逻辑：
+训练和预测统一调用 `main.features`：
 
 - 解析电导率并转换为 `log10_conductivity`
-- 对上限值样本设置替代值和样本权重
-- 删除冗余或弱相关特征
+- 按配置过滤电导率阈值
+- 清理有机样本和电荷异常样本
 - 添加若干交互特征
+- 添加 8 个 Small/Kong 组成特征
+- 编码材料 Family
 - 使用训练集特征中位数填补缺失值
 
-基础组成特征由 `get_feature/get_feature.py` 生成，依赖 `config/oxidation_states.json`
-和 `config/ionic_radius_overrides.json`。
+特征计算依赖 `config/oxidation_states.json` 和
+`config/ionic_radius_overrides.json`。
+
+## 历史结果
+
+`outputs/models/legacy/` 和 `predictions/` 中重构前生成的模型及预测结果继续保留，供结果复核；
+新代码不会向这些旧模型目录写入内容。
 
 ## 输出说明
 
 模型目录中常见文件：
 
 ```text
-model_comparison.json/csv       模型对比结果
+model_comparison.csv            模型对比结果
 lightgbm/final_results.json     LightGBM 训练参数与指标
 lightgbm/model.joblib           可用于预测的模型文件
 lightgbm/test_predictions.csv   测试集预测
 lightgbm/feature_importance.csv 特征重要性
-data/feature_list.txt           模型使用的最终特征列表
-figures/                        训练和评估图
+feature_schema.json             模型特征与 Family 编码
+summary.json                    训练摘要和最佳模型
 ```
 
 预测结果中常见列：
 
 - `ID`
 - `True Composition`
-- `status`
-- `message`
-- `oxidation_guess`
-- `valence_contributions`
-- `valence_sum`
-- `charge_residual`
+- `Family`
+- `model_name`
 - `pred_log10_conductivity`
 - `pred_conductivity_S_cm-1`
-- `n_missing_features_filled`
-
-`valence_sum` 为各元素 `amount * oxidation_state` 的总和，理想电中性公式应接近 0；
-`valence_contributions` 会列出每个元素的数量、推断化合价和贡献值，便于检查化学式或价态判断。
-`status` 为 `ok` 表示正常预测；`skipped` 或 `error` 表示该行未生成有效预测。

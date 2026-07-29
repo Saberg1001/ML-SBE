@@ -1,0 +1,2 @@
+ID,True Composition,Family,model_name,pred_log10_conductivity,pred_conductivity_S_cm-1
+pred_0001,Li6.7Si0.7Sb0.3S4.8IO0.2,argyrodites,lightgbm,-3.7874361627025506,0.00016314126942768416
