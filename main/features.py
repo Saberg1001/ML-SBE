@@ -14,11 +14,12 @@ import pandas as pd
 from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 
+from .paths import CHEMISTRY_CONFIG_DIR, MODELING_DIR
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_FEATURE_PATH = ROOT / "outputs" / "cache" / "ionic_main_features_all.csv"
-OXIDATION_CONFIG = ROOT / "config" / "oxidation_states.json"
-IONIC_RADIUS_CONFIG = ROOT / "config" / "ionic_radius_overrides.json"
+
+DEFAULT_FEATURE_PATH = MODELING_DIR / "absolute" / "generated_features.csv"
+OXIDATION_CONFIG = CHEMISTRY_CONFIG_DIR / "oxidation_states.json"
+IONIC_RADIUS_CONFIG = CHEMISTRY_CONFIG_DIR / "ionic_radius_overrides.json"
 
 TARGET_COLUMN = "Ionic conductivity (S cm-1)"
 FAMILY_COLUMN = "Family"

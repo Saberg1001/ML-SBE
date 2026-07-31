@@ -1,0 +1,35 @@
+feature,importance
+r_mean_l,1264.0
+entropy_c_l,1109.0
+Vs_variance_c_l,1092.0
+atwt_geometric_mean_all,1076.0
+mp_variance_c_l,948.0
+d_mean_c,916.0
+rₐₗₗ (pm),864.0
+ir_mean_square_all,837.0
+chi_range_x_r_avg,742.0
+χₐₗₗ,701.0
+r_ratio_x_chi_diff,630.0
+χ⁺(incl Li⁺) - χ⁻,556.0
+ρ⁺(incl Li⁺) / ρ⁻,551.0
+χ⁺(excl Li⁺),526.0
+field_x_r_diff,499.0
+ρ⁺(incl Li⁺) (C m⁻³),472.0
+r⁺(incl Li⁺) (pm),472.0
+χ⁺(excl Li⁺) - χ⁻,421.0
+s_mean_square_c,406.0
+r⁺(incl Li⁺) - r⁻,389.0
+r⁺(incl Li⁺) / r⁻,337.0
+Φ⁺(excl Li⁺) (|Z| pm⁻¹),335.0
+ρ⁺(excl Li⁺) (C m⁻³),327.0
+n_Li,308.0
+Φ⁺(incl Li⁺) (|Z| pm⁻¹),307.0
+nₕₒₛₜ cₐₜᵢₒₙ,295.0
+r⁺(excl Li⁺) (pm),255.0
+r⁺(excl Li⁺) - r⁻,209.0
+n_Li × r⁻ (pm),193.0
+r⁻ (pm),66.0
+ρ⁻ (C m⁻³),59.0
+χ⁻,49.0
+χₘₐₓ - χₘᵢₙ,38.0
+log_rho_ratio,0.0

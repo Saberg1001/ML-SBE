@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f27_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f27_family_ordinal",
+  "dataset_name": "experimental_113",
+  "input_path": "data/experimental/annotations/experimental-data-labeled.csv",
+  "input_sha256": "dc081f99320f460e9df636ce485b11759bd9e64d8ff9ddeb090e8cdfb2d95553",
+  "model_path": "runs/absolute/abs_v0_f27_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "0e3b2ca3cb97d5e3ded867fe01b6d42af5ecbb17526ad26bd0aa33c1d64b620a",
+  "prediction_purpose": "Evaluate 27-feature same-base modification trends on 113 experiments",
+  "rows": 113,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

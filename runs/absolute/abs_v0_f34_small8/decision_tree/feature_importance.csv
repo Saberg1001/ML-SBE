@@ -1,0 +1,35 @@
+feature,importance
+χ⁺(excl Li⁺) - χ⁻,0.2698931467605416
+d_mean_c,0.15150586488548803
+r⁻ (pm),0.0996047840963971
+r_mean_l,0.09388620347058803
+mp_variance_c_l,0.09365130971956125
+χₘₐₓ - χₘᵢₙ,0.06653842032696804
+entropy_c_l,0.06171382851042388
+χₐₗₗ,0.05129558437373479
+Φ⁺(incl Li⁺) (|Z| pm⁻¹),0.0431986092448488
+s_mean_square_c,0.016452507077360828
+ir_mean_square_all,0.01578124848519314
+r⁺(excl Li⁺) - r⁻,0.015088434098115595
+Φ⁺(excl Li⁺) (|Z| pm⁻¹),0.011181353752299138
+log_rho_ratio,0.008865244973744777
+r⁺(incl Li⁺) - r⁻,0.001343460224735115
+χ⁻,0.0
+χ⁺(excl Li⁺),0.0
+χ⁺(incl Li⁺) - χ⁻,0.0
+ρ⁺(incl Li⁺) / ρ⁻,0.0
+ρ⁺(excl Li⁺) (C m⁻³),0.0
+ρ⁺(incl Li⁺) (C m⁻³),0.0
+ρ⁻ (C m⁻³),0.0
+r⁺(incl Li⁺) / r⁻,0.0
+rₐₗₗ (pm),0.0
+r⁺(incl Li⁺) (pm),0.0
+r⁺(excl Li⁺) (pm),0.0
+field_x_r_diff,0.0
+chi_range_x_r_avg,0.0
+n_Li × r⁻ (pm),0.0
+r_ratio_x_chi_diff,0.0
+nₕₒₛₜ cₐₜᵢₒₙ,0.0
+n_Li,0.0
+Vs_variance_c_l,0.0
+atwt_geometric_mean_all,0.0

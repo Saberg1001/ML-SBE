@@ -1,36 +1,94 @@
 # IonConductivity
 
-本项目用于基于化学式和手工构造的组成特征预测离子电导率。模型目标为
-`log10(Ionic conductivity (S cm-1))`，输出时同时给出 log10 预测值和换算后的
-`S cm-1` 电导率。
+本项目基于化学式和组成描述符研究锂离子电解质电导率。目前可运行模型均为
+`log10(Ionic conductivity (S cm-1))` 绝对值回归；趋势分类、排序和
+`Δlog10` 回归尚未训练；后续趋势模型必须使用经复核的配对表和分组划分。
 
 ## 目录结构
 
 ```text
-config/                 氧化态和离子半径修正规则
-rawdata/                原始数据和待预测输入
-main/                   数据处理、特征、划分、训练和预测代码
-outputs/models/current/ 当前模型输出
-outputs/models/legacy/  重构前模型输出（只读保留）
-outputs/analyses/       图表和其他分析结果
-predictions/            历史和当前预测结果
-requirements.txt        Python 依赖
+config/
+├── chemistry/                 氧化态与离子半径规则
+└── taxonomy/                  待建立的Family规范词表
+
+data/
+├── obelix/raw/                OBLiX all、文献推荐划分及CIF
+├── experimental/             113条实验数据及人工标注
+├── prediction_inputs/        无训练标签的待预测配方
+└── splits/                    固定ID/分组划分manifest
+
+main/                          清洗、特征、划分、训练和预测代码
+runs/                          运行索引、每次模型运行及其预测
+reports/                       筛选后的正式表格和图片
+archive/                       只读历史模型和旧预测
+scripts/                       可复用审计与绘图入口
 ```
 
-## 环境准备
+目录约定：`obelix/raw` 和 `experimental/raw` 保留源文件，不直接覆盖；
+`data/splits` 只保存样本ID、分组和划分manifest，不复制完整特征表。每个
+`runs/<task>/<run_id>` 自带配置、入模数据、模型、预测和诊断图，`reports` 只放
+精选汇总，`archive` 只读保留历史材料。
 
-建议在项目专用虚拟环境或 conda 环境中安装依赖：
+## 数据
 
-```bash
-pip install -r requirements.txt
+OBLiX原始数据位于：
+
+```text
+data/obelix/raw/all.csv
+data/obelix/raw/official_split/train.csv
+data/obelix/raw/official_split/test.csv
+data/obelix/raw/cifs/
 ```
 
-主要依赖包括 `pandas`、`scikit-learn`、`pymatgen`、`mendeleev`、`lightgbm`、
-`optuna`、`ngboost` 和 `matplotlib`。
+其中 `train.csv/test.csv` 表示文献推荐划分。当前工作区的 `train.csv` 内容呈
+二进制或加密状态，文件被原样保留，但在取得可读版本前不能直接交给pandas。
 
-## 完整流程
+实验数据分为原始表和标注表：
 
-统一 API 位于 `main`：
+```text
+data/experimental/raw/experimental-data.tsv
+data/experimental/annotations/experimental-data-labeled.csv
+```
+
+legacy block文件只用于人工复核，不能直接视为有效趋势配对。待预测配方位于
+`data/prediction_inputs/`，不参与训练。
+
+## 当前绝对值baseline
+
+历史模型索引位于 `runs/absolute/registry.csv`，对应运行目录为：
+
+```text
+runs/absolute/abs_v0_f26/
+runs/absolute/abs_v0_f27_family_ordinal/
+runs/absolute/abs_v0_f34_small8/
+runs/absolute/abs_v0_f35_small8_family_ordinal/
+```
+
+四者均为历史baseline，使用相同的旧随机344/86划分。27和35特征模型的Family
+采用连续浮点编码；四个模型的随机划分均存在公式和DOI泄漏。因此这些结果可用于
+复盘特征变化，但不能作为趋势模型的最终性能结论。
+
+每个运行内部统一保存：
+
+```text
+<run_id>/
+├── manifest.json
+├── config.json
+├── data/
+├── lightgbm/
+├── predictions/
+└── figures/
+```
+
+## 使用当前流水线
+
+项目环境：
+
+```text
+/home/ziyiguo/miniconda3/envs/IonConductivity
+```
+
+完整训练API保持从 `main` 导入：
 
 ```python
 from main import PipelineConfig, run_training_pipeline
@@ -39,86 +97,40 @@ result = run_training_pipeline(PipelineConfig())
 print(result.train.output_dir)
 ```
 
-默认流程依次执行原始数据清理、组成特征生成、训练/测试划分和 Optuna 训练，
-模型保存到 `outputs/models/current/`。可通过各阶段的配置对象修改阈值、划分方法、
-模型类型和 trial 数。
+新训练默认写入 `runs/absolute/`。划分阶段不再额外写顶层 `features/train/test`
+副本；每个正式运行在自己的 `data/` 下保存实际入模数据。
 
-完整特征表不再单独写入顶层 `features/`。特征生成和数据划分在内存中完成后，
-每次训练都会在模型运行目录的 `data/train.csv` 和 `data/test.csv` 中保存完整的
-训练/测试特征表，并同时保存实际入模特征列表和缺失值填充信息。
-
-每次训练都会在运行目录的 `figures/` 中强制生成与旧版相同格式和文件名的训练/测试
-拟合图、指标表、Top 10 特征重要性占比图及组合汇总图，便于与历史实验直接比较。
-残差、Optuna 优化历史和 Top 20 原始重要性图作为额外诊断保留。
-
-预测使用同一套特征实现：
+预测示例：
 
 ```python
 from main import PredictConfig, predict_formulas
 
 result = predict_formulas(
-    "rawdata/experimental-data",
-    "outputs/models/current/<run_name>",
+    "data/experimental/annotations/experimental-data-labeled.csv",
+    "runs/absolute/abs_v0_f26",
     PredictConfig(
-        dataset_name="experimental-data",
-        prediction_purpose="Evaluate predictions against experimental conductivity",
+        dataset_name="experimental_113",
+        prediction_purpose="Evaluate the historical absolute baseline",
     ),
 )
 ```
 
-预测默认按模型和数据集保存到稳定路径：
+默认输出与模型运行绑定：
 
 ```text
-predictions/by_model/<training_run>/<model_name>/<dataset_name>/
+runs/absolute/<run_id>/predictions/<model>/<dataset_id>/
 ├── predictions.csv
 ├── features.csv
 ├── evaluation.json
 └── run_metadata.json
 ```
 
-相同训练运行、模型和数据集再次预测时更新同一目录，不按时间重复保存。
-`run_metadata.json` 说明模型、输入数据和预测用途；`evaluation.json` 在输入含有
-`reference_mS_cm` 时记录误差及排序指标，否则明确记录缺少真实值、无法评估。
+化学配置位于 `config/chemistry/`。历史模型集中在
+`archive/absolute_legacy/models/`，只读保留，不作为代码默认输入。
 
-## 特征工程
+## Git管理原则
 
-训练和预测统一调用 `main.features`：
-
-- 解析电导率并转换为 `log10_conductivity`
-- 按配置过滤电导率阈值
-- 清理有机样本和电荷异常样本
-- 添加若干交互特征
-- 添加 8 个 Small/Kong 组成特征
-- 编码材料 Family
-- 使用训练集特征中位数填补缺失值
-
-特征计算依赖 `config/oxidation_states.json` 和
-`config/ionic_radius_overrides.json`。
-
-## 历史结果
-
-`outputs/models/legacy/` 和 `predictions/` 中重构前生成的模型及预测结果继续保留，供结果复核；
-新代码不会向这些旧模型目录写入内容。
-
-## 输出说明
-
-模型目录中常见文件：
-
-```text
-model_comparison.csv            模型对比结果
-lightgbm/final_results.json     LightGBM 训练参数与指标
-lightgbm/model.joblib           可用于预测的模型文件
-lightgbm/test_predictions.csv   测试集预测
-lightgbm/feature_importance.csv 特征重要性
-feature_schema.json             模型特征与 Family 编码
-summary.json                    训练摘要和最佳模型
-```
-
-预测结果中常见列：
-
-- `ID`
-- `True Composition`
-- `Family`
-- `model_name`
-- `pred_log10_conductivity`
-- `pred_conductivity_S_cm-1`
+- 跟踪源码、配置、原始/校订数据、manifest和精选报告；
+- 不跟踪模型二进制、运行级特征缓存和自动生成训练图；
+- 不使用 `latest/current` 表示正式模型，统一使用稳定 `run_id`；
+- 数据过滤、Family词表、配对规则或划分变化时创建新版本，不覆盖旧版本。

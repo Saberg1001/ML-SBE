@@ -1,0 +1,21 @@
+{
+  "run_id": "abs_v0_f34_small8",
+  "legacy_run_name": "ionic_main_34_features_all_models_50",
+  "task": "absolute_regression",
+  "target": "log10_conductivity",
+  "feature_count": 34,
+  "family_encoding": "not_used",
+  "split": "random_seed42_legacy",
+  "train_rows": 344,
+  "test_rows": 86,
+  "best_model": "lightgbm",
+  "model_path": "lightgbm/model.joblib",
+  "model_sha256": "fc4d3872311b3eacfa0a8cb5af9e66dfa14a2fa571a29b06c26baf4caea9600e",
+  "source_commit": "8cb924c",
+  "status": "historical_baseline",
+  "known_limitations": [
+    "The eight added descriptors are highly correlated with existing features.",
+    "Random row split leaks formulas and DOI groups.",
+    "Training optimizes absolute MAE rather than modification trend."
+  ]
+}

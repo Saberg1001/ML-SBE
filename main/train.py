@@ -22,10 +22,10 @@ except ImportError as exc:
     raise RuntimeError("Optuna is required for main.train") from exc
 
 from .features import FAMILY_COLUMN, family_code_mapping, infer_feature_columns
+from .paths import RUNS_DIR
 
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_ROOT = ROOT / "outputs" / "models" / "current"
+DEFAULT_OUTPUT_ROOT = RUNS_DIR / "absolute"
 TARGET_COLUMN = "log10_conductivity"
 MODEL_NAMES = ("lightgbm", "random_forest", "decision_tree", "mlp", "ngboost")
 

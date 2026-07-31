@@ -11,11 +11,10 @@ import numpy as np
 import pandas as pd
 
 from .features import SMALL_FEATURE_SPECS, TARGET_COLUMN, FeatureConfig, make_feature_table
+from .paths import EXPERIMENTAL_ANNOTATIONS_DIR, portable_path
 
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_ROOT = ROOT / "predictions" / "by_model"
-DEFAULT_EXPERIMENTAL_FAMILY_BLOCKS = ROOT / "config" / "experimental_family_blocks.csv"
+DEFAULT_EXPERIMENTAL_FAMILY_BLOCKS = EXPERIMENTAL_ANNOTATIONS_DIR / "family_blocks_legacy.csv"
 DUMMY_CONDUCTIVITY = 1e-6
 
 
@@ -27,10 +26,11 @@ class PredictConfig:
         Subdirectory/model to load from the training output. Use None to read
         best_model.txt, falling back to lightgbm if that file is absent.
     output_dir:
-        Optional exact output directory. When omitted, use the stable layout
-        predictions/by_model/<training_run>/<model>/<dataset>/.
+        Optional exact output directory. When omitted, save predictions inside
+        the selected training run.
     output_root:
-        Root directory for the stable model-first layout.
+        Optional alternate run root. The default keeps predictions under
+        <model_output_dir>/predictions/<model>/<dataset>/.
     dataset_name:
         Optional dataset label. File inputs default to the input stem.
     prediction_purpose:
@@ -48,7 +48,7 @@ class PredictConfig:
 
     model_name: str | None = None
     output_dir: Path | None = None
-    output_root: Path = DEFAULT_OUTPUT_ROOT
+    output_root: Path | None = None
     dataset_name: str | None = None
     prediction_purpose: str | None = None
     formula_column: str | None = None
@@ -97,7 +97,9 @@ def _prediction_output_dir(
     training_run = _safe_path_name(model_output_dir.name, "model_run")
     selected_model = _safe_path_name(model_name, "model")
     dataset = _dataset_name(input_data, config.dataset_name)
-    return Path(config.output_root) / training_run / selected_model / dataset
+    if config.output_root is None:
+        return model_output_dir / "predictions" / selected_model / dataset
+    return Path(config.output_root) / training_run / "predictions" / selected_model / dataset
 
 
 def _adjacent_trend_metrics(predictions: pd.DataFrame) -> dict:
@@ -391,11 +393,11 @@ def predict_formulas(
     metadata = {
         "training_run": model_output_dir.name,
         "model_name": model_name,
-        "model_output_dir": str(model_output_dir.resolve()),
+        "model_output_dir": portable_path(model_output_dir),
         "dataset_name": _dataset_name(input_data, config.dataset_name),
-        "input_path": str(input_path) if input_path is not None else None,
+        "input_path": portable_path(input_path) if input_path is not None else None,
         "input_sha256": _sha256(input_path) if input_path is not None else None,
-        "model_path": str(model_path),
+        "model_path": portable_path(model_path),
         "model_sha256": _sha256(model_path),
         "prediction_purpose": config.prediction_purpose or "Not specified",
         "rows": int(len(predictions)),

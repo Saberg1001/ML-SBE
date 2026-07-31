@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f26",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f26",
+  "dataset_name": "experimental_113",
+  "input_path": "data/experimental/annotations/experimental-data-labeled.csv",
+  "input_sha256": "dc081f99320f460e9df636ce485b11759bd9e64d8ff9ddeb090e8cdfb2d95553",
+  "model_path": "runs/absolute/abs_v0_f26/lightgbm/model.joblib",
+  "model_sha256": "80e1ce4f6dc76ae212873aae8111d183aeb8c5f10c46effe6fe159bd8c7c3795",
+  "prediction_purpose": "Evaluate experimental conductivity predictions with 26 features",
+  "rows": 113,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

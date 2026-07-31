@@ -1,0 +1,13 @@
+{
+  "model_name": "all",
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "optuna_seed": 42,
+  "output_root": "runs/absolute",
+  "run_name": "abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "ionic_main_random_filter_gt1e-6_family",
+  "feature_columns": null,
+  "target_column": "log10_conductivity",
+  "verbose": true
+}

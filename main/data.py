@@ -12,10 +12,10 @@ from .features import (
     charge_balance_records,
     contains_organic_molecule,
 )
+from .paths import OBELIX_RAW_DIR
 
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RAW_PATH = ROOT / "rawdata" / "all.csv"
+DEFAULT_RAW_PATH = OBELIX_RAW_DIR / "all.csv"
 
 
 @dataclass

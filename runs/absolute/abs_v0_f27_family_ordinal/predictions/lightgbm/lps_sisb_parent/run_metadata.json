@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f27_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f27_family_ordinal",
+  "dataset_name": "lps_sisb_parent",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v0_f27_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "0e3b2ca3cb97d5e3ded867fe01b6d42af5ecbb17526ad26bd0aa33c1d64b620a",
+  "prediction_purpose": "Bi5 feature-set parent baseline",
+  "rows": 1,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

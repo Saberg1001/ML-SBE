@@ -1,0 +1,21 @@
+{
+  "run_id": "abs_v0_f27_family_ordinal",
+  "legacy_run_name": "ionic_main_27_features_26_plus_family_all_models_50",
+  "task": "absolute_regression",
+  "target": "log10_conductivity",
+  "feature_count": 27,
+  "family_encoding": "ordinal_float_legacy",
+  "split": "random_seed42_legacy",
+  "train_rows": 344,
+  "test_rows": 86,
+  "best_model": "lightgbm",
+  "model_path": "lightgbm/model.joblib",
+  "model_sha256": "0e3b2ca3cb97d5e3ded867fe01b6d42af5ecbb17526ad26bd0aa33c1d64b620a",
+  "source_commit": "8cb924c",
+  "status": "historical_baseline",
+  "known_limitations": [
+    "Family is encoded as an ordered float instead of one-hot or native categorical data.",
+    "Random row split leaks formulas and DOI groups.",
+    "Training optimizes absolute MAE rather than modification trend."
+  ]
+}

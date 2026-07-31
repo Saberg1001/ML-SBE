@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f35_small8_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "lps_sisb_doping__family_corrected",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v0_f35_small8_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Historical 35-feature LightGBM baseline; LPS-derived system labeled argyrodites",
+  "rows": 60,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

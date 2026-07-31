@@ -1,0 +1,26 @@
+series_block_id,start_row,end_row,label,status
+legacy_01,1,4,Li(5.7-x)PS(4.7-x)Cl(1.3+x),legacy_unvalidated
+legacy_02,5,9,Li5.5PS4.5Cl(1.5-x)Ix,legacy_unvalidated
+legacy_03,10,16,Li5.4PS(4.4-x)OxClBr0.6,legacy_unvalidated
+legacy_04,17,21,Li5.5AsS(4.5-x)OxBr1.5,legacy_unvalidated
+legacy_05,22,24,Li5.5As/SbS(4.5-x)OxBr1.5,legacy_unvalidated
+legacy_06,25,28,Li5.4PS4O0.4Cl(1-x)FxBr0.6,legacy_unvalidated
+legacy_07,29,32,Li(6.3+x)As(0.7-x)SixS5I,legacy_unvalidated
+legacy_08,33,37,Li(7.0-x)SbxSi(1-x)S5I,legacy_unvalidated
+legacy_09,38,42,Li(7.7-x)Sb0.3Si0.7S(6-x)I(x),legacy_unvalidated
+legacy_10,43,44,Li3-3.875 As/Sn sulfides,legacy_unvalidated
+legacy_11,45,48,Li5.4P(1-x)SnxS4.4ClBr0.6,legacy_unvalidated
+legacy_12,49,52,Li5.4P/Sn/Si S(4.4-x)OxClBr0.6,legacy_unvalidated
+legacy_13,53,56,Li10SnP/Sb S/O series,legacy_unvalidated
+legacy_14,57,61,Li10 Si/Sn P2 S(12-x)Ox,legacy_unvalidated
+legacy_15,62,67,Li6.7Si0.7Sb0.3S(5-x)Se/OxI,legacy_unvalidated
+legacy_16,68,70,Li6.7Si0.7Sb(0.3-x)AsxS4.8O0.2I,legacy_unvalidated
+legacy_17,71,72,Li6.7Si0.7Sb0.3S/Se/O/I,legacy_unvalidated
+legacy_18,73,79,Li-Zr-O-Cl mixed series,legacy_unvalidated
+legacy_19,80,85,Li(5.4+x)P(1-x)ZrxS(4.4-2x)O(2x)ClBr0.6,legacy_unvalidated
+legacy_20,86,86,Li3.45Sn0.09Si0.36P0.55S3.65O0.35,legacy_unvalidated
+legacy_21,87,90,Li9.54Si1.566Sn0.174P1.34SbxS11.1Br0.3O0.6,legacy_unvalidated
+legacy_22,91,93,Li9.54Si1.566Sn0.174P1.34AsxS11.1Br0.3O0.6,legacy_unvalidated
+legacy_23,94,97,Li9.54Si1.74P1.44S(11.7-x)Br0.3Ox,legacy_unvalidated
+legacy_24,98,107,Li9.54(Si(1-x)Gex)1.74P1.44S11.1Br0.3O0.6,legacy_unvalidated
+legacy_25,108,113,Li9.54(Si(1-x)Snx)1.74P1.44S11.1Br0.3O0.6,legacy_unvalidated

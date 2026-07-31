@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "taxonomy_version": "1.1.0",
+  "source": {
+    "dataset": "OBELIX",
+    "path": "data/obelix/raw/all.csv",
+    "column": "Family",
+    "sha256": "599325a2ed5d04c098faf648513de58a44a1d5cf939816149e1849c3eaa508db",
+    "row_count": 599,
+    "non_missing_count": 599,
+    "missing_count": 0,
+    "unique_non_missing_labels": 46
+  },
+  "curation": {
+    "expert_completed_family_rows": 33,
+    "assignment_basis": [
+      "exact_composition",
+      "same_literature_series",
+      "chemistry_review"
+    ]
+  },
+  "unknown_label": "unknown",
+  "unseen_family_policy": "require_taxonomy_update",
+  "normalization": {
+    "trim_whitespace": true,
+    "lowercase": true,
+    "separator": "_",
+    "non_alphanumeric_to_separator": true,
+    "collapse_repeated_separators": true,
+    "strip_separator_edges": true,
+    "null_tokens": [
+      "",
+      "nan",
+      "none",
+      "null",
+      "unknown"
+    ]
+  },
+  "canonical_families": [
+    "antiperovskite",
+    "argyrodites",
+    "boracites",
+    "borates",
+    "boron_nitride",
+    "borophosphates",
+    "chalcogenidotetrelates",
+    "chlorides",
+    "copper_pyroborate",
+    "diphosphate",
+    "fluorides",
+    "fluorooxoborate",
+    "fluorophosphates",
+    "garnet",
+    "garnet_like",
+    "germanates",
+    "halides",
+    "hexaoxometalates",
+    "hydrides",
+    "lanthanumlithiumoxide",
+    "layered",
+    "lgps",
+    "lipon",
+    "lisicon",
+    "molybdates",
+    "nasicon",
+    "nitrides",
+    "nitridosilicates",
+    "organic_salts",
+    "oxides",
+    "perovskites",
+    "phosphates",
+    "polyoxometalates",
+    "pyrochlore",
+    "pyrophosphate",
+    "silicates",
+    "sugilites",
+    "sulfides",
+    "tavorite",
+    "thio_lisicon",
+    "thio_phosphate",
+    "zirconates"
+  ],
+  "aliases": {
+    "argyrodite": "argyrodites",
+    "cholorides": "chlorides",
+    "halide": "halides",
+    "nitride": "nitrides"
+  },
+  "parent_families": {
+    "chlorides": "halides",
+    "fluorides": "halides"
+  },
+  "modeling_policy": {
+    "resolve_aliases": true,
+    "merge_parent_families": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f34_small8",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f34_small8",
+  "dataset_name": "lps_sisb_parent",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v0_f34_small8/lightgbm/model.joblib",
+  "model_sha256": "fc4d3872311b3eacfa0a8cb5af9e66dfa14a2fa571a29b06c26baf4caea9600e",
+  "prediction_purpose": "Feature ablation parent baseline",
+  "rows": 1,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

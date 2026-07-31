@@ -1,0 +1,182 @@
+{
+  "best_model": "lightgbm",
+  "n_features": 34,
+  "n_train": 344,
+  "n_test": 86,
+  "family_mapping": {
+    "unknown": 0,
+    "antiperovskite": 1,
+    "argyrodites": 2,
+    "boracites": 3,
+    "chalcogenidotetrelates": 4,
+    "chlorides": 5,
+    "cholorides": 6,
+    "garnet": 7,
+    "garnet_like": 8,
+    "halides": 9,
+    "hexaoxometalates": 10,
+    "hydrides": 11,
+    "layered": 12,
+    "lgps": 13,
+    "lisicon": 14,
+    "nasicon": 15,
+    "nitrides": 16,
+    "oxides": 17,
+    "perovskites": 18,
+    "phosphates": 19,
+    "sulfides": 20,
+    "thio_lisicon": 21,
+    "thio_phosphate": 22
+  },
+  "results": {
+    "lightgbm": {
+      "model": "lightgbm",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 1700,
+        "learning_rate": 0.06094081339180363,
+        "num_leaves": 15,
+        "min_child_samples": 5,
+        "subsample": 0.571344938997578,
+        "colsample_bytree": 0.9927779632219429,
+        "reg_lambda": 0.09235461274876476,
+        "reg_alpha": 0.8580630149018186,
+        "max_depth": 5
+      },
+      "cv_best_mae": 0.5098073736036433,
+      "cv_best_fold_maes": [
+        0.5375310331304001,
+        0.5303622924938425,
+        0.4922686368624289,
+        0.5085927707856391,
+        0.4802821347459054
+      ],
+      "train_metrics": {
+        "mae": 0.1127982905741638,
+        "rmse": 0.2452026347487643,
+        "r2": 0.9430290490643645
+      },
+      "test_metrics": {
+        "mae": 0.41710929219625137,
+        "rmse": 0.5891013800107974,
+        "r2": 0.7078430467321597
+      }
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 800,
+        "max_depth": 20,
+        "min_samples_split": 2,
+        "min_samples_leaf": 1,
+        "max_features": "log2"
+      },
+      "cv_best_mae": 0.5058950516886518,
+      "cv_best_fold_maes": [
+        0.5348327296015785,
+        0.5139865069791639,
+        0.48313357139344887,
+        0.5065187684327606,
+        0.4910036820363072
+      ],
+      "train_metrics": {
+        "mae": 0.2184672931711062,
+        "rmse": 0.326640331670364,
+        "r2": 0.8989019405557508
+      },
+      "test_metrics": {
+        "mae": 0.4630825344657386,
+        "rmse": 0.6164398366993131,
+        "r2": 0.6800975691944657
+      }
+    },
+    "decision_tree": {
+      "model": "decision_tree",
+      "status": "ok",
+      "best_params": {
+        "max_depth": 10,
+        "min_samples_split": 20,
+        "min_samples_leaf": 5,
+        "max_features": null
+      },
+      "cv_best_mae": 0.5643605933194608,
+      "cv_best_fold_maes": [
+        0.5997749691241261,
+        0.6089336696659403,
+        0.503679109196478,
+        0.6045180283901495,
+        0.5048971902206102
+      ],
+      "train_metrics": {
+        "mae": 0.4049456241274153,
+        "rmse": 0.5872876912629529,
+        "r2": 0.6731827275492033
+      },
+      "test_metrics": {
+        "mae": 0.6262479959792853,
+        "rmse": 0.8191305464280586,
+        "r2": 0.43513796027622564
+      }
+    },
+    "mlp": {
+      "model": "mlp",
+      "status": "ok",
+      "best_params": {
+        "hidden_layer_sizes": [
+          64,
+          32
+        ],
+        "activation": "tanh",
+        "alpha": 0.05226206173438013,
+        "learning_rate_init": 0.003296125206196739,
+        "max_iter": 500
+      },
+      "cv_best_mae": 0.6334240267641464,
+      "cv_best_fold_maes": [
+        0.6369982504538054,
+        0.6034870347958958,
+        0.7204470083819489,
+        0.5504266835591956,
+        0.655761156629886
+      ],
+      "train_metrics": {
+        "mae": 0.5612097601807269,
+        "rmse": 0.759548070543446,
+        "r2": 0.45334448564250807
+      },
+      "test_metrics": {
+        "mae": 0.5789121609094495,
+        "rmse": 0.764983290304485,
+        "r2": 0.5073482334614348
+      }
+    },
+    "ngboost": {
+      "model": "ngboost",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 800,
+        "learning_rate": 0.013215578234908803,
+        "minibatch_frac": 0.8011602572373964
+      },
+      "cv_best_mae": 0.5138149060503159,
+      "cv_best_fold_maes": [
+        0.5276632053738674,
+        0.5376884643883851,
+        0.5044543740768748,
+        0.5084595354651098,
+        0.4908089509473426
+      ],
+      "train_metrics": {
+        "mae": 0.22926980940260402,
+        "rmse": 0.32079181977508786,
+        "r2": 0.902489861323123
+      },
+      "test_metrics": {
+        "mae": 0.49140200616602875,
+        "rmse": 0.6526497685076792,
+        "r2": 0.6414113631513579
+      }
+    }
+  }
+}

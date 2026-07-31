@@ -6,10 +6,11 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit, train_test_split
 
+from .paths import MODELING_DIR
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_TRAIN_PATH = ROOT / "features" / "ionic_main_random_gt1e-6_train.csv"
-DEFAULT_TEST_PATH = ROOT / "features" / "ionic_main_random_gt1e-6_test.csv"
+
+DEFAULT_TRAIN_PATH = MODELING_DIR / "absolute" / "generated_train.csv"
+DEFAULT_TEST_PATH = MODELING_DIR / "absolute" / "generated_test.csv"
 
 
 @dataclass
@@ -52,8 +53,8 @@ class SplitConfig:
     stratify_column: str | None = None
     train_ids: set[str] | None = None
     test_ids: set[str] | None = None
-    train_output: Path | None = DEFAULT_TRAIN_PATH
-    test_output: Path | None = DEFAULT_TEST_PATH
+    train_output: Path | None = None
+    test_output: Path | None = None
 
 
 @dataclass

@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f35_small8_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "lps_sisb_doping__family_unknown",
+  "input_path": "data/prediction_inputs/Li6.7Si0.7Sb0.3S4.8IO0.2.csv",
+  "input_sha256": "e8887084d4d56cd4f1790472607e07df837dc09032c75b764c4bc7f0fce6fa67",
+  "model_path": "runs/absolute/abs_v0_f35_small8_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Historical 35-feature LightGBM baseline comparison using unknown family labels",
+  "rows": 60,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}
