@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "taxonomy_version": "1.1.0",
+  "taxonomy_version": "1.2.0",
   "source": {
     "dataset": "OBELIX",
     "path": "data/obelix/raw/all.csv",
@@ -13,6 +13,9 @@
   },
   "curation": {
     "expert_completed_family_rows": 33,
+    "project_added_families": [
+      "amorphous"
+    ],
     "assignment_basis": [
       "exact_composition",
       "same_literature_series",
@@ -37,6 +40,7 @@
     ]
   },
   "canonical_families": [
+    "amorphous",
     "antiperovskite",
     "argyrodites",
     "boracites",
@@ -84,7 +88,9 @@
     "argyrodite": "argyrodites",
     "cholorides": "chlorides",
     "halide": "halides",
-    "nitride": "nitrides"
+    "nitride": "nitrides",
+    "non_crystalline": "amorphous",
+    "noncrystalline": "amorphous"
   },
   "parent_families": {
     "chlorides": "halides",

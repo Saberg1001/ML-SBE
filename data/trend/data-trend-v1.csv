@@ -1,0 +1,724 @@
+ID,化学式,电导率（室温，S/cm）,电导率测得温度（°C）,电导率（其他温度，S/cm）,化合物制备方法,family,非晶,对应文献DOI,文献年份,备注
+5z0,Li5AlO4,5e-10,RT,,unknow,oxides,unknow,10.1016/0025-5408(76)90169-0,1976,close match: Yes；close match DOI: 10.1002/zaac.19713800303
+9zk,Li5GaO4,5e-09,RT,,unknow,oxides,unknow,10.1016/0025-5408(76)90169-0,1976,
+bv2,LiYO2,1.8e-08,RT,,unknow,oxides,unknow,10.1016/0167-2738(81)90021-7,1981,check cif file matching
+t0h,Li2ZrO3,6.1e-10,RT,,unknow,oxides,unknow,10.1016/0167-2738(81)90021-7,1981,check cif file matching
+yav,Li2VCl4,6.95e-06,RT,,unknow,cholorides,unknow,10.1016/0167-2738(83)90223-0,1983,close match: Yes；close match DOI: 10.1002/zaac.19946200505
+bjw,Li2MnCl4,4.79e-06,RT,,unknow,chlorides,unknow,10.1016/0167-2738(83)90223-0,1983,close match: Yes；close match DOI: icsd-69678
+dvn,Li2MgCl4,6.24e-07,RT,,unknow,chlorides,unknow,10.1016/0167-2738(83)90223-0,1983,close match: Yes；close match DOI: 10.1002/zaac.19946200505
+0x9,Li1.2Sc0.2Ti1.8(PO4)3,0.000246,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+iwe,Li1.3Sc0.3Ti1.7(PO4)3,0.000407,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+ib2,Li1.1Sc0.1Ti1.9(PO4)3,0.000158,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+ppz,Li1.3In0.3Hf1.7(PO4)3,1e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+ci1,LiTi0.2Zr1.8(PO4)3,5.6e-08,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+08e,LiTi1.8Zr0.2(PO4)3,8.5e-08,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+xkh,LiTi0.1Zr1.9(PO4)3,3.2e-08,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+wng,Li1.2In0.2Hf1.8(PO4)3,4e-06,RT,,unknow,NASICON,unknow,10.1016/0167-2738(86)90179-7,1986,
+5bz,Li3BN2,8.7e-08,RT,,unknow,boron nitride,unknow,10.1016/0022-4596(87)90135-6,1987,
+qa9,Li3BN2,1.6e-10,RT,,unknow,boron nitride,unknow,10.1016/0022-4596(87)90135-6,1987,changed space group to reflect actual higher symmetry
+fwz,Li2SiS3,2e-06,RT,,unknow,thio-LISICON,unknow,10.1016/0025-5408(89)90053-6,1989,appendix: diffraction data available；close match: Yes；close match DOI: mp-1210789
+x94,Li4SiS4,4.93e-08,RT,,unknow,thio-LISICON,unknow,10.1016/0025-5408(89)90053-6,1989,appendix: diffraction data available
+fkt,Li1.2La0.2Ti1.8(PO4)3,0.000528,RT,,unknow,NASICON,unknow,10.1149/1.2096693,1989,duplicate with line 273
+ctg,Li1.3La0.3Ti1.7(PO4)3,0.000528,RT,,unknow,NASICON,unknow,10.1149/1.2096693,1989,duplicate with line 274
+qea,LiTi2(PO4)3,2e-06,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+mdj,Li1.2Ti2Si0.2P2.8O12,8.6e-05,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+t1l,Li1.3Ti2Si0.3P2.7O12,0.00032,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+my9,Li1.2Al0.2Ti1.8(PO4)3,0.000595,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,close match: Yes；close match DOI: 10.1016/j.solidstatesciences.2016.08.011
+9s4,Li1.3Al0.3Ti1.7(PO4)3,0.000722,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,close match: Yes；close match DOI: 10.1021/acs.chemmater.9b04419
+iqt,Li1.4Al0.4Ti1.6(PO4)3,0.000388,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,close match: Yes；close match DOI: 10.1016/j.ssi.2019.115192
+xa0,Li1.5Al0.5Ti1.5(PO4)3,0.000248,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,close match: Yes；close match DOI: 10.1016/j.ssi.2019.115192
+f4x,Li1.2Cr0.2Ti1.8(PO4)3,1.82e-05,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+txm,Li1.3Cr0.3Ti1.7(PO4)3,3.51e-05,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+v1t,Li1.4Cr0.4Ti1.6(PO4)3,0.000149,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+d6b,Li1.5Cr0.5Ti1.5(PO4)3,0.000386,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+x9a,Li1.2Ga0.2Ti1.8(PO4)3,0.000162,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+3ta,Li1.3Ga0.3Ti1.7(PO4)3,0.000261,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+gjy,Li1.4Ga0.4Ti1.6(PO4)3,0.000128,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+lz8,Li1.5Ga0.5Ti1.5(PO4)3,0.000122,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+6st,Li1.2Fe0.2Ti1.8(PO4)3,0.00018,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+t9r,Li1.3Fe0.3Ti1.7(PO4)3,0.000246,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+xr7,Li1.4Fe0.4Ti1.6(PO4)3,0.000392,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+pg8,Li1.5Fe0.5Ti1.5(PO4)3,0.000174,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,close match: Yes；close match DOI: 10.1039/b312865b
+1wm,Li1.2Sc0.2Ti1.8(PO4)3,0.00069,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+do2,Li1.3Sc0.3Ti1.7(PO4)3,0.000703,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+uaj,Li1.4Sc0.4Ti1.6(PO4)3,0.000515,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+5u3,Li1.2In0.2Ti1.8(PO4)3,0.00039,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+2eq,Li1.3In0.3Ti1.7(PO4)3,0.000393,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+yn6,Li1.4In0.4Ti1.6(PO4)3,0.000302,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+8jy,Li1.5In0.5Ti1.5(PO4)3,0.000204,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+p4l,Li1.2La0.2Ti1.8(PO4)3,8e-05,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+qkr,Li1.3La0.3Ti1.7(PO4)3,0.000523,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+e0z,Li1.4La0.4Ti1.6(PO4)3,0.000498,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+vus,Li1.5La0.5Ti1.5(PO4)3,0.000281,RT,,unknow,NASICON,unknow,10.1149/1.2086597,1990,
+a3l,LiHf2(PO4)3,2.83e-07,RT,,unknow,NASICON,unknow,10.1002/chin.199345017,1993,
+4ba,LiGe2(PO4)3,3.33e-07,RT,,unknow,NASICON,unknow,10.1002/chin.199345017,1993,Precision of IC is not good non linear extrapolation；close match: Yes；close match DOI: 10.1016/0022-4596(91)90134-4
+ncr,LiHf2(PO4)3,6.85e-07,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+dx2,Li1.1Fe0.1Hf1.9(PO4)3,0.000107,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+6xc,Li1.1In0.1Hf1.9(PO4)3,5.13e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+21m,Li1.1Lu0.1Hf1.9(PO4)3,5.88e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+4k1,Li1.1Sc0.1Hf1.9(PO4)3,2.45e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+gzp,Li1.2Lu0.2Hf1.8(PO4)3,9.79e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+lh8,Li1.3Cr0.3Hf1.7(PO4)3,5.26e-07,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+ew5,Li1.3Fe0.3Hf1.7(PO4)3,5.4e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+9l3,Li1.3In0.3Hf1.7(PO4)3,0.000142,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+jdk,Li1.3Lu0.3Hf1.7(PO4)3,3.56e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+h8a,Li1.3Sc0.3Hf1.7(PO4)3,8.32e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+jq7,Li1.3Y0.3Hf1.7(PO4)3,3.19e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+ylt,Li1.4In0.4Hf1.6(PO4)3,0.000142,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+gnq,Li1.4Lu0.4Hf1.6(PO4)3,2.06e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+sso,Li1.4Y0.4Hf1.6(PO4)3,2.09e-05,RT,,unknow,NASICON,unknow,10.1016/0167-2738(93)90387-i,1993,
+kxh,Pr0.56Li0.34TiO3.01,1e-06,RT,,unknow,perovskites,unknow,10.1016/0167-2738(94)90310-7,1994,
+3we,Nd0.55Li0.34TiO3,8e-08,RT,,unknow,perovskites,unknow,10.1016/0167-2738(94)90310-7,1994,
+i6k,Sm0.52Li0.38TiO2.97,2e-07,RT,,unknow,perovskites,unknow,10.1016/0167-2738(94)90310-7,1994,IC number should be read from the graph
+w7d,Li3PO4,4.2e-18,RT,,unknow,LISICON,unknow,10.1006/jssc.1995.1140,1995,close match: Yes
+uxo,Li2.88PO3.73N0.14,1.4e-13,RT,,unknow,LISICON,unknow,10.1006/jssc.1995.1140,1995,refer 79426-ICSD; po information is missing
+dnt,Li2CrTi(PO4)3,4.41e-07,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+g5g,Li2CrZr(PO4)3,5.91e-07,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+hpu,Li2CrHf(PO4)3,4.2e-08,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+c6h,Li2FeTi(PO4)3,3.34e-07,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+vzu,Li2FeZr(PO4)3,1.44e-07,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+a3e,Li2InHf(PO4)3,2.74e-08,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+ubi,Li2InTi(PO4)3,8.3e-06,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+9z8,Li2InZr(PO4)3,8.22e-08,RT,,unknow,NASICON,unknow,10.1016/s0167-2738(96)00565-6,1997,
+t3k,Li1.9Mn0.9Ga0.1Cl4,2.37e-07,RT,,unknow,chlorides,unknow,10.1016/s0167-2738(96)00592-9,1997,
+uxi,Li1.65Mn0.65In0.35Cl4,9.9e-08,RT,,unknow,chlorides,unknow,10.1016/s0167-2738(96)00592-9,1997,
+w1l,Li0.5Sr0.5Cr0.25Ta0.75O3,6e-05,RT,,unknow,perovskites,unknow,10.1016/s0378-7753(97)02645-1,1997,
+jce,Li0.5Sr0.5Fe0.25Ta0.75O3,0.0001,RT,,unknow,perovskites,unknow,10.1016/s0378-7753(97)02645-1,1997,
+ix1,Li0.91Hf2.022(PO4)3,3.2e-07,RT,,unknow,NASICON,unknow,10.1021/cm970078n,1997,true formula: Hf2.032 Li0.87 O12 P3;  partial occupancy corrected
+z7n,Li0.86Hf2.035(PO4)3,9.2e-08,RT,,unknow,NASICON,unknow,10.1021/cm970078n,1997,double check with ID 11
+86o,La0.61Li0.18TiO3,0.000412,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+2lu,La0.55Li0.36TiO3,0.000688,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+bd5,La0.54Li0.39TiO3,0.000651,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+ukw,La0.52Li0.45TiO3,0.000501,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+5h8,La0.58Li0.27TiO3,0.000599,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+vwy,La0.56Li0.33TiO3,0.000668,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,close match: Yes；close match DOI: 10.1006/jssc.1996.0385
+epv,La0.58Li0.27TiO3,0.000832,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+v7r,La0.56Li0.33TiO3,0.0013,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+yhc,La0.55Li0.36TiO3,0.00154,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+q3c,La0.54Li0.39TiO3,0.00125,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+pdv,La0.52Li0.45TiO3,0.000785,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00070-8,1998,
+dl7,Li2MgTi3O8,<1E-10,RT,,unknow,oxides,unknow,10.1039/a800234g,1998,
+i12,Li2CoTi3O8,<1E-10,RT,,unknow,oxides,unknow,10.1039/a800234g,1998,
+aui,Li2CoGe3O8,<1E-10,RT,,unknow,oxides,unknow,10.1039/a800234g,1998,
+mfs,Li2ZnGe3O8,<1E-10,RT,,unknow,oxides,unknow,10.1039/a800234g,1998,
+il5,Nd0.25Li0.25TaO3,1.31e-08,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00414-7,1999,
+r1m,Sm0.25Li0.25TaO3,4.32e-10,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00414-7,1999,
+o23,Li0.25La0.25TaO3,2.61e-05,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(98)00414-7,1999,
+za6,Li1.1Al0.1Ge1.9(PO4)3,2.9e-06,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,
+ag1,Li1.3Al0.3Ge1.7(PO4)3,3.9e-05,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,
+u5t,Li1.5Al0.5Ge1.5(PO4)3,0.00028,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,
+0y6,Li1.6Al0.6Ge1.4(PO4)3,0.00014,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,
+yq2,Li1.1Al0.1Ti1.9(PO4)3,3e-05,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,close match: Yes；close match DOI: 10.1016/j.solidstatesciences.2016.08.011
+kab,Li1.3Al0.3Ti1.7(PO4)3,3.75e-05,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,close match: Yes；close match DOI: 10.1021/acs.chemmater.9b04419
+tp2,Li1.6Al0.6Ti1.4(PO4)3,2.3e-05,RT,,unknow,NASICON,unknow,10.1016/s0955-2219(99)00055-2,1999,
+xq3,Li4Sr3Nb5.77Fe0.23O19.77,<1E-10,RT,,unknow,perovskites,unknow,10.1021/cm980736j,1999,partial occupancy incorrect
+wgw,Li4Sr3Nb6O20,<1E-10,RT,,unknow,perovskites,unknow,10.1021/cm980736j,1999,partial occupancy incorrect
+lc1,Li1.2Al1.1Ta0.9(PO4)3,6.5e-07,RT,,unknow,NASICON,unknow,10.1039/a807007e,1999,
+sxv,LiAlTa(PO4)3,6.5e-07,RT,,unknow,NASICON,unknow,10.1039/a807007e,1999,
+cy2,La0.64Li0.08TiO3,0.000335,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(00)00761-x,2000,
+5tl,La0.62Li0.14TiO3,0.000442,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(00)00761-x,2000,
+u2y,La0.595Li0.215TiO3,0.000853,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(00)00761-x,2000,
+hta,La0.565Li0.305TiO3,0.000957,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(00)00761-x,2000,
+s3h,La0.5Li0.5TiO3,0.000925,RT,,unknow,perovskites,unknow,10.1016/s0167-2738(00)00761-x,2000,
+nua,Li(LaTiO4),<1E-10,RT,,unknow,perovskites,unknow,10.4028/www.scientific.net/msf.321-324.965,2000,
+3rx,Li(NdTiO4),<1E-10,RT,,unknow,perovskites,unknow,10.4028/www.scientific.net/msf.321-324.965,2000,
+81x,(Ag0.33Li0.67)0.27La0.57TiO3,0.0001,RT,,unknow,perovskites,unknow,10.1021/cm001207u,2001,
+5fj,(Ag0.5Li0.5)0.27La0.57TiO3,2.3e-05,RT,,unknow,perovskites,unknow,10.1021/cm001207u,2001,
+0vd,(Ag0.67Li0.33)0.27La0.57TiO3,2e-07,RT,,unknow,perovskites,unknow,10.1021/cm001207u,2001,
+0lo,Li0.27La0.57TiO3,0.00034,RT,,unknow,perovskites,unknow,10.1021/cm001207u,2001,
+o4u,Li3.8Ge0.8P0.2S4,1.78e-06,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+yy9,Li3.6Ge0.6P0.4S4,0.000175,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+mvq,Li3.4Ge0.4P0.6S4,0.000654,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+2yl,Li3.35Ge0.35P0.65S4,0.00154,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+5qm,Li3.3Ge0.3P0.7S4,0.00174,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+3jh,Li3.25Ge0.25P0.75S4,0.0022,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+j3x,Li3.2Ge0.2P0.8S4,0.000555,RT,,unknow,thio-LISICON,unknow,10.1149/1.1379028,2001,
+b4c,Li4SiS4,1.59e-08,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+7se,Li3.8Si0.8P0.2S4,8.11e-07,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+5e2,Li3.6Si0.6P0.4S4,7.19e-05,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+dj2,Li3.4Si0.4P0.6S4,0.000662,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+10u,Li3.2Si0.2P0.8S4,3.2e-06,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+gl0,Li4.2Si0.8Al0.2S4,2.4e-08,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+wmr,Li4.4Si0.6Al0.4S4,3.05e-08,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+xxq,Li4.6Si0.4Al0.6S4,1.46e-08,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+h8o,Li4.8Si0.2Al0.8S4,2.29e-07,RT,,unknow,thio-LISICON,unknow,10.1006/jssc.2002.9701,2002,
+l2w,Li3.333Mg0.333P2S6,8.2e-08,RT,,unknow,thio-phosphate,unknow,10.1016/s0167-2738(02)00007-3,2002,partial occupancy corrected
+ob9,Li2.667Mg0.667P2S6,4e-06,RT,,unknow,thio-phosphate,unknow,10.1016/s0167-2738(02)00007-3,2002,partial occupancy corrected
+lcx,La0.6Sr0.06Li0.06TiO3,1.13e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+mam,La0.56Sr0.1Li0.1TiO3,1.37e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+0jx,La0.51Sr0.15Li0.15TiO3,5.3e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+lyq,La0.41Sr0.25Li0.25TiO3,7.64e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+2tt,La0.385Sr0.275Li0.275TiO3,6.04e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+xy0,La0.36Sr0.3Li0.3TiO3,1.92e-05,RT,,unknow,perovskites,unknow,10.1021/cm020609u,2003,lattice parameter should be checked
+pbz,Li3.75Ge0.75V0.25O4,5.66e-06,RT,,unknow,LISICON,unknow,10.1023/a:1026135806929,2003,partial occupancy corrected
+7ek,Li3.70Ge0.85W0.15O4,3.8e-05,RT,,unknow,LISICON,unknow,10.1023/a:1026135806929,2003,partial occupancy corrected
+2r7,Li3Cr(MoO4)3,3.19e-09,RT,,unknow,molybdates,unknow,10.1039/b301189e,2003,close match: Yes；close match DOI: 10.1016/j.jssc.2009.09.012
+b56,Li2Mg2(MoO4)3,<1E-10,RT,,unknow,molybdates,unknow,10.1039/b301189e,2003,
+mfu,Li3Fe(MoO4)3,5.89e-10,RT,,unknow,molybdates,unknow,10.1039/b301189e,2003,close match: Yes；close match DOI: icsd-16176
+gas,Li0.31La0.63(Ti0.9Co0.1)O3,0.00026,RT,,unknow,perovskites,unknow,10.1016/j.mseb.2004.07.003,2004,
+9ph,Li0.19La0.67(Ti0.9Co0.1)O3,0.000108,RT,,unknow,perovskites,unknow,10.1016/j.mseb.2004.07.003,2004,
+7e5,La0.65Li0.05(Mg0.5W0.5)O3,1.8e-07,RT,,unknow,perovskites,unknow,10.1016/j.ssi.2004.05.010,2004,partial occupancy corrected
+sib,La0.63Li0.11(Mg0.5W0.5)O3,6.8e-06,RT,,unknow,perovskites,unknow,10.1016/j.ssi.2004.05.010,2004,partial occupancy corrected
+r99,La0.62Li0.14(Mg0.5W0.5)O3,1.2e-05,RT,,unknow,perovskites,unknow,10.1016/j.ssi.2004.05.010,2004,partial occupancy corrected
+oi6,Li7SbO6,6.7e-08,RT,,unknow,hexaoxometalates,unknow,10.1021/ic030208w,2004,partial occupancy not correct
+7ta,Li7TaO6,2.36e-08,27（外推）,50°C: 1.53e-07,unknow,hexaoxometalates,unknow,10.1021/ic030208w,2004,Missing OBLiX row reconstructed from article Tables 1 and 7；由50°C按Ea=0.68 eV外推至27°C
+7bi,Li7BiO6,8.81e-07,27（外推）,50°C: 4.348e-06,unknow,hexaoxometalates,unknow,10.1021/ic030208w,2004,Missing conductivity row reconstructed from article Table 7; no matched structure in source；由50°C按Ea=0.58 eV外推至27°C
+544,Li6BaLa2Ta2O12,4e-05,RT,,unknow,garnet-like,unknow,10.1002/adfm.200400044,2005,
+ps0,Li6SrLa2Ta2O12,7e-06,RT,,unknow,garnet-like,unknow,10.1002/adfm.200400044,2005,
+lf5,Li6BaLa2Nb2O12,6e-06,RT,,unknow,garnet,unknow,10.1111/j.1551-2916.2005.00060.x,2005,
+68u,Li5La3Nb2O12,8e-06,RT,,unknow,garnet,unknow,10.1111/j.1551-2916.2005.00060.x,2005,close match: Yes；close match DOI: 10.1016/0025-5408(88)90264-4
+gyw,Li6SrLa2Ta2O12,4.2e-06,RT,,unknow,garnet,unknow,10.1111/j.1551-2916.2005.00060.x,2005,
+cjq,Li6SrLa2Nb2O12,4.2e-06,RT,,unknow,garnet,unknow,10.1111/j.1551-2916.2005.00060.x,2005,duplicate with line 491; 374
+uaz,Li6CaLa2Nb2O12,1.6e-06,RT,,unknow,garnet,unknow,10.1111/j.1551-2916.2005.00060.x,2005,"ic # check, was wrong paper；close match: Yes；close match DOI: 10.1016/j.cej.2019.121937"
+ihb,Li0.33La0.56Ti0.99Al0.01O2.99F0.01,0.00098,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+3k7,Li0.33La0.56Ti0.98Al0.02O2.98F0.02,0.00106,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+1sz,Li0.33La0.56Ti0.97Al0.03O2.97F0.03,0.000928,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+yh8,Li0.33La0.56Ti0.96Al0.04O2.96F0.04,0.000622,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+coh,Li0.33La0.56Ti0.95Al0.05O2.95F0.05,0.000176,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+1pw,Li0.33La0.56Ti0.94Al0.06O2.94F0.06,0.000106,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+bw3,Li0.33La0.56Ti0.93Al0.07O2.93F0.07,0.000645,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+my5,Li0.33La0.56Ti0.92Al0.08O2.92F0.08,0.000494,RT,,unknow,perovskites,unknow,10.1007/s11581-006-0011-9,2006,
+0v9,Li5.5La3Nb1.75In0.25O12,2.4e-05,RT,,unknow,garnet,unknow,10.1016/j.jssc.2005.12.025,2006,
+qtc,Li5.5La2.75K0.25Nb2O12,1.06e-05,RT,,unknow,garnet,unknow,10.1016/j.jssc.2005.12.025,2006,
+4t5,LiCrSb(PO4)3,3.57e-10,RT,,unknow,NASICON,unknow,10.1063/1.2357843,2006,
+smk,LiAlSb(PO4)3,3.17e-08,RT,,unknow,NASICON,unknow,10.1063/1.2357843,2006,
+vtr,LiFeSb(PO4)3,1.37e-06,RT,,unknow,NASICON,unknow,10.1063/1.2357843,2006,
+aax,Li5.25Ba0.25La2.75Ta2O12,7.41e-06,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+o86,Li5.5Ba0.5La2.5Ta2O12,1.41e-05,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+coi,Li6.25Ba1.25La1.75Ta2O12,4.99e-05,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+3vi,Li6.5Ba1.5La1.5Ta2O12,3.08e-05,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+vwn,Li6.75Ba1.75La1.25Ta2O12,1.18e-05,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+tlp,Li7Ba2LaTa2O12,2.85e-06,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check
+ka6,Li5La3Ta2O12,6.61e-06,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check；close match: Yes；close match DOI: 10.1039/c6dt04021g
+7o7,Li6BaLa2Ta2O12,2.95e-05,RT,,unknow,garnet,unknow,10.1007/s11581-007-0097-8,2007,lattice parameter double check；close match: Yes；close match DOI: 10.1021/am4060194
+kbq,Li5La3Bi2O12,1.9e-05,RT,,unknow,garnet,unknow,10.1016/j.mseb.2007.07.009,2007,
+uw9,Li6La2SrBi2O12,2e-05,RT,,unknow,garnet,unknow,10.1016/j.mseb.2007.07.009,2007,
+xog,Li5La3Sb2O12,7.8e-06,RT,,unknow,garnet,unknow,10.1016/j.materresbull.2007.10.035,2008,
+bi3,Li6SrLa2Sb2O12,6.3e-06,RT,,unknow,garnet,unknow,10.1016/j.materresbull.2007.10.035,2008,
+gcj,Li6(La2Ca)(NbO6)2,1.33e-06,RT,,unknow,garnet,unknow,10.1016/j.ssi.2008.01.047,2008,
+20k,Li6(La2Sr)(NbO6)2,3.69e-06,RT,,unknow,garnet,unknow,10.1016/j.ssi.2008.01.047,2008,"Value for annealed, quenched also available: 6.2e-7"
+jej,Li6CaLa2Ta2O12,2.2e-06,RT,,unknow,garnet,unknow,10.1016/j.ssi.2008.10.022,2009,
+hud,Li6BaLa2Ta2O12,1.3e-05,RT,,unknow,garnet,unknow,10.1016/j.ssi.2008.10.022,2009,
+jl4,(Li0.61Mg0.39)(Li0.46Mg0.005Ti0.035)Ti1.5O4,6.56e-10,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+jkq,(Li0.55Mg0.45)(Li0.445Mg0.055)Ti1.5O4,1.53e-11,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+m0v,Li(Li0.34Ti1.66)O4,6.03e-08,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+6du,(Li0.916Mg0.084)(Li0.352Mg0.016Ti1.634)O4,1.73e-08,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+u0c,(Li0.826Mg0.174)(Li0.374Mg0.026Ti1.60)O4,4.24e-09,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+xub,(Li0.74Mg0.26)(Li0.40Mg0.04Ti1.56)O4,1.51e-09,RT,,unknow,oxides,unknow,10.1016/j.ssi.2010.06.003,2010,
+883,LiAlH4,8.7e-09,RT,,unknow,hydrides,unknow,10.1063/1.3356981,2010,
+95j,Li3AlH6,1.4e-07,RT,,unknow,hydrides,unknow,10.1063/1.3356981,2010,
+w87,Li6PS5Br,3.2e-05,RT,,unknow,argyrodites,unknow,10.1002/pssa.201001117,2011,close match: Yes；close match DOI: 10.1021/acs.inorgchem.0c01504
+97p,Li6PS5Cl,3.3e-05,RT,,unknow,argyrodites,unknow,10.1002/pssa.201001117,2011,close match: Yes；close match DOI: 10.1021/acs.inorgchem.0c01504
+p9u,Li6PS5I,0.00022,RT,,unknow,argyrodites,unknow,10.1002/pssa.201001117,2011,close match: Yes；close match DOI: 10.1021/jacs.7b06327
+xz4,(Li0.5Ce0.5)(MoO4),1.3e-08,RT,,unknow,molybdates,unknow,10.1007/s12039-011-0068-5,2011,partial occupancy corrected
+hja,(Li0.5Ce0.25Pr0.25)(MoO4),1e-09,RT,,unknow,molybdates,unknow,10.1007/s12039-011-0068-5,2011,partial occupancy corrected
+3nb,(Li0.5Ce0.25Sm0.25)(MoO4),1.8e-10,RT,,unknow,molybdates,unknow,10.1007/s12039-011-0068-5,2011,partial occupancy corrected
+gkl,Li5La3Nb2O12,5.08e-06,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,ic # incorrect；close match: Yes；close match DOI: 10.1039/b514640b
+ijh,Li5La3Nb1.95Y0.05O11.95,1.34e-05,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,
+q46,Li5La3Nb1.9Y0.1O11.9,1.44e-05,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,
+8m3,Li5La3Nb1.85Y0.15O11.85,5.71e-06,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,
+zyx,Li5La3Nb1.8Y0.2O11.8,9.13e-06,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,
+qvu,Li5La3Nb1.75Y0.25O11.75,9.68e-06,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2011.05.031,2011,
+ku9,Li0.4Na0.1La0.5Nb2O6,9.92e-06,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+9n0,Li0.3Na0.2La0.5Nb2O6,1.11e-05,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+ozo,Li0.2Na0.3La0.5Nb2O6,1.18e-05,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+h5i,Li0.1Na0.4La0.5Nb2O6,1.21e-05,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,"partial occupancy corrected, changed symmetry to reflect actual higher symmetry"
+o9h,Li0.07Na0.43La0.5Nb2O6,1.23e-05,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+4xq,Li0.04Na0.46La0.5Nb2O6,5.91e-06,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+0ii,Li0.02Na0.48La0.5Nb2O6,3.99e-06,RT,,unknow,perovskites,unknow,10.1134/s002016851103006x,2011,partial occupancy corrected
+dq4,Li1.3Al0.1Sc0.2Ti1.7(PO4)3,0.000426,RT,,unknow,NASICON,unknow,10.1007/s10008-012-1780-x,2012,refer D2 - 144
+0fa,Li1.3Al0.2Sc0.1Ti1.7(PO4)3,0.000269,RT,,unknow,NASICON,unknow,10.1007/s10008-012-1780-x,2012,
+4uu,Li6.15La3Zr1.75Ta0.25Ga0.2O12,0.00041,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2012.01.131,2012,
+sdz,Li6.15La3Zr1.75Ta0.25Al0.2O12,0.00037,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2012.01.131,2012,
+7w5,Li6.75La3Zr1.75Ta0.25O12,0.00087,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2012.01.131,2012,close match: Yes；close match DOI: 10.1039/c1jm14588f
+h7r,Li(Ti1.4Sn0.6)(PO4)3,2.28e-05,RT,,unknow,NASICON,unknow,10.1016/j.physb.2011.11.006,2012,partial occupancy corrected
+9ky,Li(Ti0.6Sn1.4)(PO4)3,9.42e-06,RT,,unknow,NASICON,unknow,10.1016/j.physb.2011.11.006,2012,partial occupancy corrected
+4ea,Li(Ti0.4Sn1.6)(PO4)3,3.15e-06,RT,,unknow,NASICON,unknow,10.1016/j.physb.2011.11.006,2012,partial occupancy corrected
+hzf,Li1.3Al0.2Sc0.1Ti1.7(PO4)3,0.000972,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.03.045,2012,
+x61,Li1.3Al0.15Sc0.15Ti1.7(PO4)3,0.00124,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.03.045,2012,
+czo,Li1.3Al0.1Sc0.2Ti1.7(PO4)3,0.000429,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.03.045,2012,
+o8s,Li1.3Sc0.3Ti1.7(PO4)3,0.000452,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.03.045,2012,
+lap,Li1.3Al0.3Ti1.7(PO4)3,0.00113,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.03.045,2012,close match: Yes；close match DOI: 10.1021/acs.chemmater.9b04419
+f7p,Li1.3Al0.2Y0.1Ti1.7(PO4)3,0.00012,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.05.011,2012,
+l8t,Li1.3Al0.1Y0.2Ti1.7(PO4)3,7.3e-05,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.05.011,2012,
+3tt,Li1.3Al0.15Y0.15Ti1.7(PO4)3,1.9e-05,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2012.05.011,2012,
+trv1_0001,Li3OCl,8.5e-4,RT,,unknow,antiperovskite,否,10.1021/ja308741y,2012,富锂反钙钛矿纯相
+trv1_0002,Li3OCl0.5Br0.5,1.94e-3,RT,,unknow,antiperovskite,否,10.1021/ja308741y,2012,混合卤素固溶体；系列最高值
+j5g,Li6La3Nb1.5Y0.5O12,0.000188,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,
+dvb,Li5.2La3Nb1.9Y0.1O12,6.39e-05,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,
+cti,Li5.4La3Nb1.8Y0.2O12,6.74e-05,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,
+2d1,Li5.5La3Nb1.75Y0.25O12,9.18e-05,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,
+3rh,Li6.5La3Nb1.25Y0.75O12,0.00027,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,duplicate with line 550
+a6v,Li5.4La3Nb1.8Y0.75O12,2.51e-05,RT,,unknow,garnet,unknow,10.1021/jp304737x,2012,wrong composition;  may duplicate with 548
+3qz,Li7La3Zr2O12,0.00012,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,
+kji,Li6.4La3Zr1.4Ta0.6O12,0.001,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19022
+gdr,Li6.2La3Zr1.2Ta0.8O12,0.00032,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19022
+kh3,Li6.5La3Zr1.5Ta0.5O12,0.00092,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19094
+zqx,Li6.6La3Zr1.6Ta0.4O12,0.00073,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,
+o5q,Li6.8La3Zr1.8Ta0.2O12,0.00028,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19022
+0ew,Li6La3ZrTaO12,0.00016,RT,,unknow,garnet,unknow,10.1039/c2jm31413d,2012,duplicate with line 510
+v1q,Li6.8La3Zr1.8Ta0.2O12,0.00073,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,
+4vd,Li6.75La3Zr1.75Ta0.25O12,0.00063,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,duplicate with line 512
+5xk,Li6.65La3Zr1.65Ta0.35O12,0.00046,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,
+2wb,Li6.6La3Zr1.6Ta0.4O12,0.00047,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19022
+zfg,Li6.55La3Zr1.55Ta0.45O12,0.0004,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,
+6hq,Li6La3ZrTaO12,0.00035,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,
+hcm,Li5La3Ta2O12,3.4e-05,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,close match: Yes；close match DOI: 10.1016/0167-577x(88)90011-0
+e6a,Li6.7La3Zr1.7Ta0.3O12,0.00069,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,close match: Yes；close match DOI: 10.1021/acsaem.1c03632
+g5q,Li6.5La3Zr1.5Ta0.5O12,0.00028,RT,,unknow,garnet,unknow,10.1149/2.024205esl,2012,close match: Yes；close match DOI: 10.2109/jcersj2.19022
+r07,Li6.75La3Zr1.875Te0.125O12,0.00033,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2013.03.166,2013,
+uht,Li6.5La3Zr1.75Te0.25O12,0.00102,RT,,unknow,garnet,unknow,10.1016/j.jpowsour.2013.03.166,2013,
+019,LiTi2(PO4)3,0.000161,RT,,unknow,NASICON,unknow,10.1021/ic400577v,2013,
+yqu,Li1.2Ti1.8Al0.2(PO4)3,0.00482,RT,,unknow,NASICON,unknow,10.1021/ic400577v,2013,"true formula for lattice params is  Li1.17(Ti1.83Al0.17)(PO4)3, IC at Li1.2"
+joc,Li3PS4,2.6e-07,RT,,unknow,thio-LISICON,unknow,10.1021/ja3110895,2013,
+nhq,Li3PS4,8.93e-07,RT,,unknow,thio-LISICON,unknow,10.1021/ja3110895,2013,lattice parameters not matching cif
+whw,Li6.8La3Zr1.8Sb0.2O12,5.9e-05,RT,,unknow,garnet,unknow,10.1039/c3cp50991e,2013,
+duf,Li6.6La3Zr1.6Sb0.4O12,0.00077,RT,,unknow,garnet,unknow,10.1039/c3cp50991e,2013,close match: Yes；close match DOI: 10.1016/j.ssi.2019.115185
+dll,Li6.4La3Zr1.4Sb0.6O12,0.00066,RT,,unknow,garnet,unknow,10.1039/c3cp50991e,2013,
+i90,Li6.2La3Zr1.2Sb0.8O12,0.00045,RT,,unknow,garnet,unknow,10.1039/c3cp50991e,2013,
+dm9,Li6La3ZrSbO12,0.00026,RT,,unknow,garnet,unknow,10.1039/c3cp50991e,2013,
+yp3,LiTi2(PO4)3,6e-05,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+tzl,Li1.05Al0.05Ti1.95(PO4)3,0.0011,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+hyj,Li1.1Al0.1Ti1.9(PO4)3,0.00067,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+mg4,Li1.3Al0.3Ti1.7(PO4)3,0.0062,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected；close match: Yes；close match DOI: 10.1016/j.jallcom.2020.155878
+50s,Li1.4Al0.4Ti1.6(PO4)3,0.0033,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+d4q,Li1.05Cr0.05Ti1.95(PO4)3,0.00018,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+6he,Li1.1Cr0.1Ti1.9(PO4)3,0.00026,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+pwy,Li1.2Cr0.2Ti1.8(PO4)3,0.00043,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+y9l,Li1.3Cr0.3Ti1.7(PO4)3,0.00029,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+rc1,Li1.05Fe0.05Ti1.95(PO4)3,0.00013,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+lzt,Li1.1Fe0.1Ti1.9(PO4)3,0.00063,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+kbp,Li1.2Fe0.2Ti1.8(PO4)3,0.0014,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+b9u,Li1.3Fe0.3Ti1.7(PO4)3,0.0023,RT,,unknow,NASICON,unknow,10.1016/j.ssi.2014.07.018,2014,composition should be corrected
+sqm,Li6Ba0.5Sr0.5La2Ta2O12,7.1e-06,RT,,unknow,garnet,unknow,10.1021/am4060194,2014,
+zxr,Li6SrLa2Ta2O12,5.4e-06,RT,,unknow,garnet,unknow,10.1021/am4060194,2014,
+h89,Li6BaLa2Ta2O12,1.5e-05,RT,,unknow,garnet,unknow,10.1021/am4060194,2014,
+l9r,Li6CaLa2Ta2O12,2.2e-06,RT,,unknow,garnet,unknow,10.1021/am4060194,2014,
+z53,Li6.6La3Zr1.6Ta0.4O12,0.000313,RT,,unknow,garnet,unknow,10.1021/am503731h,2014,
+8y4,Li6.6La2.875Y0.125Zr1.6Ta0.4O12,0.000317,RT,,unknow,garnet,unknow,10.1021/am503731h,2014,
+ucw,Li6.6La2.75Y0.25Zr1.6Ta0.4O12,0.000436,RT,,unknow,garnet,unknow,10.1021/am503731h,2014,
+ff9,Li6.6La2.5Y0.5Zr1.6Ta0.4O12,0.000226,RT,,unknow,garnet,unknow,10.1021/am503731h,2014,
+mqo,Li3.45Si0.45P0.55S4,0.00673,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,refer D2 - 109; 252037-ICSD
+izs,Li3.475Si0.475P0.525S4,0.00527,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+8nc,Li3.425Si0.425P0.575S4,0.00565,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+3sx,Li3.4Si0.4P0.6S4,0.00421,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+xga,Li3.335Sn0.33P0.67S4,0.00373,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+xn9,Li3.3Sn0.3P0.7S4,0.00365,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+sg4,Li3.285Sn0.28P0.72S4,0.00436,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+ns3,Li3.27Sn0.27P0.73S4,0.00496,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+g8j,Li3.26Sn0.26P0.74S4,0.00453,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+bim,Li3.25Sn0.25P0.75S4,0.0036,RT,,unknow,LGPS,unknow,10.1039/c4fd00143e,2014,
+rr5,LiTi2(PO4)3,7.2e-05,RT,,unknow,NASICON,unknow,10.1007/s11164-013-1348-0,2015,close match: Yes；close match DOI: 10.1039/b203652p
+6j9,Li1.15Fe0.15Ti1.85(PO4)3,0.000522,RT,,unknow,NASICON,unknow,10.1007/s11164-013-1348-0,2015,
+rg6,Li1.4Al0.4Ti1.6(PO4)3,0.00338,RT,,unknow,NASICON,unknow,10.1016/j.jeurceramsoc.2014.11.023,2015,refere D2 - 134
+ed4,Li1.2Al0.2Ge1.8(PO4)3,7.94e-05,RT,,unknow,NASICON,unknow,10.1016/j.jeurceramsoc.2014.11.023,2015,
+vg0,Li1.5Al0.5Ge1.5(PO4)3,0.00019,RT,,unknow,NASICON,unknow,10.1016/j.jeurceramsoc.2014.11.023,2015,close match: Yes；close match DOI: 10.1016/j.jallcom.2020.155878
+z9y,Li1.2Al0.2Ti1.8(PO4)3,0.00338,RT,,unknow,NASICON,unknow,10.1016/j.jeurceramsoc.2014.11.023,2015,close match: Yes；close match DOI: 10.1021/acs.chemmater.9b04419
+bq9,Li3BiO3,2.4e-10,RT,,unknow,oxides,unknow,10.1016/j.ssi.2015.10.016,2015,D - Rhi - 1_si_1_ Li3BiO3；close match: Yes；close match DOI: 10.1002/zaac.19895760119
+skm,Li5BiO5,3.9e-09,RT,,unknow,oxides,unknow,10.1016/j.ssi.2015.10.016,2015,D - Rhi - 1_si_2_ Li5BiO5
+x2i,LiBiO2,3.8e-08,RT,,unknow,oxides,unknow,10.1016/j.ssi.2015.10.016,2015,close match: Yes；close match DOI: icsd-46022
+d7f,Li3BiO4,4.1e-10,RT,,unknow,oxides,unknow,10.1016/j.ssi.2015.10.016,2015,close match: Yes；close match DOI: icsd-109087
+5d6,Li6.8La3Zr1.9Mo0.1O12,8e-05,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.5b01895,2015,
+ciq,Li6.6La3Zr1.8Mo0.2O12,0.000311,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.5b01895,2015,
+suz,Li6.4La3Zr1.7Mo0.3O12,0.000369,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.5b01895,2015,
+1tk,Li6.2La3Zr1.6Mo0.4O12,0.00034,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.5b01895,2015,
+9o6,Li6.5La3Zr1.75Mo0.25O12,0.000333,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.5b01895,2015,
+pwr,Li7.22Si1.5P0.5O8,1.64e-07,RT,,unknow,LISICON,unknow,10.1021/jacs.5b04444,2015,partial occupancy corrected
+fj5,Li6.5O8P1.5Si0.5,4.49e-07,RT,,unknow,LISICON,unknow,10.1021/jacs.5b04444,2015,partial occupancy corrected
+wa3,Li51.2Al1.6La24Zr16O96,0.000254,RT,,unknow,garnet,unknow,10.1038/srep18053,2015,"Z, composition incorrect"
+l6h,Li49.6Al1.6La24Zr14.4Ta1.6O96,0.000614,RT,,unknow,garnet,unknow,10.1038/srep18053,2015,
+52b,Li10.05Ge1.05P1.95S12,0.0122,RT,,unknow,LGPS,unknow,10.1039/c4ta05231e,2015,
+8po,Li10.2Ge1.2P1.8S12,0.0132,RT,,unknow,LGPS,unknow,10.1039/c4ta05231e,2015,
+ya8,Li10.5Ge1.5P1.5S12,0.011,RT,,unknow,LGPS,unknow,10.1039/c4ta05231e,2015,
+824,Li10.35Ge1.35P1.65S12,0.0144,RT,,unknow,LGPS,unknow,10.1039/c4ta05231e,2015,
+nip,Li9.81Sn0.81P2.19S12,0.0055,RT,,unknow,LGPS,unknow,10.1107/s2052520615022283,2015,partial occupancy corrected
+k4x,Li10.35Si1.35P1.65S12,0.0065,RT,,unknow,LGPS,unknow,10.1107/s2052520615022283,2015,
+ecp,LaLiO2,<1E-10,RT,,unknow,Lanthanumlithiumoxide,unknow,10.1016/j.ssi.2015.09.001,2016,
+me3,(La0.9Sr0.1)LiO2,6.29e-10,RT,,unknow,Lanthanumlithiumoxide,unknow,10.1016/j.ssi.2015.09.001,2016,
+zs0,La(Li0.76Mg0.08)O2,7.27e-10,RT,,unknow,Lanthanumlithiumoxide,unknow,10.1016/j.ssi.2015.09.001,2016,
+mtr,Fe0.16La2.95Li5.68Zr2O12,0.000935,RT,,unknow,garnet,unknow,10.1021/acs.chemmater.6b02516,2016,check the composition
+s2v,Fe0.19La2.95Li5.57Zr2O12,0.00138,RT,,unknow,garnet,unknow,10.1021/acs.chemmater.6b02516,2016,check the composition
+ikh,Li9.6P3S12,0.0012,RT,,unknow,LGPS,unknow,10.1038/nenergy.2016.30,2016,appendix: diffraction data available
+ete,Li9.54Si1.74P1.44S11.7Cl0.3,0.025,RT,,unknow,LGPS,unknow,10.1038/nenergy.2016.30,2016,appendix: diffraction data available
+bnu,LiGa0.5Al0.5GeO4,<1E-10,RT,,unknow,oxides,unknow,10.1149/2.1111610jes,2016,
+kxw,LiAlGeO4,<1E-10,RT,,unknow,oxides,unknow,10.1149/2.1111610jes,2016,
+um1,LiGaGeO4,<1E-10,RT,,unknow,oxides,unknow,10.1149/2.1111610jes,2016,
+sg0,LiScO2,<1E-10,RT,,unknow,oxides,unknow,10.2320/matertrans.y-m2016816,2016,ICSD request
+97b,Li0.9Sc0.9Zr0.1O2,<1E-10,RT,,unknow,oxides,unknow,10.2320/matertrans.y-m2016816,2016,ICSD request
+dbs,Li6.5La3Zr1.5Ta0.5O12,0.000794,RT,,unknow,garnet,unknow,10.3389/fenrg.2016.00028,2016,
+bt0,Li6.5La2.95Ba0.05Zr1.45Ta0.55O12,0.000832,RT,,unknow,garnet,unknow,10.3389/fenrg.2016.00028,2016,
+dti,Li6.5La2.9Ba0.1Zr1.4Ta0.6O12,0.000834,RT,,unknow,garnet,unknow,10.3389/fenrg.2016.00028,2016,
+7gm,Li6.5La2.8Ba0.2Zr1.3Ta0.7O12,0.000631,RT,,unknow,garnet,unknow,10.3389/fenrg.2016.00028,2016,
+c71,Li6.5La2.7Ba0.3Zr1.2Ta0.8O12,0.000492,RT,,unknow,garnet,unknow,10.3389/fenrg.2016.00028,2016,
+lk8,(La0.55Li0.45)(Ti0.9Al0.1)O3,0.00151,RT,,unknow,perovskites,unknow,10.1016/j.jallcom.2017.05.278,2017,
+lud,(La0.6Li0.4)(Ti0.8Al0.2)O3,0.000568,RT,,unknow,perovskites,unknow,10.1016/j.jallcom.2017.05.278,2017,
+vlm,(La0.65Li0.35)(Ti0.7Al0.3)O3,0.000161,RT,,unknow,perovskites,unknow,10.1016/j.jallcom.2017.05.278,2017,
+gwu,(La0.7Li0.3)(Ti0.6Al0.4)O3,1.04e-07,RT,,unknow,perovskites,unknow,10.1016/j.jallcom.2017.05.278,2017,
+nkr,Li10GeP2S12,0.00143,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+906,Li9.8Ba0.1GeP2S12,0.000561,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+fnu,Li9.6Ba0.2GeP2S12,0.000572,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+pfi,Li9.4Ba0.3GeP2S12,0.000707,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+f0h,Li9.2Ba0.4GeP2S12,0.000316,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+7iw,Li9Ba0.5GeP2S12,9.98e-05,RT,,unknow,LGPS,unknow,10.1016/j.ssi.2017.01.014,2017,
+8ub,Li10.5(Sn0.2Si0.8)1.5P1.5S12,0.00879,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.7b00886,2017,appendix: diffraction data available
+7tu,Li10.2(Sn0.2Si0.8)1.2P1.8S12,0.00782,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.7b00886,2017,appendix: diffraction data available
+ui6,Li10.35(Sn0.27Si1.08)P1.65S12,0.011,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.7b00886,2017,duplicated with line 204; deleted
+gz8,Li5La3Ta2O12,1.59e-05,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+419,Li5.3La3Ta1.85Sm0.15O12,7.11e-06,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+c0g,Li5.5La3Ta1.75Sm0.25O12,5.17e-06,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+kbu,Li5.70La3Ta1.65Sm0.35O12,2.15e-05,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+fam,Li5.90La3Ta1.55Sm0.45O12,1.18e-05,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+dae,Li6.10La3Ta1.45Sm0.55O12,1.4e-05,RT,,unknow,garnet,unknow,10.1021/acs.inorgchem.7b00816,2017,
+s3r,Li4Al0.33Si0.33P0.33O4,3.25e-06,RT,,unknow,LISICON,unknow,10.1021/acsami.6b14402,2017,appendix: diffraction data available
+max,Li4.25Si0.75Al0.25O4,2.02e-08,RT,,unknow,LISICON,unknow,10.1021/acsami.6b14402,2017,appendix: diffraction data available
+k5y,Li3.75Si0.75P0.25O4,5.54e-07,RT,,unknow,LISICON,unknow,10.1021/acsami.6b14402,2017,appendix: diffraction data available
+9yt,Li6PS5Cl0.25Br0.75,0.00186,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+122,Li6PS5Cl,0.00205,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+ij5,Li6PS5Cl0.5Br0.5,0.00333,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+6jf,Li6PS5Br,0.00115,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+ymc,Li6PS5Br0.5I0.5,2.62e-05,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+ywe,Li6PS5I,1.3e-06,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+kgl,Li6PS5Cl0.75Br0.25,0.00226,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+vqj,Li6PS5Br0.75I0.25,0.000112,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+h82,Li6PS5Br0.25I0.75,4.72e-06,RT,,unknow,argyrodites,unknow,10.1021/jacs.7b06327,2017,
+elz,Li3YBr6,0.00192,RT,,unknow,halides,unknow,10.1002/adma.201803075,2018,appendix: diffraction data available；close match: Yes；close match DOI: 10.1021/acs.chemmater.0c04352
+ei3,Li3YCl6,0.000539,RT,,unknow,halides,unknow,10.1002/adma.201803075,2018,appendix: diffraction data available；close match: Yes；close match DOI: 10.1021/acs.chemmater.0c04352
+i9a,Li2.5Zn0.25PS4,0.00084,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.7b05108,2018,
+i47,LiZnPS4,5.4e-08,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.7b05108,2018,close match: Yes；close match DOI: 10.1002/1521-3749(200208)628:8<1765::aid-zaac1765>3.0.co;2-e
+dco,Li2Zn0.5PS4,0.00013,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.7b05108,2018,
+tqb,Li1.5Zn0.75PS4,1.65e-05,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.7b05108,2018,
+5zv,Li4Zn(PO4)2,5.55e-18,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.7b05139,2018,
+uox,Li3.7Zn0.7Ga0.3(PO4)2,5.65e-12,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.7b05139,2018,
+gxz,Li4Zn(PO4)2,<1E-10,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.7b05139,2018,"should be deleted, high T structure, refer the alpha phase"
+tbu,Li3.5Zn0.5Ga0.5(PO4)2,<1E-10,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.7b05139,2018,
+mtn,Li10GeP2S12,0.0246,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.8b00266,2018,
+9rc,Li10(Ge0.776Sn0.224)P2S12,0.0141,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.8b00266,2018,
+13q,Li10SnP2S12,0.00398,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.8b00266,2018,lattice parameters not matching cif
+ik8,Li10(Ge0.416Sn0.584)P2S12,0.00743,RT,,unknow,LGPS,unknow,10.1021/acs.chemmater.8b00266,2018,
+ssv,Li3P0.2V0.8O4,1.31e-13,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,D_0 calculation
+h6c,Li3VO4,9.2e-14,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,close match: Yes；close match DOI: 10.1016/s0022-4596(73)80012-x
+e6e,Li3.2Ge0.2P0.8O4,1.14e-06,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+ylh,Li3.2Ge0.2V0.8O4,1.9e-05,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+eij,Li3.4Ge0.4P0.6O4,4.5e-06,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+ldd,Li3.4Ge0.4V0.6O4,8.89e-07,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+efb,Li3.6Ge0.6P0.4O4,1.1e-05,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+lcm,Li3.6Ge0.6V0.4O4,3.19e-05,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+mgs,Li3.8Ge0.8P0.2O4,1.03e-06,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+31s,Li3.8Ge0.8V0.2O4,2.71e-06,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+dku,Li3P0.4V0.6O4,3.55e-13,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+ndx,Li3P0.6V0.4O4,3.2e-13,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+m0j,Li3P0.8V0.2O4,2.05e-13,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,
+9lo,Li3PO4,1.75e-13,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,close match: Yes；close match DOI: icsd-77095
+dth,Li4GeO4,1.3e-12,RT,,unknow,LISICON,unknow,10.1021/acs.chemmater.8b01504,2018,close match: Yes；close match DOI: 10.1002/zaac.19875551213
+rwr,Li8GeP4,1.8e-05,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.8b02759,2018,
+pql,Li8SiP4,4.5e-05,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.8b02759,2018,
+240,Li8GeP4,8.6e-05,RT,,unknow,phosphates,unknow,10.1021/acs.chemmater.8b02759,2018,
+deu,Li4.4Al0.4Ge0.6S4,4.3e-05,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.8b03175,2018,
+usu,Li4.4Al0.4Sn0.6S4,4.3e-06,RT,,unknow,sulfides,unknow,10.1021/acs.chemmater.8b03175,2018,
+nig,Li6PS5Br,0.00277,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+z16,Li6P(S4.9Se0.1)Br,0.0032,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+hbz,Li6P(S4.8Se0.2)Br,0.00392,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+uut,Li6P(S4.7Se0.3)Br,0.00362,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+cju,Li6P(S4.6Se0.4)Br,0.00364,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+d9l,Li6P(S4.5Se0.5)Br,0.00268,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+96f,Li6P(S4.4Se0.6)Br,0.00278,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+1kq,Li6P(S4.3Se0.7)Br,0.00301,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+c6e,Li6P(S4.2Se0.8)Br,0.00348,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+t2c,Li6P(S4.1Se0.9)Br,0.00382,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+dlj,Li6P(S4Se)Br,0.00361,RT,,unknow,argyrodites,unknow,10.1021/acs.inorgchem.8b02443,2018,
+ldx,LiGe2(PO4)3,4.83e-09,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+0fh,Li1.2Al0.2Ge1.8(PO4)3,4.83e-05,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+gw2,Li1.4Al0.4Ge1.6(PO4)3,0.000188,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+1xf,Li1.5Al0.5Ge1.5(PO4)3,0.000336,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+tjh,Li1.7Al0.7Ge1.3(PO4)3,0.000264,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+8fn,Li1.8Al0.8Ge1.2(PO4)3,0.000137,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+3uq,Li1.3Al0.3Ge1.7(PO4)3,8.24e-05,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,"check ID 242-247; refer D2 - 140, D2- 146, D1-421"
+1dm,Li1.6Al0.6Ge1.4(PO4)3,0.000284,RT,,unknow,NASICON,unknow,10.1021/acsami.8b00842,2018,
+5wz,Li6PS5I,1.26e-06,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available；close match: Yes；close match DOI: 10.1002/anie.200703900
+5gj,Li6.1P0.90Ge0.1S5I,8.86e-06,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+t17,Li6.15P0.85Ge0.15S5I,3.93e-05,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+kf7,Li6.2P0.8Ge0.2S5I,3.19e-05,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+utv,Li6.25P0.75Ge0.25S5I,0.00015,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+q9f,Li6.3P0.7Ge0.3S5I,0.00065,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+5qw,Li6.4P0.6Ge0.4S5I,0.0015,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+znj,Li6.5P0.5Ge0.5S5I,0.00186,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+pa1,Li6.6P0.4Ge0.6S5I,0.00521,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available；close match: Yes；close match DOI: 10.1021/jacs.1c11571
+lxk,Li6.7P0.3Ge0.7S5I,0.00554,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+1m8,Li6.8P0.2Ge0.8S5I,0.00258,RT,,unknow,argyrodites,unknow,10.1021/jacs.8b10282,2018,appendix: diffraction data available
+9zr,Li6PS5Br,0.000701,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+a8v,Li6.025P0.975Si0.025S5Br,0.000878,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+09w,Li6.05P0.95Si0.05S5Br,0.000437,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+x2v,Li6.075P0.925Si0.075S5Br,0.000873,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+bnh,Li6.1P0.95Si0.1S5Br,0.000799,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+x9d,Li6.125P0.875Si0.125S5Br,0.000902,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+ish,Li6.175P0.825Si0.175S5Br,0.000931,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+iiy,Li6.2P0.8Si0.2S5Br,0.00169,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+3zo,Li6.225P0.775Si0.225S5Br,0.00108,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+vj7,Li6.25P0.75Si0.25S5Br,0.00141,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+wsd,Li6.3P0.7Si0.3S5Br,0.00165,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+10s,Li6.35P0.65Si0.35S5Br,0.00234,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+fkj,Li6.5P0.5Si0.5S5Br,0.00219,RT,,unknow,argyrodites,unknow,10.1039/c7ta08581h,2018,
+ek5,LiSrNb2O6F,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+xut,LiSrTa2O6F,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+ckw,LiSr0.9Nb2O6F0.8,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+yab,LiSr0.9Ta2O6F0.8,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+ysm,Li1.1SrNb1.9Zr0.1O6F,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+e81,Li1.1SrTa1.9Zr0.1O6F,<1E-10,RT,,unknow,pyrochlore,unknow,10.2497/jjspm.65.26,2018,
+de5,Li3InCl6,0.00204,RT,,unknow,Halide,unknow,10.1002/anie.201909805,2019,partial occupancy corrected
+v12,Li3InCl6,0.00204,25,,水介导合成 + 200°C真空脱水,halides,否,10.1002/anie.201909805,2019,Curator row 12; water-mediated synthesis and vacuum dehydration at 200 C; original 2.04 mS/cm at 25 C
+v23,Li3InCl6,0.00149,RT,,球磨 + 260°C退火,halides,否,10.1039/c9ee02311a,2019,Curator row 23; ball-milled and annealed at 260 C; monoclinic; original 1.49 mS/cm
+v49,Li3InCl6,0.00083,RT,,球磨（未退火）,halides,否,10.1039/c9ee02311a,2019,Curator row 49; ball-milled without annealing; corrected DOI; original 0.83 mS/cm
+v24,Li3InCl6,0.00142,RT,,球磨 + 退火,halides,否,10.1021/acs.nanolett.0c01156,2020,Curator row 24; ball-milled and annealed; independent group; original 1.42 mS/cm
+v34,Li3Y0.5In0.5Cl6,0.00122,RT,,球磨 + 退火,halides,否,10.1021/acs.nanolett.0c01156,2020,Curator row 34; ball-milled and annealed; monoclinic; original 1.22 mS/cm
+v78,Li3YCl6,0.0000608,RT,,unknow,halides,否,10.1021/acs.nanolett.0c01156,2020,Curator row 78; starting hcp value for In3+ substitution; original 0.0608 mS/cm
+n7a,Li2.5Y0.5Zr0.5Cl6,0.0014,RT,,unknow,halides,unknow,10.1021/acsenergylett.9b02599,2020,Li2.5Er0.5Zr0.5Cl6 is available
+er0,Li3ErCl6,0.00009,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-1; phase I (trigonal); original 0.09 mS/cm at 25 C
+er1,Li2.9Er0.9Zr0.1Cl6,0.00038,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-2; phase I; original 0.38 mS/cm at 25 C
+er2,Li2.8Er0.8Zr0.2Cl6,0.00078,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-3; phase II+III; original 0.78 mS/cm at 25 C
+er3,Li2.75Er0.75Zr0.25Cl6,0.0008,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-4; phase II+III; original 0.80 mS/cm at 25 C
+er4,Li2.7Er0.7Zr0.3Cl6,0.0011,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-5; phase II+III; original 1.1 mS/cm at 25 C
+er5,Li2.633Er0.633Zr0.367Cl6,0.0011,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction with composition aligned to article text x=0.367; curator row 25-6; phase III (orthorhombic); original 1.1 mS/cm at 25 C
+er6,Li2.5Er0.5Zr0.5Cl6,0.00095,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-7; phase III; original 0.95 mS/cm at 25 C
+er7,Li2.4Er0.4Zr0.6Cl6,0.00085,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-8; phase III; original 0.85 mS/cm at 25 C
+er8,Li2.2Er0.2Zr0.8Cl6,0.00045,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1c extraction; curator row 25-9; phase III; original 0.45 mS/cm at 25 C
+yz0,Li3YCl6,0.00007,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-1; phase I (trigonal); original 0.07 mS/cm at 25 C
+yz1,Li2.9Y0.9Zr0.1Cl6,0.00032,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-2; phase I; original 0.32 mS/cm at 25 C
+yz2,Li2.8Y0.8Zr0.2Cl6,0.00095,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-3; phase I+II; original 0.95 mS/cm at 25 C
+yz3,Li2.75Y0.75Zr0.25Cl6,0.001,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-4; phase I+II; original 1.0 mS/cm at 25 C
+yz4,Li2.7Y0.7Zr0.3Cl6,0.0012,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-5; phase I+II; original 1.2 mS/cm at 25 C
+yz5,Li2.633Y0.633Zr0.367Cl6,0.0013,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction with composition aligned to article text x=0.367; curator row 26-6; phase III; original 1.3 mS/cm at 25 C
+yz6,Li2.4Y0.4Zr0.6Cl6,0.00095,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-8; phase III; original 0.95 mS/cm at 25 C
+yz7,Li2.5Y0.5Zr0.5Cl6,0.0014,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-7; phase III (orthorhombic); original 1.4 mS/cm at 25 C; existing OBLiX record retained
+zzr,Li10GeP2S12,0.0076,RT,,unknow,LGPS,unknow,10.1021/jacs.0c10735,2020,
+kop,Li10Ge0.66Sn0.33P2S12,0.0064,RT,,unknow,LGPS,unknow,10.1021/jacs.0c10735,2020,
+rty,Li10Ge0.33Sn0.66P2S12,0.0048,RT,,unknow,LGPS,unknow,10.1021/jacs.0c10735,2020,
+kko,Li10SnP2S12,0.0038,RT,,unknow,LGPS,unknow,10.1021/jacs.0c10735,2020,
+v20,Li2Sc0.666667Cl4,0.0015,RT,,高温固相合成（48 h）,halides,否,10.1039/d0ee01017k,2020,Curator row 20; high-temperature solid-state synthesis for 48 h; disordered spinel; original 1.5 mS/cm
+v35,Li2.08Sc0.64Cl4,0.00122,RT,,unknow,halides,否,10.1039/d0ee01017k,2020,Curator row 35; increased LiCl impurity; original 1.22 mS/cm
+v42,Li1.9Sc0.7Cl4,0.00109,RT,,unknow,halides,否,10.1039/d0ee01017k,2020,Curator row 42; low Li+ concentration; original 1.09 mS/cm
+trv1_0003,Li10.42Si1.5P1.5Cl0.08O11.92,1.03e-5,27,,固相合成,oxide,否,10.1088/1757-899x/924/1/012037,2020,LISICON型；同文件另表将制备方法记为熔融淬火法
+trv1_0004,Li10.42Ge1.5P1.5Cl0.08O11.92,3.7e-5,27,,固相合成,oxide,否,10.1088/1757-899x/924/1/012037,2020,LISICON型；同文件另表将制备方法记为熔融淬火法
+trv1_0005,Li7P2S8I,6.5e-3,RT,,无热处理,sulfide,是,10.1088/1757-899x/924/1/012037,2020,非晶态
+trv1_0006,Li7P2S8I,~1.0e-3,RT,,固相合成,sulfide,否,10.1088/1757-899x/924/1/012037,2020,玻璃陶瓷；经热处理结晶化
+trv1_0007,Li10P3S12I,6.5e-3,RT,,固相合成,sulfide,unknow,10.1088/1757-899x/924/1/012037,2020,9Li2S-3P2S5-2LiI组成
+trv1_0008,Li11P3S12.5I,7.9e-3,RT,,固相合成,sulfide,unknow,10.1088/1757-899x/924/1/012037,2020,Li2S-P2S5-LiI体系
+trv1_0009,Li7P2S8I0.5Cl0.5,3.08e-3,RT,,热压+Cl掺杂,sulfide,unknow,10.1088/1757-899x/924/1/012037,2020,Cl掺杂样品
+trv1_0010,Li15(PS4)4Cl3,4e-8,RT,,固相合成,sulfide,否,10.1088/1757-899x/924/1/012037,2020,立方晶系I-43d
+v46,Li2.25Zr0.75Fe0.25Cl6,0.001,RT,,退火,halides,否,10.1002/aenm.202003190,2021,Curator row 46; Fe3+ doped and annealed; trigonal; original 1.0 mS/cm
+v63,Li2ZrCl6,0.0004,RT,,机械球磨,halides,否,10.1002/aenm.202003190,2021,Curator row 63; mechanical milling; trigonal; original 0.4 mS/cm
+v31,Li3InCl6,0.0013,RT,,unknow,halides,否,10.1002/aenm.202100836,2021,Curator row 31; undoped baseline; original 1.3 mS/cm
+v47,Li3InCl4.8F1.2,0.00098,RT,,球磨 + 退火,halides,否,10.1002/aenm.202100836,2021,Curator row 47; ball-milled and annealed; tabulated value; original 0.98 mS/cm
+v10,Li2.5Y0.5Zr0.5Cl6,0.0021,RT,,球磨 + 退火,halides,否,10.1016/j.cej.2021.130630,2021,Curator row 10; ball-milled and annealed; trigonal; tabulated value 2.1 mS/cm
+v21,Li2.6Yb0.6Hf0.4Cl6,0.0015,RT,,球磨 + 退火,halides,否,10.1016/j.cej.2021.130630,2021,Curator row 21; ball-milled and annealed; monoclinic; original 1.5 mS/cm
+ar1,Li4SnS3Se,7.5e-05,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+cz2,Li4SnSSe3,9.5e-07,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+klr,Li4SnS2Se2,3.6e-05,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+mn3,Li4SnSe4,4.5e-08,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+o0a,Li4Ge0.75Sn0.25Se4,6e-06,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+qer,Li4Ge0.50Sn0.50Se4,1.8e-06,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+aab,Li4Ge0.25Sn0.75Se4,8.3e-07,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+1ty,Li4GeS3Se,8.5e-06,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+zv5,Li4GeS2Se2,2.8e-05,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+xk3,Li4GeSe4,5e-06,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+i4l,Li4GeSSe3,1.5e-05,RT,,unknow,Chalcogenidotetrelates,unknow,10.1021/acs.chemmater.0c04150,2021,
+v39,Li2.7Yb0.7Zr0.3Cl6,0.0011,RT,,unknow,halides,否,10.1021/acsmaterialslett.1c00142,2021,Curator row 39; orthorhombic; corrected DOI; original 1.1 mS/cm
+v74,Li3YbCl6,0.000106,RT,,350°C煅烧,halides,否,10.1021/acsmaterialslett.1c00142,2021,Curator row 74; calcined at 350 C; trigonal; corrected DOI; original 0.106 mS/cm
+v77,Li3YbCl6,0.000063,RT,,650°C煅烧,halides,否,10.1021/acsmaterialslett.1c00142,2021,Curator row 77; calcined at 650 C; orthorhombic; corrected DOI; original 0.063 mS/cm
+trv1_0011,Li10GeP2S12,1.2e-2,RT,,固相合成,sulfide,否,10.1039/d1ta06338c,2021,LGPS；实验值
+trv1_0012,Li10SnP2S12,7e-3,RT,,固相合成,sulfide,否,10.1039/d1ta06338c,2021,LSnPS；实验值
+trv1_0013,Li9.42Si1.02P2.1S9.96O2.04,3.2e-4,RT,,固相合成,sulfide,否,10.1039/d1ta06338c,2021,LGPS型氧硫化物
+v33,Li3ScCl6,0.00125,RT,,NH4Cl辅助湿化学合成,halides,否,10.1126/sciadv.abh1896,2021,Curator row 33; NH4Cl-assisted wet-chemical synthesis; monoclinic; original 1.25 mS/cm
+v43,Li3YBr6,0.00109,RT,,NH4Cl辅助湿化学合成,halides,否,10.1126/sciadv.abh1896,2021,Curator row 43; NH4Cl-assisted wet-chemical synthesis; monoclinic; original 1.09 mS/cm
+v61,Li3ErCl6,0.000407,RT,,NH4Cl辅助湿化学合成,halides,否,10.1126/sciadv.abh1896,2021,Curator row 61; NH4Cl-assisted wet-chemical synthesis; trigonal; original 0.407 mS/cm
+v65,Li3YCl6,0.000345,RT,,NH4Cl辅助湿化学合成（500°C）,halides,否,10.1126/sciadv.abh1896,2021,Curator row 65; NH4Cl-assisted wet-chemical synthesis at 500 C; original 0.345 mS/cm
+v11,Li2.7Zr0.3In0.7Cl6,,30,30°C: 0.0021,unknow,halides,否,10.1016/j.cej.2022.135413,2022,Curator row 11; Zr4+ doped; original 2.1 mS/cm at 30 C
+v15,Li2.5Zr0.5In0.5Cl6,0.0018,RT,,球磨 + 退火,halides,否,10.1016/j.cej.2022.135413,2022,Curator row 15; ball-milled and annealed; monoclinic; original 1.8 mS/cm
+v27,Li2.4Er0.4Zr0.6Cl6,0.00138,RT,,球磨,halides,否,10.1021/acsami.1c25087,2022,Curator row 27; ball-milled Zr-doped x=0.6 sample; distinct 2022 source; original 1.38 mS/cm
+v37,Li2.6Er0.6Zr0.4Cl6,0.00113,RT,,unknow,halides,否,10.1021/acsami.1c25087,2022,Curator row 37; Zr4+ substituted; 4.21 V oxidative stability; original 1.13 mS/cm
+v60,Li3ErCl6,0.000429,RT,,机械球磨,halides,否,10.1021/acsami.1c25087,2022,Curator row 60; mechanical milling; corrected DOI; original 0.429 mS/cm
+trv1_0014,Li2OHCl,1.93e-6,25,,熔融-凝固法（350°C，6 min）,antiperovskite,否,10.1039/d2ta01462a,2022,室温为正交相与立方相混合相
+trv1_0015,Li2OHCl0.9Br0.1,2.52e-6,25,,熔融-凝固法（350°C，6 min）,antiperovskite,否,10.1039/d2ta01462a,2022,系列最高电导率；室温稳定立方相
+trv1_0016,Li2OHCl0.7Br0.3,1.79e-6,25,,熔融-凝固法（350°C，快冷）,antiperovskite,否,10.1039/d2ta01462a,2022,x=0.3；不确定度±1.2e-7 S/cm
+trv1_0017,Li2OHCl0.5Br0.5,1.54e-6,25,,熔融-凝固法（350°C，快冷）,antiperovskite,否,10.1039/d2ta01462a,2022,x=0.5；不确定度±1.0e-7 S/cm
+trv1_0018,Li2OHCl0.3Br0.7,1.45e-6,25,,熔融-凝固法（350°C，快冷）,antiperovskite,否,10.1039/d2ta01462a,2022,x=0.7；不确定度±9.0e-8 S/cm
+trv1_0019,Li2OHCl0.1Br0.9,1.23e-6,25,,熔融-凝固法（350°C，快冷）,antiperovskite,否,10.1039/d2ta01462a,2022,x=0.9；不确定度±9.0e-8 S/cm
+trv1_0020,Li2OHBr,1.29e-6,25,,熔融-凝固法（350°C，6 min）,antiperovskite,否,10.1039/d2ta01462a,2022,立方相
+trv1_0021,Li2OHBr,1.99e-6,25,,熔融-凝固法+慢冷（1°C/min）,antiperovskite,否,10.1039/d2ta01462a,2022,慢冷样品；电导率提高约1.5倍
+v01,LiTaOCl4,0.0124,RT,,球磨 + 退火,halides,否,10.1002/anie.202217581,2023,Curator row 1; ball-milled and annealed oxychloride; original 12.4 mS/cm
+v02,LiNbOCl4,0.0104,RT,,球磨 + 退火,halides,否,10.1002/anie.202217581,2023,Curator row 2; ball-milled and annealed oxychloride; corrected from LLM value 10.7 to source value 10.4 mS/cm
+trv1_0022,Li3YCl6,1.53e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,原始相；三方晶系
+trv1_0023,Li3YBr1.6Cl4.4,1.06e-3,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,阴离子单掺杂最优值
+trv1_0024,Li3YBr1.8Cl4.2,9.74e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,过掺导致晶格应变增大
+trv1_0025,Li3YBr2Cl4,6.29e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,出现LiCl杂相
+trv1_0026,Li3Y0.85In0.15Cl6,3.00e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,In掺杂最优值
+trv1_0027,Li3Y0.82Sc0.18Cl6,2.75e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,Sc掺杂最优值
+trv1_0028,Li2.99Y0.99Zr0.01Cl6,2.76e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,Zr掺杂最优值
+trv1_0029,Li2.99Y0.99Zr0.01Br1.6Cl4.4,7.51e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,1% Zr与Br双掺；全文最优
+trv1_0030,Li2.99Y0.84In0.08Sc0.07Zr0.01Br1.6Cl4.4,5.56e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,In、Sc、Zr三种阳离子与Br共掺
+trv1_0031,Li2.99Y0.99Zr0.01BrCl5,5.40e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,1% Zr与低Br含量双掺
+trv1_0032,Li2.99Y0.99Zr0.01Br0.4Cl5.6,3.70e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,1% Zr与极低Br含量双掺
+v09,Li2.5Sc0.5Zr0.5Cl6,0.00223,25,,unknow,halides,否,10.1016/j.cej.2022.140509,2023,Curator row 9; Zr4+ doped; original 2.23 mS/cm at 25 C
+v55,Li3ScCl6,0.00068,25,,unknow,halides,否,10.1016/j.cej.2022.140509,2023,Curator row 55; undoped comparator; original 0.68 mS/cm at 25 C
+v32,Li2.7In0.7Hf0.3Cl6,0.00128,RT,,unknow,halides,否,10.1021/acsami.2c21022,2023,Curator row 32; Hf4+ doped; corrected DOI; original 1.28 mS/cm
+v56,Li3InCl6,0.00067,RT,,unknow,halides,否,10.1021/acsami.2c21022,2023,Curator row 56; undoped Hf-doping reference; corrected DOI; original 0.67 mS/cm
+khx,Li3.2TaCl5O1.6,0.0066,RT,,unknow,halides,是,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; original 6.6e-3 S/cm
+arj,Li3TaCl5O1.5,0.0058,RT,,unknow,halides,是,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; approximate original 5.8e-3 S/cm
+vuo,Li2.8TaCl5O1.4,0.0055,RT,,unknow,halides,是,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; approximate original 5.5e-3 S/cm
+skp,Li2.4TaCl5O1.2,0.0054,RT,,unknow,halides,是,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; approximate original 5.4e-3 S/cm
+mvh,Li2.2TaCl5O1.1,0.0053,RT,,unknow,halides,是,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; original 5.3e-3 S/cm
+vbk,Li2TaCl5O,0.00041,RT,,unknow,halides,否,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; crystalline comparison; original 0.41e-3 S/cm
+fmx,Li3HfCl4O1.5,0.00197,RT,,unknow,halides,unknow,10.1038/s41467-023-39197-8,2023,Source data/add-data-LZACO.txt; original 1.97e-3 S/cm
+mhg,Li1.75ZrCl4.75O0.5,0.00242,25,,unknow,halides,unknow,10.1038/s41467-023-39522-1,2023,Source data/add-data-LZACO.txt; curator row 8; O2- substitution; original 2.42 mS/cm at 25 C
+jib,Li2.5ZrCl5.5O0.5,0.00117,RT,,unknow,halides,unknow,10.1038/s41467-023-39522-1,2023,Source data/add-data-LZACO.txt; curator row 16; dual-phase room-temperature sample; corrected from review extraction 1.7 to source value 1.17 mS/cm
+trv1_0033,Li2ZrCl6,4.17e-4,27（外推）,30°C: 4.8e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,未暴露样品；由30°C按Ea=0.37 eV外推至27°C
+trv1_0034,Li2.2Zr0.9Zn0.1Cl6,,30,30°C: ~7.0e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,由图估算
+trv1_0035,Li2.4Zr0.8Zn0.2Cl6,1.00e-3,27（外推）,30°C: 1.13e-3,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,系列最优；由30°C按Ea=0.31 eV外推至27°C
+trv1_0036,Li2.6Zr0.7Zn0.3Cl6,,30,30°C: ~9.0e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,由图估算
+trv1_0037,Li2.8Zr0.6Zn0.4Cl6,,30,30°C: ~6.0e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,由图估算
+trv1_0038,Li3Zr0.5Zn0.5Cl6,,30,30°C: ~3.0e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,由图估算
+trv1_0039,Li2ZrCl6,,30,30°C: 1.4e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,空气暴露后
+trv1_0040,Li2.4Zr0.8Zn0.2Cl6,,30,30°C: 9.8e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,空气暴露后
+trv1_0041,Li2ZrCl6,2.94e-4,27（外推）,30°C: 3.4e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由30°C按Ea=0.38 eV外推至27°C
+trv1_0042,Li2.1ZrCl6F0.1,,30,30°C: ~4.5e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由图估算
+trv1_0043,Li2.2ZrCl6F0.2,,30,30°C: 6.37e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,
+trv1_0044,Li2.3ZrCl6F0.3,,30,30°C: ~5.5e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由图估算
+trv1_0045,Li2.4ZrCl6F0.4,,30,30°C: ~4.0e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由图估算
+trv1_0046,Li2.3ZrCl6.1F0.2,6.50e-4,27（外推）,30°C: 7.4e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,本文最优样品；由30°C按Ea=0.34 eV外推至27°C
+trv1_0047,Li2.3ZrCl6.2F0.2,,30,30°C: ~7.0e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由图估算
+trv1_0048,Li2.4ZrCl6.3F0.2,,30,30°C: ~6.0e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由图估算
+qtx,Li2ZrCl6,0.00012,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.12 mS/cm; Ea=0.43 eV
+lly,Li2.1Zr0.9Al0.1Cl6,0.00036,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.36 mS/cm; Ea=0.40 eV
+qiv,Li2.15Zr0.85Al0.15Cl6,0.00065,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.65 mS/cm; Ea=0.345 eV
+hav,Li2.2Zr0.8Al0.2Cl6,0.00099,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.99 mS/cm; Ea=0.335 eV
+wys,Li2.25Zr0.75Al0.25Cl6,0.00113,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 1.13 mS/cm; Ea=0.29 eV
+uby,Li2.3Zr0.7Al0.3Cl6,0.00087,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.87 mS/cm; Ea=0.36 eV
+gsp,Li2.4Zr0.6Al0.4Cl6,0.0005,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.50 mS/cm; Ea=0.40 eV
+nek,Li2ZrCl6,0.000397,RT,,unknow,halides,unknow,10.1016/j.est.2024.111700,2024,Source data/add-data-LZACO.txt; original 3.97e-4 S/cm
+ync,Li3.4ZrCl4.6O1.4,0.00146,RT,,unknow,halides,unknow,10.1016/j.est.2024.111700,2024,Source data/add-data-LZACO.txt; original 1.46e-3 S/cm
+trv1_0049,Li3YCl6,2.6e-4,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+trv1_0050,Li3Y0.8Fe0.2Cl6,7.5e-4,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+trv1_0051,Li2.4Y0.4Zr0.6Cl6,2.05e-3,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,系列最优
+trv1_0052,Li2.4Y0.4Zr0.6Cl5.925F0.075,1.65e-3,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+trv1_0053,Li2.4Y0.4Zr0.6Cl5.85F0.15,1.45e-3,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+trv1_0054,Li2.4Y0.4Zr0.6Cl5.7F0.3,1.08e-3,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+trv1_0055,Li2.75Y0.16Er0.16Yb0.16In0.25Zr0.25Cl6,,30,30°C: 1.171e-3,机械化学球磨,halide,unknow,10.1038/s41467-024-45864-1,2024,二次引用[18]
+trv1_0056,Li2.75Al0.16Ti0.16Fe0.16In0.25Zr0.25Cl6,,30,30°C: 4.54e-4,机械化学球磨,halide,unknow,10.1038/s41467-024-45864-1,2024,二次引用[18]
+trv1_0057,Li3YbCl6,≈4.0e-4,RT,,unknow,halide,unknow,10.1002/adma.202501838,2025,卤化物固态电解质基体
+trv1_0058,Li3LuCl6,≈4.0e-4,RT,,unknow,halide,unknow,10.1002/adma.202501838,2025,卤化物固态电解质基体
+trv1_0059,Li3YCl6,≈4.0e-4,RT,,unknow,halide,unknow,10.1002/adma.202501838,2025,对比电解质；与Li不稳定
+trv1_0060,Li6PI3,6.2e-4,RT,,unknow,halide,unknow,10.1002/adma.202501838,2025,PI3涂层与Li接触后的还原产物；界面层材料
+trv1_0061,Li2ZrCl6,4.0e-4,30,30°C: 4.7e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；I与Br系列共用基准，已合并
+trv1_0062,Li2ZrCl5.75I0.25,5.6e-4,30,30°C: 6.5e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=0.25
+trv1_0063,Li2ZrCl5.5I0.5,8.1e-4,30,30°C: 9.3e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；I系列最高值
+trv1_0064,Li2ZrCl5.25I0.75,7.4e-4,30,30°C: 8.5e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=0.75
+trv1_0065,Li2ZrCl5I,6.7e-4,30,30°C: 7.7e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=1.0
+trv1_0066,Li2ZrCl4.5I1.5,5.4e-4,30,30°C: 6.3e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=1.5
+trv1_0067,Li2ZrCl4I2,1.9e-4,30,30°C: 2.2e-4,机械化学球磨（600 rpm，10 h；额外添加ZrI4）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；过量I导致结构畸变
+trv1_0068,Li2ZrCl5.5Br0.5,4.7e-4,30,30°C: 5.5e-4,机械化学球磨,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；Br取代中唯一微升组
+trv1_0069,Li2ZrCl5Br,3.2e-4,30,30°C: 3.8e-4,机械化学球磨,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=1.0
+trv1_0070,Li2ZrCl4.5Br1.5,2.1e-4,30,30°C: 2.5e-4,机械化学球磨,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；y=1.5
+trv1_0071,Li2ZrCl4Br2,1.8e-4,30,30°C: 2.1e-4,机械化学球磨,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；Br系列最低值
+trv1_0072,Li5.5PS4.5Cl1.5,7.8e-3,25,,unknow,argyrodite,否,10.1007/s10854-025-14581-w,2025,纯相Argyrodite基准
+trv1_0073,Li5.55Si0.05P0.95S4.4Cl1.5O0.1,~7.6e-3,25,,unknow,argyrodite,否,10.1007/s10854-025-14581-w,2025,由图估算；纯相
+trv1_0074,Li5.7Si0.2P0.8S4.1Cl1.5O0.4,2.03e-3,25,,unknow,argyrodite,否,10.1007/s10854-025-14581-w,2025,出现SiO2与LiCl杂相
+trv1_0075,Li3YCl3Br3,2.08e-3,25,,湿化学法（450°C烧结6 h）,halide,否,10.1016/s1003-6326(25)66819-1,2025,本文最优；双卤素协同效应；单斜相
+trv1_0076,Li3YBr6,~1.0e-3–1.2e-3,25,,湿化学法（450°C烧结6 h）,halide,否,10.1016/s1003-6326(25)66819-1,2025,估算范围
+trv1_0077,Li1.10NbO1.10Cl3.90,2.9e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,富Li/O；含5.3 wt% LiCl杂质
+trv1_0078,Li1.00NbO1.00Cl4.00,5.0e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,正文另记为5.1e-3 S/cm；含少于1 wt% LiCl
+trv1_0079,Li0.95NbO0.95Cl4.05,9.4e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,系列最高电导率
+trv1_0080,Li0.90NbO0.90Cl4.10,3.1e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,
+trv1_0081,Li0.85NbO0.85Cl4.15,2.8e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,
+trv1_0082,Li0.80NbO0.80Cl4.20,1.7e-3,25,,高能球磨（500 rpm，40 h）+真空安瓿100°C退火12 h,oxyhalide,否,10.1021/acs.chemmater.5c00627,2025,系列最低电导率
+trv1_0083,Li2ZrCl6,1.50e-4,25,,机械化学球磨（1000 rpm，15 h）,halide,否,10.1021/acs.jpcc.5c05412,2025,纯相LZC；三方相
+trv1_0084,Li1.9Zr0.9Sb0.1Cl5.5O0.25,2.63e-4,25,,机械化学球磨（1000 rpm，15 h）,oxyhalide,否,10.1021/acs.jpcc.5c05412,2025,x=0.05；I相与II相共存
+trv1_0085,Li1.8Zr0.8Sb0.2Cl5O0.5,3.47e-4,25,,机械化学球磨（1000 rpm，15 h）,oxyhalide,否,10.1021/acs.jpcc.5c05412,2025,x=0.10；I相与II相共存
+trv1_0086,Li1.75Zr0.75Sb0.25Cl4.75O0.625,4.20e-4,25,,机械化学球磨（1000 rpm，15 h）,oxyhalide,否,10.1021/acs.jpcc.5c05412,2025,系列最高电导率；单斜相为主
+trv1_0087,Li1.7Zr0.7Sb0.3Cl4.5O0.75,3.63e-4,25,,机械化学球磨（1000 rpm，15 h）,oxyhalide,否,10.1021/acs.jpcc.5c05412,2025,x=0.15；纯II相
+trv1_0088,Li1.6Zr0.6Sb0.4Cl4O1.0,6.5e-5,25,,机械化学球磨（1000 rpm，15 h）,oxyhalide,否,10.1021/acs.jpcc.5c05412,2025,x=0.20；过量掺杂导致电导率下降
+trv1_0089,Li3InCl6,1.30e-3,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,未取代基准；三个取代系列共用基准，已合并
+trv1_0090,Li3InCl5.8Br0.2,9.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.2
+trv1_0091,Li3InCl5.6Br0.4,7.5e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.4
+trv1_0092,Li3InCl5.4Br0.6,4.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.6；Br固溶极限
+trv1_0093,Li3InCl5.2Br0.8,2.8e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.8；接近杂相区
+trv1_0094,Li3InCl5Br,3.0e-5,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=1.0；杂相主导
+trv1_0095,Li3InCl4.8Br1.2,1.5e-7,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=1.2；原值为1.5e-4 mS/cm；杂相
+trv1_0096,Li3InCl5.8F0.2,9.5e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.2
+trv1_0097,Li3InCl5.6F0.4,8.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.4
+trv1_0098,Li3InCl5.4F0.6,6.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.6
+trv1_0099,Li3InCl5.2F0.8,5.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.8；F单相固溶极限
+trv1_0100,Li3InCl5F,4.5e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=1.0；纯相或微量杂相
+trv1_0101,Li3InCl4.8F1.2,3.5e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=1.2；出现InF3杂相
+trv1_0102,Li3InCl5.9I0.1,3.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.1；生成LiInI4杂相
+trv1_0103,Li3InCl5.8I0.2,2.0e-4,RT,,球磨+退火,halide,否,10.1021/acs.jpclett.5c00947,2025,x=0.2；生成LiInI4杂相
+trv1_0104,Li2.375Al0.375Zr0.625Cl6,,30,30°C: 8.7e-4,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0105,Li1.625Al0.375Zr0.625Cl5.25,9.81e-4,27（外推）,30°C: 1.1e-3,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,由30°C按Ea=0.30 eV外推至27°C
+trv1_0106,Li2.25Fe0.25Zr0.75Cl6,,30,30°C: 8.6e-4,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0107,Li1.75Fe0.25Zr0.75Cl5.75,,30,30°C: 1.2e-3,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0108,Li2.1Zr0.6Al0.2Y0.2Cl5.7,,30,30°C: 1.81e-3,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0109,Li2.4Zr0.6Al0.2Y0.2Cl6,,30,30°C: 7.6e-4,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0110,Li2.1Zr0.6Fe0.2Y0.2Cl5.7,,30,30°C: 1.36e-3,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0111,Li2.4Zr0.6Fe0.2Y0.2Cl6,,30,30°C: 9.5e-4,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0112,Li1.8Zr0.8Fe0.1Al0.1Cl5.6,,30,30°C: 1.04e-3,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0113,Li2.2Zr0.8Fe0.1Al0.1Cl6,,30,30°C: 9.6e-4,机械化学球磨,halide,unknow,10.1021/acsnano.4c16514,2025,
+trv1_0114,Li0.388La0.475Ta0.238Cl3,1.56e-3,30,30°C: 1.72e-3,高能震荡球磨（875 cycles/min，3 h）,halide,否,10.1021/jacs.5c11480,2025,室温值由30°C数据外推至27°C；未掺杂基准
+trv1_0115,Li0.488La0.475Ta0.238Cl2.9O0.1,1.70e-3,30,30°C: 1.86e-3,高能震荡球磨（875 cycles/min，3 h）,oxyhalide,否,10.1021/jacs.5c11480,2025,室温值由30°C数据外推至27°C；x=0.10
+trv1_0116,Li0.538La0.475Ta0.238Cl2.85O0.15,1.88e-3,30,30°C: 2.05e-3,高能震荡球磨（875 cycles/min，3 h）,oxyhalide,否,10.1021/jacs.5c11480,2025,室温值由30°C数据外推至27°C；最优掺杂
+trv1_0117,Li0.588La0.475Ta0.238Cl2.8O0.2,1.62e-3,30,30°C: 1.78e-3,高能震荡球磨（875 cycles/min，3 h）,oxyhalide,否,10.1021/jacs.5c11480,2025,室温值由30°C数据外推至27°C；x=0.20
+trv1_0118,Li0.688La0.475Ta0.238Cl2.7O0.3,7.9e-4,30,30°C: 8.7e-4,高能震荡球磨（875 cycles/min，3 h）,oxyhalide,否,10.1021/jacs.5c11480,2025,室温值由30°C数据外推至27°C；x=0.30
+trv1_0119,Li3InCl6,1.86e-3,25,,高能球磨+350°C热处理,halide,否,10.1039/d5ta05447h,2025,纯相基准；另有外推27°C值2.03e-3 S/cm
+trv1_0120,Li3.25InCl5.75O0.25,9.1e-4,25,,高能球磨+350°C热处理,oxyhalide,否,10.1039/d5ta05447h,2025,仅掺O；另有外推27°C值1.00e-3 S/cm
+trv1_0121,Li3In0.75Zr0.25Cl5.75O0.25,1.05e-3,25,,高能球磨+350°C热处理,oxyhalide,否,10.1039/d5ta05447h,2025,共掺杂最优；正文另记1.12e-3 S/cm；外推27°C值1.15e-3 S/cm
+trv1_0122,Li2.75In0.5Zr0.5Cl5.75O0.25,6.6e-4,25,,高能球磨+350°C热处理,oxyhalide,否,10.1039/d5ta05447h,2025,另有外推27°C值7.2e-4 S/cm
+trv1_0123,Li2.5In0.25Zr0.75Cl5.75O0.25,4.8e-4,25,,高能球磨+350°C热处理,oxyhalide,是,10.1039/d5ta05447h,2025,部分非晶化；出现ZrO2杂相；外推27°C值5.3e-4 S/cm
+trv1_0124,LiTaOCl4,~1.0e-2,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,LTOC基准；由图估算
+trv1_0125,LiTaO0.83S0.17Cl4,~7.0e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,x=0.17；由Figure 2b估算
+trv1_0126,LiTaO0.80S0.20Cl4,~6.0e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,x=0.20；由Figure 2b估算
+trv1_0127,LiTaO0.75S0.25Cl4,~5.0e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,x=0.25；由Figure 2b估算
+trv1_0128,LiTaO0.67S0.33Cl4,~3.5e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,x=0.33；由Figure 2b估算
+trv1_0129,LiTaO0.5S0.5Cl4,1.89e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,LTOSC-1；最低活化能
+trv1_0130,LiTaO0.34S0.66Cl4,~1.2e-3,RT,,unknow,oxyhalide,是,10.1002/smll.74036,2026,x=0.66；由Figure 2b估算
+trv1_0131,Li3ZrCl4O1.5,~8.0e-4,25,,unknow,oxyhalide,是,10.1021/acs.energyfuels.6c01704,2026,x=0；由Figure 1d估算
+trv1_0132,Li2.975ZrCl4O1.475Br0.025,3.4e-3,25,,unknow,oxyhalide,是,10.1021/acs.energyfuels.6c01704,2026,x=0.025；最优组分
+trv1_0133,Li2.95ZrCl4O1.45Br0.05,~2.2e-3,25,,unknow,oxyhalide,是,10.1021/acs.energyfuels.6c01704,2026,x=0.05；由Figure 1d估算
+trv1_0134,Li2.90ZrCl4O1.40Br0.10,~1.2e-3,25,,unknow,oxyhalide,是,10.1021/acs.energyfuels.6c01704,2026,x=0.10；由Figure 1d估算
+trv1_0135,Li2.85ZrCl4O1.35Br0.15,~7.0e-4,25,,unknow,oxyhalide,是,10.1021/acs.energyfuels.6c01704,2026,x=0.15；由Figure 1d估算
+trv1_0136,Li2ZrCl6,~1.0e-5,25,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT；σbulk=1.0e-4 S/cm；基准材料
+trv1_0137,Li2.20Zr0.90Mg0.10Cl6,2.2e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT；σbulk=1.09e-3 S/cm
+trv1_0138,Li2.20Zr0.90Zn0.10Cl6,2.6e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT；σbulk=4.8e-4 S/cm
+trv1_0139,Li2.25Zr0.75Fe0.25Cl6,4.5e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT；σbulk=1.24e-3 S/cm；最高体相电导率
+trv1_0140,Li2.25Zr0.75Ga0.25Cl6,7.7e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT=7.7e-4±8e-5 S/cm；σbulk=2.9e-4±2e-5 S/cm
+trv1_0141,Li2.10Zr0.95Mg0.05Cl6,~5.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；低掺杂量
+trv1_0142,Li2.30Zr0.85Mg0.15Cl6,~6.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk
+trv1_0143,Li2.10Zr0.95Zn0.05Cl6,~2.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；低掺杂量
+trv1_0144,Li2.30Zr0.85Zn0.15Cl6,~3.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；出现单斜相
+trv1_0145,Li2.10Zr0.90Fe0.10Cl6,~5.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；低掺杂量
+trv1_0146,Li2.20Zr0.80Fe0.20Cl6,~9.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；接近最优
+trv1_0147,Li2.30Zr0.70Fe0.30Cl6,~8.0e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；开始出现二次相
+trv1_0148,Li2.10Zr0.90Ga0.10Cl6,~1.5e-4,RT,,unknow,halide,否,10.1021/acsaem.6c01288,2026,仅有σbulk；低掺杂量
+zec,Li2Zr0.8Al0.2Cl3.8O,0.00198,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.98 mS/cm
+tsw,Li2Zr0.75Al0.25Cl3.75O,0.00201,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.01 mS/cm
+wnt,Li2Zr0.7Al0.3Cl3.7O,0.00174,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.74 mS/cm
+odf,Li2Zr0.6Al0.4Cl3.6O,0.00122,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.22 mS/cm
+nsm,Li2Zr0.5Al0.5Cl3.5O,0.000846,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.846 mS/cm
+tlx,Li2.4Zr0.8Al0.2Cl3.8O1.2,0.0021,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.1 mS/cm
+btq,Li2.4Zr0.75Al0.25Cl3.75O1.2,0.00254,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.54 mS/cm
+xhm,Li2.4Zr0.7Al0.3Cl3.7O1.2,0.00224,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.24 mS/cm
+gmh,Li2.4Zr0.6Al0.4Cl3.6O1.2,0.00134,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.34 mS/cm
+gno,Li2.4Zr0.5Al0.5Cl3.5O1.2,0.000907,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.907 mS/cm
+dbx,Li2.8Zr0.8Al0.2Cl3.8O1.4,0.00224,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.24 mS/cm
+pkj,Li2.8Zr0.75Al0.25Cl3.75O1.4,0.00255,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.55 mS/cm
+xfm,Li2.8Zr0.7Al0.3Cl3.7O1.4,0.00232,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 2.32 mS/cm
+wen,Li2.8Zr0.6Al0.4Cl3.6O1.4,0.00134,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.34 mS/cm
+vxk,Li2.8Zr0.5Al0.5Cl3.5O1.4,0.000969,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.969 mS/cm
+thq,Li3.2Zr0.8Al0.2Cl3.8O1.6,0.00138,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.38 mS/cm
+oyy,Li3.2Zr0.75Al0.25Cl3.75O1.6,0.00142,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.42 mS/cm
+okv,Li3.2Zr0.7Al0.3Cl3.7O1.6,0.00137,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.37 mS/cm
+nmx,Li3.2Zr0.6Al0.4Cl3.6O1.6,0.00112,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1.12 mS/cm
+azb,Li3.2Zr0.5Al0.5Cl3.5O1.6,0.000921,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.921 mS/cm
+dax,Li3.6Zr0.8Al0.2Cl3.8O1.8,0.000624,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.624 mS/cm
+mny,Li3.6Zr0.75Al0.25Cl3.75O1.8,0.000733,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.733 mS/cm
+lim,Li3.6Zr0.7Al0.3Cl3.7O1.8,0.001,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 1 mS/cm
+edx,Li3.6Zr0.6Al0.4Cl3.6O1.8,0.000693,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.693 mS/cm
+wdm,Li3.6Zr0.5Al0.5Cl3.5O1.8,0.00036,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.36 mS/cm
+trv1_0149,C4N2H12ZnBr4,2.9e-4,25,,水热/溶剂热法+冷压,hybrid halide,unknow,10.1038/s41467-026-68394-4,2026,PipZnBr4；含过量ZnBr2
+trv1_0150,C4N2H12ZnBr4,2.3e-4,25,,水热/溶剂热法+冷压,hybrid halide,unknow,10.1038/s41467-026-68394-4,2026,PipZnBr4；1:1化学计量比
