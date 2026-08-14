@@ -1,0 +1,28 @@
+source_csv_line,gradient_role,x_Y,x_Zr,n_Li_Cl6,n_Y_Cl6,n_Zr_Cl6,n_Cl_Cl6,composition_record_count,ID,化学式,电导率（室温，S/cm）,电导率测得温度（°C）,电导率（其他温度，S/cm）,化合物制备方法,family,非晶,对应文献DOI,文献年份,备注
+385,Y_endmember,1,0,3,1,0,6,7,ei3,Li3YCl6,0.000539,RT,,unknow,halides,unknow,10.1002/adma.201803075,2018,appendix: diffraction data available；close match: Yes；close match DOI: 10.1021/acs.chemmater.0c04352
+608,Y_endmember,1,0,3,1,0,6,7,trv1_0059,Li3YCl6,≈4.0e-4,RT,,unknow,halide,unknow,10.1002/adma.202501838,2025,对比电解质；与Li不稳定
+549,Y_endmember,1,0,3,1,0,6,7,trv1_0022,Li3YCl6,1.53e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,原始相；三方晶系
+473,Y_endmember,1,0,3,1,0,6,7,v78,Li3YCl6,0.0000608,RT,,unknow,halides,否,10.1021/acs.nanolett.0c01156,2020,Curator row 78; starting hcp value for In3+ substitution; original 0.0608 mS/cm
+598,Y_endmember,1,0,3,1,0,6,7,trv1_0049,Li3YCl6,2.6e-4,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,
+484,Y_endmember,1,0,3,1,0,6,7,yz0,Li3YCl6,0.00007,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-1; phase I (trigonal); original 0.07 mS/cm at 25 C
+533,Y_endmember,1,0,3,1,0,6,7,v65,Li3YCl6,0.000345,RT,,NH4Cl辅助湿化学合成（500°C）,halides,否,10.1126/sciadv.abh1896,2021,Curator row 65; NH4Cl-assisted wet-chemical synthesis at 500 C; original 0.345 mS/cm
+555,mixed_gradient,0.99,0.01,2.99,0.99,0.01,6,1,trv1_0028,Li2.99Y0.99Zr0.01Cl6,2.76e-4,RT,,unknow,halide,否,10.1007/s10008-023-05612-9,2023,Zr掺杂最优值
+485,mixed_gradient,0.9,0.1,2.9,0.9,0.1,6,1,yz1,Li2.9Y0.9Zr0.1Cl6,0.00032,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-2; phase I; original 0.32 mS/cm at 25 C
+486,mixed_gradient,0.8,0.2,2.8,0.8,0.2,6,1,yz2,Li2.8Y0.8Zr0.2Cl6,0.00095,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-3; phase I+II; original 0.95 mS/cm at 25 C
+487,mixed_gradient,0.75,0.25,2.75,0.75,0.25,6,1,yz3,Li2.75Y0.75Zr0.25Cl6,0.001,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-4; phase I+II; original 1.0 mS/cm at 25 C
+488,mixed_gradient,0.7,0.3,2.7,0.7,0.3,6,1,yz4,Li2.7Y0.7Zr0.3Cl6,0.0012,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-5; phase I+II; original 1.2 mS/cm at 25 C
+489,mixed_gradient,0.633,0.367,2.633,0.633,0.367,6,1,yz5,Li2.633Y0.633Zr0.367Cl6,0.0013,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction with composition aligned to article text x=0.367; curator row 26-6; phase III; original 1.3 mS/cm at 25 C
+511,mixed_gradient,0.5,0.5,2.5,0.5,0.5,6,3,v10,Li2.5Y0.5Zr0.5Cl6,0.0021,RT,,球磨 + 退火,halides,否,10.1016/j.cej.2021.130630,2021,Curator row 10; ball-milled and annealed; trigonal; tabulated value 2.1 mS/cm
+474,mixed_gradient,0.5,0.5,2.5,0.5,0.5,6,3,n7a,Li2.5Y0.5Zr0.5Cl6,0.0014,RT,,unknow,halides,unknow,10.1021/acsenergylett.9b02599,2020,Li2.5Er0.5Zr0.5Cl6 is available
+491,mixed_gradient,0.5,0.5,2.5,0.5,0.5,6,3,yz7,Li2.5Y0.5Zr0.5Cl6,0.0014,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-7; phase III (orthorhombic); original 1.4 mS/cm at 25 C; existing OBLiX record retained
+600,mixed_gradient,0.4,0.6,2.4,0.4,0.6,6,2,trv1_0051,Li2.4Y0.4Zr0.6Cl6,2.05e-3,RT,,unknow,halide,unknow,10.1021/acsami.4c01352,2024,系列最优
+490,mixed_gradient,0.4,0.6,2.4,0.4,0.6,6,2,yz6,Li2.4Y0.4Zr0.6Cl6,0.00095,25,,unknow,halides,否,10.1021/acsenergylett.9b02599,2020,Human-verified Figure 1d extraction; curator row 26-8; phase III; original 0.95 mS/cm at 25 C
+508,Zr_endmember,0,1,2,0,1,6,9,v63,Li2ZrCl6,0.0004,RT,,机械球磨,halides,否,10.1002/aenm.202003190,2021,Curator row 63; mechanical milling; trigonal; original 0.4 mS/cm
+573,Zr_endmember,0,1,2,0,1,6,9,trv1_0033,Li2ZrCl6,4.17e-4,27（外推）,30°C: 4.8e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,未暴露样品；由30°C按Ea=0.37 eV外推至27°C
+579,Zr_endmember,0,1,2,0,1,6,9,trv1_0039,Li2ZrCl6,,30,30°C: 1.4e-4,机械化学球磨,halide,unknow,10.1002/aenm.202405760,2024,空气暴露后
+581,Zr_endmember,0,1,2,0,1,6,9,trv1_0041,Li2ZrCl6,2.94e-4,27（外推）,30°C: 3.4e-4,机械化学球磨,halide,unknow,10.1002/smll.202407418,2024,由30°C按Ea=0.38 eV外推至27°C
+610,Zr_endmember,0,1,2,0,1,6,9,trv1_0061,Li2ZrCl6,4.0e-4,30,30°C: 4.7e-4,机械化学球磨（600 rpm，10 h）,halide,否,10.1002/smll.202505926,2025,室温值由30°C数据外推至27°C；I与Br系列共用基准，已合并
+589,Zr_endmember,0,1,2,0,1,6,9,qtx,Li2ZrCl6,0.00012,RT,,unknow,halides,否,10.1016/j.ensm.2024.103444,2024,Source data/add-data-LZACO.txt; crystalline; original 0.12 mS/cm; Ea=0.43 eV
+596,Zr_endmember,0,1,2,0,1,6,9,nek,Li2ZrCl6,0.000397,RT,,unknow,halides,unknow,10.1016/j.est.2024.111700,2024,Source data/add-data-LZACO.txt; original 3.97e-4 S/cm
+632,Zr_endmember,0,1,2,0,1,6,9,trv1_0083,Li2ZrCl6,1.50e-4,25,,机械化学球磨（1000 rpm，15 h）,halide,否,10.1021/acs.jpcc.5c05412,2025,纯相LZC；三方相
+685,Zr_endmember,0,1,2,0,1,6,9,trv1_0136,Li2ZrCl6,~1.0e-5,25,,unknow,halide,否,10.1021/acsaem.6c01288,2026,主值为σTOT；σbulk=1.0e-4 S/cm；基准材料

@@ -1,0 +1,17 @@
+group_id,pair_id,化学式_a,化学式_b,family,source_row_a,source_row_b,电导率_a_S_cm-1,电导率_b_S_cm-1,真实电导率变化值_S_cm-1,真实趋势标签,预测趋势标签,预测正确,probability_decrease,probability_unchanged,probability_increase
+group1,halide_pair_0001,Li4ZrCl4O2,Li2.25Zr0.75In0.25Cl6,halides,1,2,0.0015,0.00037000000000000005,-0.00113,decrease,decrease,True,0.5293989,0.009702722,0.46089837
+group1,halide_pair_0002,Li2.25Zr0.75In0.25Cl6,Li2.4Zr0.8Zn0.2Cl6,halides,2,3,0.00037000000000000005,0.00030000000000000003,-7.000000000000002e-05,unchanged,increase,False,0.24523541,0.25434342,0.50042117
+group1,halide_pair_0003,Li2.4Zr0.8Zn0.2Cl6,Li2ZrCl5Br,halides,3,4,0.00030000000000000003,8.900000000000001e-05,-0.00021100000000000003,decrease,decrease,True,0.9830976,0.008128152,0.008774232
+group1,halide_pair_0004,Li2ZrCl5Br,Li2.4Zr0.7In0.2Zn0.1Cl6,halides,4,5,8.900000000000001e-05,0.00031,0.000221,increase,unchanged,False,0.4153001,0.42680934,0.15789056
+group1,halide_pair_0005,Li2.4Zr0.7In0.2Zn0.1Cl6,Li2.9Zr0.2Y0.5In0.2Zn0.1Cl6,halides,5,6,0.00031,0.00018,-0.00013,decrease,increase,False,0.0160095,0.12055724,0.86343324
+group1,halide_pair_0006,Li2.9Zr0.2Y0.5In0.2Zn0.1Cl6,Li2.7Zr0.4Y0.3In0.2Zn0.1Cl6,halides,6,7,0.00018,0.00028,9.999999999999996e-05,unchanged,increase,False,0.12442383,0.0039297473,0.87164646
+group1,halide_pair_0007,Li2.7Zr0.4Y0.3In0.2Zn0.1Cl6,Li2.5Y0.5Zr0.5Cl6,halides,7,8,0.00028,0.0007400000000000001,0.0004600000000000001,increase,increase,True,0.25025678,0.03676536,0.7129779
+group2,halide_pair_0008,Li2.5Y0.5Zr0.5Cl6 + 5wt%ZrCl4,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,halides,9,10,0.0013000000000000002,0.0014,9.999999999999983e-05,unchanged,increase,False,0.18601592,0.03175772,0.7822264
+group2,halide_pair_0009,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,halides,10,11,0.0014,0.0011,-0.0002999999999999999,decrease,increase,False,0.28654486,0.045662694,0.6677925
+group2,halide_pair_0010,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,halides,11,12,0.0011,0.0011,0.0,unchanged,increase,False,0.38297942,0.04102995,0.5759907
+group2,halide_pair_0011,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,halides,12,13,0.0011,0.0015,0.00039999999999999996,increase,increase,True,0.28253916,0.11631354,0.6011473
+group2,halide_pair_0012,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,halides,13,14,0.0015,0.0016,0.00010000000000000005,increase,increase,True,0.014350428,0.0038205704,0.98182905
+group2,halide_pair_0013,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,halides,14,15,0.0016,0.0016,0.0,unchanged,increase,False,0.04146703,0.0067248316,0.95180815
+group2,halide_pair_0014,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,halides,15,16,0.0016,0.0015,-0.00010000000000000005,decrease,increase,False,0.04509324,0.0024467097,0.95246005
+group2,halide_pair_0015,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,halides,16,17,0.0015,0.0016,0.00010000000000000005,increase,increase,True,0.061115168,0.0061635296,0.9327213
+group2,halide_pair_0016,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4,halides,17,18,0.0016,2e-05,-0.00158,decrease,increase,False,0.020547004,0.021912111,0.9575409

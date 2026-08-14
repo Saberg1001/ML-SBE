@@ -1,12 +1,25 @@
 from __future__ import annotations
 
+import os
+import sys
+
+# Allow running this module directly with ``python main/absolute/split.py`` (e.g.
+# the VS Code "Run" button): project root must be importable for ``main.*``.
+if __package__ is None:
+    _PROJECT_ROOT = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    )
+    if _PROJECT_ROOT not in sys.path:
+        sys.path.insert(0, _PROJECT_ROOT)
+
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit, train_test_split
 
-from .paths import MODELING_DIR
+from main.features import DEFAULT_FEATURE_PATH
+from main.paths import MODELING_DIR
 
 
 DEFAULT_TRAIN_PATH = MODELING_DIR / "absolute" / "generated_train.csv"
@@ -16,6 +29,9 @@ DEFAULT_TEST_PATH = MODELING_DIR / "absolute" / "generated_test.csv"
 @dataclass
 class SplitConfig:
     """Options for train/test splitting.
+
+    Note: pipeline experiment parameter defaults are maintained centrally in
+    main/pipeline.py::default_pipeline_config(); edit there, not here.
 
     method:
         Split strategy. Supported values:
@@ -179,3 +195,28 @@ def split_feature_table(
     if config.train_output is not None and config.test_output is not None:
         result.to_files(config.train_output, config.test_output)
     return result
+
+
+def main() -> None:
+    """Run the train/test split stage with the default pipeline configuration.
+
+    Run directly via ``python main/absolute/split.py`` (or the VS Code "Run" button).
+    Requires the feature stage output from main/features.py.
+    Input  : data/modeling/absolute/generated_features.csv
+    Outputs: data/modeling/absolute/generated_train.csv
+             data/modeling/absolute/generated_test.csv
+    """
+    from main.absolute.pipeline import default_pipeline_config
+
+    frame = pd.read_csv(DEFAULT_FEATURE_PATH)
+    config = default_pipeline_config().split
+    result = split_feature_table(frame, config)
+    result.to_files(DEFAULT_TRAIN_PATH, DEFAULT_TEST_PATH)
+    print(f"Train rows: {len(result.train)}")
+    print(f"Test rows : {len(result.test)}")
+    print(f"Train CSV : {DEFAULT_TRAIN_PATH.resolve()}")
+    print(f"Test CSV  : {DEFAULT_TEST_PATH.resolve()}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,8 +1,11 @@
 matplotlib
 pandas
+scipy
 scikit-learn
 mendeleev
 pymatgen
 lightgbm
+catboost
+xgboost
 ngboost
 optuna

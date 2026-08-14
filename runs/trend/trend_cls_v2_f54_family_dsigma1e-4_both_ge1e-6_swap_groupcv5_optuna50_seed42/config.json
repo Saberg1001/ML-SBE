@@ -1,0 +1,16 @@
+{
+  "train_path": "data/trend/data-trend-v2-pairs-feature-train-both-ge-1e-6.csv",
+  "validation_path": "data/trend/data-trend-v2-pairs-feature-validation-both-ge-1e-6.csv",
+  "output_root": "runs/trend",
+  "run_name": "trend_cls_v2_f54_family_dsigma1e-4_both_ge1e-6_swap_groupcv5_optuna50_seed42",
+  "models": [
+    "lightgbm",
+    "catboost",
+    "xgboost",
+    "random_forest"
+  ],
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "swap_augmentation": true
+}

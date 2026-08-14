@@ -1,26 +1,44 @@
 from __future__ import annotations
 
+import os
+import sys
+
+# Allow running this module directly with ``python main/absolute/data.py`` (e.g.
+# the VS Code "Run" button): project root must be importable for ``main.*``.
+if __package__ is None:
+    _PROJECT_ROOT = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    )
+    if _PROJECT_ROOT not in sys.path:
+        sys.path.insert(0, _PROJECT_ROOT)
+
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
 import pandas as pd
 from pymatgen.core import Composition
 
-from .features import (
+from main.features import (
     CHARGE_RESIDUAL_EXCLUDE_LIMIT,
     MANUAL_ABNORMAL_CHARGE_IDS,
     charge_balance_records,
     contains_organic_molecule,
 )
-from .paths import OBELIX_RAW_DIR
+from main.paths import MODELING_DIR, OBELIX_RAW_DIR
 
 
 DEFAULT_RAW_PATH = OBELIX_RAW_DIR / "all.csv"
+# Default outputs when running this module directly with ``python main/data.py``.
+DEFAULT_CLEAN_OUTPUT = MODELING_DIR / "absolute" / "generated_clean.csv"
+DEFAULT_REMOVED_OUTPUT = MODELING_DIR / "absolute" / "generated_removed.csv"
 
 
 @dataclass
 class CleanDataConfig:
     """Options for raw OBLiX data loading and row-level cleaning.
+
+    Note: pipeline experiment parameter defaults are maintained centrally in
+    main/pipeline.py::default_pipeline_config(); edit there, not here.
 
     raw_path:
         CSV path used when clean_raw_data receives no dataframe.
@@ -140,3 +158,27 @@ def clean_raw_data(
         "removed_charge_abnormal_rows": int(charge_removed_count),
     }
     return CleanDataResult(cleaned=cleaned, removed=removed_all, summary=summary)
+
+
+def main() -> None:
+    """Run the cleaning stage with the default pipeline configuration.
+
+    Run directly via ``python main/absolute/data.py`` (or the VS Code "Run" button).
+    Raw input  : data/obelix/raw/all.csv
+    Outputs    : data/modeling/absolute/generated_clean.csv
+                 data/modeling/absolute/generated_removed.csv
+    """
+    # Imported lazily to avoid a circular import (pipeline.py imports this module).
+    from main.absolute.pipeline import default_pipeline_config
+
+    config = default_pipeline_config().clean
+    result = clean_raw_data(config=config)
+    result.to_files(DEFAULT_CLEAN_OUTPUT, DEFAULT_REMOVED_OUTPUT)
+    print(f"Cleaned rows: {result.summary['cleaned_rows']}")
+    print(f"Removed rows: {result.summary['removed_rows']}")
+    print(f"Clean CSV   : {DEFAULT_CLEAN_OUTPUT.resolve()}")
+    print(f"Removed CSV : {DEFAULT_REMOVED_OUTPUT.resolve()}")
+
+
+if __name__ == "__main__":
+    main()

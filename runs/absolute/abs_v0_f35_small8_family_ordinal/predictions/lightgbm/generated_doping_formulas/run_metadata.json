@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f35_small8_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "generated_doping_formulas",
+  "input_path": "data/prediction_inputs/generated_doping_formulas.csv",
+  "input_sha256": "84df70557ce493cd3ba2a0d4f0d8931f9db20b056d7bdabf711b29e672374123",
+  "model_path": "runs/absolute/abs_v0_f35_small8_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Not specified",
+  "rows": 127,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

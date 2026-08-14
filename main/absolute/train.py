@@ -1,5 +1,17 @@
 from __future__ import annotations
 
+import os
+import sys
+
+# Allow running this module directly with ``python main/absolute/train.py`` (e.g.
+# the VS Code "Run" button): project root must be importable for ``main.*``.
+if __package__ is None:
+    _PROJECT_ROOT = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    )
+    if _PROJECT_ROOT not in sys.path:
+        sys.path.insert(0, _PROJECT_ROOT)
+
 from dataclasses import asdict, dataclass
 import json
 from pathlib import Path
@@ -21,8 +33,8 @@ try:
 except ImportError as exc:
     raise RuntimeError("Optuna is required for main.train") from exc
 
-from .features import FAMILY_COLUMN, family_code_mapping, infer_feature_columns
-from .paths import RUNS_DIR
+from main.features import FAMILY_COLUMN, family_code_mapping, infer_feature_columns
+from main.paths import RUNS_DIR
 
 
 DEFAULT_OUTPUT_ROOT = RUNS_DIR / "absolute"
@@ -33,6 +45,9 @@ MODEL_NAMES = ("lightgbm", "random_forest", "decision_tree", "mlp", "ngboost")
 @dataclass
 class TrainConfig:
     """Options for model training, Optuna tuning, and output packaging.
+
+    Note: pipeline experiment parameter defaults are maintained centrally in
+    main/pipeline.py::default_pipeline_config(); edit there, not here.
 
     model_name:
         Model to train. Supported values are "all", "lightgbm",
@@ -806,3 +821,32 @@ def train_model(
         results=results,
         feature_columns=feature_columns,
     )
+
+
+def main() -> None:
+    """Run the training stage with the default pipeline configuration.
+
+    Run directly via ``python main/absolute/train.py`` (or the VS Code "Run" button).
+    Requires the split stage outputs from main/absolute/split.py.
+
+    Note: the default configuration runs ``n_trials=50`` Optuna trials per
+    model and trains all models; this step can take a while.
+
+    Inputs : data/modeling/absolute/generated_train.csv
+             data/modeling/absolute/generated_test.csv
+    Output : runs/absolute/<run_id>/   (contains model_comparison.csv,
+             per-model train/test_predictions.csv, figures/, config.json,
+             summary.json, and best_model.txt)
+    """
+    from main.absolute.pipeline import default_pipeline_config
+
+    from main.absolute.split import DEFAULT_TEST_PATH, DEFAULT_TRAIN_PATH
+
+    config = default_pipeline_config().train
+    result = train_model(DEFAULT_TRAIN_PATH, DEFAULT_TEST_PATH, config)
+    print(f"Best model   : {result.best_model}")
+    print(f"Output dir   : {result.output_dir.resolve()}")
+
+
+if __name__ == "__main__":
+    main()

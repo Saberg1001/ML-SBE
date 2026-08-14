@@ -1,0 +1,12 @@
+source_row,组成,离子电导率@298K (S/cm),Unnamed: 2,备注,record_id,formula,preparation_method,conductivity_S_cm-1,excluded_reason
+9,Li2.5Y0.5Zr0.5Cl6 + 5wt%ZrCl4,1.3 x 10-3,,固相,halide_010,Li2.5Y0.5Zr0.5Cl6 + 5wt%ZrCl4,固相,0.0013000000000000002,composite_additive_formula_not_supported
+10,Li2.5Y0.5Zr0.5Cl6 + 10wt%ZrCl4,1.1 x 10-3,,固相,halide_011,Li2.5Y0.5Zr0.5Cl6 + 10wt%ZrCl4,固相,0.0011,composite_additive_formula_not_supported
+11,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,1.4 x 10-3,,固相,halide_012,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,固相,0.0014,composite_additive_formula_not_supported
+12,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,1.1 x 10-3,,固相,halide_013,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,固相,0.0011,composite_additive_formula_not_supported
+13,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,1.1 x 10-3,,固相,halide_014,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,固相,0.0011,composite_additive_formula_not_supported
+15,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,1.5 x 10-3,,固相,halide_016,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,固相,0.0015,composite_additive_formula_not_supported
+16,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,1.6 x 10-3,,固相,halide_017,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,固相,0.0016,composite_additive_formula_not_supported
+17,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,1.6 x 10-3,,固相,halide_018,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,固相,0.0016,composite_additive_formula_not_supported
+18,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,1.5 x 10-3,,固相,halide_019,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,固相,0.0015,composite_additive_formula_not_supported
+19,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,1.6 x 10-3,,固相,halide_020,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,固相,0.0016,composite_additive_formula_not_supported
+21,Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4,2.0 x 10-5,,固相,halide_022,Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4,固相,2e-05,composite_additive_formula_not_supported

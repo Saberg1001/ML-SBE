@@ -1,0 +1,40 @@
+{
+  "model": "/home/ziyiguo/project/IonConductivity/runs/trend/trend_cls_v3_f27_family_abs01_fixedval_optuna10_seed42/catboost/model.joblib",
+  "pairs": 104,
+  "threshold_S_cm-1": 0.0001,
+  "accuracy": 0.49038461538461536,
+  "macro_f1": 0.31741071428571427,
+  "balanced_accuracy": 0.3122415219189413,
+  "labels": {
+    "decrease": 62,
+    "unchanged": 3,
+    "increase": 39
+  },
+  "predicted_labels": {
+    "decrease": 66,
+    "unchanged": 7,
+    "increase": 31
+  },
+  "confusion_matrix_labels": [
+    "decrease",
+    "unchanged",
+    "increase"
+  ],
+  "confusion_matrix": [
+    [
+      39,
+      4,
+      19
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      24,
+      3,
+      12
+    ]
+  ]
+}

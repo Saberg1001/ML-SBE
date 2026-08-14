@@ -1,0 +1,16 @@
+{
+  "train_path": "data/trend/data-trend-v1-pairs-feature-train.csv",
+  "validation_path": "data/trend/data-trend-v1-pairs-feature-validation.csv",
+  "output_root": "runs/trend",
+  "run_name": null,
+  "models": [
+    "lightgbm",
+    "catboost",
+    "xgboost",
+    "random_forest"
+  ],
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "swap_augmentation": true
+}

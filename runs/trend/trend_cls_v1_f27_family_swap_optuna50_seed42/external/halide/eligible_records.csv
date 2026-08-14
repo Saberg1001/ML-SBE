@@ -1,0 +1,12 @@
+source_row,组成,离子电导率@298K (S/cm),Unnamed: 2,备注,record_id,formula,preparation_method,conductivity_S_cm-1
+0,Li4ZrCl4O2,1.5 x 10-3,,球磨,halide_001,Li4ZrCl4O2,球磨,0.0015
+1,Li2.25Zr0.75In0.25Cl6,3.7 x 10-4,,球磨,halide_002,Li2.25Zr0.75In0.25Cl6,球磨,0.00037000000000000005
+2,Li2.4Zr0.8Zn0.2Cl6,3.0 x 10-4,,球磨,halide_003,Li2.4Zr0.8Zn0.2Cl6,球磨,0.00030000000000000003
+3,Li2ZrCl5Br,8.9 x 10-5,,球磨,halide_004,Li2ZrCl5Br,球磨,8.900000000000001e-05
+4,Li2.4Zr0.7In0.2Zn0.1Cl6,3.1 x 10-4,,球磨,halide_005,Li2.4Zr0.7In0.2Zn0.1Cl6,球磨,0.00031
+5,Li2.9Zr0.2Y0.5In0.2Zn0.1Cl6,1.8 x 10-4,,球磨,halide_006,Li2.9Zr0.2Y0.5In0.2Zn0.1Cl6,球磨,0.00018
+6,Li2.7Zr0.4Y0.3In0.2Zn0.1Cl6,2.8 x 10-4,,球磨,halide_007,Li2.7Zr0.4Y0.3In0.2Zn0.1Cl6,球磨,0.00028
+7,Li2.5Y0.5Zr0.5Cl6,7.4 x 10-4,,球磨,halide_008,Li2.5Y0.5Zr0.5Cl6,球磨,0.0007400000000000001
+8,Li2.5Y0.5Zr0.5Cl6,1.2 x 10-3,,固相,halide_009,Li2.5Y0.5Zr0.5Cl6,固相,0.0012
+14,Li3YCl4.5Br1.5,1.0 x 10-3,,固相,halide_015,Li3YCl4.5Br1.5,固相,0.001
+20,Li3Y0.7In0.3Cl6,8.6 x 10-4,,固相,halide_021,Li3Y0.7In0.3Cl6,固相,0.00086

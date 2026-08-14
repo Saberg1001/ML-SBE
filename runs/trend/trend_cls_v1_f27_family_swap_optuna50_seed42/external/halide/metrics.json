@@ -1,0 +1,190 @@
+{
+  "all_pairs": {
+    "rows": 31,
+    "groups": 2,
+    "accuracy": 0.45161290322580644,
+    "balanced_accuracy": 0.4083333333333334,
+    "macro_f1": 0.42424242424242425,
+    "group_weighted_macro_f1": 0.5075757575757575,
+    "group_weighted_log_loss": 0.947838948560872,
+    "group_weighted_severe_reversal_rate": 0.19642857142857134,
+    "per_class": {
+      "decrease": {
+        "precision": 0.8499999999999998,
+        "recall": 0.8499999999999998,
+        "f1": 0.8499999999999998,
+        "weighted_support": 1.4285714285714297
+      },
+      "almost_unchanged": {
+        "precision": 1.0,
+        "recall": 0.25000000000000006,
+        "f1": 0.4,
+        "weighted_support": 0.28571428571428564
+      },
+      "increase": {
+        "precision": 0.21428571428571436,
+        "recall": 0.37500000000000006,
+        "f1": 0.2727272727272728,
+        "weighted_support": 0.28571428571428564
+      }
+    },
+    "confusion_matrix": [
+      [
+        9,
+        0,
+        6
+      ],
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        5,
+        0,
+        3
+      ]
+    ]
+  },
+  "both_formulas_unseen_in_train": {
+    "rows": 16,
+    "groups": 2,
+    "accuracy": 0.4375,
+    "balanced_accuracy": 0.42063492063492064,
+    "macro_f1": 0.3703703703703704,
+    "group_weighted_macro_f1": 0.42884990253411304,
+    "group_weighted_log_loss": 1.2817007024147777,
+    "group_weighted_severe_reversal_rate": 0.16438356164383564,
+    "per_class": {
+      "decrease": {
+        "precision": 0.9302325581395348,
+        "recall": 0.7692307692307692,
+        "f1": 0.8421052631578946,
+        "weighted_support": 0.619047619047619
+      },
+      "almost_unchanged": {
+        "precision": 1.0,
+        "recall": 0.28571428571428575,
+        "f1": 0.4444444444444445,
+        "weighted_support": 0.24999999999999994
+      },
+      "increase": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "weighted_support": 0.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        4
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "ball_milling": {
+    "rows": 28,
+    "groups": 1,
+    "accuracy": 0.39285714285714285,
+    "balanced_accuracy": 0.375,
+    "macro_f1": 0.39090909090909093,
+    "group_weighted_macro_f1": 0.39090909090909093,
+    "group_weighted_log_loss": 1.700109999106614,
+    "group_weighted_severe_reversal_rate": 0.39285714285714285,
+    "per_class": {
+      "decrease": {
+        "precision": 0.5000000000000001,
+        "recall": 0.5000000000000001,
+        "f1": 0.5000000000000001,
+        "weighted_support": 0.42857142857142844
+      },
+      "almost_unchanged": {
+        "precision": 1.0,
+        "recall": 0.25000000000000006,
+        "f1": 0.4,
+        "weighted_support": 0.28571428571428564
+      },
+      "increase": {
+        "precision": 0.21428571428571436,
+        "recall": 0.37500000000000006,
+        "f1": 0.2727272727272728,
+        "weighted_support": 0.28571428571428564
+      }
+    },
+    "confusion_matrix": [
+      [
+        6,
+        0,
+        6
+      ],
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        5,
+        0,
+        3
+      ]
+    ]
+  },
+  "solid_state": {
+    "rows": 3,
+    "groups": 1,
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 0.3333333333333333,
+    "group_weighted_macro_f1": 0.3333333333333333,
+    "group_weighted_log_loss": 0.1955678980151307,
+    "group_weighted_severe_reversal_rate": 0.0,
+    "per_class": {
+      "decrease": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "weighted_support": 1.0
+      },
+      "almost_unchanged": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "weighted_support": 0.0
+      },
+      "increase": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "weighted_support": 0.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}

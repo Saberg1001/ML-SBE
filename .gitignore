@@ -14,3 +14,5 @@ archive/absolute_legacy/models/
 tmp/
 *.log
 .DS_Store
+.env
+data/modeling/

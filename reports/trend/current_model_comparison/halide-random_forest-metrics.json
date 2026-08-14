@@ -1,0 +1,40 @@
+{
+  "model": "runs/trend/trend_cls_v3_f27_family_abs01_fixedval_optuna10_seed42/random_forest/model.joblib",
+  "pairs": 16,
+  "threshold_S_cm-1": 0.0001,
+  "accuracy": 0.4375,
+  "macro_f1": 0.3333333333333333,
+  "balanced_accuracy": 0.4444444444444444,
+  "labels": {
+    "decrease": 6,
+    "unchanged": 5,
+    "increase": 5
+  },
+  "predicted_labels": {
+    "decrease": 3,
+    "unchanged": 0,
+    "increase": 13
+  },
+  "confusion_matrix_labels": [
+    "decrease",
+    "unchanged",
+    "increase"
+  ],
+  "confusion_matrix": [
+    [
+      2,
+      0,
+      4
+    ],
+    [
+      1,
+      0,
+      4
+    ],
+    [
+      0,
+      0,
+      5
+    ]
+  ]
+}

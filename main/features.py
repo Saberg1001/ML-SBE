@@ -1,5 +1,15 @@
 from __future__ import annotations
 
+import os
+import sys
+
+# Allow running this module directly with ``python main/features.py`` (e.g. the
+# VS Code "Run" button): project root must be importable for ``main.*``.
+if __package__ is None:
+    _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if _PROJECT_ROOT not in sys.path:
+        sys.path.insert(0, _PROJECT_ROOT)
+
 from dataclasses import asdict, dataclass, field
 from functools import lru_cache
 from itertools import product
@@ -14,7 +24,7 @@ import pandas as pd
 from pymatgen.core import Composition
 from pymatgen.core.periodic_table import Element
 
-from .paths import CHEMISTRY_CONFIG_DIR, MODELING_DIR
+from main.paths import CHEMISTRY_CONFIG_DIR, MODELING_DIR
 
 
 DEFAULT_FEATURE_PATH = MODELING_DIR / "absolute" / "generated_features.csv"
@@ -607,8 +617,23 @@ def normalize_family(value) -> str:
         "lgps_like": "lgps",
         "halide": "halides",
         "halide_like": "halides",
-        "oxyhalide": "halides",
-        "halide_oxyhalide": "halides",
+        # Oxyhalides are chemically distinct from binary halides.  They may
+        # share a broad halide family in a downstream taxonomy, but merging
+        # them here creates cross-family trend pairs and leaks anion chemistry
+        # into the grouping key.
+        "oxyhalide": "oxyhalides",
+        "oxyhalides": "oxyhalides",
+        "oxyhalide_like": "oxyhalides",
+        "halide_oxyhalide": "halide_oxyhalide",
+        "halides": "halides",
+        "halides_like": "halides",
+        "cholorides": "chlorides",
+        "chloride": "chlorides",
+        "chlorides": "chlorides",
+        "sulfide": "sulfides",
+        "sulfides": "sulfides",
+        "oxide": "oxides",
+        "oxides": "oxides",
     }
     return aliases.get(text, text)
 
@@ -647,6 +672,9 @@ REDUNDANT_FEATURES = {
 @dataclass
 class FeatureConfig:
     """Options for conductivity filtering and feature construction.
+
+    Note: pipeline experiment parameter defaults are maintained centrally in
+    main/pipeline.py::default_pipeline_config(); edit there, not here.
 
     min_conductivity:
         Minimum conductivity kept in the training feature table. The default
@@ -867,3 +895,27 @@ def make_feature_table(
     if config.output_path is not None:
         result.to_file(config.output_path)
     return result
+
+
+def main() -> None:
+    """Run the feature stage with the default pipeline configuration.
+
+    Run directly via ``python main/features.py`` (or the VS Code "Run" button).
+    Requires the cleaning stage output from main/absolute/data.py.
+    Input    : data/modeling/absolute/generated_clean.csv
+    Output   : data/modeling/absolute/generated_features.csv
+    """
+    from main.absolute.data import DEFAULT_CLEAN_OUTPUT
+    from main.absolute.pipeline import default_pipeline_config
+
+    source = pd.read_csv(DEFAULT_CLEAN_OUTPUT)
+    config = default_pipeline_config().features
+    result = make_feature_table(source, config)
+    result.to_file(DEFAULT_FEATURE_PATH)
+    print(f"Feature rows : {len(result.table)}")
+    print(f"Feature count: {len(result.feature_columns)}")
+    print(f"Output CSV   : {DEFAULT_FEATURE_PATH.resolve()}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,5 +1,17 @@
 from __future__ import annotations
 
+import os
+import sys
+
+# Allow running this module directly with ``python main/absolute/predict.py``
+# (e.g. the VS Code "Run" button): project root must be importable for ``main.*``.
+if __package__ is None:
+    _PROJECT_ROOT = os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    )
+    if _PROJECT_ROOT not in sys.path:
+        sys.path.insert(0, _PROJECT_ROOT)
+
 from dataclasses import dataclass
 import hashlib
 import json
@@ -10,8 +22,8 @@ import joblib
 import numpy as np
 import pandas as pd
 
-from .features import SMALL_FEATURE_SPECS, TARGET_COLUMN, FeatureConfig, make_feature_table
-from .paths import EXPERIMENTAL_ANNOTATIONS_DIR, portable_path
+from main.features import SMALL_FEATURE_SPECS, TARGET_COLUMN, FeatureConfig, make_feature_table
+from main.paths import EXPERIMENTAL_ANNOTATIONS_DIR, portable_path
 
 
 DEFAULT_EXPERIMENTAL_FAMILY_BLOCKS = EXPERIMENTAL_ANNOTATIONS_DIR / "family_blocks_legacy.csv"
@@ -417,3 +429,29 @@ def predict_formulas(
         output_dir=output_dir,
         evaluation=evaluation,
     )
+
+
+def main() -> None:
+    """Run prediction with a saved training run and a default input file.
+
+    Run directly via ``python main/absolute/predict.py`` (or the VS Code "Run" button).
+    Uses the historical baseline run abs_v0_f35_small8_family_ordinal and the
+    doping formulas input.
+
+    Input  : data/prediction_inputs/generated_doping_formulas.csv
+    Model  : runs/absolute/abs_v0_f35_small8_family_ordinal (best model)
+    Output : runs/absolute/<run_id>/predictions/<model>/<dataset>/
+             (predictions.csv, features.csv, evaluation.json, run_metadata.json)
+    """
+    from main.paths import PREDICTION_INPUTS_DIR, RUNS_DIR
+
+    input_csv = PREDICTION_INPUTS_DIR / "generated_doping_formulas.csv"
+    model_dir = RUNS_DIR / "absolute" / "abs_v0_f35_small8_family_ordinal"
+    result = predict_formulas(input_csv, model_dir, PredictConfig())
+    print(f"Prediction rows: {len(result.predictions)}")
+    print(f"Output dir     : {result.output_dir.resolve()}")
+    print("Files written  : predictions.csv, features.csv, evaluation.json, run_metadata.json")
+
+
+if __name__ == "__main__":
+    main()
