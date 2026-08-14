@@ -1,0 +1,117 @@
+{
+  "schema_version": "trend_doi_stratified_split_v3",
+  "input": "data/trend/data-trend-v2-pairs-feature.csv",
+  "target_validation_fraction": 0.1,
+  "actual_validation_fraction": 0.1001890359168242,
+  "selection_method": "mixed-integer optimization: row-count deviation first, then label-count deviation; DOI groups are indivisible",
+  "output_columns": [
+    "pair_id",
+    "group_id",
+    "doi",
+    "化学式_a",
+    "化学式_b",
+    "family",
+    "trend_label",
+    "pair_weight_group_equal",
+    "delta_entropy_c_l",
+    "delta_log10_rho_plus_incl_li",
+    "delta_field_x_r_diff",
+    "delta_n_Li",
+    "delta_log_rho_ratio",
+    "delta_r_all_pm",
+    "delta_ir_mean_square_all",
+    "delta_atwt_geometric_mean_all",
+    "delta_chi_all",
+    "delta_chi_plus_excl_minus_chi_minus",
+    "delta_phi_plus_excl_li",
+    "delta_r_plus_incl_minus_r_minus",
+    "delta_chi_plus_incl_minus_chi_minus",
+    "delta_chi_range_x_r_avg",
+    "delta_r_plus_incl_li_pm",
+    "delta_rho_plus_excl_li_c_m3",
+    "delta_r_plus_excl_minus_r_minus",
+    "delta_n_li_x_r_minus_pm",
+    "mean_entropy_c_l",
+    "mean_log10_rho_plus_incl_li",
+    "mean_log10_phi_plus_incl_li",
+    "mean_field_x_r_diff",
+    "mean_n_Li",
+    "mean_r_all_pm",
+    "mean_atwt_geometric_mean_all",
+    "abs_delta_entropy_c_l",
+    "abs_delta_log10_rho_plus_incl_li",
+    "abs_delta_log10_phi_plus_incl_li",
+    "abs_delta_field_x_r_diff",
+    "composition_L1_distance",
+    "a_r_all_pm",
+    "a_chi_plus_excl_minus_chi_minus",
+    "a_chi_all",
+    "a_phi_plus_excl_li",
+    "a_field_x_r_diff",
+    "a_r_plus_incl_minus_r_minus",
+    "a_chi_plus_incl_minus_chi_minus",
+    "a_chi_range_x_r_avg",
+    "a_r_plus_incl_li_pm",
+    "a_rho_plus_excl_li_c_m3",
+    "a_r_plus_excl_minus_r_minus",
+    "a_n_li_x_r_minus_pm",
+    "b_r_all_pm",
+    "b_chi_plus_excl_minus_chi_minus",
+    "b_chi_all",
+    "b_phi_plus_excl_li",
+    "b_field_x_r_diff",
+    "b_r_plus_incl_minus_r_minus",
+    "b_chi_plus_incl_minus_chi_minus",
+    "b_chi_range_x_r_avg",
+    "b_r_plus_incl_li_pm",
+    "b_rho_plus_excl_li_c_m3",
+    "b_r_plus_excl_minus_r_minus",
+    "b_n_li_x_r_minus_pm"
+  ],
+  "counts": {
+    "input_rows": 2116,
+    "train_rows": 1904,
+    "validation_rows": 212,
+    "train_dois": 117,
+    "validation_dois": 10
+  },
+  "label_distribution": {
+    "overall": {
+      "unchanged": 754,
+      "increase": 691,
+      "decrease": 671
+    },
+    "train": {
+      "unchanged": 678,
+      "increase": 622,
+      "decrease": 604
+    },
+    "validation": {
+      "unchanged": 76,
+      "increase": 69,
+      "decrease": 67
+    },
+    "validation_target": {
+      "decrease": 67,
+      "increase": 69,
+      "unchanged": 76
+    }
+  },
+  "label_fraction": {
+    "overall": {
+      "unchanged": 0.3563327032136106,
+      "increase": 0.32655954631379963,
+      "decrease": 0.31710775047258977
+    },
+    "train": {
+      "unchanged": 0.3560924369747899,
+      "increase": 0.32668067226890757,
+      "decrease": 0.3172268907563025
+    },
+    "validation": {
+      "unchanged": 0.3584905660377358,
+      "increase": 0.32547169811320753,
+      "decrease": 0.3160377358490566
+    }
+  }
+}

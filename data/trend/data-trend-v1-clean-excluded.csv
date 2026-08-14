@@ -1,0 +1,2 @@
+ID,化学式,电导率（室温，S/cm）,电导率测得温度（°C）,电导率（其他温度，S/cm）,化合物制备方法,family,非晶,对应文献DOI,文献年份,备注,电导率,测得温度
+v12,Li3InCl6,0.00204,25,,水介导合成 + 200°C真空脱水,halides,否,10.1002/anie.201909805,2019,Curator row 12; water-mediated synthesis and vacuum dehydration at 200 C; original 2.04 mS/cm at 25 C,0.00204,25
