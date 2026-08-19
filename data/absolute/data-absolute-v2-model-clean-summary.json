@@ -1,0 +1,33 @@
+{
+  "config": {
+    "input_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2.csv",
+    "output_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2-model-clean.csv",
+    "excluded_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2-model-clean-excluded.csv",
+    "formula_audit_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2-model-clean-formula-audit.csv",
+    "quality_audit_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2-model-clean-quality-audit.csv",
+    "summary_path": "/home/ziyiguo/project/IonConductivity/data/absolute/data-absolute-v2-model-clean-summary.json",
+    "min_conductivity": 1e-06,
+    "liverpool_temperature_min_c": 20.0,
+    "liverpool_temperature_max_c": 30.0,
+    "excluded_caltech_ids": [
+      "caltech_icsd_65051",
+      "caltech_icsd_100169"
+    ]
+  },
+  "input_rows": 1187,
+  "eligible_rows_after_threshold_and_temperature": 887,
+  "output_rows": 792,
+  "unique_output_formulas": 792,
+  "invalid_or_nonpositive_rows": 0,
+  "below_conductivity_threshold_rows": 300,
+  "liverpool_temperature_rows_removed": 0,
+  "initial_policy_rows_removed_after_overlap": 300,
+  "duplicate_formula_groups_resolved": 61,
+  "duplicate_formula_rows_removed": 95,
+  "normalized_family_conflict_groups": 3,
+  "preferred_family_selection_groups": 3,
+  "formula_family_relabel_groups": 2,
+  "high_temperature_extrapolation_rows_removed": 0,
+  "remaining_duplicate_formula_rows": 0,
+  "selection_policy": "one row per normalized reduced formula; highest reported conductivity within the preferred structural family when defined, otherwise highest overall; ties prefer checked v1, explicit room-temperature Liverpool, then Caltech"
+}

@@ -364,6 +364,34 @@ def classify_elements(
     return classification
 
 
+def anion_radius_disorder(
+    anion_symbols: list[str],
+    amounts: dict[str, float],
+    radii_pm: dict[str, float | None],
+) -> float | None:
+    """Return the normalized anion-radius dispersion for one composition."""
+
+    if not anion_symbols:
+        return None
+    if len(anion_symbols) == 1:
+        return 0.0
+
+    values = [radii_pm.get(symbol) for symbol in anion_symbols]
+    if any(value is None for value in values):
+        return None
+    weights = np.asarray([amounts[symbol] for symbol in anion_symbols], dtype=float)
+    total = float(weights.sum())
+    if total <= 0:
+        return None
+    fractions = weights / total
+    radii = np.asarray(values, dtype=float)
+    mean_radius = float(np.dot(fractions, radii))
+    if mean_radius <= 0:
+        return None
+    variance = float(np.dot(fractions, (radii - mean_radius) ** 2))
+    return float(math.sqrt(variance) / mean_radius)
+
+
 def composition_features(formula: str) -> pd.Series:
     composition = Composition(formula)
     elements = [elem.symbol for elem in composition.elements]
@@ -396,6 +424,9 @@ def composition_features(formula: str) -> pd.Series:
     anion_sym = [s for s in elements if cls.get(s) in ("anion", "halide")]
     cat_incl_sym = [s for s in elements if cls.get(s) in ("Li", "host_cation")]
     cat_excl_sym = [s for s in elements if cls.get(s) == "host_cation"]
+    cation_sym = [
+        s for s in elements if cls.get(s) in ("Li", "host_cation", "proton")
+    ]
     halide_sym = [s for s in elements if cls.get(s) == "halide"]
     non_halide_anion_sym = [s for s in elements if cls.get(s) == "anion"]
 
@@ -419,6 +450,11 @@ def composition_features(formula: str) -> pd.Series:
 
     en_values = [value for value in en_map.values() if value is not None]
     chi_max_min = (max(en_values) - min(en_values)) if len(en_values) >= 2 else None
+    delta_anion = anion_radius_disorder(anion_sym, amounts, r_map)
+    tau_cationic = safe_ratio(
+        sum(amounts[symbol] for symbol in anion_sym),
+        sum(amounts[symbol] for symbol in cation_sym),
+    )
 
     return pd.Series(
         {
@@ -462,6 +498,8 @@ def composition_features(formula: str) -> pd.Series:
                 amounts.get("Li", 0) / total_atoms
                 if total_atoms > 0 else None
             ),
+            "delta_anion": delta_anion,
+            "tau_cationic": tau_cationic,
         }
     )
 
@@ -612,8 +650,11 @@ def normalize_family(value) -> str:
     text = re.sub(r"_+", "_", text).strip("_")
     text = text or "unknown"
     aliases = {
+        "anti_perovskite": "antiperovskite",
+        "perovskite": "perovskites",
         "argyrodite": "argyrodites",
         "argyrodite_like": "argyrodites",
+        "garnet_like": "garnet",
         "lgps_like": "lgps",
         "halide": "halides",
         "halide_like": "halides",
@@ -695,6 +736,9 @@ class FeatureConfig:
     family_mapping:
         Optional precomputed text-to-code mapping for family encoding. Pass the
         training mapping during prediction to keep numeric codes consistent.
+    family_encoding:
+        "ordinal" preserves legacy numeric codes. "native" keeps family as an
+        unordered pandas categorical feature for models such as LightGBM.
     output_path:
         Feature CSV path. Use None to skip automatic file writing.
     """
@@ -705,6 +749,7 @@ class FeatureConfig:
     include_small_features: bool = True
     drop_redundant: bool = True
     family_mapping: dict[str, int] | None = None
+    family_encoding: str = "ordinal"
     output_path: Path | None = None
 
 
@@ -800,7 +845,20 @@ def _add_family_feature(frame: pd.DataFrame, config: FeatureConfig) -> tuple[pd.
     mapping = family_code_mapping(normalized, config.family_mapping)
     frame[FAMILY_COLUMN] = normalized
     if config.include_family:
-        frame[FAMILY_FEATURE_COLUMN] = encode_family(normalized, mapping)
+        if config.family_encoding == "native":
+            categories = list(mapping)
+            values = normalized.where(normalized.isin(categories), "unknown")
+            frame[FAMILY_FEATURE_COLUMN] = pd.Categorical(
+                values,
+                categories=categories,
+                ordered=False,
+            )
+        elif config.family_encoding == "ordinal":
+            frame[FAMILY_FEATURE_COLUMN] = encode_family(normalized, mapping)
+        else:
+            raise ValueError(
+                f"Unsupported family_encoding: {config.family_encoding}"
+            )
     return frame, mapping
 
 
@@ -849,6 +907,9 @@ def infer_feature_columns(frame: pd.DataFrame, *, drop_redundant: bool = True) -
     columns = []
     for column in frame.columns:
         if column in excluded:
+            continue
+        if isinstance(frame[column].dtype, pd.CategoricalDtype):
+            columns.append(column)
             continue
         values = pd.to_numeric(frame[column], errors="coerce")
         if pd.api.types.is_numeric_dtype(values) and values.notna().any():

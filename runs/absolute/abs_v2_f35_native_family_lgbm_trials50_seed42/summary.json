@@ -1,0 +1,74 @@
+{
+  "best_model": "lightgbm",
+  "n_features": 35,
+  "n_train": 633,
+  "n_test": 159,
+  "family_mapping": {
+    "unknown": 0,
+    "antiperovskite": 1,
+    "argyrodites": 2,
+    "boracites": 3,
+    "borophosphates": 4,
+    "chalcogenidotetrelates": 5,
+    "chlorides": 6,
+    "garnet": 7,
+    "glass": 8,
+    "glass_ceramic": 9,
+    "halides": 10,
+    "hexaoxometalates": 11,
+    "hybrid_halide": 12,
+    "hydrides": 13,
+    "layered": 14,
+    "lgps": 15,
+    "lisicon": 16,
+    "nasicon": 17,
+    "nitride": 18,
+    "nitrides": 19,
+    "organic_salts": 20,
+    "other": 21,
+    "oxides": 22,
+    "oxyhalides": 23,
+    "perovskites": 24,
+    "phosphates": 25,
+    "silicates": 26,
+    "sulfides": 27,
+    "thio_lisicon": 28,
+    "thio_phosphate": 29,
+    "zircon": 30
+  },
+  "results": {
+    "lightgbm": {
+      "model": "lightgbm",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 1300,
+        "learning_rate": 0.01573210583000578,
+        "num_leaves": 63,
+        "min_child_samples": 25,
+        "subsample": 0.7858750335438961,
+        "colsample_bytree": 0.9210182263746809,
+        "reg_lambda": 0.636021915586343,
+        "reg_alpha": 1.0513259352152568e-05,
+        "max_depth": 8
+      },
+      "cv_best_mae": 0.4177747662153962,
+      "cv_best_fold_maes": [
+        0.37075226104770875,
+        0.35202472844889704,
+        0.4644715277233394,
+        0.4084691534886943,
+        0.4931561603683417
+      ],
+      "train_metrics": {
+        "mae": 0.14681497212610614,
+        "rmse": 0.20360541932556683,
+        "r2": 0.9599108118709835
+      },
+      "test_metrics": {
+        "mae": 0.3706141143275878,
+        "rmse": 0.542604803240948,
+        "r2": 0.6938696479166472
+      }
+    }
+  }
+}

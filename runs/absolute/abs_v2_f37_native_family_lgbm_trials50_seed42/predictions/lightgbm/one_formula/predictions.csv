@@ -1,0 +1,2 @@
+ID,True Composition,Family,model_name,pred_log10_conductivity,pred_conductivity_S_cm-1
+pred_0001,Li7La3Zr2O12,unknown,lightgbm,-3.3216713270004967,0.00047679168507912685

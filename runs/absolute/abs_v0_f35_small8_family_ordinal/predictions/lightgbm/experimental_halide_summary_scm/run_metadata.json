@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f35_small8_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "experimental_halide_summary_scm",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v0_f35_small8_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Evaluate historical abs_v0_f35 model on experimental halide summary; reference converted from S/cm to mS/cm",
+  "rows": 121,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

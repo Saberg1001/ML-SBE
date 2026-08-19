@@ -71,6 +71,9 @@ class TrainConfig:
     feature_columns:
         Optional explicit model feature list. If None, numeric feature columns
         are inferred from the train dataframe.
+    categorical_features:
+        Feature names passed as unordered pandas categorical columns. Native
+        categorical handling is currently supported for LightGBM runs.
     target_column:
         Regression target column; default is log10_conductivity.
     verbose:
@@ -86,6 +89,10 @@ class TrainConfig:
     run_name: str | None = None
     dataset_name: str = "ionic_main_random_filter_gt1e-6_family"
     feature_columns: list[str] | None = None
+    categorical_features: list[str] | None = None
+    family_onehot_categories: list[str] | None = None
+    n_jobs: int = -1
+    lightgbm_max_cat_threshold: int = 32
     target_column: str = TARGET_COLUMN
     verbose: bool = True
 
@@ -139,18 +146,53 @@ def _feature_columns(train: pd.DataFrame, config: TrainConfig) -> list[str]:
     return infer_feature_columns(train)
 
 
-def _prepare_matrix(train: pd.DataFrame, test: pd.DataFrame, feature_columns: list[str], target_column: str):
-    X_train = train.reindex(columns=feature_columns).apply(pd.to_numeric, errors="coerce")
-    X_test = test.reindex(columns=feature_columns).apply(pd.to_numeric, errors="coerce")
-    X_train = X_train.replace([np.inf, -np.inf], np.nan)
-    X_test = X_test.replace([np.inf, -np.inf], np.nan)
-    medians = X_train.median().fillna(0.0)
-    X_train = X_train.fillna(medians)
-    X_test = X_test.fillna(medians)
+def _prepare_matrix(
+    train: pd.DataFrame,
+    test: pd.DataFrame,
+    feature_columns: list[str],
+    target_column: str,
+    categorical_features: list[str] | None = None,
+):
+    categorical = set(categorical_features or [])
+    unknown = categorical - set(feature_columns)
+    if unknown:
+        raise ValueError(f"Categorical features are not model features: {sorted(unknown)}")
+
+    X_train = train.reindex(columns=feature_columns).copy()
+    X_test = test.reindex(columns=feature_columns).copy()
+    category_levels: dict[str, list[str]] = {}
+    for column in feature_columns:
+        if column in categorical:
+            train_values = X_train[column].astype("string").fillna("unknown")
+            levels = ["unknown", *sorted(
+                value for value in train_values.unique() if value != "unknown"
+            )]
+            category_levels[column] = levels
+            X_train[column] = pd.Categorical(
+                train_values.where(train_values.isin(levels), "unknown"),
+                categories=levels,
+                ordered=False,
+            )
+            test_values = X_test[column].astype("string").fillna("unknown")
+            X_test[column] = pd.Categorical(
+                test_values.where(test_values.isin(levels), "unknown"),
+                categories=levels,
+                ordered=False,
+            )
+            continue
+        X_train[column] = pd.to_numeric(X_train[column], errors="coerce")
+        X_test[column] = pd.to_numeric(X_test[column], errors="coerce")
+
+    numeric_columns = [column for column in feature_columns if column not in categorical]
+    X_train[numeric_columns] = X_train[numeric_columns].replace([np.inf, -np.inf], np.nan)
+    X_test[numeric_columns] = X_test[numeric_columns].replace([np.inf, -np.inf], np.nan)
+    medians = X_train[numeric_columns].median().fillna(0.0)
+    X_train[numeric_columns] = X_train[numeric_columns].fillna(medians)
+    X_test[numeric_columns] = X_test[numeric_columns].fillna(medians)
     y_train = pd.to_numeric(train[target_column], errors="coerce")
     y_test = pd.to_numeric(test[target_column], errors="coerce")
     weights = pd.to_numeric(train.get("sample_weight", pd.Series(1.0, index=train.index)), errors="coerce").fillna(1.0)
-    return X_train, X_test, y_train, y_test, weights, medians
+    return X_train, X_test, y_train, y_test, weights, medians, category_levels
 
 
 def _fit_optional_weight(model, X, y, weights, use_weight: bool):
@@ -232,15 +274,20 @@ def _sample_ngboost(trial):
     }
 
 
-def _model_spec(model_name: str):
+def _model_spec(
+    model_name: str,
+    n_jobs: int = -1,
+    lightgbm_max_cat_threshold: int = 32,
+):
     if model_name == "lightgbm":
         return (
             lambda params: lgb.LGBMRegressor(
                 objective="regression",
                 verbosity=-1,
-                n_jobs=-1,
+                n_jobs=n_jobs,
                 random_state=42,
                 subsample_freq=1,
+                max_cat_threshold=lightgbm_max_cat_threshold,
                 **params,
             ),
             _sample_lightgbm,
@@ -249,7 +296,7 @@ def _model_spec(model_name: str):
         )
     if model_name == "random_forest":
         return (
-            lambda params: RandomForestRegressor(random_state=42, n_jobs=-1, **params),
+            lambda params: RandomForestRegressor(random_state=42, n_jobs=n_jobs, **params),
             _sample_random_forest,
             True,
             False,
@@ -290,7 +337,11 @@ def _optimize_model(
     weights: pd.Series,
     config: TrainConfig,
 ):
-    factory, sampler, use_weight, scale = _model_spec(model_name)
+    factory, sampler, use_weight, scale = _model_spec(
+        model_name,
+        config.n_jobs,
+        config.lightgbm_max_cat_threshold,
+    )
     kfold = KFold(n_splits=config.cv_splits, shuffle=True, random_state=config.seed)
     start = time.time()
 
@@ -694,12 +745,18 @@ def train_model(
     train, train_path = _load_frame(train_data)
     test, test_path = _load_frame(test_data)
     feature_columns = _feature_columns(train, config)
+    categorical_features = list(config.categorical_features or [])
+    if categorical_features and config.model_name != "lightgbm":
+        raise ValueError(
+            "Native categorical features are currently supported only for LightGBM"
+        )
     family_mapping = _family_mapping_from_frames(train, test)
-    X_train, X_test, y_train, y_test, weights, medians = _prepare_matrix(
+    X_train, X_test, y_train, y_test, weights, medians, category_levels = _prepare_matrix(
         train,
         test,
         feature_columns,
         config.target_column,
+        categorical_features,
     )
 
     output_dir = Path(config.output_root) / _run_name(config, len(feature_columns))
@@ -760,6 +817,9 @@ def train_model(
             "feature_cols": feature_columns,
             "feature_medians": medians,
             "family_mapping": family_mapping,
+            "categorical_features": categorical_features,
+            "category_levels": category_levels,
+            "family_onehot_categories": list(config.family_onehot_categories or []),
         }
         joblib.dump(artifact, model_dir / "model.joblib")
         result = {
@@ -800,6 +860,8 @@ def train_model(
         "train_path": str(train_path) if train_path else None,
         "test_path": str(test_path) if test_path else None,
         "family_mapping": family_mapping,
+        "categorical_features": categorical_features,
+        "category_levels": category_levels,
     }
     save_json(output_dir / "config.json", asdict(config))
     save_json(output_dir / "feature_schema.json", schema)

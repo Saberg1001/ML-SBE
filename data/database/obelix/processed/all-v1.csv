@@ -858,3 +858,4 @@ edx,Li3.6Zr0.6Al0.4Cl3.6O1.8,0.000693,RT,,unknow,halides,是,10.1038/s41467-025-
 wdm,Li3.6Zr0.5Al0.5Cl3.5O1.8,0.00036,RT,,unknow,halides,是,10.1038/s41467-025-68210-5,2026,Source data/add-data-LZACO.txt; original 0.36 mS/cm
 trv1_0149,C4N2H12ZnBr4,2.9e-4,25,,水热/溶剂热法+冷压,hybrid halide,unknow,10.1038/s41467-026-68394-4,2026,PipZnBr4；含过量ZnBr2
 trv1_0150,C4N2H12ZnBr4,2.3e-4,25,,水热/溶剂热法+冷压,hybrid halide,unknow,10.1038/s41467-026-68394-4,2026,PipZnBr4；1:1化学计量比
+a71299,Li2.5Y0.75W0.25Cl3.5Br2.5,0.00638,RT,,高能球磨法,halides,unknow,10.1002/aenm.71299,,Manual literature addition; original 6.38 mS/cm; temperature not recorded

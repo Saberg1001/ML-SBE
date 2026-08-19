@@ -15,6 +15,7 @@ output under data/modeling/absolute/ (or runs/absolute/ for training).
 from .data import CleanDataConfig, CleanDataResult, clean_raw_data, load_raw_data
 from .pipeline import PipelineConfig, PipelineResult, run_training_pipeline
 from .predict import PredictConfig, PredictionResult, label_families_by_blocks, predict_formulas
+from .clean_v2 import CleanAbsoluteV2Config, CleanAbsoluteV2Result, clean_absolute_v2_data
 from .split import SplitConfig, SplitResult, split_feature_table
 from .train import TrainConfig, TrainResult, train_model
 
@@ -33,6 +34,9 @@ __all__ = [
     "load_raw_data",
     "label_families_by_blocks",
     "predict_formulas",
+    "CleanAbsoluteV2Config",
+    "CleanAbsoluteV2Result",
+    "clean_absolute_v2_data",
     "run_training_pipeline",
     "split_feature_table",
     "train_model",

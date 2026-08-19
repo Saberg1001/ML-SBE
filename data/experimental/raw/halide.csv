@@ -22,3 +22,9 @@ Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4	1.6 x 10-3		固相
 Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4	1.5 x 10-3		固相
 Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4	1.6 x 10-3		固相
 Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4	2.0 x 10-5		固相
+
+hal_019,Li3Y0.9Al0.1Cl3.6Br2.4,0.00083,unknow,halides
+hal_020,Li3Y0.9Al0.1Cl5Br,0.00048,unknow,halides
+
+hal_021,Li2.5Y0.75W0.25Cl3.5Br2.5,0.0018,unknow,halides
+hal_022,Li2.6Y0.8W0.2Cl5.8Br0.2,0.00025,unknow,halides

@@ -1,0 +1,13 @@
+{
+  "model_name": "all",
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "optuna_seed": 42,
+  "output_root": "/home/ziyiguo/project/IonConductivity/runs/absolute",
+  "run_name": "abs_v1_latest_dedup_span05_all_models_trials50_seed42",
+  "dataset_name": "absolute_v1_latest_dedup_span05",
+  "feature_columns": null,
+  "target_column": "log10_conductivity",
+  "verbose": true
+}

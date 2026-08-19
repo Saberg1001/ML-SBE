@@ -125,8 +125,12 @@ hal_010,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,0.0014,固相,halides
 hal_011,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,0.0011,固相,halides
 hal_012,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,0.0011,固相,halides
 hal_013,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,0.0015,固相,halides
-hal_014,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,0.0016,固相,halides
+hal_014,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt% ZrCl4,0.0016,固相,halides
 hal_015,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,0.0016,固相,halides
 hal_016,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,0.0015,固相,halides
 hal_017,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,0.0016,固相,halides
 hal_018,Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4,2e-05,固相,halides
+hal_019,Li3Y0.9Al0.1Cl3.6Br2.4,0.00083,unknow,halides
+hal_020,Li3Y0.9Al0.1Cl5Br,0.00048,unknow,halides
+hal_021,Li2.5Y0.75W0.25Cl3.5Br2.5,0.0018,unknow,halides
+hal_022,Li2.6Y0.8W0.2Cl5.8Br0.2,0.00025,unknow,halides

@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v0_f35_small8_family_ordinal",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v0_f35_small8_family_ordinal",
+  "dataset_name": "experimental_halide_summary_scm_v2label113",
+  "input_path": "data/experimental/annotations/experimental-data-labeled.csv",
+  "input_sha256": "dc081f99320f460e9df636ce485b11759bd9e64d8ff9ddeb090e8cdfb2d95553",
+  "model_path": "runs/absolute/abs_v0_f35_small8_family_ordinal/lightgbm/model.joblib",
+  "model_sha256": "f3488a42acbed9655c29c69d62d11f9dbece2fc4ee9d46f5eace7a50a02fddb0",
+  "prediction_purpose": "Retrospective historical F35 comparison on the same 113 labeled experimental formulas used for the V2/F37 evaluation.",
+  "rows": 113,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

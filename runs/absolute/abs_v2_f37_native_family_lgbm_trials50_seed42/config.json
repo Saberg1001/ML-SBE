@@ -1,0 +1,19 @@
+{
+  "model_name": "lightgbm",
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "optuna_seed": 42,
+  "output_root": "/home/ziyiguo/project/IonConductivity/runs/absolute",
+  "run_name": "abs_v2_f37_native_family_lgbm_trials50_seed42",
+  "dataset_name": "absolute_v2_clean_f37_native_family",
+  "feature_columns": null,
+  "categorical_features": [
+    "family"
+  ],
+  "family_onehot_categories": null,
+  "n_jobs": -1,
+  "lightgbm_max_cat_threshold": 32,
+  "target_column": "log10_conductivity",
+  "verbose": true
+}

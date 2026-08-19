@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "rows_total": 113,
+  "rows_evaluated": 113,
+  "mae_log10": 1.1251993185559543,
+  "rmse_log10": 1.2265715501980432,
+  "r2_log10": -7.485541224079881,
+  "spearman_rank_correlation": 0.26853642409821854,
+  "kendall_rank_correlation": 0.1809267843156963,
+  "n_comparable_pairs": 6321,
+  "n_inverted_pairs": 2588,
+  "n_predicted_tie_pairs": 1,
+  "pairwise_inversion_rate": 0.40942888783420345,
+  "adjacent_trend_status": "ok",
+  "n_adjacent_comparable": 100,
+  "n_adjacent_correct": 70,
+  "n_adjacent_mismatches": 30,
+  "adjacent_trend_accuracy": 0.7
+}

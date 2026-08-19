@@ -1,0 +1,255 @@
+ID,Reduced Composition,DOI,source,previous_family,recommended_family,confidence,assignment_method,evidence
+caltech_icsd_885,Li6.7La3Zr1.7Ta0.3O12,10.2109/jcersj2.16019,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_894,Li6.5La3Zr1.5Ta0.5O12,10.2109/jcersj2.16019,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_1485,Li2TeO4,10.1016/0025-5408(94)90011-6,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_2512,Li2SO4,10.1051/epjap/2014130433,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_5667,Li10.2Si0.96Sn0.24P1.8S12,10.1021/acs.chemmater.9b00743,caltech,unknown,lgps,high,exact_formula_unique_family,lgps
+caltech_icsd_5669,Li10.35Si1.08Sn0.27P1.65S12,10.1021/acs.chemmater.9b00743,caltech,unknown,lgps,high,exact_formula_unique_family,lgps
+caltech_icsd_5926,Li1.8La1Ta1.2Ti0.8Nb1O7,10.1039/c9dt03547h,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_7931,Li1.114Ti1.9Al0.101P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_7932,Li1.222Ti1.795Al0.205P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_7933,Li1.252Ti1.718Al0.281P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_7934,Li1.312Ti1.592Al0.407P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_7935,Li1.421Ti1.579Al0.421P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_7936,Li1.414Ti1.489Al0.511P3O12,10.1016/j.solidstatesciences.2016.08.011,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_11042,Li6.2Si0.2P0.8S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11043,Li6.25Si0.25P0.75S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11044,Li6.3Si0.3P0.7S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11045,Li6.4Si0.4P0.6S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11046,Li6.5Si0.5P0.5S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11047,Li6.6Si0.6P0.4S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11048,Li6.7Si0.7P0.3S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11050,Li6.05Sn0.05P0.95S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11051,Li6.1Sn0.1P0.9S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11052,Li6.15Sn0.15P0.85S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11053,Li6.2Sn0.2P0.8S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11054,Li6.25Sn0.25P0.75S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_11055,Li6.3Sn0.3P0.7S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_12641,Li3.81Sn0.85Sb0.15S4,10.1016/j.jpowsour.2019.227338,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_12643,Li3.83Sn0.9Sb0.1S4,10.1016/j.jpowsour.2019.227338,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_12644,Li3.72Sn0.8Sb0.2S4,10.1016/j.jpowsour.2019.227338,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_13429,Li6Zn(P2O7)2,10.1021/acs.inorgchem.8b01800,caltech,unknown,phosphates,low,composition_rule,composition: phosphate
+caltech_icsd_14364,NaLiSO4,10.1016/0167-2738(90)90312-f,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_14937,Li3.8Si0.8P0.2S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_14938,Li3.5Si0.5P0.5S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,low,composition_rule,composition: Li-M-P-S
+caltech_icsd_14939,Li3.67Si0.67P0.33S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,low,composition_rule,composition: Li-M-P-S
+caltech_icsd_14940,Li3.15Si0.15P0.85S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,low,composition_rule,composition: Li-M-P-S
+caltech_icsd_14942,Li3.25Si0.25P0.75S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,low,composition_rule,composition: Li-M-P-S
+caltech_icsd_14943,Li3.33Si0.33P0.67S4,10.1021/acs.chemmater.9b00657,caltech,unknown,thio_lisicon,low,composition_rule,composition: Li-M-P-S
+caltech_icsd_14987,LiGaO2,10.1021/acs.chemmater.9b04540,caltech,unknown,oxides,high,exact_formula_unique_family,oxides
+caltech_icsd_14988,LiGaS2,10.1021/acs.chemmater.9b04540,caltech,unknown,sulfides,low,composition_rule,composition: chalcogenide
+caltech_icsd_14992,Li7La3Ce0.158Zr1.842O12,10.1021/acs.chemmater.9b03526,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_16799,Li7IN2,10.1016/0025-5408(81)90124-0,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_16800,Li5I2N,10.1016/0025-5408(81)90124-0,caltech,unknown,other,high,exact_formula_unique_family,other
+caltech_icsd_18229,Li3.01Sc1Cl6,10.1021/jacs.0c00134,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_18420,Li3CaB2O5F,10.1039/d0dt02423f,caltech,unknown,fluorooxoborate,low,composition_rule,composition: B-O-F
+caltech_icsd_18587,Li5.75La3Ce0.75Nb1.25O12,10.1039/d0dt02112a,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_18842,Li10Ge1Sb0.15P1.85S12,10.1021/acs.chemmater.9b04764,caltech,unknown,lgps,low,composition_rule,composition: Li-M-P-S LGPS-like
+caltech_icsd_19667,Li1.884H1.12Cl1O1,10.1021/acs.inorgchem.0c01631,caltech,unknown,antiperovskite,low,composition_rule,composition: Li-H-O-halide
+caltech_icsd_19945,Li0.29La0.57Ti1O3,10.1016/j.ssi.2020.115486,caltech,unknown,perovskites,high,exact_formula_unique_family,perovskites
+caltech_icsd_19965,Li6.533La2.976Zr1.5Ta0.5O11.964,10.1016/j.ssi.2019.115170,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_19966,Li6.399La2.852Zr1.5Ta0.5O11.792,10.1016/j.ssi.2019.115170,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_19992,Li6.4La3Zr2Al0.2O12,10.1016/j.ssi.2020.115317,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_22269,Li5.5P1S4.5Cl1.5,10.1002/anie.201814222,caltech,unknown,argyrodites,high,exact_formula_unique_family,argyrodites
+caltech_icsd_22436,Li6.96Si1.71Sn1.55P0.8S12,10.1016/j.ssi.2020.115458,caltech,unknown,lgps,low,composition_rule,composition: Li-M-P-S LGPS-like
+caltech_icsd_22955,Li6.8La3Zr1.8Ta0.2O12,10.2109/jcersj2.19022,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_22956,Li6.6La3Zr1.6Ta0.4O12,10.2109/jcersj2.19022,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_22957,Li6.5La3Zr1.5Ta0.5O12,10.2109/jcersj2.19022,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_22958,Li6.4La3Zr1.4Ta0.6O12,10.2109/jcersj2.19022,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_22959,Li6.2La3Zr1.2Ta0.8O12,10.2109/jcersj2.19022,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_25445,Li6.5La3Zr1.5Nb0.5O12,10.2109/jcersj2.19094,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_25446,Li6.5La3Zr1.5Ta0.5O12,10.2109/jcersj2.19094,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_29957,Li3YBr6,10.1021/acs.chemmater.0c04352,caltech,unknown,halides,high,exact_formula_unique_family,halides
+caltech_icsd_29965,Li3YCl6,10.1021/acs.chemmater.0c04352,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_30161,Li10Ge(PS6)2,10.1021/acs.chemmater.8b00266,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_30165,Li10Sn0.33Ge0.66P2S12,10.1021/acs.chemmater.8b00266,caltech,unknown,lgps,high,exact_formula_unique_family,lgps
+caltech_icsd_30169,Li10Sn0.66Ge0.33P2S12,10.1021/acs.chemmater.8b00266,caltech,unknown,lgps,high,exact_formula_unique_family,lgps
+caltech_icsd_30301,Li5.7Ca0.15P1S5Cl1,10.1021/acs.chemmater.0c03090,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_30302,Li5.55Ca0.1P1S4.75Cl1.25,10.1021/acs.chemmater.0c03090,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_30303,Li5.35Ca0.1P1S4.5Cl1.55,10.1021/acs.chemmater.0c03090,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_30304,Li5.3Ca0.1P1S4.5Cl1.5,10.1021/acs.chemmater.0c03090,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_30385,Li5VS2(O2F)4,10.1021/acsami.0c14781,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+caltech_icsd_31230,Na0.13Li0.87Cr1Mo2O8,10.1016/j.jallcom.2020.154740,caltech,unknown,molybdates,low,composition_rule,composition: molybdate
+caltech_icsd_32139,Li5GaS4,10.1039/d1dt00766a,caltech,unknown,sulfides,low,composition_rule,composition: chalcogenide
+caltech_icsd_32326,Li3.53V0.3Ge0.525P0.175O4,10.1021/acsaem.9b01152,caltech,unknown,lisicon,low,composition_rule,composition: Li-(Si/Ge)-P-O
+caltech_icsd_33191,Li29Zr9Nb3O40,10.1016/j.jallcom.2019.152517,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_33397,Li2.1Sn0.9O2.85,10.1016/j.ssi.2021.115610,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_34302,Li2.53Er0.53Zr0.47Cl6,10.1021/acsenergylett.9b02599,caltech,unknown,halides,medium,doi_series_unique_family,halides
+caltech_icsd_34311,Li1Mn0.33Co0.33Ni0.33O2,10.1021/acsaem.0c02606,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_34362,Li2ZnGeO4,10.1016/0167-2738(83)90038-3,caltech,unknown,germanates,low,composition_rule,composition: germanate
+caltech_icsd_34359,Sr0.96Li0.08Ta2O6,10.1039/c8ra02779j,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_34366,Sr0.92Li0.17Ta2O6,10.1039/c8ra02779j,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_34367,Sr0.88Li0.25Ta2O6,10.1039/c8ra02779j,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_35018,Li3PS4,10.1021/acs.chemmater.7b05108,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_35168,Li3.75Si0.75P0.25O4,10.1016/b978-0-08-021592-1.50024-6,caltech,unknown,lisicon,high,exact_formula_unique_family,lisicon
+caltech_icsd_35275,LiAlCl4,10.1149/1.2133238,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_35473,LiIO3,10.1016/s0038-1098(00)00247-7,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+caltech_icsd_36789,Li1.396Fe0.42Ge1.58P3O12,10.1016/j.jallcom.2020.156338,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_36942,Li6.7La3Zr1.56Ta0.25Al0.012Si0.15O11.91,10.1016/j.ssi.2021.115713,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_36943,Li7.15La3Zr1.71Ta0.25Al0.012Si0.15O12.44,10.1016/j.ssi.2021.115713,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_36944,Li6.79La3Zr1.61Ta0.25Al0.012Si0.15O12.12,10.1016/j.ssi.2021.115713,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_38290,Li2.15Al0.5S1.65Cl0.35,10.1021/acs.chemmater.1c02751,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_47145,Li3.4Si0.7S0.3O4,10.1039/jm9910101023,caltech,unknown,silicates,low,composition_rule,composition: silicate
+caltech_icsd_49646,Li7.2N1.6Cl2.4,10.1016/0025-5408(79)90191-0,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_50151,Li3ErCl6,10.1016/j.isci.2019.05.036,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_51332,Li2Ti0.925Fe1.075P3O12,10.1016/s0167-2738(96)00565-6,caltech,unknown,nasicon,medium,doi_series_unique_family,nasicon
+caltech_icsd_55665,LiAlSiO4,10.1016/0375-9601(75)90788-4,caltech,unknown,silicates,low,composition_rule,composition: silicate
+caltech_icsd_62137,Li6ZnO4,10.1016/0025-5408(76)90169-0,caltech,unknown,oxides,medium,doi_series_unique_family,oxides
+caltech_icsd_66007,LiPN2,10.1016/0167-2738(90)90432-q,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_69017,Li7PN4,10.1016/0167-2738(90)90432-q,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_80924,LiGa(SiO3)2,10.1016/0167-2738(87)90048-8,caltech,unknown,phenakite,medium,doi_series_unique_family,phenakite
+caltech_icsd_81047,Li0.36Nd0.54Ti1O3,10.1016/s0022-3697(96)00226-0,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_81048,Li0.39Pr0.51Ti1O2.96,10.1016/s0022-3697(96)00226-0,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_81980,LiAlSi3O8,10.4028/www.scientific.net/kem.790.9,caltech,unknown,silicates,low,composition_rule,composition: silicate
+caltech_icsd_82671,Li0.33La0.5Ti1O3,10.1016/0038-1098(93)90841-a,caltech,unknown,perovskites,medium,doi_series_unique_family,perovskites
+caltech_icsd_83501,Li0.87Hf2.032P3O12,10.1021/cm970078n,caltech,unknown,nasicon,medium,doi_series_unique_family,nasicon
+caltech_icsd_86168,Li2NiGe3O8,10.1039/a800234g,caltech,unknown,oxides,medium,doi_series_unique_family,oxides
+caltech_icsd_87413,SrLi4N2,10.1002/anie.198917021,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_92229,Li0.125La0.625Ti1O3,10.1016/s0167-2738(00)00761-x,caltech,unknown,perovskites,medium,doi_series_unique_family,perovskites
+caltech_icsd_99398,Li0.18La0.61Ti1O3,10.1039/c7ta00196g,caltech,unknown,perovskites,high,exact_formula_unique_family,perovskites
+caltech_icsd_101866,Li5.74Si0.08Sb0.92S4.99I1.01,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101867,Li6.16Si0.62Sb0.38S5.07I0.93,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101868,Li6.47Sn0.2Sb0.8S4.97I1.03,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101869,Li6.07Si0.34Sb0.66S5.01I0.99,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101870,Li6.22Ge0.43Sb0.57S5I1,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101871,Li5.96Ge0.22Sb0.78S5.01I0.99,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101872,Li6.28Si0.45Sb0.55S5.04I0.96,10.1021/jacs.9b08357,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_101899,Li3.126Al0.973S3,10.1021/acs.chemmater.9b03230,caltech,unknown,sulfides,medium,doi_series_unique_family,sulfides
+caltech_icsd_109212,Li2.33Si0.17P1,10.1021/jacs.9b05301,caltech,unknown,other,low,composition_rule,composition: taxonomy fallback
+caltech_icsd_111757,Li4Sn1Se3.1S0.9,10.1021/acs.chemmater.0c04150,caltech,unknown,chalcogenidotetrelates,medium,doi_series_unique_family,chalcogenidotetrelates
+caltech_icsd_111759,Li4Sn0.82Ge0.18Se4,10.1021/acs.chemmater.0c04150,caltech,unknown,chalcogenidotetrelates,medium,doi_series_unique_family,chalcogenidotetrelates
+caltech_icsd_112252,Li4GeO4,10.1021/acs.chemmater.0c04150,caltech,unknown,lisicon,high,exact_formula_unique_family,lisicon
+caltech_icsd_120970,Li2HBrO,10.1016/j.jssc.2020.121263,caltech,unknown,antiperovskite,high,exact_formula_unique_family,antiperovskite
+caltech_icsd_121102,Li3.55V0.464Si0.12Ge0.416O4,10.1016/j.jssc.2020.121651,caltech,unknown,silicates,low,composition_rule,composition: silicate
+caltech_icsd_121540,Li9.54Si1.74P1.44S11.4Cl0.3O0.3,10.1021/acs.chemmater.0c02351,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+caltech_icsd_121997,Li5.82P1S4.7Br1Cl1,10.1021/acs.chemmater.0c04650,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_121998,Li5.58P1S4.7Br0.3Cl1,10.1021/acs.chemmater.0c04650,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_121999,Li5.64P1S4.5Br0.5Cl1,10.1021/acs.chemmater.0c04650,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_122000,Li5.52P1S4.3Br0.7Cl1,10.1021/acs.chemmater.0c04650,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_122371,Li6PCS5N,10.1021/acs.chemmater.1c01170,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_122395,Li3InCl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,high,exact_formula_unique_family,halides
+caltech_icsd_122396,Li2.9Zr0.1In0.9Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_122397,Li2.8Zr0.18In0.78Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_122398,Li2.66Zr0.29In0.69Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_122399,Li2.6Zr0.4In0.6Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_122400,Li2.5Zr0.5In0.5Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,high,exact_formula_unique_family,halides
+caltech_icsd_130090,LiSc(PS3)2,10.1002/zaac.201800363,caltech,unknown,thio_phosphate,low,composition_rule,composition: Li-P-chalcogen
+caltech_icsd_130092,Li2.925Sc0.358P2S6,10.1002/zaac.201800363,caltech,unknown,thio_phosphate,low,composition_rule,composition: Li-P-chalcogen
+caltech_icsd_130194,Li4Sn0.772Ge0.228S4,10.1021/acs.chemmater.9b01059,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_130195,Li4Sn0.504Ge0.496S4,10.1021/acs.chemmater.9b01059,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_130196,Li4Sn0.279Ge0.721S4,10.1021/acs.chemmater.9b01059,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_130198,Li4GeS4,10.1021/acs.chemmater.9b01059,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_130546,Li4Cu8Ge3H2S12O,10.1002/anie.201901739,caltech,unknown,hydrides,low,composition_rule,composition: lithium hydride
+caltech_icsd_131108,Li10Ge(PS6)2,10.1021/acs.chemmater.9b01550,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_131109,Li6PS5Cl,10.1021/acs.chemmater.9b01550,caltech,unknown,argyrodites,high,exact_formula_unique_family,argyrodites
+caltech_icsd_133976,Li6PS5Cl,10.1021/acs.chemmater.0c02418,caltech,unknown,argyrodites,high,exact_formula_unique_family,argyrodites
+caltech_icsd_134058,Li6.77La3Zr1.95Nb0.05O12,10.1021/acs.inorgchem.0c02161,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_135340,Li6.5La3Zr1.5Ta0.5O12,10.1002/celc.201800679,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_135737,Li1.9W2O6.95,10.1021/acs.inorgchem.1c00609,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_140546,Li6.4La3Zr2Ge0.11O12,10.1016/j.ssi.2019.04.021,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_141256,Li15P4S16Cl3,10.1021/acs.inorgchem.9b01751,caltech,unknown,sulfides,high,exact_formula_unique_family,sulfides
+caltech_icsd_141482,LiIn2SbO6,10.1021/acs.chemmater.0c01491,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_141510,Li5.77P1S5Br1,10.1021/acs.chemmater.9b05331,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_141993,LiB11H6CCl6,10.1021/acs.chemmater.9b04383,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_141995,LiB11H6CBr6,10.1021/acs.chemmater.9b04383,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_142557,Li1.62La2Ti2.83Nb0.17O10,10.1021/acs.inorgchem.0c00962,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_142566,Li2La1.8Ti2.4Nb0.6O10,10.1021/acs.inorgchem.0c00962,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_143928,Li6B7S13I,10.1021/jacs.1c00941,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_143975,Li4.4B10S18Cl1.8,10.1002/anie.202013339,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_143976,Li5.6B10S18Br1.7,10.1002/anie.202013339,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_143977,Li6.8B10S18I1.6,10.1002/anie.202013339,caltech,unknown,halides,low,composition_rule,composition: chalcogen-halide
+caltech_icsd_151937,Sr0.04Li0.2Ca0.36Ta1O3,10.1016/j.solidstatesciences.2004.05.006,caltech,unknown,perovskites,medium,doi_series_unique_family,perovskites
+caltech_icsd_155126,Li3BN2,10.1016/0022-4596(87)90135-6,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_159728,Li3.05Nd3Sb0.05Te1.95O12,10.1021/cm703677q,caltech,unknown,garnet,medium,doi_series_unique_family,garnet
+caltech_icsd_159729,Li3.1Nd3Sb0.1Te1.9O12,10.1021/cm703677q,caltech,unknown,garnet,medium,doi_series_unique_family,garnet
+caltech_icsd_159730,Li3.2Nd3Sb0.2Te1.8O12,10.1021/cm703677q,caltech,unknown,garnet,medium,doi_series_unique_family,garnet
+caltech_icsd_159731,Li3.5Nd3Sb0.5Te1.5O12,10.1021/cm703677q,caltech,unknown,garnet,medium,doi_series_unique_family,garnet
+caltech_icsd_159733,Li4.5Nd3Sb1.5Te0.5O12,10.1021/cm703677q,caltech,unknown,garnet,medium,doi_series_unique_family,garnet
+caltech_icsd_163298,Li1.4Ti1.4Al0.4Ge0.2P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,high,exact_formula_unique_family,nasicon
+caltech_icsd_163299,Li1.6Ti1.2Al0.6Ge0.2P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163300,Li1.2Ti1.4Al0.2Ge0.4P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163301,Li1.4Ti1.2Al0.4Ge0.4P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163302,Li1.6Ti1Al0.6Ge0.4P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163303,Li1.2Ti1.2Al0.2Ge0.6P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163304,Li1.4Ti1Al0.4Ge0.6P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_163305,Li1.6Ti0.8Al0.6Ge0.6P3O12,10.3166/acsm.32.561-572,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_165472,Li0.5La0.5Ti1O3,10.1016/j.ssi.2009.08.002,caltech,unknown,perovskites,high,exact_formula_unique_family,perovskites
+caltech_icsd_165481,Na0.2Li0.3La0.5Ti1O3,10.1016/j.ssi.2009.08.002,caltech,unknown,perovskites,medium,doi_series_unique_family,perovskites
+caltech_icsd_171171,Li5La3Nb2O12,10.1111/j.1151-2916.2003.tb03318.x,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_183686,Li6.5La3Zr1.5Ta0.5O12,10.1149/2.024205esl,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_184087,Li0.9Ti1.8Nb0.2P3O12,10.1016/j.ssi.2012.01.035,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
+caltech_icsd_184917,LiLa(PO3)4,10.1016/j.physb.2012.03.077,caltech,unknown,phosphates,low,composition_rule,composition: phosphate
+caltech_icsd_185539,Li6.06La3Zr2Al0.2O12,10.1039/c1cp22108f,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_188649,Li1.134Mn0.47Co0.138Ni0.257O2,10.1039/c3ta11040k,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_188650,Li1.137Mn0.473Co0.137Ni0.252O2,10.1039/c3ta11040k,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_188651,Li1.149Mn0.467Co0.137Ni0.246O2,10.1039/c3ta11040k,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_188652,Li1.136Mn0.467Co0.139Ni0.258O2,10.1039/c3ta11040k,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_188887,Li10GePS12,10.1039/c4ta05231e,caltech,unknown,lgps,medium,doi_series_unique_family,lgps
+caltech_icsd_190654,LiZr2(AsO4)3,10.1134/s0020168514030091,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_190825,Sr0.049Li0.461La0.49Ti1O3,10.1016/j.ceramint.2013.05.083,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_190826,Sr0.111Li0.429La0.46Ti1O3,10.1016/j.ceramint.2013.05.083,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_190827,Sr0.23Li0.368La0.402Ti1O3,10.1016/j.ceramint.2013.05.083,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_190830,Sr0.5Li0.25La0.25Ti1O3,10.1016/j.ceramint.2013.05.083,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_191542,Li6.46La3Zr2Al0.081O12,10.1016/j.ssi.2014.01.043,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_193168,Li2B3PO8,10.1016/j.ssi.2014.10.009,caltech,unknown,borophosphates,low,composition_rule,composition: B-P-O
+caltech_icsd_193768,Li4SnSe4,10.1021/cm400541n,caltech,unknown,chalcogenidotetrelates,low,composition_rule,composition: lithium tetrel chalcogenide
+caltech_icsd_196431,CsLi5Mn(P2O7)2,10.1039/c5dt04427h,caltech,unknown,phosphates,low,composition_rule,composition: phosphate
+caltech_icsd_196465,Li4.5Cr0.5Te1O6,10.1016/j.materresbull.2015.12.011,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_196466,Li4.5Mn0.5Te1O6,10.1016/j.materresbull.2015.12.011,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_196467,Li4.5Al0.5Te1O6,10.1016/j.materresbull.2015.12.011,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_235184,Li8GeP4,10.1021/acs.chemmater.8b02759,caltech,unknown,phosphates,medium,doi_series_unique_family,phosphates
+caltech_icsd_238601,Li6.6Si1P1O8,10.1021/jacs.5b04444,caltech,unknown,lisicon,medium,doi_series_unique_family,lisicon
+caltech_icsd_238603,Li4SiO4,10.1016/0022-4596(84)90114-2,caltech,unknown,lisicon,high,exact_formula_unique_family,lisicon
+caltech_icsd_239304,Li3.2V1N0.24O3.76,10.1039/c5ta07823g,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_239762,LiY(BH4)4,10.1039/c6ta02761j,caltech,unknown,hydrides,low,composition_rule,composition: lithium hydride
+caltech_icsd_239763,LiBH4,10.1039/c6ta02761j,caltech,unknown,other,high,exact_formula_unique_family,other
+caltech_icsd_240749,Li9S3N,10.1039/c5ta05432j,caltech,unknown,nitrides,low,composition_rule,composition: nitride
+caltech_icsd_241829,Li2VS2O9,10.1021/acs.chemmater.6b02759,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_243915,Li2Mg2P3NO9,10.1021/jacs.7b02323,caltech,unknown,phosphates,low,composition_rule,composition: phosphate
+caltech_icsd_248343,Li3B(PO4)2,10.1016/j.jssc.2014.11.024,caltech,unknown,borophosphates,high,exact_formula_unique_family,borophosphates
+caltech_icsd_248836,Li4CoTeO6,10.1021/ic301125n,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_254406,LiGa2GeS6,10.1016/j.ssi.2014.04.015,caltech,unknown,sulfides,medium,doi_series_unique_family,sulfides
+caltech_icsd_255464,Li4Zn(PO4)2,10.1021/acs.chemmater.7b05139,caltech,unknown,phosphates,medium,doi_series_unique_family,phosphates
+caltech_icsd_258921,Li6.5La3Hf1.5Ta0.5O12,10.2109/jcersj2.16273,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_258922,Li6.5La3Ta0.5Sn1.5O12,10.2109/jcersj2.16273,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259001,Li5La3Ta2O12,10.1039/c6dt04021g,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_259002,Li5.3La3Gd0.15Ta1.85O12,10.1039/c6dt04021g,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259003,Li5.5La3Gd0.25Ta1.75O12,10.1039/c6dt04021g,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259004,Li5.7La3Gd0.35Ta1.65O12,10.1039/c6dt04021g,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259005,Li5.9La3Gd0.45Ta1.55O12,10.1039/c6dt04021g,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259006,Li6.1La3Gd0.55Ta1.45O12,10.1039/c6dt04021g,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_259199,Li5B3H13N,10.1021/acs.jpcc.7b00821,caltech,unknown,hydrides,low,composition_rule,composition: lithium hydride
+caltech_icsd_259200,Li6PS5Cl,10.1021/jacs.7b06327,caltech,unknown,argyrodites,high,exact_formula_unique_family,argyrodites
+caltech_icsd_261343,LiZnSO4F,10.1002/anie.201006331,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+caltech_icsd_262046,LiMn2TeO6,10.1016/j.solidstatesciences.2011.08.019,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_262922,Li14Ce5Si11N19O7F2,10.1021/ja302255d,caltech,unknown,nitridosilicates,medium,doi_series_unique_family,nitridosilicates
+caltech_icsd_264462,Li1.69Zn0.66P1S4,10.1021/acs.chemmater.7b05108,caltech,unknown,sulfides,medium,doi_series_unique_family,sulfides
+caltech_icsd_264463,Li1.19Zn0.9P1S4,10.1021/acs.chemmater.7b05108,caltech,unknown,sulfides,medium,doi_series_unique_family,sulfides
+caltech_icsd_264522,Li6.74La3Hf2Al0.08O12,10.1016/j.jpowsour.2018.04.066,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_264526,Li6B0.9P1H3.6S4.9,10.1021/acsomega.8b00377,caltech,unknown,hydrides,low,composition_rule,composition: lithium hydride; conflicting_reference_labels=argyrodites|glass
+caltech_icsd_267193,Li6PS5Br,10.1021/acs.inorgchem.8b02443,caltech,unknown,argyrodites,high,exact_formula_unique_family,argyrodites
+caltech_icsd_280927,BaLiP2O7,10.1007/s11581-014-1261-6,caltech,unknown,pyrophosphate,medium,doi_series_unique_family,pyrophosphate
+caltech_icsd_281119,LiMgSO4F,10.1021/jp304767d,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+caltech_icsd_290831,Li4GeS4,10.1016/j.ssi.2004.02.025,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
+caltech_icsd_290979,Li3SNO3,10.1016/j.solidstatesciences.2013.08.004,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_291218,LiLa9(Si3O13)2,10.1016/0167-2738(95)00240-5,caltech,unknown,silicates,medium,doi_series_unique_family,silicates
+caltech_icsd_291220,LiEu9(Si3O13)2,10.1016/0167-2738(95)00240-5,caltech,unknown,silicates,medium,doi_series_unique_family,silicates
+caltech_icsd_291520,Sr0.69Li0.16Ta0.75Ga0.25O3,10.1016/j.jssc.2015.01.007,caltech,unknown,perovskites,low,composition_rule,composition: ABO3 stoichiometry
+caltech_icsd_402062,Li2ZnI4,10.1016/j.ssi.2007.10.018,caltech,unknown,halides,low,composition_rule,composition: halide
+caltech_icsd_403573,Li10.34Si1.35P1.65S9.68O2.3,10.1021/acs.chemmater.9b00505,caltech,unknown,lisicon,low,composition_rule,composition: Li-(Si/Ge)-P-O
+caltech_icsd_403574,Li13.73Si1.35P1.65S10.46O1.54,10.1021/acs.chemmater.9b00505,caltech,unknown,lisicon,low,composition_rule,composition: Li-(Si/Ge)-P-O
+caltech_icsd_403592,Li6.22Si0.2P0.8S5I1,10.1021/acs.chemmater.9b01857,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
+caltech_icsd_414244,LiI,10.1149/1.2403248,caltech,unknown,rocksalt,high,exact_formula_unique_family,rocksalt
+caltech_icsd_415121,Li2TeSe3,10.1002/zaac.200500007,caltech,unknown,sulfides,low,composition_rule,composition: chalcogenide
+caltech_icsd_420126,Li2SiN2,10.1016/0167-2738(87)90119-6,caltech,unknown,nitride,medium,doi_series_unique_family,nitride
+caltech_icsd_421130,Li7PS6,10.1021/acsami.8b19181,caltech,unknown,thio_phosphate,low,composition_rule,composition: Li-P-chalcogen
+caltech_icsd_422259,Li7La3Zr2O12,10.1016/j.ssi.2010.12.010,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_424834,Li3SbS3,10.1016/0167-2738(83)90222-9,caltech,unknown,sulfides,high,exact_formula_unique_family,sulfides
+caltech_icsd_427619,Li1.2Ti1.8Al0.2P3O12,10.1016/j.jeurceramsoc.2014.11.023,caltech,unknown,nasicon,medium,doi_series_unique_family,nasicon
+caltech_icsd_428404,LiFePO4F,10.1016/j.electacta.2012.08.073,caltech,unknown,fluorophosphates,low,composition_rule,composition: P-O-F
+caltech_icsd_430574,Li6.16La2.94Zr2Al0.07Ga0.15O12,10.1021/acs.chemmater.6b00579,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_430575,Li6.85La2.94Zr2Al0.11Ga0.08O12,10.1021/acs.chemmater.6b00579,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_430576,Li5.55La2.88Zr2Al0.19Ga0.05O12,10.1021/acs.chemmater.6b00579,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
+caltech_icsd_431128,Li2Ti3O7,10.1016/0038-1098(79)90780-4,caltech,unknown,oxides,low,composition_rule,composition: oxide
+caltech_icsd_432169,Li4.117P1S4I1,10.1021/acs.chemmater.7b00013,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide; conflicting_reference_labels=argyrodites|thio_lisicon
+caltech_icsd_433117,Li3CoTeO6,10.1039/c7dt02663c,caltech,unknown,oxides,low,composition_rule,composition: oxide

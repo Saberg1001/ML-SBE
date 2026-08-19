@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v2_f37_native_family_lgbm_trials50_seed42",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42",
+  "dataset_name": "one_formula",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42/lightgbm/model.joblib",
+  "model_sha256": "6d9e4aeac34a2be75d36faeb707ab8d432cda4f3c4f325acf832ddd1a014c272",
+  "prediction_purpose": "Not specified",
+  "rows": 1,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

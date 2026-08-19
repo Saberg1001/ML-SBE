@@ -26,6 +26,8 @@
     "nₕₐₗᵢdₑ": "$n_{\\mathrm{halide}}$",
     "nₕₒₛₜ cₐₜᵢₒₙ": "$n_{\\mathrm{host\\ cation}}$",
     "nₐₙᵢₒₙ": "$n_{\\mathrm{anion}}$",
+    "delta_anion": "$\\delta_{\\mathrm{anion}}$",
+    "tau_cationic": "$\\tau_{\\mathrm{cationic}} = n_{\\mathrm{anion}} / n_{\\mathrm{cation}}$",
     "χ⁺(incl Li⁺)": "$\\chi^+_{(\\mathrm{incl\\ Li}^{+})}$",
     "χ⁺(excl Li⁺)": "$\\chi^+_{(\\mathrm{excl\\ Li}^{+})}$",
     "χ⁺(incl Li⁺) - χ⁻": "$\\chi^+_{(\\mathrm{incl\\ Li}^{+})} - \\chi^-$",

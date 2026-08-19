@@ -291,6 +291,9 @@ def predict_formulas(
     scaler = artifact.get("scaler")
     feature_columns = list(artifact["feature_cols"])
     medians = pd.Series(artifact.get("feature_medians", 0.0))
+    categorical_features = list(artifact.get("categorical_features", []))
+    category_levels = dict(artifact.get("category_levels", {}))
+    family_onehot_categories = list(artifact.get("family_onehot_categories", []))
 
     family_mapping = artifact.get("family_mapping")
     summary_path = model_output_dir / "summary.json"
@@ -304,6 +307,9 @@ def predict_formulas(
         FeatureConfig(
             min_conductivity=None,
             include_family="family" in feature_columns,
+            family_encoding=(
+                "native" if "family" in categorical_features else "ordinal"
+            ),
             include_interactions=True,
             include_small_features=any(
                 column in feature_columns
@@ -314,8 +320,28 @@ def predict_formulas(
         ),
     )
     features = feature_result.table
-    X = features.reindex(columns=feature_columns).apply(pd.to_numeric, errors="coerce")
-    X = X.replace([np.inf, -np.inf], np.nan).fillna(medians.reindex(feature_columns).fillna(0.0))
+    for category in family_onehot_categories:
+        features[f"family__{category}"] = (
+            features["Family"].astype(str).eq(category).astype(float)
+        )
+    X = features.reindex(columns=feature_columns).copy()
+    numeric_columns = [
+        column for column in feature_columns if column not in categorical_features
+    ]
+    for column in numeric_columns:
+        X[column] = pd.to_numeric(X[column], errors="coerce")
+    X[numeric_columns] = X[numeric_columns].replace([np.inf, -np.inf], np.nan)
+    X[numeric_columns] = X[numeric_columns].fillna(
+        medians.reindex(numeric_columns).fillna(0.0)
+    )
+    for column in categorical_features:
+        levels = list(category_levels[column])
+        values = X[column].astype("string").fillna("unknown")
+        X[column] = pd.Categorical(
+            values.where(values.isin(levels), "unknown"),
+            categories=levels,
+            ordered=False,
+        )
     predict_X = X
     if scaler is not None:
         predict_X = pd.DataFrame(scaler.transform(X), columns=feature_columns, index=X.index)
