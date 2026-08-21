@@ -22,7 +22,13 @@ import joblib
 import numpy as np
 import pandas as pd
 
-from main.features import SMALL_FEATURE_SPECS, TARGET_COLUMN, FeatureConfig, make_feature_table
+from main.features import (
+    SMALL_FEATURE_SPECS,
+    TARGET_COLUMN,
+    FeatureConfig,
+    make_feature_table,
+    normalize_family,
+)
 from main.paths import EXPERIMENTAL_ANNOTATIONS_DIR, portable_path
 
 
@@ -302,6 +308,29 @@ def predict_formulas(
         family_mapping = summary.get("family_mapping")
 
     formulas = _read_input(input_data, config)
+    if "family" in categorical_features:
+        if "Family" not in formulas.columns:
+            raise ValueError(
+                "This native-family model requires family input. Supply a "
+                "Family/family CSV column or use the CLI --family option."
+            )
+        raw_family = formulas["Family"].astype(str).str.strip()
+        missing_family = raw_family.str.lower().isin({"", "nan", "none", "<na>"})
+        if missing_family.any():
+            missing_ids = formulas.loc[missing_family, "ID"].astype(str).tolist()
+            raise ValueError(
+                "Missing family values for prediction rows: "
+                + ", ".join(missing_ids[:10])
+            )
+        normalized_family = raw_family.map(normalize_family)
+        allowed_families = set(category_levels.get("family", []))
+        unsupported = sorted(set(normalized_family) - allowed_families)
+        if unsupported:
+            raise ValueError(
+                f"Unsupported family values after normalization: {unsupported}. "
+                f"Allowed values: {sorted(allowed_families)}"
+            )
+        formulas["Family"] = normalized_family
     feature_result = make_feature_table(
         formulas,
         FeatureConfig(

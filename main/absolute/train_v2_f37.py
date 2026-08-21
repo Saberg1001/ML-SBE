@@ -31,6 +31,9 @@ def main() -> None:
     """Build F37 from the V2 clean table and train only native-family LightGBM."""
 
     source = pd.read_csv(INPUT_PATH)
+    descriptor_cache_path = (
+        RUNS_DIR / "absolute" / RUN_NAME / "data" / "all_features.csv"
+    )
     feature_config = FeatureConfig(
         min_conductivity=None,
         include_family=True,
@@ -39,6 +42,7 @@ def main() -> None:
         include_small_features=True,
         drop_redundant=True,
         output_path=None,
+        descriptor_cache_path=descriptor_cache_path,
     )
     feature_result = make_feature_table(source, feature_config)
     split_result = split_feature_table(
@@ -58,6 +62,7 @@ def main() -> None:
             run_name=RUN_NAME,
             dataset_name="absolute_v2_clean_f37_native_family",
             categorical_features=["family"],
+            n_jobs=1,
             verbose=True,
         ),
     )

@@ -741,6 +741,10 @@ class FeatureConfig:
         unordered pandas categorical feature for models such as LightGBM.
     output_path:
         Feature CSV path. Use None to skip automatic file writing.
+    descriptor_cache_path:
+        Optional prior feature table. Composition-only descriptors are reused
+        by normalized formula; targets, families, interactions, and splits are
+        always rebuilt from the current input.
     """
 
     min_conductivity: float | None = 1e-6
@@ -751,6 +755,7 @@ class FeatureConfig:
     family_mapping: dict[str, int] | None = None
     family_encoding: str = "ordinal"
     output_path: Path | None = None
+    descriptor_cache_path: Path | None = None
 
 
 @dataclass
@@ -810,28 +815,61 @@ def _apply_conductivity_policy(frame: pd.DataFrame, config: FeatureConfig) -> tu
     return frame.reset_index(drop=True), removed.reset_index(drop=True)
 
 
-def _add_composition_features(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+def _descriptor_cache(path: Path | None) -> pd.DataFrame:
+    if path is None or not Path(path).exists():
+        return pd.DataFrame()
+    cache = pd.read_csv(path)
+    required = {
+        "Reduced Composition",
+        "Z_by_element",
+        "tau_cationic",
+        *(name for name, _, _, _ in SMALL_FEATURE_SPECS),
+    }
+    missing = sorted(required - set(cache.columns))
+    if missing:
+        print(f"Descriptor cache ignored; missing columns: {missing}", flush=True)
+        return pd.DataFrame()
+    return cache.drop_duplicates("Reduced Composition", keep="last").set_index(
+        "Reduced Composition"
+    )
+
+
+def _add_composition_features(
+    frame: pd.DataFrame,
+    cache: pd.DataFrame | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame, int]:
     rows = []
     removed = []
+    cache_hits = 0
     total = len(frame)
     for index, (_, row) in enumerate(frame.iterrows(), start=1):
         try:
-            rows.append(composition_features(row["True Composition"]))
+            formula_key = str(row.get("Reduced Composition", ""))
+            if cache is not None and not cache.empty and formula_key in cache.index:
+                cached = cache.loc[formula_key]
+                rows.append(cached.loc["Z_by_element":"tau_cationic"])
+                cache_hits += 1
+            else:
+                rows.append(composition_features(row["True Composition"]))
         except Exception as exc:
             removed_row = row.to_dict()
             removed_row["removed_reason"] = f"feature_error: {exc}"
             removed.append(removed_row)
             rows.append(pd.Series(dtype=object))
         if index == 1 or index % 50 == 0 or index == total:
-            print(f"Computed composition features {index}/{total}", flush=True)
+            print(
+                f"Processed composition features {index}/{total} "
+                f"(cache hits={cache_hits})",
+                flush=True,
+            )
 
-    feature_frame = pd.DataFrame(rows)
+    feature_frame = pd.DataFrame(rows).reset_index(drop=True)
     output = pd.concat([frame.reset_index(drop=True), feature_frame], axis=1)
     error_removed = pd.DataFrame(removed)
     if not error_removed.empty:
         error_ids = set(error_removed["ID"].astype(str))
         output = output[~output["ID"].astype(str).isin(error_ids)].copy()
-    return output.reset_index(drop=True), error_removed.reset_index(drop=True)
+    return output.reset_index(drop=True), error_removed.reset_index(drop=True), cache_hits
 
 
 def _add_family_feature(frame: pd.DataFrame, config: FeatureConfig) -> tuple[pd.DataFrame, dict[str, int]]:
@@ -892,11 +930,25 @@ def _add_interactions(frame: pd.DataFrame, include: bool) -> pd.DataFrame:
     return frame
 
 
-def _add_small_features(frame: pd.DataFrame, include: bool) -> pd.DataFrame:
+def _add_small_features(
+    frame: pd.DataFrame,
+    include: bool,
+    cache: pd.DataFrame | None = None,
+) -> tuple[pd.DataFrame, int]:
     if not include:
-        return frame
-    small_rows = frame["True Composition"].apply(small_composition_features)
-    return pd.concat([frame.reset_index(drop=True), small_rows.reset_index(drop=True)], axis=1)
+        return frame, 0
+    names = [name for name, _, _, _ in SMALL_FEATURE_SPECS]
+    rows = []
+    cache_hits = 0
+    for _, row in frame.iterrows():
+        formula_key = str(row.get("Reduced Composition", ""))
+        if cache is not None and not cache.empty and formula_key in cache.index:
+            rows.append(cache.loc[formula_key, names])
+            cache_hits += 1
+        else:
+            rows.append(small_composition_features(row["True Composition"]))
+    small_rows = pd.DataFrame(rows).reset_index(drop=True)
+    return pd.concat([frame.reset_index(drop=True), small_rows], axis=1), cache_hits
 
 
 def infer_feature_columns(frame: pd.DataFrame, *, drop_redundant: bool = True) -> list[str]:
@@ -924,11 +976,16 @@ def make_feature_table(
     """Build descriptors, log10 target, family encoding, and feature columns."""
 
     config = config or FeatureConfig()
+    cache = _descriptor_cache(config.descriptor_cache_path)
     filtered, low_removed = _apply_conductivity_policy(df, config)
-    featured, feature_removed = _add_composition_features(filtered)
+    featured, feature_removed, composition_cache_hits = _add_composition_features(
+        filtered, cache
+    )
     featured, family_mapping = _add_family_feature(featured, config)
     featured = _add_interactions(featured, config.include_interactions)
-    featured = _add_small_features(featured, config.include_small_features)
+    featured, small_cache_hits = _add_small_features(
+        featured, config.include_small_features, cache
+    )
     feature_columns = infer_feature_columns(featured, drop_redundant=config.drop_redundant)
 
     removed = pd.concat([low_removed, feature_removed], ignore_index=True)
@@ -937,6 +994,12 @@ def make_feature_table(
         "input_rows": int(len(df)),
         "output_rows": int(len(featured)),
         "removed_rows": int(len(removed)),
+        "descriptor_cache": {
+            "path": str(config.descriptor_cache_path) if config.descriptor_cache_path else None,
+            "available_rows": int(len(cache)),
+            "composition_hits": int(composition_cache_hits),
+            "small_feature_hits": int(small_cache_hits),
+        },
         "feature_count": int(len(feature_columns)),
         "feature_columns": feature_columns,
         "family_mapping": family_mapping,

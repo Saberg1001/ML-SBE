@@ -17,3 +17,7 @@ tmp/
 .env
 data/modeling/
 tests/
+PPT/
+recommend/
+scripts/
+main/trend/screen_recommend_candidates.py

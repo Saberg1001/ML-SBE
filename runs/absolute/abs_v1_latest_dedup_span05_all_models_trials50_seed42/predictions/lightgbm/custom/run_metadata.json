@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v1_latest_dedup_span05_all_models_trials50_seed42",
+  "model_name": "lightgbm",
+  "model_output_dir": "runs/absolute/abs_v1_latest_dedup_span05_all_models_trials50_seed42",
+  "dataset_name": "custom",
+  "input_path": null,
+  "input_sha256": null,
+  "model_path": "runs/absolute/abs_v1_latest_dedup_span05_all_models_trials50_seed42/lightgbm/model.joblib",
+  "model_sha256": "e3f4b393a259774bf8cad10f458993858ed9123252fdecd68d02ccda80a5233c",
+  "prediction_purpose": "Not specified",
+  "rows": 1,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

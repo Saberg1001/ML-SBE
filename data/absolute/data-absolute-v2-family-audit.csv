@@ -1,4 +1,67 @@
 ID,Reduced Composition,DOI,source,previous_family,recommended_family,confidence,assignment_method,evidence
+qtx,Li2ZrCl6,10.1016/j.ensm.2024.103444,literature,unknown,halides,medium,doi_series_unique_family,halides
+nek,Li2ZrCl6,10.1016/j.est.2024.111700,literature,unknown,halides,medium,doi_series_unique_family,halides
+er0,Li3ErCl6,10.1021/acsenergylett.9b02599,literature,unknown,halides,medium,doi_series_unique_family,halides
+yz0,Li3YCl6,10.1021/acsenergylett.9b02599,literature,unknown,halides,medium,doi_series_unique_family,halides
+v05,Li3ScCl6,10.1021/jacs.0c00134,literature,unknown,halides,low,composition_rule,composition: halide
+v11,Li2.7Zr0.3In0.7Cl6,10.1016/j.cej.2022.135413,literature,unknown,halides,medium,doi_series_unique_family,halides
+v19,Li2.9Zr0.1In0.9Cl6,10.1021/acs.chemmater.1c01348,literature,unknown,halides,low,composition_rule,composition: halide
+v28,Li3In1Cl5.6F0.4,10.1016/j.jpowsour.2022.231939,literature,unknown,halides,high,exact_formula_unique_family,halides
+v33,Li3ScCl6,10.1126/sciadv.abh1896,literature,unknown,halides,medium,doi_series_unique_family,halides
+v50,Li2ZrCl6,10.1038/s41467-021-24697-2,literature,unknown,halides,low,composition_rule,composition: halide
+v52,Li3InCl6,10.1021/acsami.2c06216,literature,unknown,halides,high,exact_formula_unique_family,halides
+v55,Li3ScCl6,10.1016/j.cej.2022.140509,literature,unknown,halides,medium,doi_series_unique_family,halides
+v60,Li3ErCl6,10.1021/acsami.1c25087,literature,unknown,halides,medium,doi_series_unique_family,halides
+v61,Li3ErCl6,10.1126/sciadv.abh1896,literature,unknown,halides,medium,doi_series_unique_family,halides
+v63,Li2ZrCl6,10.1002/aenm.202003190,literature,unknown,halides,medium,doi_series_unique_family,halides
+v65,Li3YCl6,10.1126/sciadv.abh1896,literature,unknown,halides,medium,doi_series_unique_family,halides
+v78,Li3YCl6,10.1021/acs.nanolett.0c01156,literature,unknown,halides,medium,doi_series_unique_family,halides
+v80,LiAlCl4,10.1021/acsmaterialslett.1c00055,literature,unknown,halides,low,composition_rule,composition: halide
+a71299_lyc,Li3YCl6,10.1002/aenm.71299,literature,unknown,halides,medium,doi_series_unique_family,halides
+a71299_lycb,Li3Y(BrCl)3,10.1002/aenm.71299,literature,unknown,halides,high,exact_formula_unique_family,halides
+a71299_zr,Li2.8Y0.8Zr0.2Br2.8Cl3.2,10.1002/aenm.71299,literature,unknown,halides,medium,doi_series_unique_family,halides
+a71299_nb,Li2.6Y0.8Nb0.2Br2.6Cl3.4,10.1002/aenm.71299,literature,unknown,halides,medium,doi_series_unique_family,halides
+a71299_ta,Li2.6Y0.8Ta0.2Br2.6Cl3.4,10.1002/aenm.71299,literature,unknown,halides,medium,doi_series_unique_family,halides
+a71299_mo,Li2.55Y0.85Mo0.15Br2.55Cl3.45,10.1002/aenm.71299,literature,unknown,halides,medium,doi_series_unique_family,halides
+anie2595440,Li4Si(W3O10)4,10.1002/anie.2595440,literature,unknown,silicates,low,composition_rule,composition: silicate
+ensm_2025_104655_x01,Li2.9Zr0.1In0.9Cl6,10.1016/j.ensm.2025.104655,literature,unknown,halides,low,composition_rule,composition: halide
+ensm_2025_104655_x02,Li2.8Zr0.2In0.8Cl6,10.1016/j.ensm.2025.104655,literature,unknown,halides,low,composition_rule,composition: halide
+ensm_2025_104655_x04,Li2.6Zr0.4In0.6Cl6,10.1016/j.ensm.2025.104655,literature,unknown,halides,low,composition_rule,composition: halide
+ensm_2025_104655_x05,Li2.5Zr0.5In0.5Cl6,10.1016/j.ensm.2025.104655,literature,unknown,halides,high,exact_formula_unique_family,halides
+ensm_2025_104655_q03,Li2.7Zr0.3In0.7Cl6,10.1016/j.ensm.2025.104655,literature,unknown,halides,low,composition_rule,composition: halide
+aenm_202503135_x0_y0,Li3InCl6,10.1002/aenm.202503135,literature,unknown,halides,high,exact_formula_unique_family,halides
+aenm_202503135_x0_y04,Li3In1Cl5.6F0.4,10.1002/aenm.202503135,literature,unknown,halides,high,exact_formula_unique_family,halides
+aenm_202503135_x0_y06,Li3In1Cl5.4F0.6,10.1002/aenm.202503135,literature,unknown,halides,high,exact_formula_unique_family,halides
+aenm_202503135_x0_y08,Li3In1Cl5.2F0.8,10.1002/aenm.202503135,literature,unknown,halides,high,exact_formula_unique_family,halides
+aenm_202503135_x0_y10,Li3InCl5F,10.1002/aenm.202503135,literature,unknown,halides,high,exact_formula_unique_family,halides
+aenm_202503135_x01_y08,Li2.9Zr0.1In0.9Cl5.2F0.8,10.1002/aenm.202503135,literature,unknown,halides,low,composition_rule,composition: halide
+aenm_202503135_x02_y08,Li2.8Zr0.2In0.8Cl5.2F0.8,10.1002/aenm.202503135,literature,unknown,halides,low,composition_rule,composition: halide
+s10008_2026_06605_x00,Li3InCl6,10.1007/s10008-026-06605-0,literature,unknown,halides,high,exact_formula_unique_family,halides
+s10008_2026_06605_x01,Li2.9In1Cu0.1Cl6,10.1007/s10008-026-06605-0,literature,unknown,halides,low,composition_rule,composition: halide
+s10008_2026_06605_x02,Li2.8In1Cu0.2Cl6,10.1007/s10008-026-06605-0,literature,unknown,halides,low,composition_rule,composition: halide
+s10008_2026_06605_x03,Li2.7In1Cu0.3Cl6,10.1007/s10008-026-06605-0,literature,unknown,halides,low,composition_rule,composition: halide
+s10008_2026_06605_x04,Li2.6In1Cu0.4Cl6,10.1007/s10008-026-06605-0,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x00,Li2ZrCl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x02,Li1.94Hf0.02Zr0.92Ta0.02Nb0.02Mo0.02Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x05,Li1.85Hf0.05Zr0.8Ta0.05Nb0.05Mo0.05Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x07,Li1.79Hf0.07Zr0.72Ta0.07Nb0.07Mo0.07Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x10,Li1.7Hf0.1Zr0.6Ta0.1Nb0.1Mo0.1Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x12,Li1.64Hf0.12Zr0.52Ta0.12Nb0.12Mo0.12Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+smll_74786_x15,Li1.55Hf0.15Zr0.4Ta0.15Nb0.15Mo0.15Cl6,10.1002/smll.74786,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_in,Li3InCl6,10.1021/acsnano.4c02678,literature,unknown,halides,high,exact_formula_unique_family,halides
+acsnano_4c02678_zr,Li2.8Zr0.2In0.8Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_nb,Li2.6Nb0.2In0.8Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_w,Li2.4In0.8W0.2Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_ta02,Li2.6Ta0.2In0.8Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_ta01,Li2.8Ta0.1In0.9Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+acsnano_4c02678_ta03,Li2.4Ta0.3In0.7Cl6,10.1021/acsnano.4c02678,literature,unknown,halides,low,composition_rule,composition: halide
+adfm_75439_x025,Li3.05Zr0.75Cl3O1.125F0.25,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x050,Li3.1Zr0.75Cl3O1.125F0.5,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x075,Li3.15Zr0.75Cl3O1.125F0.75,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x100,Li3.25Zr0.75Cl3O1.125F1,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x125,Li3.35Zr0.75Cl3O1.125F1.25,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x150,Li3.5Zr0.75Cl3O1.125F1.5,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
+adfm_75439_x175,Li3.75Zr0.75Cl3O1.125F1.75,10.1002/adfm.75439,literature,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
 caltech_icsd_885,Li6.7La3Zr1.7Ta0.3O12,10.2109/jcersj2.16019,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
 caltech_icsd_894,Li6.5La3Zr1.5Ta0.5O12,10.2109/jcersj2.16019,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
 caltech_icsd_1485,Li2TeO4,10.1016/0025-5408(94)90011-6,caltech,unknown,oxides,low,composition_rule,composition: oxide
@@ -82,7 +145,6 @@ caltech_icsd_34366,Sr0.92Li0.17Ta2O6,10.1039/c8ra02779j,caltech,unknown,oxides,l
 caltech_icsd_34367,Sr0.88Li0.25Ta2O6,10.1039/c8ra02779j,caltech,unknown,oxides,low,composition_rule,composition: oxide
 caltech_icsd_35018,Li3PS4,10.1021/acs.chemmater.7b05108,caltech,unknown,thio_lisicon,high,exact_formula_unique_family,thio_lisicon
 caltech_icsd_35168,Li3.75Si0.75P0.25O4,10.1016/b978-0-08-021592-1.50024-6,caltech,unknown,lisicon,high,exact_formula_unique_family,lisicon
-caltech_icsd_35275,LiAlCl4,10.1149/1.2133238,caltech,unknown,halides,low,composition_rule,composition: halide
 caltech_icsd_35473,LiIO3,10.1016/s0038-1098(00)00247-7,caltech,unknown,oxyhalides,low,composition_rule,composition: oxide + halide
 caltech_icsd_36789,Li1.396Fe0.42Ge1.58P3O12,10.1016/j.jallcom.2020.156338,caltech,unknown,nasicon,low,composition_rule,composition: M-P3-O12 NASICON-like
 caltech_icsd_36942,Li6.7La3Zr1.56Ta0.25Al0.012Si0.15O11.91,10.1016/j.ssi.2021.115713,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
@@ -128,7 +190,6 @@ caltech_icsd_121999,Li5.64P1S4.5Br0.5Cl1,10.1021/acs.chemmater.0c04650,caltech,u
 caltech_icsd_122000,Li5.52P1S4.3Br0.7Cl1,10.1021/acs.chemmater.0c04650,caltech,unknown,argyrodites,low,composition_rule,composition: Li-P-chalcogen-halide
 caltech_icsd_122371,Li6PCS5N,10.1021/acs.chemmater.1c01170,caltech,unknown,nitrides,low,composition_rule,composition: nitride
 caltech_icsd_122395,Li3InCl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,high,exact_formula_unique_family,halides
-caltech_icsd_122396,Li2.9Zr0.1In0.9Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
 caltech_icsd_122397,Li2.8Zr0.18In0.78Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
 caltech_icsd_122398,Li2.66Zr0.29In0.69Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
 caltech_icsd_122399,Li2.6Zr0.4In0.6Cl6,10.1021/acs.chemmater.1c01348,caltech,unknown,halides,low,composition_rule,composition: halide
@@ -243,7 +304,7 @@ caltech_icsd_414244,LiI,10.1149/1.2403248,caltech,unknown,rocksalt,high,exact_fo
 caltech_icsd_415121,Li2TeSe3,10.1002/zaac.200500007,caltech,unknown,sulfides,low,composition_rule,composition: chalcogenide
 caltech_icsd_420126,Li2SiN2,10.1016/0167-2738(87)90119-6,caltech,unknown,nitride,medium,doi_series_unique_family,nitride
 caltech_icsd_421130,Li7PS6,10.1021/acsami.8b19181,caltech,unknown,thio_phosphate,low,composition_rule,composition: Li-P-chalcogen
-caltech_icsd_422259,Li7La3Zr2O12,10.1016/j.ssi.2010.12.010,caltech,unknown,garnet,high,exact_formula_unique_family,garnet
+caltech_icsd_422259,Li6.75La3Zr1.75O12,10.1016/j.ssi.2010.12.010,caltech,unknown,garnet,low,composition_rule,composition: Li-La-O12 garnet-like
 caltech_icsd_424834,Li3SbS3,10.1016/0167-2738(83)90222-9,caltech,unknown,sulfides,high,exact_formula_unique_family,sulfides
 caltech_icsd_427619,Li1.2Ti1.8Al0.2P3O12,10.1016/j.jeurceramsoc.2014.11.023,caltech,unknown,nasicon,medium,doi_series_unique_family,nasicon
 caltech_icsd_428404,LiFePO4F,10.1016/j.electacta.2012.08.073,caltech,unknown,fluorophosphates,low,composition_rule,composition: P-O-F

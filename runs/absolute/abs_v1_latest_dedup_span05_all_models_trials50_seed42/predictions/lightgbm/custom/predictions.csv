@@ -1,0 +1,2 @@
+ID,True Composition,Family,model_name,pred_log10_conductivity,pred_conductivity_S_cm-1
+pred_0001,Li3Y0.7In0.3Cl6,halides,lightgbm,-3.2855108537794497,0.000518190141366537

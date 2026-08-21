@@ -14,20 +14,20 @@
       "caltech_icsd_100169"
     ]
   },
-  "input_rows": 1187,
-  "eligible_rows_after_threshold_and_temperature": 887,
-  "output_rows": 792,
-  "unique_output_formulas": 792,
+  "input_rows": 1249,
+  "eligible_rows_after_threshold_and_temperature": 949,
+  "output_rows": 826,
+  "unique_output_formulas": 826,
   "invalid_or_nonpositive_rows": 0,
   "below_conductivity_threshold_rows": 300,
   "liverpool_temperature_rows_removed": 0,
   "initial_policy_rows_removed_after_overlap": 300,
-  "duplicate_formula_groups_resolved": 61,
-  "duplicate_formula_rows_removed": 95,
+  "duplicate_formula_groups_resolved": 73,
+  "duplicate_formula_rows_removed": 123,
   "normalized_family_conflict_groups": 3,
   "preferred_family_selection_groups": 3,
   "formula_family_relabel_groups": 2,
   "high_temperature_extrapolation_rows_removed": 0,
   "remaining_duplicate_formula_rows": 0,
-  "selection_policy": "one row per normalized reduced formula; highest reported conductivity within the preferred structural family when defined, otherwise highest overall; ties prefer checked v1, explicit room-temperature Liverpool, then Caltech"
+  "selection_policy": "one row per normalized reduced formula; highest reported conductivity within the preferred structural family when defined, otherwise highest overall; ties prefer checked v1, explicit literature additions, room-temperature Liverpool, then Caltech"
 }

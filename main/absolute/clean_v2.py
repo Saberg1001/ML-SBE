@@ -82,6 +82,8 @@ def _source_name(ref: object) -> str:
         return "liverpool"
     if "caltech" in text:
         return "caltech"
+    if "literature_additions" in text:
+        return "literature"
     return "v1"
 
 
@@ -103,7 +105,7 @@ def clean_absolute_v2_data(
     working["_row_order"] = np.arange(len(working))
     working["_source"] = working["Ref"].map(_source_name)
     working["_source_rank"] = working["_source"].map(
-        {"v1": 0, "liverpool": 1, "caltech": 2}
+        {"v1": 0, "literature": 1, "liverpool": 2, "caltech": 3}
     )
     working["_checked_rank"] = ~working["Checked"].astype(str).str.lower().isin(
         {"1", "true", "yes"}
@@ -320,7 +322,7 @@ def clean_absolute_v2_data(
             "one row per normalized reduced formula; highest reported "
             "conductivity within the preferred structural family when defined, "
             "otherwise highest overall; ties prefer checked v1, explicit "
-            "room-temperature Liverpool, then Caltech"
+            "literature additions, room-temperature Liverpool, then Caltech"
         ),
     }
     return CleanAbsoluteV2Result(

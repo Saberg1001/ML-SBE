@@ -125,6 +125,19 @@ runs/absolute/<run_id>/predictions/<model>/<dataset_id>/
 └── run_metadata.json
 ```
 
+使用 native-family 绝对电导率模型时必须显式提供 family。单配方示例：
+
+```bash
+python main/predict.py absolute \
+  --model-run runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42 \
+  --formula Li7La3Zr2O12 \
+  --family garnet
+```
+
+多配方可重复传入 `--formula` 和 `--family`；一个 `--family` 值也可应用于
+全部配方。批量 CSV 默认识别 `True Composition` 和 `Family` 列，也可通过
+`--formula-column`、`--family-column` 和 `--id-column` 指定列名。
+
 化学配置位于 `config/chemistry/`。历史模型集中在
 `archive/absolute_legacy/models/`，只读保留，不作为代码默认输入。
 

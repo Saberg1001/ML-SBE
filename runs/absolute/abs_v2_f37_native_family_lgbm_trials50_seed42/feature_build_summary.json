@@ -39,11 +39,18 @@
       "zircon": 30
     },
     "family_encoding": "native",
-    "output_path": null
+    "output_path": null,
+    "descriptor_cache_path": "/home/ziyiguo/project/IonConductivity/runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42/data/all_features.csv"
   },
-  "input_rows": 792,
-  "output_rows": 792,
+  "input_rows": 826,
+  "output_rows": 826,
   "removed_rows": 0,
+  "descriptor_cache": {
+    "path": "/home/ziyiguo/project/IonConductivity/runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42/data/all_features.csv",
+    "available_rows": 798,
+    "composition_hits": 793,
+    "small_feature_hits": 793
+  },
   "feature_count": 37,
   "feature_columns": [
     "χₐₗₗ",
@@ -119,7 +126,7 @@
   },
   "target_log10": {
     "min": -6.0,
-    "median": -3.3979400086720375,
+    "median": -3.360016036880496,
     "max": -1.5528419686577808
   }
 }

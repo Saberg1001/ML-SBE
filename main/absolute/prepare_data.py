@@ -35,11 +35,19 @@ DEFAULT_V2_CALTECH_INPUT = (
 DEFAULT_V2_LIVERPOOL_INPUT = (
     DATA_DIR / "database" / "liverpool" / "LiIonDatabase.csv"
 )
+DEFAULT_V2_LITERATURE_INPUT = DATA_DIR / "add-data" / "literature_additions.csv"
 DEFAULT_V2_OUTPUT = ABSOLUTE_DIR / "data-absolute-v2.csv"
 DEFAULT_V2_EXCLUDED = ABSOLUTE_DIR / "data-absolute-v2-excluded.csv"
 DEFAULT_V2_AUDIT = ABSOLUTE_DIR / "data-absolute-v2-duplicate-audit.csv"
 DEFAULT_V2_FAMILY_AUDIT = ABSOLUTE_DIR / "data-absolute-v2-family-audit.csv"
 DEFAULT_V2_FAMILY_COUNTS = ABSOLUTE_DIR / "data-absolute-v2-family-counts.csv"
+
+# The Caltech source stores the ideal ICSD structure formula.  For this
+# record, the conductivity paper reports a Li- and Zr-deficient composition,
+# which is the composition that should be supplied to the model.
+CALTECH_REDUCED_COMPOSITION_OVERRIDES = {
+    "422259": "Li6.75La3Zr1.75O12",
+}
 
 ABSOLUTE_COLUMNS = [
     "ID",
@@ -92,6 +100,7 @@ class PrepareAbsoluteV2Config:
     v1_input_path: Path = DEFAULT_OUTPUT
     caltech_input_path: Path = DEFAULT_V2_CALTECH_INPUT
     liverpool_input_path: Path = DEFAULT_V2_LIVERPOOL_INPUT
+    literature_input_path: Path = DEFAULT_V2_LITERATURE_INPUT
     output_path: Path = DEFAULT_V2_OUTPUT
     excluded_path: Path = DEFAULT_V2_EXCLUDED
     audit_path: Path = DEFAULT_V2_AUDIT
@@ -308,7 +317,7 @@ _DOI_URL_PREFIX = re.compile(
     flags=re.IGNORECASE,
 )
 _DOI_PATTERN = re.compile(r"^10\.\d{4,9}/\S+$", flags=re.IGNORECASE)
-_SOURCE_PRIORITY = {"v1": 0, "caltech": 1, "liverpool": 2}
+_SOURCE_PRIORITY = {"v1": 0, "literature": 1, "caltech": 2, "liverpool": 3}
 
 
 def _doi_tokens(value: object) -> tuple[str, ...]:
@@ -352,6 +361,53 @@ def _v1_candidates(path: Path) -> pd.DataFrame:
             input_row.get("Ionic conductivity (S cm-1)", ""),
         )
         row.update({column: input_row.get(column, "") for column in ABSOLUTE_COLUMNS})
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def _literature_candidates(path: Path) -> pd.DataFrame:
+    """Convert active curated literature additions into V2 candidates."""
+    source = pd.read_csv(path, dtype=str, keep_default_na=False)
+    if "status" in source.columns:
+        source = source[source["status"].str.strip().str.lower().eq("active")]
+
+    rows = []
+    for source_row, (_, input_row) in enumerate(source.iterrows(), start=1):
+        formula = (
+            input_row.get("True Composition", "")
+            or input_row.get("Reduced Composition", "")
+        )
+        conductivity = (
+            input_row.get("stored_conductivity_s_cm", "")
+            or input_row.get("calculated_conductivity_s_cm", "")
+            or input_row.get("source_conductivity_s_cm", "")
+        )
+        row = _candidate_row(
+            "literature",
+            source_row,
+            formula,
+            input_row.get("DOI", ""),
+            conductivity,
+        )
+        note_parts = [
+            str(input_row.get("note", "")).strip(),
+            f"addition_id={input_row.get('addition_id', '')}",
+            f"calculation_method={input_row.get('calculation_method', '')}",
+            f"target_temperature_C={input_row.get('target_temperature_c', '')}",
+            f"structure_status={input_row.get('structure_status', '')}",
+            f"source_year={input_row.get('year', '')}",
+        ]
+        row.update({
+            "ID": input_row.get("ID", "") or input_row.get("addition_id", ""),
+            "Ionic conductivity (S cm-1)": conductivity,
+            "Family": "unknown",
+            "Checked": "1",
+            "Ref": "data/add-data/literature_additions.csv",
+            "note": "; ".join(part for part in note_parts if part and not part.endswith("=")),
+            "_temperature_c": pd.to_numeric(
+                input_row.get("target_temperature_c", ""), errors="coerce"
+            ),
+        })
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -443,6 +499,14 @@ def _validate_v2_candidates(
         reduced, true_formula, formula_error = _normalized_formula(
             row.get("_source_formula", "")
         )
+        if row.get("_source_name") == "caltech":
+            corrected_formula = CALTECH_REDUCED_COMPOSITION_OVERRIDES.get(
+                str(row.get("ICSD ID", "")).strip()
+            )
+            if corrected_formula:
+                reduced, _, correction_error = _normalized_formula(corrected_formula)
+                if correction_error:
+                    formula_error = correction_error
         doi_tokens = _doi_tokens(row.get("_source_doi", ""))
         conductivity, qualifier = parse_conductivity(
             row.get("_source_conductivity", "")
@@ -749,6 +813,11 @@ def _deduplicate_v2_candidates(
     candidates["_candidate_order"] = np.arange(len(candidates))
     candidates["_duplicate_group"] = _duplicate_components(candidates)
     candidates["_source_priority"] = candidates["_source_name"].map(_SOURCE_PRIORITY)
+    candidates["_literature_conductivity_priority"] = np.where(
+        candidates["_source_name"].eq("literature"),
+        -pd.to_numeric(candidates["_conductivity_value"], errors="coerce"),
+        0.0,
+    )
     candidates["_temperature_distance"] = np.where(
         candidates["_source_name"].eq("liverpool"),
         (
@@ -763,6 +832,7 @@ def _deduplicate_v2_candidates(
             "_duplicate_group",
             "_source_priority",
             "_temperature_distance",
+            "_literature_conductivity_priority",
             "_source_row",
         ],
         kind="stable",
@@ -895,16 +965,19 @@ def _resolve_formula_span_conflicts(
 def prepare_absolute_v2_data(
     config: PrepareAbsoluteV2Config | None = None,
 ) -> PrepareAbsoluteResult:
-    """Merge three databases and deduplicate by normalized DOI plus formula."""
+    """Merge source databases and additions, then deduplicate DOI plus formula."""
     config = config or PrepareAbsoluteV2Config()
     source_frames = [
         _v1_candidates(config.v1_input_path),
+        _literature_candidates(config.literature_input_path),
         _caltech_candidates(config.caltech_input_path),
         _liverpool_candidates(config.liverpool_input_path),
     ]
     source_counts = {
         name: int(len(frame))
-        for name, frame in zip(("v1", "caltech", "liverpool"), source_frames)
+        for name, frame in zip(
+            ("v1", "literature", "caltech", "liverpool"), source_frames
+        )
     }
     candidates = pd.concat(source_frames, ignore_index=True, sort=False)
     valid, invalid = _validate_v2_candidates(candidates, config)
@@ -948,7 +1021,7 @@ def prepare_absolute_v2_data(
         "output_rows": int(len(output)),
         "output_rows_by_source": {
             source: int(output_source_counts.get(source, 0))
-            for source in ("v1", "caltech", "liverpool")
+            for source in ("v1", "literature", "caltech", "liverpool")
         },
         "excluded_rows": int(len(excluded_output)),
         "invalid_or_non_room_temperature_rows": int(len(invalid)),
@@ -971,7 +1044,7 @@ def prepare_absolute_v2_data(
             "then reduced formula span"
         ),
         "selection_priority": [
-            "DOI+formula: v1, caltech, liverpool closest to 25 C",
+            "DOI+formula: v1, literature additions, caltech, Liverpool closest to 25 C",
             "formula span: highest conductivity",
         ],
     }
