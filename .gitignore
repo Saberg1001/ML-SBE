@@ -21,3 +21,5 @@ PPT/
 recommend/
 scripts/
 main/trend/screen_recommend_candidates.py
+main/absolute/screen*
+runs/absolute/abs_v2_f37_native_family_lgbm_trials50_seed42/predictions/
