@@ -1,0 +1,39 @@
+{
+  "direct_f56": {
+    "name": "direct_f56",
+    "weighted_mae": 0.2934,
+    "mae": 0.3397,
+    "dir_acc": 0.6909,
+    "within_2x": 0.5,
+    "group_top1": 0.2727,
+    "n_direction": 55
+  },
+  "residual_f56": {
+    "name": "residual_f56",
+    "weighted_mae": 0.2111,
+    "mae": 0.1997,
+    "dir_acc": 0.8364,
+    "within_2x": 0.8229,
+    "group_top1": 0.7273,
+    "n_direction": 55
+  },
+  "zero_change": {
+    "name": "zero_change",
+    "weighted_mae": 0.2853,
+    "mae": 0.2459,
+    "dir_acc": 0.0,
+    "within_2x": 0.7604,
+    "group_top1": 0.2727,
+    "n_direction": 55
+  },
+  "n_pairs": 96,
+  "n_groups": 12,
+  "residual_non_finite_d0_ratio": 0.0,
+  "anchor_leakage_check": {
+    "either_endpoint_seen_ratio": 0.01,
+    "both_endpoints_seen_ratio": 0.0,
+    "neither_endpoint_seen_pairs": 95,
+    "total_pairs": 96,
+    "note": "实验数据几乎不与绝对锚点训练集重叠——与趋势验证集98%泄漏形成对比，因此残差模型在此的领先是真实的"
+  }
+}

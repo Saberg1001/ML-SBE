@@ -1,8 +1,9 @@
 # IonConductivity
 
 本项目基于化学式和组成描述符研究锂离子电解质电导率。目前可运行模型均为
-`log10(Ionic conductivity (S cm-1))` 绝对值回归；趋势分类、排序和
-`Δlog10` 回归尚未训练；后续趋势模型必须使用经复核的配对表和分组划分。
+`log10(Ionic conductivity (S cm-1))` 绝对值回归；趋势分类模型已保留，
+trend-v3 使用材料 A 的已知电导率和同文献可比材料对预测 `log10(σ_B)`，再派生
+绝对变化与变化比例。趋势模型必须使用经复核的配对表和 DOI/重复公式连通分组划分。
 
 ## 目录结构
 
@@ -100,6 +101,20 @@ print(result.train.output_dir)
 新训练默认写入 `runs/absolute/`。划分阶段不再额外写顶层 `features/train/test`
 副本；每个正式运行在自己的 `data/` 下保存实际入模数据。
 
+实验性 trend-v3 回归训练与成对预测：
+
+```bash
+python main/trend/train_pair_regression_v3.py
+python main/trend/predict_regression.py Li6PS5Cl Li6PS5Br 1e-3
+python main/trend/evaluate_regression_experimental.py
+```
+
+模型输入两条化学式及材料 A 的已知电导率，回归目标为 `log10(σ_B)`；随后派生
+`σ_B-σ_A`、`|σ_B-σ_A|` 和 `log10(σ_B/σ_A)`。训练对限定在同 DOI、同标准化
+family 及相同测量/制备/相态分层中，并使用 A/B 交换训练增强。新目标与精简后的
+43 特征模型在内部测试和 113 条同实验室外部数据上均未超过零变化回归基线，
+当前状态仍为 `experimental_not_for_deployment`。
+
 预测示例：
 
 ```python
@@ -140,10 +155,3 @@ python main/predict.py absolute \
 
 化学配置位于 `config/chemistry/`。历史模型集中在
 `archive/absolute_legacy/models/`，只读保留，不作为代码默认输入。
-
-## Git管理原则
-
-- 跟踪源码、配置、原始/校订数据、manifest和精选报告；
-- 不跟踪模型二进制、运行级特征缓存和自动生成训练图；
-- 不使用 `latest/current` 表示正式模型，统一使用稳定 `run_id`；
-- 数据过滤、Family词表、配对规则或划分变化时创建新版本，不覆盖旧版本。

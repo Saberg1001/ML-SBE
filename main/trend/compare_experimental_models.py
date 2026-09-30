@@ -44,7 +44,7 @@ from main.trend.predict import _parse_conductivity, _parse_formula, _prediction_
 
 
 ROOT = Path(__file__).resolve().parents[2]
-SUMMARY_PATH = ROOT / "data/experimental/experimental-halide-summary.csv"
+SUMMARY_PATH = ROOT / "data/experimental/experimental-summary.csv"
 GENERAL_RAW_PATH = ROOT / "data/experimental/raw/experimental-data.csv"
 HALIDE_RAW_PATH = ROOT / "data/experimental/raw/halide.csv"
 OUTPUT_DIR = ROOT / "tmp/exp"
@@ -194,12 +194,27 @@ def _read_raw_segments(raw_path: Path, dataset: str) -> list[dict]:
             formula = parts[1].strip()
             conductivity_text = parts[2].strip()
         elif dataset == "halide":
-            if current_segment is None or len(parts) < 2:
+            if current_segment is None:
                 continue
+            # Tab-delimited row: formula \t value [\t \t note]
+            if len(parts) >= 2:
+                formula = first
+                if "+" in formula:
+                    continue  # skip additive rows (e.g. "+5wt%ZrCl4")
+                conductivity_text = parts[1].split("#")[0].strip()
+            # Comma-delimited row: hal_NNN,formula,value,...
+            elif "," in first:
+                csv_parts = [p.strip() for p in first.split(",")]
+                if len(csv_parts) < 3:
+                    continue
+                formula = csv_parts[1]
+                conductivity_text = csv_parts[2].split("#")[0].strip()
+            else:
+                continue
+            # All non-additive halide rows get exp_NNN IDs starting at exp_126,
+            # matching the order produced by build_lab_summary.py.
+            row_id = f"exp_{126 + halide_index:03d}"
             halide_index += 1
-            row_id = f"hal_{halide_index:03d}"
-            formula = first
-            conductivity_text = parts[1].strip()
         else:
             raise ValueError(f"Unsupported dataset: {dataset}")
 

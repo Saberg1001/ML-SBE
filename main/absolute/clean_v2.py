@@ -50,6 +50,12 @@ class CleanAbsoluteV2Config:
     min_conductivity: float = 1e-6
     liverpool_temperature_min_c: float = 20.0
     liverpool_temperature_max_c: float = 30.0
+    # Sources whose ``measured_temperature_C`` note must fall inside the range
+    # above. Rows from ``temperature_required_sources`` are also dropped when
+    # the temperature is missing (Liverpool policy); other filtered sources keep
+    # rows with an unknown temperature.
+    temperature_filtered_sources: tuple[str, ...] = ("liverpool",)
+    temperature_required_sources: tuple[str, ...] = ("liverpool",)
     excluded_caltech_ids: tuple[str, ...] = (
         "caltech_icsd_65051",
         "caltech_icsd_100169",
@@ -84,7 +90,22 @@ def _source_name(ref: object) -> str:
         return "caltech"
     if "literature_additions" in text:
         return "literature"
+    # v3 add-data tables (curated literature, same trust level as additions).
+    if "sulfide" in text:
+        return "sulfide"
+    if "halide" in text:
+        return "halide"
     return "v1"
+
+
+SOURCE_RANK = {
+    "v1": 0,
+    "literature": 1,
+    "sulfide": 1,
+    "halide": 1,
+    "liverpool": 2,
+    "caltech": 3,
+}
 
 
 def _pipe(values: pd.Series) -> str:
@@ -104,9 +125,7 @@ def clean_absolute_v2_data(
     working["_qualifier"] = [qualifier for _, qualifier in parsed]
     working["_row_order"] = np.arange(len(working))
     working["_source"] = working["Ref"].map(_source_name)
-    working["_source_rank"] = working["_source"].map(
-        {"v1": 0, "literature": 1, "liverpool": 2, "caltech": 3}
-    )
+    working["_source_rank"] = working["_source"].map(SOURCE_RANK)
     working["_checked_rank"] = ~working["Checked"].astype(str).str.lower().isin(
         {"1", "true", "yes"}
     )
@@ -128,14 +147,15 @@ def clean_absolute_v2_data(
     conductivity = pd.to_numeric(working["_conductivity"], errors="coerce")
     invalid_mask = ~conductivity.gt(0)
     low_mask = conductivity.lt(config.min_conductivity) & ~invalid_mask
-    liverpool_temperature_mask = working["_source"].eq("liverpool") & (
-        working["_liverpool_temperature_c"].lt(
-            config.liverpool_temperature_min_c
-        )
-        | working["_liverpool_temperature_c"].gt(
-            config.liverpool_temperature_max_c
-        )
-        | working["_liverpool_temperature_c"].isna()
+    temperature = working["_liverpool_temperature_c"]
+    out_of_range = temperature.lt(config.liverpool_temperature_min_c) | temperature.gt(
+        config.liverpool_temperature_max_c
+    )
+    liverpool_temperature_mask = (
+        working["_source"].isin(config.temperature_filtered_sources) & out_of_range
+    ) | (
+        working["_source"].isin(config.temperature_required_sources)
+        & temperature.isna()
     )
     excluded_extrapolation_mask = (
         working["_source"].eq("caltech")
@@ -159,7 +179,7 @@ def clean_absolute_v2_data(
             "invalid or non-positive conductivity",
             f"model threshold: conductivity < {config.min_conductivity:g}",
             (
-                "Liverpool temperature outside model range "
+                "measured temperature outside model range "
                 f"[{config.liverpool_temperature_min_c:g}, "
                 f"{config.liverpool_temperature_max_c:g}] C"
             ),

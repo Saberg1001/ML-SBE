@@ -1,0 +1,24 @@
+table,group,ID,formula,note,measured_log10,flag,matched_clean_formula,DOI,lit_log10,delta_log10,n_lit,lit_spread,lit_family,lit_phase
+halide.csv,group1,group1_001,Li4ZrCl4O2,球磨,-2.8239087409443187,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group1,group1_002,Li2.25Zr0.75In0.25Cl6,球磨,-3.431798275933005,,Li2.25Zr0.75In0.25Cl6,10.1016/j.cclet.2021.12.048,-2.96657624451305,-0.4652220314199549,1,0.0,halides,球磨
+halide.csv,group1,group1_003,Li2.4Zr0.8Zn0.2Cl6,球磨,-3.5228787452803374,,Li2.4Zr0.8Zn0.2Cl6,10.1002/aenm.202405760,-3.0,-0.5228787452803374,1,0.0,halides,机械化学球磨
+halide.csv,group1,group1_004,Li2ZrCl5Br,球磨,-4.050609993355087,,Li2ZrBrCl5,10.1002/smll.202505926,-3.494850021680094,-0.5557599716749926,1,0.0,halides,机械化学球磨
+halide.csv,group1,group1_005,Li2.4Zr0.7In0.2Zn0.1Cl6,球磨,-3.5086383061657274,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group1,group1_006,Li2.9Zr0.2Y0.5In0.2Zn0.1Cl6,球磨,-3.744727494896694,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group1,group1_007,Li2.7Zr0.4Y0.3In0.2Zn0.1Cl6,球磨,-3.552841968657781,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group1,group1_008,Li2.5Y0.5Zr0.5Cl6,球磨,-3.1307682802690238,,Li2.5Y0.5Zr0.5Cl6,10.1016/j.cej.2021.130630,-2.677780705266081,-0.45298757500294284,1,0.0,halides,球磨 + 退火
+halide.csv,group2,group2_009,Li2.5Y0.5Zr0.5Cl6 + 5wt%ZrCl4,固相,-2.886056647693163,lab sample has an additive (e.g. 5wt%ZrCl4); literature row is the bare host,Li2.5Y0.5Zr0.5Cl6,10.1016/j.cej.2021.130630,-2.677780705266081,-0.20827594242708214,1,0.0,halides,球磨 + 退火
+halide.csv,group2,group2_010,Li2.5Y0.5Zr0.5Cl5.5Br0.5 + 5wt%ZrCl4,固相,-2.853871964321762,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_011,Li2.5Y0.5Zr0.5Cl5Br + 5wt%ZrCl4,固相,-2.958607314841775,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_012,Li2.5Y0.5Zr0.5Cl4.5Br1.5 + 5wt%ZrCl4,固相,-2.958607314841775,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_013,Li2.9Y0.9Zr0.1Cl4.5Br1.5 + 5wt%ZrCl4,固相,-2.8239087409443187,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_014,Li2.8Y0.8Zr0.2Cl4.5Br1.5 + 5wt%ZrCl4,固相,-2.795880017344075,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_015,Li2.7Y0.7Zr0.3Cl4.5Br1.5 + 5wt%ZrCl4,固相,-2.795880017344075,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_016,Li2.6Y0.6Zr0.4Cl4.5Br1.5 + 5wt%ZrCl4,固相,-2.8239087409443187,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_017,Li2.7Y0.7Zr0.3Cl5.5Br0.5 + 5wt%ZrCl4,固相,-2.795880017344075,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,group2_018,Li3.15Y0.75Zr0.05Zn0.2Cl6 + 5wt%ZrCl4,固相,-4.698970004336019,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,hal_019,Li3Y0.9Al0.1Cl3.6Br2.4,球磨,-3.0809219076239263,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,hal_020,Li3Y0.9Al0.1Cl5Br,球磨,-3.318758762624413,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,hal_021,Li2.5Y0.75W0.25Cl3.5Br2.5,球磨,-2.744727494896694,,Li2.5Y0.75W0.25Br2.5Cl3.5,10.1002/aenm.71299,-2.1951793212788377,-0.5495481736178562,1,0.0,halides,高能球磨法
+halide.csv,group2,hal_022,Li2.6Y0.8W0.2Cl5.8Br0.2,球磨,-3.6020599913279625,no literature entry for this formula,,,,,0,0.0,,
+halide.csv,group2,hal_023,Li2.6In0.4Zr0.5Ca0.1Cl6,球磨,-3.2291479883578558,no literature entry for this formula,,,,,0,0.0,,

@@ -1,0 +1,189 @@
+{
+  "best_model": "ngboost",
+  "n_features": 37,
+  "n_train": 660,
+  "n_test": 166,
+  "family_mapping": {
+    "unknown": 0,
+    "antiperovskite": 1,
+    "argyrodites": 2,
+    "boracites": 3,
+    "borophosphates": 4,
+    "chalcogenidotetrelates": 5,
+    "chlorides": 6,
+    "garnet": 7,
+    "glass": 8,
+    "glass_ceramic": 9,
+    "halides": 10,
+    "hexaoxometalates": 11,
+    "hybrid_halide": 12,
+    "hydrides": 13,
+    "layered": 14,
+    "lgps": 15,
+    "lisicon": 16,
+    "nasicon": 17,
+    "nitride": 18,
+    "nitrides": 19,
+    "organic_salts": 20,
+    "other": 21,
+    "oxides": 22,
+    "oxyhalides": 23,
+    "perovskites": 24,
+    "phosphates": 25,
+    "silicates": 26,
+    "sulfides": 27,
+    "thio_lisicon": 28,
+    "thio_phosphate": 29,
+    "zircon": 30
+  },
+  "results": {
+    "lightgbm": {
+      "model": "lightgbm",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 800,
+        "learning_rate": 0.015920850387394606,
+        "num_leaves": 27,
+        "min_child_samples": 8,
+        "subsample": 0.5100626599842416,
+        "colsample_bytree": 0.5351292313448185,
+        "reg_lambda": 2.1803882881712644,
+        "reg_alpha": 1.3698617419790983e-07,
+        "max_depth": 10
+      },
+      "cv_best_mae": 0.41189533850151483,
+      "cv_best_fold_maes": [
+        0.4173810330873608,
+        0.4339615161195385,
+        0.42863263480295255,
+        0.35666542811884394,
+        0.42283608037887827
+      ],
+      "train_metrics": {
+        "mae": 0.1316115860086184,
+        "rmse": 0.18901765175770988,
+        "r2": 0.9641301652257036
+      },
+      "test_metrics": {
+        "mae": 0.34723271602210487,
+        "rmse": 0.4912519852294758,
+        "r2": 0.753662750902927
+      }
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 600,
+        "max_depth": 20,
+        "min_samples_split": 3,
+        "min_samples_leaf": 1,
+        "max_features": 0.917881776165745
+      },
+      "cv_best_mae": 0.41988303629863033,
+      "cv_best_fold_maes": [
+        0.4433290640743412,
+        0.4089732726459187,
+        0.46365635544837025,
+        0.3807766697994395,
+        0.4026798195250822
+      ],
+      "train_metrics": {
+        "mae": 0.15414577878809033,
+        "rmse": 0.2233922223197933,
+        "r2": 0.9498973442940488
+      },
+      "test_metrics": {
+        "mae": 0.35845744257065754,
+        "rmse": 0.5152097483142469,
+        "r2": 0.7290497264248654
+      }
+    },
+    "decision_tree": {
+      "model": "decision_tree",
+      "status": "ok",
+      "best_params": {
+        "max_depth": 15,
+        "min_samples_split": 25,
+        "min_samples_leaf": 14,
+        "max_features": "sqrt"
+      },
+      "cv_best_mae": 0.5290384336598504,
+      "cv_best_fold_maes": [
+        0.5438121153435321,
+        0.5169717758475513,
+        0.607127126403558,
+        0.49071882388310145,
+        0.48656232682150913
+      ],
+      "train_metrics": {
+        "mae": 0.4250635993718746,
+        "rmse": 0.5902384303583385,
+        "r2": 0.6502323692521887
+      },
+      "test_metrics": {
+        "mae": 0.48814650560572986,
+        "rmse": 0.6757609455218302,
+        "r2": 0.5338693848491285
+      }
+    },
+    "mlp": {
+      "model": "mlp",
+      "status": "ok",
+      "best_params": {
+        "hidden_layer_sizes": [
+          64
+        ],
+        "activation": "tanh",
+        "alpha": 0.0003350947217628504,
+        "learning_rate_init": 0.00878928746763827,
+        "max_iter": 500
+      },
+      "cv_best_mae": 0.4909290188734149,
+      "cv_best_fold_maes": [
+        0.43662920329038973,
+        0.4519576235706766,
+        0.6107903113506653,
+        0.4321921295637429,
+        0.5230758265915998
+      ],
+      "train_metrics": {
+        "mae": 0.36601941414190525,
+        "rmse": 0.49949966974202836,
+        "r2": 0.7495073079526651
+      },
+      "test_metrics": {
+        "mae": 0.4608799258696564,
+        "rmse": 0.6450724309129812,
+        "r2": 0.5752450847427035
+      }
+    },
+    "ngboost": {
+      "model": "ngboost",
+      "status": "ok",
+      "best_params": {
+        "n_estimators": 1200,
+        "learning_rate": 0.03246185745266487,
+        "minibatch_frac": 0.5193625999805914
+      },
+      "cv_best_mae": 0.4171762174817168,
+      "cv_best_fold_maes": [
+        0.42896486283082585,
+        0.4118842322807934,
+        0.4412374157334584,
+        0.36865131669247314,
+        0.4351432598710332
+      ],
+      "train_metrics": {
+        "mae": 0.12512253576061666,
+        "rmse": 0.15286693309863655,
+        "r2": 0.9765387171978248
+      },
+      "test_metrics": {
+        "mae": 0.3429865271953526,
+        "rmse": 0.4934775196933922,
+        "r2": 0.75142571618089
+      }
+    }
+  }
+}

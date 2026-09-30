@@ -8,6 +8,7 @@
 .vscode/
 .agent
 .codex
+.claude
 
 data/obelix/raw/cifs
 archive/absolute_legacy/models/

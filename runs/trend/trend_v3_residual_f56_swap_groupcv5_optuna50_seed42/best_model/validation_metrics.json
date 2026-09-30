@@ -1,0 +1,14 @@
+{
+  "weighted_mae_delta_log10_ratio": 0.13689407328626282,
+  "mae_delta_log10_ratio": 0.1792328220660716,
+  "weighted_rmse_delta_log10_ratio": 0.18165969763985176,
+  "r2_log10_sigma_b": 0.9131009058610063,
+  "spearman_delta_log10_ratio": 0.8793783370378546,
+  "direction_accuracy_at_0.1_log10": 0.8048780487804879,
+  "within_two_fold_ratio": 0.823170731707317,
+  "increase_precision_at_0.1_log10": 0.7837837837837838,
+  "increase_recall_at_0.1_log10": 0.9354838709677419,
+  "group_top1_accuracy": 0.6,
+  "median_absolute_error_delta_log10_ratio": 0.12606581864998728,
+  "p90_absolute_error_delta_log10_ratio": 0.40201708871295205
+}

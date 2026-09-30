@@ -76,6 +76,15 @@ class TrainConfig:
         categorical handling is currently supported for LightGBM runs.
     target_column:
         Regression target column; default is log10_conductivity.
+    n_bootstrap:
+        Number of bootstrap refits used to estimate the predictive std for
+        models without a native predictive distribution (LightGBM, RF, DT,
+        MLP). 0 disables it. The reported ``y_sigma`` combines the ensemble
+        spread (epistemic) with the out-of-fold residual std of the best
+        parameters (aleatoric floor). NGBoost always reports its Normal
+        ``scale`` instead and ignores this setting.
+    bootstrap_seed:
+        Base seed for bootstrap row resampling and per-replica model seeds.
     verbose:
         If True, print Optuna progress with elapsed time and ETA.
     """
@@ -94,6 +103,8 @@ class TrainConfig:
     n_jobs: int = -1
     lightgbm_max_cat_threshold: int = 32
     target_column: str = TARGET_COLUMN
+    n_bootstrap: int = 0
+    bootstrap_seed: int = 42
     verbose: bool = True
 
 
@@ -403,19 +414,163 @@ def _fit_final(factory, params, use_weight, scale, X_train, y_train, weights, X_
         fit_X_train, fit_X_test, scaler = _scale_fit(X_train, X_test)
     model = factory(params)
     _fit_optional_weight(model, fit_X_train, y_train, weights, use_weight)
-    return model, scaler, model.predict(fit_X_train), model.predict(fit_X_test)
+    return model, scaler, fit_X_train, fit_X_test, model.predict(fit_X_train), model.predict(fit_X_test)
 
 
-def _save_predictions(path: Path, ids, y_true, y_pred) -> None:
+# --- Predictive uncertainty -------------------------------------------------
+#
+# Two sources, mirrored in predict.py::_predict_log10_sigma:
+#   * NGBoost exposes a per-row Normal via ``pred_dist``; ``scale`` is sigma.
+#   * Point models (LightGBM & co.) have no variance output. We fit a bootstrap
+#     ensemble with the tuned params and take the spread across replicas as the
+#     epistemic part, then add the out-of-fold residual std of the same params
+#     as an aleatoric floor: sigma^2 = var_ensemble + oof_resid_std^2.
+
+Z95 = 1.959963984540054
+Z68 = 1.0
+
+
+def _dist_sigma(model, X) -> np.ndarray | None:
+    pred_dist = getattr(model, "pred_dist", None)
+    if pred_dist is None:
+        return None
+    dist = pred_dist(X)
+    params = getattr(dist, "params", None)
+    if isinstance(params, dict) and "scale" in params:
+        return np.asarray(params["scale"], dtype=float)
+    scale = getattr(dist, "scale", None)
+    return None if scale is None else np.asarray(scale, dtype=float)
+
+
+def _seeded(model, seed: int):
+    if "random_state" in model.get_params():
+        model.set_params(random_state=seed)
+    return model
+
+
+def _fit_bootstrap_ensemble(
+    factory, params, use_weight, X_train, y_train, weights, n_bootstrap: int, seed: int, verbose: bool
+) -> list:
+    """Refit ``n_bootstrap`` replicas on row-resampled (already scaled) data."""
+    ensemble = []
+    n_rows = len(X_train)
+    start = time.time()
+    for replica in range(n_bootstrap):
+        rng = np.random.default_rng(seed + replica)
+        index = rng.integers(0, n_rows, n_rows)
+        model = _seeded(factory(params), seed + replica)
+        _fit_optional_weight(model, X_train.iloc[index], y_train.iloc[index], weights.iloc[index], use_weight)
+        ensemble.append(model)
+        if verbose and (replica + 1) % 5 == 0:
+            elapsed = time.time() - start
+            eta = (n_bootstrap - replica - 1) * elapsed / (replica + 1)
+            print(f"  bootstrap {replica + 1}/{n_bootstrap}; elapsed={elapsed:.0f}s; ETA={eta:.0f}s", flush=True)
+    return ensemble
+
+
+def ensemble_sigma(ensemble: list, X, aleatoric_sigma: float = 0.0) -> tuple[np.ndarray, np.ndarray]:
+    """Return (total sigma, epistemic sigma) from a bootstrap ensemble."""
+    stack = np.stack([np.asarray(member.predict(X), dtype=float) for member in ensemble])
+    epistemic = stack.std(axis=0, ddof=1) if len(ensemble) > 1 else np.zeros(stack.shape[1])
+    total = np.sqrt(epistemic**2 + float(aleatoric_sigma) ** 2)
+    return total, epistemic
+
+
+def _oof_residual_std(factory, params, use_weight, scale, X_train, y_train, weights, config: TrainConfig) -> float:
+    """Out-of-fold residual std of the tuned params (aleatoric floor)."""
+    kfold = KFold(n_splits=config.cv_splits, shuffle=True, random_state=config.seed)
+    residuals = np.empty(len(X_train))
+    for train_idx, valid_idx in kfold.split(X_train):
+        fold_X_train = X_train.iloc[train_idx]
+        fold_X_valid = X_train.iloc[valid_idx]
+        if scale:
+            fold_X_train, fold_X_valid, _ = _scale_fit(fold_X_train, fold_X_valid)
+        model = factory(params)
+        _fit_optional_weight(model, fold_X_train, y_train.iloc[train_idx], weights.iloc[train_idx], use_weight)
+        residuals[valid_idx] = y_train.iloc[valid_idx].to_numpy() - model.predict(fold_X_valid)
+    return float(np.std(residuals, ddof=1))
+
+
+def uncertainty_metrics(y_true, y_pred, sigma) -> dict[str, float]:
+    """Calibration summary of a Gaussian predictive distribution in log10 space."""
+    y_true = np.asarray(y_true, dtype=float)
+    residual = y_true - np.asarray(y_pred, dtype=float)
+    sigma = np.asarray(sigma, dtype=float)
+    safe_sigma = np.where(sigma > 0, sigma, np.nan)
+    z = residual / safe_sigma
+    abs_residual = np.abs(residual)
+    nll = 0.5 * np.log(2 * np.pi * safe_sigma**2) + 0.5 * z**2
+    rank_corr = pd.Series(abs_residual).corr(pd.Series(sigma), method="spearman") if len(sigma) > 2 else np.nan
+    return {
+        "mean_sigma": float(np.nanmean(sigma)),
+        "median_sigma": float(np.nanmedian(sigma)),
+        "coverage68": float(np.mean(abs_residual <= Z68 * sigma)),
+        "coverage95": float(np.mean(abs_residual <= Z95 * sigma)),
+        "z_mean": float(np.nanmean(z)),
+        "z_std": float(np.nanstd(z, ddof=0)),
+        "nll": float(np.nanmean(nll)),
+        "spearman_abs_residual_sigma": float(rank_corr),
+    }
+
+
+def _predict_with_uncertainty(
+    model_name: str,
+    model,
+    factory,
+    params,
+    use_weight,
+    scale,
+    fit_X_train,
+    fit_X_test,
+    X_train,
+    y_train,
+    weights,
+    config: TrainConfig,
+):
+    """Return (sigma dict, ensemble, aleatoric_sigma, source) for train/test."""
+    dist_test = _dist_sigma(model, fit_X_test)
+    if dist_test is not None:
+        return (
+            {"train": (_dist_sigma(model, fit_X_train), None), "test": (dist_test, None)},
+            [],
+            None,
+            "pred_dist",
+        )
+    if config.n_bootstrap <= 0:
+        return {}, [], None, None
+    if config.verbose:
+        print(f"{model_name}: out-of-fold residual std with best params...", flush=True)
+    aleatoric = _oof_residual_std(factory, params, use_weight, scale, X_train, y_train, weights, config)
+    if config.verbose:
+        print(f"{model_name}: aleatoric floor={aleatoric:.3f}; fitting {config.n_bootstrap} bootstrap replicas...", flush=True)
+    ensemble = _fit_bootstrap_ensemble(
+        factory, params, use_weight, fit_X_train, y_train, weights, config.n_bootstrap, config.bootstrap_seed, config.verbose
+    )
+    return (
+        {"train": ensemble_sigma(ensemble, fit_X_train, aleatoric), "test": ensemble_sigma(ensemble, fit_X_test, aleatoric)},
+        ensemble,
+        aleatoric,
+        "bootstrap+oof",
+    )
+
+
+def _save_predictions(path: Path, ids, y_true, y_pred, sigma=None, sigma_epistemic=None) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(
+    frame = pd.DataFrame(
         {
             "ID": ids.to_numpy() if hasattr(ids, "to_numpy") else ids,
             "y_true": np.asarray(y_true),
             "y_pred": np.asarray(y_pred),
             "residual": np.asarray(y_true) - np.asarray(y_pred),
         }
-    ).to_csv(path, index=False)
+    )
+    if sigma is not None:
+        frame["y_sigma"] = np.asarray(sigma, dtype=float)
+        frame["y_lower95"] = frame["y_pred"] - Z95 * frame["y_sigma"]
+        frame["y_upper95"] = frame["y_pred"] + Z95 * frame["y_sigma"]
+    if sigma_epistemic is not None:
+        frame["y_sigma_epistemic"] = np.asarray(sigma_epistemic, dtype=float)
+    frame.to_csv(path, index=False)
 
 
 def _save_feature_importance(model, feature_columns: list[str], path: Path) -> None:
@@ -500,6 +655,43 @@ def _plot_model_diagnostics(model_dir: Path, figures_dir: Path) -> None:
         axis.grid(axis="x", alpha=0.2)
         fig.savefig(figures_dir / f"{model_dir.name}_feature_importance.png", dpi=300)
         plt.close(fig)
+
+    if "y_sigma" in test_predictions.columns:
+        _plot_uncertainty(model_dir.name, train_predictions, test_predictions, figures_dir)
+
+
+def _plot_uncertainty(model_name: str, train_predictions, test_predictions, figures_dir: Path) -> None:
+    """Calibration curve (nominal vs empirical coverage) and sigma vs |residual|."""
+    import matplotlib.pyplot as plt
+    from scipy.stats import norm
+
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5), constrained_layout=True)
+    nominal = np.linspace(0.05, 0.99, 40)
+    for label, frame, color in (
+        ("Train", train_predictions, "#1f77b4"),
+        ("Test", test_predictions, "#d62728"),
+    ):
+        abs_z = (frame["residual"].abs() / frame["y_sigma"].replace(0, np.nan)).dropna().to_numpy()
+        empirical = [float(np.mean(abs_z <= norm.ppf(0.5 + level / 2))) for level in nominal]
+        axes[0].plot(nominal, empirical, marker="o", markersize=3, label=label, color=color)
+        axes[1].scatter(frame["y_sigma"], frame["residual"].abs(), alpha=0.6, s=20, label=label, color=color)
+    axes[0].plot([0, 1], [0, 1], "k--", linewidth=1)
+    axes[0].set_xlabel("Nominal coverage")
+    axes[0].set_ylabel("Empirical coverage")
+    axes[0].set_title("Interval calibration")
+    axes[0].legend()
+    axes[0].grid(alpha=0.2)
+    limit = float(max(test_predictions["y_sigma"].max(), test_predictions["residual"].abs().max()))
+    axes[1].plot([0, limit], [0, limit], "k--", linewidth=1, label="|residual| = sigma")
+    axes[1].plot([0, limit], [0, Z95 * limit], "k:", linewidth=1, label="|residual| = 1.96 sigma")
+    axes[1].set_xlabel("Predicted sigma (log10)")
+    axes[1].set_ylabel("|Residual| (log10)")
+    axes[1].set_title("Sigma vs absolute residual")
+    axes[1].legend()
+    axes[1].grid(alpha=0.2)
+    fig.suptitle(f"{model_name} predictive uncertainty")
+    fig.savefig(figures_dir / f"{model_name}_uncertainty.png", dpi=300)
+    plt.close(fig)
 
 
 def _display_model_name(model_name: str) -> str:
@@ -682,6 +874,14 @@ def generate_training_figures(output_dir: str | Path) -> Path:
     best_model_name = str(successful.sort_values("test_mae").iloc[0]["model"])
     all_model_names = [str(name) for name in successful["model"]]
     _plot_model_diagnostics(output_dir / best_model_name, figures_dir)
+    # Uncertainty figures for every model that reports sigma, not only the best.
+    for model_name in all_model_names:
+        if model_name == best_model_name:
+            continue
+        test_predictions = pd.read_csv(output_dir / model_name / "test_predictions.csv")
+        if "y_sigma" in test_predictions.columns:
+            train_predictions = pd.read_csv(output_dir / model_name / "train_predictions.csv")
+            _plot_uncertainty(model_name, train_predictions, test_predictions, figures_dir)
 
     metric_frame = _saved_prediction_metrics(output_dir, all_model_names)
     _plot_train_test_parity(output_dir, figures_dir, all_model_names)
@@ -782,7 +982,7 @@ def train_model(
             continue
 
         best_params = _best_sampled_params(study, sampler)
-        model, scaler, train_pred, test_pred = _fit_final(
+        model, scaler, fit_X_train, fit_X_test, train_pred, test_pred = _fit_final(
             factory,
             best_params,
             use_weight,
@@ -792,12 +992,22 @@ def train_model(
             weights,
             X_test,
         )
+        sigmas, ensemble, aleatoric_sigma, sigma_source = _predict_with_uncertainty(
+            model_name, model, factory, best_params, use_weight, scale,
+            fit_X_train, fit_X_test, X_train, y_train, weights, config,
+        )
+        train_sigma, train_sigma_epi = sigmas.get("train", (None, None))
+        test_sigma, test_sigma_epi = sigmas.get("test", (None, None))
         model_dir = output_dir / model_name
         model_dir.mkdir(parents=True, exist_ok=True)
         train_metrics = metrics(y_train, train_pred)
         test_metrics = metrics(y_test, test_pred)
-        _save_predictions(model_dir / "train_predictions.csv", train.get("ID", train.index), y_train, train_pred)
-        _save_predictions(model_dir / "test_predictions.csv", test.get("ID", test.index), y_test, test_pred)
+        _save_predictions(
+            model_dir / "train_predictions.csv", train.get("ID", train.index), y_train, train_pred, train_sigma, train_sigma_epi
+        )
+        _save_predictions(
+            model_dir / "test_predictions.csv", test.get("ID", test.index), y_test, test_pred, test_sigma, test_sigma_epi
+        )
         _save_feature_importance(model, feature_columns, model_dir / "feature_importance.csv")
         pd.DataFrame(
             [
@@ -820,6 +1030,11 @@ def train_model(
             "categorical_features": categorical_features,
             "category_levels": category_levels,
             "family_onehot_categories": list(config.family_onehot_categories or []),
+            # Uncertainty: bootstrap replicas + aleatoric floor for point models;
+            # empty for NGBoost, whose pred_dist carries sigma on its own.
+            "ensemble": ensemble,
+            "aleatoric_sigma": aleatoric_sigma,
+            "sigma_source": sigma_source,
         }
         joblib.dump(artifact, model_dir / "model.joblib")
         result = {
@@ -830,20 +1045,35 @@ def train_model(
             "cv_best_fold_maes": study.best_trial.user_attrs.get("fold_maes", []),
             "train_metrics": train_metrics,
             "test_metrics": test_metrics,
+            "sigma_source": sigma_source,
+            "aleatoric_sigma": aleatoric_sigma,
+            "n_bootstrap": len(ensemble),
         }
+        if test_sigma is not None:
+            result["train_uncertainty"] = uncertainty_metrics(y_train, train_pred, train_sigma)
+            result["test_uncertainty"] = uncertainty_metrics(y_test, test_pred, test_sigma)
         save_json(model_dir / "final_results.json", result)
         results[model_name] = result
-        rows.append(
-            {
-                "model": model_name,
-                "status": "ok",
-                "cv_mae": result["cv_best_mae"],
-                "train_mae": train_metrics["mae"],
-                "test_mae": test_metrics["mae"],
-                "test_rmse": test_metrics["rmse"],
-                "test_r2": test_metrics["r2"],
-            }
-        )
+        row = {
+            "model": model_name,
+            "status": "ok",
+            "cv_mae": result["cv_best_mae"],
+            "train_mae": train_metrics["mae"],
+            "test_mae": test_metrics["mae"],
+            "test_rmse": test_metrics["rmse"],
+            "test_r2": test_metrics["r2"],
+        }
+        if test_sigma is not None:
+            row.update(
+                {
+                    "sigma_source": sigma_source,
+                    "test_mean_sigma": result["test_uncertainty"]["mean_sigma"],
+                    "test_coverage95": result["test_uncertainty"]["coverage95"],
+                    "test_z_std": result["test_uncertainty"]["z_std"],
+                    "test_nll": result["test_uncertainty"]["nll"],
+                }
+            )
+        rows.append(row)
 
     comparison = pd.DataFrame(rows)
     comparison.to_csv(output_dir / "model_comparison.csv", index=False)

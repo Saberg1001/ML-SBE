@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sulfide Cleaning Table</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --ink: #16181d;
+    --ink-soft: #5b616e;
+    --line: #dfe3e9;
+    --line-soft: #eceff3;
+    --accent: #2f5fd0;
+    --accent-soft: #e7edfb;
+    --warn: #b4531a;
+    --warn-soft: #fdf0e4;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", "Noto Sans SC", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101216;
+      --panel: #171a20;
+      --ink: #e7eaf0;
+      --ink-soft: #9aa3b2;
+      --line: #2a2f39;
+      --line-soft: #22262e;
+      --accent: #7ba0f5;
+      --accent-soft: #1d2740;
+      --warn: #e0a06a;
+      --warn-soft: #2e2419;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101216;
+    --panel: #171a20;
+    --ink: #e7eaf0;
+    --ink-soft: #9aa3b2;
+    --line: #2a2f39;
+    --line-soft: #22262e;
+    --accent: #7ba0f5;
+    --accent-soft: #1d2740;
+    --warn: #e0a06a;
+    --warn-soft: #2e2419;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  header {
+    padding: 20px 16px 14px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  h1 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+  .sub { color: var(--ink-soft); font-size: 12px; }
+  .sub b { color: var(--ink); font-weight: 600; }
+
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  input[type="search"], select, button {
+    font: inherit;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 6px 9px;
+  }
+  input[type="search"] { flex: 1 1 220px; min-width: 160px; }
+  button { cursor: pointer; }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+  .count { margin-left: auto; color: var(--ink-soft); font-family: var(--mono); font-size: 12px; }
+  .count b { color: var(--ink); }
+
+  .cols {
+    display: none;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 10px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  .cols.open { display: flex; }
+  .cols label { display: inline-flex; align-items: center; gap: 5px; color: var(--ink-soft); font-size: 12px; }
+  .cols label.on { color: var(--ink); }
+
+  .wrap { overflow: auto; padding: 14px 16px 60px; }
+  table { border-collapse: collapse; background: var(--panel); width: 100%; }
+  th, td {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 6px 9px;
+    text-align: left;
+    vertical-align: top;
+  }
+  thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  tbody tr:hover { background: var(--accent-soft); }
+  td.num { font-family: var(--mono); white-space: nowrap; }
+  td.id { font-family: var(--mono); color: var(--ink-soft); white-space: nowrap; }
+  .warn { color: var(--warn); }
+
+  .flag {
+    display: inline-block;
+    margin: 1px 3px 1px 0;
+    padding: 1px 6px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-family: var(--mono);
+    background: var(--line-soft);
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+  .flag.hot { background: var(--warn-soft); color: var(--warn); }
+  .flag.info { background: var(--accent-soft); color: var(--accent); }
+  .empty { color: var(--ink-soft); }
+</style>
+</head>
+<body>
+<header>
+  <h1>硫化物电解质数据清洗表</h1>
+  <div class="sub">
+    源文件 <b>data/add-data/sulfide.csv</b> → 输出 <b>data/add-data/sulfide-clean.csv</b>；
+    不删减任何行，全部差异记录在 <b>row_flags</b> 列，供后续并入训练集时筛选。
+  </div>
+</header>
+
+<div class="bar">
+  <input type="search" id="q" placeholder="搜索材料名 / DOI / 备注 / 标记…" autocomplete="off">
+  <select id="block"><option value="">全部 block</option></select>
+  <select id="flag"><option value="">全部标记</option></select>
+  <button id="toggle" aria-expanded="false">列显示</button>
+  <span class="count"><b id="shown">0</b> / <span id="total">0</span> 行</span>
+</div>
+<div class="cols" id="cols"></div>
+
+<div class="wrap">
+  <table>
+    <thead><tr id="head"></tr></thead>
+    <tbody id="body"></tbody>
+  </table>
+</div>
+
+<script>const ROWS = [];</script>
+<script>
+const COLS = [
+  ["row_id", "ID"], ["block_id", "Block"], ["material_name_raw", "材料名(原始)"],
+  ["formula", "化学式"], ["alias", "别名"], ["conductivity_s_cm", "σ (S/cm)"],
+  ["temperature_c", "温度(°C)"], ["activation_energy_ev", "Ea (eV)"],
+  ["electron_conductivity_raw", "电子电导"], ["year", "年份"], ["doi", "DOI"],
+  ["dopant_x", "x"], ["dopant_type", "掺杂类型"], ["synthesis_raw", "制备"],
+  ["pressing_raw", "成片"], ["milling_raw", "球磨"], ["anneal_raw", "退火/后处理"],
+  ["li2s_source", "Li2S来源"], ["article", "文章"], ["sample_code", "样品代号"],
+  ["sn_content", "Sn含量"], ["note_raw", "备注"], ["block_comment", "块注释"],
+  ["row_flags", "row_flags"],
+];
+const HIDDEN_BY_DEFAULT = new Set(["alias", "article", "sample_code", "block_comment", "li2s_source"]);
+
+// Flag categories: hot = needs a decision before training, info = provenance only.
+const FLAG_LABEL = {
+  missing_value: "无电导率值",
+  approximate: "估读值",
+  read_from_figure: "图读",
+  converted_from_intercept: "截距R换算",
+  converted_from_mS: "mS→S",
+  unit_assumed_from_header: "单位按表头",
+  value_taken_from_parenthetical: "取括号内值",
+  conductivity_out_of_range: "电导率越界",
+  missing_temperature: "无温度",
+  temperature_unparsed: "温度未解析",
+  temperature_unstated: "温度未标注",
+  celsius_assumed_from_bare_number: "裸数字按°C",
+  room_temperature_assumed_25C: "室温=25°C",
+  explicit_celsius: "显式°C",
+  converted_from_kelvin: "K→°C",
+  source_self_conflicting: "原文自相矛盾",
+  ea_missing: "无活化能",
+  formula_not_plain: "非单一化学式",
+  doi_not_parsed: "DOI未解析",
+  doi_missing_in_source: "原文无DOI",
+  year_unparsed: "年份未解析",
+};
+const FLAG_CLASS = {
+  missing_value: "hot", conductivity_out_of_range: "hot", temperature_unparsed: "hot",
+  source_self_conflicting: "hot", doi_not_parsed: "hot", year_unparsed: "hot",
+  formula_not_plain: "info", approximate: "info", read_from_figure: "info",
+  converted_from_intercept: "info", converted_from_mS: "info",
+  unit_assumed_from_header: "info", value_taken_from_parenthetical: "info",
+  celsius_assumed_from_bare_number: "info", room_temperature_assumed_25C: "info",
+  converted_from_kelvin: "info",
+};
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+const state = {
+  q: "", block: "", flag: "",
+  hidden: new Set(HIDDEN_BY_DEFAULT),
+};
+try {
+  const saved = JSON.parse(localStorage.getItem("sulfide-table-state") || "null");
+  if (saved) {
+    state.q = saved.q || "";
+    state.block = saved.block || "";
+    state.flag = saved.flag || "";
+    state.hidden = new Set(saved.hidden || [...HIDDEN_BY_DEFAULT]);
+  }
+} catch (e) { /* private mode or blocked storage: fall back to defaults */ }
+
+function persist() {
+  try {
+    localStorage.setItem("sulfide-table-state", JSON.stringify({
+      q: state.q, block: state.block, flag: state.flag, hidden: [...state.hidden],
+    }));
+  } catch (e) { /* ignore */ }
+}
+
+// ---- filter option lists
+const blocks = [...new Set(ROWS.map((r) => r.block_id))];
+for (const b of blocks) {
+  $("block").insertAdjacentHTML("beforeend", `<option value="${esc(b)}">${esc(b)}</option>`);
+}
+const flagCounts = {};
+for (const r of ROWS) for (const f of r.row_flags) flagCounts[f] = (flagCounts[f] || 0) + 1;
+for (const f of Object.keys(flagCounts).sort((a, b) => flagCounts[b] - flagCounts[a])) {
+  $("flag").insertAdjacentHTML("beforeend",
+    `<option value="${esc(f)}">${esc(FLAG_LABEL[f] || f)} (${flagCounts[f]})</option>`);
+}
+
+// ---- column visibility toggles
+$("cols").innerHTML = COLS.map(([key, label]) => {
+  const on = !state.hidden.has(key);
+  return `<label class="${on ? "on" : ""}"><input type="checkbox" value="${esc(key)}"${on ? " checked" : ""}>${esc(label)}</label>`;
+}).join("");
+
+function visibleCols() { return COLS.filter(([k]) => !state.hidden.has(k)); }
+
+function render() {
+  const cols = visibleCols();
+  $("head").innerHTML = cols.map(([, label]) => `<th>${esc(label)}</th>`).join("");
+
+  const q = state.q.trim().toLowerCase();
+  const rows = ROWS.filter((r) => {
+    if (state.block && r.block_id !== state.block) return false;
+    if (state.flag && !r.row_flags.includes(state.flag)) return false;
+    if (!q) return true;
+    return Object.values(r).some((v) => String(v).toLowerCase().includes(q));
+  });
+
+  $("body").innerHTML = rows.map((r) => "<tr>" + cols.map(([key]) => {
+    if (key === "row_flags") {
+      return "<td>" + r.row_flags.map((f) =>
+        `<span class="flag ${FLAG_CLASS[f] || ""}" title="${esc(f)}">${esc(FLAG_LABEL[f] || f)}</span>`
+      ).join("") + "</td>";
+    }
+    if (key === "conductivity_s_cm") {
+      const v = r[key];
+      return `<td class="num${v ? "" : " warn"}">${v ? esc(v) : "—"}</td>`;
+    }
+    if (key === "row_id" || key === "block_id") return `<td class="id">${esc(r[key])}</td>`;
+    if (key === "temperature_c" || key === "activation_energy_ev" || key === "dopant_x" || key === "year") {
+      return `<td class="num">${r[key] === "" ? '<span class="empty">—</span>' : esc(r[key])}</td>`;
+    }
+    return `<td>${r[key] ? esc(r[key]) : '<span class="empty">—</span>'}</td>`;
+  }).join("") + "</tr>").join("");
+
+  $("shown").textContent = rows.length;
+}
+
+$("total").textContent = ROWS.length;
+$("q").value = state.q;
+$("block").value = state.block;
+$("flag").value = state.flag;
+
+$("q").addEventListener("input", (e) => { state.q = e.target.value; persist(); render(); });
+$("block").addEventListener("change", (e) => { state.block = e.target.value; persist(); render(); });
+$("flag").addEventListener("change", (e) => { state.flag = e.target.value; persist(); render(); });
+$("toggle").addEventListener("click", () => {
+  const open = $("cols").classList.toggle("open");
+  $("toggle").setAttribute("aria-expanded", String(open));
+});
+$("cols").addEventListener("change", (e) => {
+  if (!e.target.matches("input[type=checkbox]")) return;
+  const key = e.target.value;
+  e.target.checked ? state.hidden.delete(key) : state.hidden.add(key);
+  e.target.closest("label").classList.toggle("on", e.target.checked);
+  persist();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

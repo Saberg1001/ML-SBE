@@ -1,0 +1,17 @@
+{
+  "training_run": "abs_v2_f37_ordinal_family_all_models_trials50_seed42",
+  "model_name": "ngboost",
+  "model_output_dir": "runs/absolute/abs_v2_f37_ordinal_family_all_models_trials50_seed42",
+  "dataset_name": "lab-halide-ballmill",
+  "input_path": "data/experimental/lab-halide-ballmill.csv",
+  "input_sha256": "f889cf67708f5139f91a9f63f9509cc1f9a255f59d0c81cc0b7df2f3c1191932",
+  "model_path": "runs/absolute/abs_v2_f37_ordinal_family_all_models_trials50_seed42/ngboost/model.joblib",
+  "model_sha256": "9ff9d0a6e5c6b745028a2c05a1e843436854b43ddf355a5f956ee3a02220c5c8",
+  "prediction_purpose": "Not specified",
+  "rows": 13,
+  "files": {
+    "predictions": "predictions.csv",
+    "features": "features.csv",
+    "evaluation": "evaluation.json"
+  }
+}

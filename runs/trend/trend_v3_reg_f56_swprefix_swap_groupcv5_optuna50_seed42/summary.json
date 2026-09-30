@@ -1,0 +1,19 @@
+{
+  "best_model_by_cv": "lightgbm",
+  "selection_rule": "lowest DOI-grouped CV weighted MAE",
+  "held_out_validation_not_used_for_selection": true,
+  "comparison": [
+    {
+      "model": "lightgbm",
+      "status": "ok",
+      "tuning_weighted_mae": 0.33644085737903795,
+      "validation_weighted_mae": 0.21027484567761615,
+      "validation_weighted_rmse": 0.30132119885473313,
+      "validation_weighted_r2": 0.4586189153012207,
+      "validation_r2": 0.40044298144733226,
+      "validation_sign_accuracy": 0.7073170731707317,
+      "best_trial": 43,
+      "elapsed_minutes": 2.958408854083488
+    }
+  ]
+}

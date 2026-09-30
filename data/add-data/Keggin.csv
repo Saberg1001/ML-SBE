@@ -1,0 +1,6 @@
+ID,Reduced Composition,Z,True Composition,Ionic conductivity (S cm-1),IC (Total),IC (Bulk),Space group,Space group #,a,b,c,alpha,beta,gamma,Family,DOI,Checked,Ref,Cif ID,Cif ref_1,Cif ref_2,note,close match,close match DOI,ICSD ID,Laskowski ID,Liion ID
+,Li3PW12O40,,Li3PW12O40,8.9E-4,8.9E-4,8.9E-4,Pn-3m,224,,,,90,90,90,Cubic (Keggin),10.1002/anie.202317949,Yes,Angew. Chem. Int. Ed. 2024 63 e202317949,,,,,"POM-Keggin SSE; Ea=0.23eV; cold-pressed pellet EIS; AIMD pred 1.13mS/cm@300K; air stable; Li metal compatible; $5.68/kg recycled; e-conductivity 4.3E-9 S/cm",H3PW12O40,,,,
+,Li3PMo12O40,,Li3PMo12O40,9.2E-4,9.2E-4,9.2E-4,Pn-3m,224,,,,90,90,90,Cubic (Keggin),10.1002/anie.202317949,Yes,Angew. Chem. Int. Ed. 2024 63 e202317949,,,,,"POM-Keggin SSC; Ea=0.23eV; isomorphous substitution W->Mo; e-conductivity 5.1E-8 S/cm; used as SSC in Li-air battery; 650 cycles O2 / 460 cycles air 20%RH",Li3PW12O40,10.1002/anie.202317949,,,
+,Li3PW12O40+Li3PMo12O40 (1:1),,Li3PW12O40+Li3PMo12O40 (1:1 mixture),9.0E-4,9.0E-4,9.0E-4,Pn-3m,224,,,,90,90,90,Cubic (Keggin),10.1002/anie.202317949,Yes,Angew. Chem. Int. Ed. 2024 63 e202317949,,,,,"SSE/SSC interface mixture; Ea=0.23eV; AIMD confirmed low barrier cross-interface Li+ transport; 7Li NMR ~50% Li+ belongs to Li3PMo12O40",Li3PW12O40,10.1002/anie.202317949,,,
+
+

@@ -1,0 +1,13 @@
+{
+  "train_path": "data/trend/data-trend-v3-pairs-feature-train.csv",
+  "validation_path": "data/trend/data-trend-v3-pairs-feature-validation.csv",
+  "output_root": "runs/trend",
+  "run_name": "trend_v3_reg_f56_swprefix_swap_groupcv5_optuna50_seed42",
+  "models": [
+    "lightgbm"
+  ],
+  "n_trials": 50,
+  "cv_splits": 5,
+  "seed": 42,
+  "swap_augmentation": true
+}

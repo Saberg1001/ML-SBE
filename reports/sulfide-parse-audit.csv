@@ -1,0 +1,255 @@
+row_id,block_id,material,cond_cell_raw,parsed_cond,temp_cell_raw,parsed_temp,ea_cell_raw,flags
+sul_0001,B01,Li₁₀GeP₂S₁₂（LGPS）,0.012,0.012,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0002,B01,Li₁₀SiP₂S₁₂（LSiPS-20）,0.0023,0.0023,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0003,B01,Li₉.₅₄Si₁.₇₄P₁.₄₄S₁₁.₇Cl₀.₃,0.025,0.025,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0004,B01,Li₁₀.₃₅Ge₁.₃₅P₁.₆₅S₁₂,0.0142,0.0142,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0005,B01,Li₁₀.₅Ge₁.₅P₁.₅S₁₂,0.0188,0.0188,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0006,B01,Li₅.₅PS₄.₅Cl₁.₅,0.008,0.008,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0007,B01,Li₅.₄₈Ag₀.₀₂PS₄.₅Cl₁.₅,0.0085,0.0085,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0008,B01,Li₅.₄₅Ag₀.₀₅PS₄.₅Cl₁.₅,0.0091,0.0091,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0009,B01,Li₅.₄Ag₀.₁₀PS₄.₅Cl₁.₅,0.0064,0.0064,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0010,B01,Li₆PS₅Br（LPSBr）,0.00085,0.00085,30 °C,30,,unit_assumed_from_header;explicit_celsius
+sul_0011,B01,Li₆P₀.₈₅Si₀.₀₅Ge₀.₀₅Sn₀.₀₅S₄.₅BrCl₀.₅（HE-LPSBrCl）,0.00796,0.00796,30 °C,30,,unit_assumed_from_header;explicit_celsius
+sul_0012,B01,Li₆.₆P₀.₄Ge₀.₆S₅I,0.0054,0.0054,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0013,B01,Li₆.₆Sb₀.₄Si₀.₆S₅I,0.0148,0.0148,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0014,B01,Li₄.₄Al₀.₄Ge₀.₆S₄,4.3e-05,4.3e-05,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0015,B01,Li₄.₃AlS₃.₃Cl₀.₇,1e-06,1e-06,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0016,B01,Li₆.₅Sb₀.₅Ge₀.₅S₅I,0.0161,0.0161,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0017,B01,70Li₂S–30P₂S₅玻璃,9.2e-05,9.2e-05,室温,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0018,B01,75Li₂S–25P₂S₅玻璃,0.0005,0.0005,室温,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0019,B01,70Li₂S–30P₂S₅玻璃–陶瓷,0.0021,0.0021,室温,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0020,B01,Li₇.₁P₂S₈.₁I₀.₉,0.00627,0.00627,图中未标注；正文按室温性能讨论,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0021,B01,Li₇.₂P₂S₈.₂I₀.₈,0.00608,0.00608,图中未标注,,,unit_assumed_from_header;temperature_unstated
+sul_0022,B01,Li₇.₃P₂S₈.₃I₀.₇,0.00473,0.00473,图中未标注,,,unit_assumed_from_header;temperature_unstated
+sul_0023,B01,Li₇.₄P₂S₈.₄I₀.₆,0.00248,0.00248,图中未标注,,,unit_assumed_from_header;temperature_unstated
+sul_0024,B01,Li₆PS₅Cl,1.4e-05,1.4e-05,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C;doi_missing_in_source
+sul_0025,B01,Li₅.₅PS₄.₅Cl₁.₅,0.00498,0.00498,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0026,B01,Li₇P₂S₈I₀.₇₅Br₀.₂₅（金属氧化物掺杂）,0.0073,0.0073,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0027,B01,Li₁₀.₃Ge₁.₆P₁.₄S₁₁.₇Cl₀.₃,0.0124,0.0124,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0028,B01,Li₄.₀₂₅Sn₀.₉₇₅Bi₀.₀₂₅S₄,0.000135,0.000135,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0029,B01,Li₉.₉₈Ge₀.₉₉Sn₀.₀₁P₂S₁₁.₉₈F₀.₀₂,0.00628,0.00628,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0030,B01,Li₆PS₅Cl/EMG柔性复合固态电解质片,0.00188,0.00188,60 °C,60,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0031,B01,Li₃.₀₄P₀.₉₆Ge₀.₀₄S₃.₉₂O₀.₀₈,0.00354,0.00354,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0032,B01,Li₅.₅₄P₀.₉₈Bi₀.₀₂S₄.₄₇O₀.₀₃Cl₁.₅,0.00222,0.00222,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0033,B01,Li₉.₅₄[Si₀.₆Ge₀.₄]₁.₇₄P₁.₄₄S₁₁.₁Br₀.₃O₀.₆,0.032,0.032,室温,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0034,B01,Li₆.₇Si₀.₇Sb₀.₃S₅I,0.0148,0.0148,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0035,B01,Li₆.₇₅Sb₀.₂₅Si₀.₇₅S₅I,0.0131,0.0131,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0036,B01,Li₅.₃₅PS₄.₃₅(BH₄)₁.₁₅Cl₀.₅,0.0261,0.0261,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0037,B01,Li₆PS₄.₆I₁.₄（玻璃陶瓷）,0.00204,0.00204,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0038,B01,Li₅.₅PS₄.₅Cl₀.₈Br₀.₇,0.0227,0.0227,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0039,B01,Li₆.₀₄P₀.₉₈Bi₀.₀₂S₄.₉₇O₀.₀₃Cl,0.0034,0.0034,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0040,B01,Li₅.₅P₀.₉₆Sb₀.₀₄S₄.₄₀O₀.₁₀Cl₁.₅,0.0072,0.0072,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0041,B01,Li₆.₁₂P₀.₉₂In₀.₀₈S₄.₈₈O₀.₁₂Cl,0.00267,0.00267,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0042,B01,Li₆.₃P₀.₉Mg₀.₁S₅Cl₀.₈F₀.₂,0.0017,0.0017,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0043,B01,Li7P3S11,0.017,0.017,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0044,B01,Li6.6P0.4Ge0.6S5I,0.018,0.018,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0045,B01,Li5.3PS4.3ClBr0.7,0.024,0.024,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0046,B01,Li6.8Si0.8As0.2S5I,0.0104,0.0104,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0047,B01,Li6.6Si0.6Sb0.4S5I,0.0148,0.0148,室温（25 °C）,25,,unit_assumed_from_header;explicit_celsius
+sul_0048,B01,Li6.6Si0.6Sb0.4S5I,0.024,0.024,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0049,B01,Li6PO5Cl,1e-09,1e-09,245,245,,unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0050,B01,Li6PO5Br,1e-09,1e-09,245,245,,unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0051,B01,Li6SiO4Cl2,6.2e-06,6.2e-06,575 K,301.85,,unit_assumed_from_header;converted_from_kelvin
+sul_0052,B01,Li7Ge3PS12,0.00011,0.00011,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0053,B01,Li6.96Sn1.55Si1.71P0.8S12,0.0013,0.0013,373 K,99.85,,unit_assumed_from_header;converted_from_kelvin
+sul_0054,B01,Li4.1Al0.1Si0.9S4,0.000254,0.000254,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0055,B01,Li6.15Al0.15Si1.35S5.4O0.6,0.00124,0.00124,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0056,B01,Li6.25PTe0.125S5.125Cl0.75,0.0045,0.0045,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0057,B01,Li5.7PS4.7Cl1.3,0.0064,0.0064,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0058,B01,Li5.5PS4.5Br1.5,0.0044,0.0044,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0059,B01,Li5.4PS4.4Cl1.6,0.00618,0.00618,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0060,B01,Li5.35Ca0.1PS4.5Cl1.55,0.0102,0.0102,室温（原文未注明具体温度）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0061,B01,Li6POS4(SH),0.082,0.082,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0062,B01,Li6.25PS5.25(BH4)0.75,0.177,0.177,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0063,B01,Li5.91PS4.91(BH4)1.09,0.0048,0.0048,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0064,B01,Li₃.₂₅Ge₀.₂₅P₀.₇₅S₄,0.0022,0.0022,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0065,B01,Li₁₀SnP₂S₁₂,0.004,0.004,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0066,B01,Li₁₀Sn₀.₉₅P₂S₁₁.₄O₀.₅,0.0039,0.0039,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0067,B01,Li₇Zn₀.₅SiS₆,1.02e-07,1.02e-07,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0068,B01,Li₇Zn₀.₅SiS₆,0.000434,0.000434,230 °C（503 K）,230,,unit_assumed_from_header;explicit_celsius
+sul_0069,B01,Li₆PS₅F₀.₂₅I₀.₇₅,0.00035,0.00035,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0070,B01,Li₆P₀.₉₂₅Sb₀.₀₇₅S₅Cl,0.0036,0.0036,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0071,B01,Li₆.₀₅P₀.₉₅Sn₀.₀₅S₅Cl₀.₈I₀.₂,0.0039,0.0039,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0072,B01,Li₅.₆Cu₀.₂PS₄.₈Br₁.₂,0.00365,0.00365,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0073,B01,Li₁₀.₁P₂.₉₅Sb₀.₀₅S₁₂I,0.0059,0.0059,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0074,B01,Li₄PS₄I,0.00012,0.00012,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0075,B01,Li₆PS₅Cl,0.00034,0.00034,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0076,B01,Li₅.₅PS₄.₅ClBr₀.₅,0.007,0.007,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0077,B01,Li₁₀SnP₁.₈Sb₀.₂S₁₂,0.00243,0.00243,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0078,B01,Li7P2S8Br,0.00044,0.00044,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0079,B01,Li7P2S8Br,0.0012,0.0012,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0080,B01,Li7P2S8Br,0.0011,0.0011,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0081,B01,Li7P2S8Br,4e-05,4e-05,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0082,B01,Li7P2S8Br,2e-05,2e-05,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0083,B01,Li7P2S8I,0.00528,0.00528,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0084,B01,Li7P2S8Br0.75I0.25,0.00421,0.00421,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0085,B01,Li7P2S8Br0.50I0.50,0.00579,0.00579,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0086,B01,Li7P2S8Br0.25I0.75 (LPSBrI),0.00616,0.00616,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0087,B01,Li7P2S8Br0.25Cl0.75,0.000172,0.000172,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0088,B01,Li7P2S8Cl0.25Br0.75,0.00173,0.00173,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0089,B01,Li7P2S8I0.25Cl0.75,0.0005,0.0005,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0090,B01,Li7P2S8Cl0.25I0.75,0.00314,0.00314,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0091,B01,Li7.05Sn0.05P1.95S8Br0.25I0.75 (LPSBrI-Sn0.05),0.00778,0.00778,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0092,B01,Li7.1Sn0.1P1.9S8Br0.25I0.75 (LPSBrI-Sn0.1),0.00744,0.00744,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0093,B01,Li7.2Sn0.2P1.8S8Br0.25I0.75 (LPSBrI-Sn0.2),0.00722,0.00722,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0094,B01,LPSBrI-Sn0.05a(Li含量不变),0.00493,0.00493,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0095,B01,LPSBrI-Sn0.1a(Li含量不变),0.00498,0.00498,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0096,B01,LPSBrI-Sn0.2a(Li含量不变),0.00345,0.00345,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0097,B01,Li7.05Si0.05P1.95S8Br0.25I0.75,0.00714,0.00714,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0098,B01,Li7.05Sb0.05P1.95S8Br0.25I0.75,0.00601,0.00601,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0099,B01,Li7.05Bi0.05P1.95S8Br0.25I0.75,0.00683,0.00683,25℃(RT),25,,unit_assumed_from_header;explicit_celsius
+sul_0100,B01,Li3.06P0.98Zn0.02S3.98O0.02,0.00112,0.00112,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0101,B01,Li3P0.98Sb0.02S3.95O0.05,0.00108,0.00108,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0102,B01,Li2.5Zn0.25PS4,0.00057,0.00057,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0103,B01,Li3.8Sb0.2Sn0.8S4,0.00035,0.00035,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0104,B01,Li6.96Sn1.55Si1.71P0.8S12,8e-05,8e-05,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0105,B01,Li6.7P0.3Si0.7S5I,0.002,0.002,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0106,B01,Li6.3P0.7Sn0.3S4.4O0.6I,0.0002,0.0002,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0107,B01,Li6.55P0.45Si0.55S5I,0.0011,0.0011,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0108,B01,Li7P2.9S10.85Mo0.01,0.0048,0.0048,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0109,B01,Li7Sb0.05P2.95S10.5I0.5,0.00255,0.00255,RT,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0110,B01,70Li2S·29P2S5·1SeS2,0.00528,0.00528,RT,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0111,B02,Li₆PS₅Cl,4.5,0.0045,室温,25,0.37,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0112,B02,Li₆.₂₅PS₅.₂₅Cl₀.₇₅,3.1,0.0031,室温,25,0.40,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0113,B02,Li₆.₅PS₅.₅Cl₀.₅,2.2,0.0022,室温,25,0.43,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0114,B02,Li₆.₇₅PS₅.₇₅Cl₀.₂₅,1.3,0.0013,室温,25,0.46,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0115,B02,Li₆PS₅Br,2.1,0.0021,室温,25,0.31,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0116,B02,Li₆.₂₅PS₅.₂₅Br₀.₇₅,2.6,0.0026,室温,25,0.35,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0117,B02,Li₆.₅PS₅.₅Br₀.₅,2.5,0.0025,室温,25,0.41,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0118,B02,Li₆.₇₅PS₅.₇₅Br₀.₂₅,1.4,0.0014,室温,25,0.44,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0119,B02,Li₆PS₅I,0.0033,3.3e-06,室温,25,0.38,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0120,B02,Li₆.₂PS₅.₂I₀.₈,0.020,2e-05,室温,25,0.39,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0121,B02,Li₆.₄PS₅.₄I₀.₆,0.13,0.00013,室温,25,0.40,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0122,B04,Li₃PS₄,0.27×10⁻³,0.00027,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0123,B04,Li₃.02P₀.98Zn₀.02S₃.96F₀.04,0.85×10⁻³,0.00085,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0124,B04,Li₃.04P₀.96Zn₀.04S₃.92F₀.08,1.23×10⁻³,0.00123,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0125,B04,Li₃.06P₀.94Zn₀.06S₃.88F₀.12,0.89×10⁻³,0.00089,室温,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0126,B04,Li₃.04P₀.96Zn₀.04S₃.92F₀.08电解质膜,0.44×10⁻³,0.00044,室温,25,,formula_not_plain;unit_assumed_from_header;room_temperature_assumed_25C
+sul_0127,B05,Li₃PS₄,2.7×10⁻⁴,0.00027,25,25,,unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0128,B05,Li₃.₀₄P₀.₉₈Bi₀.₀₂S₃.₉₇O₀.₀₃,约4.6×10⁻⁴,0.00046,25,25,,approximate;unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0129,B05,Li₃.₀₈P₀.₉₆Bi₀.₀₄S₃.₉₄O₀.₀₆,约6.6×10⁻⁴,0.00066,25,25,,approximate;unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0130,B05,Li₃.₁₂P₀.₉₄Bi₀.₀₆S₃.₉₁O₀.₀₉,2.8×10⁻³,0.0028,25,25,,unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0131,B05,Li₃.₁₆P₀.₉₂Bi₀.₀₈S₃.₈₈O₀.₁₂,约1.4×10⁻³,0.0014,25,25,,approximate;unit_assumed_from_header;celsius_assumed_from_bare_number
+sul_0132,B06,Li₃PS₄,2.4×10⁻⁴,0.00024,,,0.34,unit_assumed_from_header;missing_temperature
+sul_0133,B06,Li₃.₀₄P₀.₉₈Bi₀.₀₂S₃.₉₇I₀.₀₆,2.4×10⁻³,0.0024,,,0.26,unit_assumed_from_header;missing_temperature
+sul_0134,B06,Li₃.₀₈P₀.₉₆Bi₀.₀₄S₃.₉₄I₀.₁₂,2.8×10⁻³,0.0028,,,0.27,unit_assumed_from_header;missing_temperature
+sul_0135,B06,Li₃.₁₂P₀.₉₄Bi₀.₀₆S₃.₉₁I₀.₁₈,4.05×10⁻³,0.00405,,,0.25,unit_assumed_from_header;missing_temperature
+sul_0136,B06,Li₃.₁₆P₀.₉₂Bi₀.₀₈S₃.₈₈I₀.₂₄,2.7×10⁻³,0.0027,,,0.28,unit_assumed_from_header;missing_temperature
+sul_0137,B07,Li₃PS₄（Li₃PS₄·xLiI，x = 0）,0.5 × 10⁻⁴ S·cm⁻¹,5e-05,RT,25,,room_temperature_assumed_25C
+sul_0138,B07,Li₃PS₄·0.5LiI,1.5 × 10⁻⁴ S·cm⁻¹,0.00015,RT,25,,formula_not_plain;room_temperature_assumed_25C
+sul_0139,B07,Li₄PS₄I（Li₃PS₄·LiI，x = 1）,1.3 × 10⁻⁴ S·cm⁻¹,0.00013,RT,25,,room_temperature_assumed_25C
+sul_0140,B07,Li₃PS₄·1.5LiI,0.9 × 10⁻⁴ S·cm⁻¹,9e-05,RT,25,,formula_not_plain;room_temperature_assumed_25C
+sul_0141,B07,Li₄PS₄I（空气暴露60 min后，经180 °C真空干燥4 h）,0.7 × 10⁻⁴ S·cm⁻¹,7e-05,19 °C,19,,explicit_celsius
+sul_0142,B08,Li₃.₁P₀.₉Sn₀.₁S₄ 玻璃电解质（球磨态）,5.5 × 10⁻⁴,0.00055,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0143,B08,Li₃.₃P₀.₇Sn₀.₃S₄ 玻璃陶瓷,8.1 × 10⁻⁴,0.00081,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0144,B08,Li₃.₅P₀.₅Sn₀.₅S₄ 玻璃陶瓷,8.4 × 10⁻⁵,8.4e-05,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0145,B09,Li₃PS₄·LiF玻璃陶瓷（x = 0）,2.2 × 10⁻⁴,0.00022,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0146,B09,Li₃PS₃.₉₅O₀.₀₅·LiF玻璃陶瓷（x = 0.05）,2.9 × 10⁻⁴,0.00029,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0147,B09,Li₃PS₃.₉O₀.₁·LiF玻璃陶瓷（x = 0.10）,1.7 × 10⁻⁴,0.00017,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0148,B09,Li₃PS₃.₈₅O₀.₁₅·LiF玻璃陶瓷（x = 0.15）,9.0 × 10⁻⁴,0.0009,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0149,B09,Li₃PS₃.₈O₀.₂·LiF玻璃陶瓷（x = 0.20）,1.3 × 10⁻³,0.0013,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0150,B09,Li₃PS₃.₇₅O₀.₂₅·LiF玻璃陶瓷（x = 0.25）,5.9 × 10⁻⁴,0.00059,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0151,B09,Li₃PS₃.₇O₀.₃·LiF玻璃陶瓷（x = 0.30）,5.7 × 10⁻⁴,0.00057,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0152,B09,Li₃PS₃.₆O₀.₄·LiF玻璃陶瓷（x = 0.40）,3.3 × 10⁻⁴,0.00033,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0153,B09,Li₃PS₃.₅O₀.₅·LiF玻璃陶瓷（x = 0.50）,2.9 × 10⁻⁴,0.00029,25 °C,25,,formula_not_plain;unit_assumed_from_header;explicit_celsius
+sul_0154,B10,LSnSiPSO,7.14,0.00714,室温（文中明确给出RT；温变测试起始点为298 K）,24.85,,formula_not_plain;unit_assumed_from_header;converted_from_mS;converted_from_kelvin
+sul_0155,B10,Li₆PS₅Cl（LPSCl）,2.60,0.0026,室温；干燥室动态开放暴露前,25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0156,B10,Li₁₀GeP₂S₁₂（LGPS）,4.55,0.00455,室温；干燥室动态开放暴露前,25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0157,B11,Li₇P₃S₁₁（LPS）,1.07 × 10⁻³,0.00107,室温（具体温度未注明）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0158,B11,Li₇.₀₅P₂.₉₅Si₀.₀₅S₁₀.₉O₀.₁（LPS-0.05SiO₂）,1.32 × 10⁻³,0.00132,室温（具体温度未注明）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0159,B11,Li₇.₀₈P₂.₉₂Ge₀.₀₈S₁₀.₈₄O₀.₁₆（LPS-0.08GeO₂）,2.06 × 10⁻³,0.00206,室温（具体温度未注明）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0160,B11,Li₇.₀₅P₂.₉₅Sn₀.₀₅S₁₀.₉O₀.₁（LPS-0.05SnO₂）,2.53 × 10⁻³,0.00253,室温（具体温度未注明）,25,,unit_assumed_from_header;room_temperature_assumed_25C
+sul_0161,B12,Li₅.₅PS₄.₅Cl₁.₅,5.05 × 10⁻³,0.00505,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0162,B12,Li₅.₅₅Al₀.₁₅PS₅Cl,5.67 × 10⁻³,0.00567,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0163,B12,Li₅.₄Al₀.₁PS₄.₇Cl₁.₃,7.29 × 10⁻³,0.00729,25 °C,25,,unit_assumed_from_header;explicit_celsius
+sul_0164,B13,Li₆PS₅Cl（LPSC）,4.2 mS·cm⁻¹（4.2 × 10⁻³ S·cm⁻¹）,0.0042,25 °C,25,,value_taken_from_parenthetical;explicit_celsius
+sul_0165,B13,Li₆PS₄.₇₅ClO₀.₂₅（LPSCO0.25）,4.73 mS·cm⁻¹（4.73 × 10⁻³ S·cm⁻¹）,0.00473,25 °C,25,,value_taken_from_parenthetical;explicit_celsius
+sul_0166,B13,Li₆PS₄ClO（LPSCO，x = 1）,2.08 mS·cm⁻¹（2.08 × 10⁻³ S·cm⁻¹）,0.00208,25 °C,25,,value_taken_from_parenthetical;explicit_celsius
+sul_0167,B14,Li₆PS₅Cl,0.34 mS·cm⁻¹（3.4 × 10⁻⁴ S·cm⁻¹）,0.00034,25 °C,25,,value_taken_from_parenthetical;explicit_celsius
+sul_0168,B14,Li₆PS₅Br,0.31 mS·cm⁻¹（3.1 × 10⁻⁴ S·cm⁻¹）,0.00031,25 °C,25,,value_taken_from_parenthetical;explicit_celsius
+sul_0169,B14,Li₆PS₅Cl·LiCl,0.53 mS·cm⁻¹（5.3 × 10⁻⁴ S·cm⁻¹）,0.00053,25 °C,25,,formula_not_plain;value_taken_from_parenthetical;explicit_celsius
+sul_0170,B14,Li₆PS₅Cl·LiCl,5 mS·cm⁻¹（5.0 × 10⁻³ S·cm⁻¹）,0.005,90 °C,90,,formula_not_plain;value_taken_from_parenthetical;explicit_celsius
+sul_0171,B15,Li₆PS₅Cl,4.96,0.00496,25 °C,25,,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0172,B15,Li₅.₈PS₄.₈Cl₁.₀Br₀.₂,7.05,0.00705,25 °C,25,,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0173,B15,Li₅.₆PS₄.₆Cl₁.₀Br₀.₄,9.16,0.00916,25 °C,25,,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0174,B15,Li₅.₅PS₄.₅Cl₁.₀Br₀.₅,4.66,0.00466,25 °C,25,,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0175,B16,Li6PSe5I,≈0.5,0.0005,室温,25,,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0176,B16,Li6.1P0.9Sn0.1Se5I,≈0.8,0.0008,室温,25,,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0177,B16,Li6.2P0.8Sn0.2Se5I,≈1.1,0.0011,室温,25,,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0178,B16,Li6.3P0.7Sn0.3Se5I,2.4,0.0024,室温,25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0179,B16,Li6.4P0.6Sn0.4Se5I,1.67,0.00167,室温,25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0180,B17,Li₅.₆PS₄.₆Cl₁.₄ (C-LPSC),8.2,0.0082,25 ℃,25,0.217,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0181,B17,Li₅.₆PS₄.₆Cl₁.₄ (S-LPSC),6.3,0.0063,25 ℃,25,0.222,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0182,B17,Li₅.₆PS₄.₆Cl₁.₄ (S-LPSC),8.6,0.0086,25 ℃,25,未报道,unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0183,B17,Li₅.₅PS₄.₅Cl₁.₅ (S-LPSC),5.0,0.005,25 ℃,25,未报道,unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0184,B17,Li₅.₅PS₄.₅Cl₁.₅ (S-LPSC),6.7,0.0067,25 ℃,25,未报道,unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0185,B17,Li₅.₇PS₄.₇Cl₁.₃ (S-LPSC),4.4,0.0044,25 ℃,25,未报道,unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0186,B17,Li₅.₇PS₄.₇Cl₁.₃ (S-LPSC),5.9,0.0059,25 ℃,25,未报道,unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0187,B18,Li₆PS₅Cl,~1.1,0.0011,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0188,B18,Li₆PS₅Cl,~2.25,0.00225,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0189,B18,Li₆PS₅Cl,~3.2,0.0032,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0190,B18,Li₆PS₅Cl,~2.65,0.00265,RT,25,0.414,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0191,B18,Li₆PS₅Cl,~1.7,0.0017,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0192,B18,Li₅.₇PS₄.₇Cl₁.₃,~0.5,0.0005,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0193,B18,Li₅.₇PS₄.₇Cl₁.₃,~4.6,0.0046,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0194,B18,Li₅.₇PS₄.₇Cl₁.₃,~5.6,0.0056,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0195,B18,Li₅.₇PS₄.₇Cl₁.₃,~5.85,0.00585,RT,25,0.382,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0196,B18,Li₅.₇PS₄.₇Cl₁.₃,~5.45,0.00545,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0197,B18,Li₅.₇PS₄.₇Cl₁.₃,0.34（Fig. S3e 读图；高频截距 R≈34 Ω 换算）,0.00034,RT,25,未报道,approximate;read_from_figure;converted_from_intercept;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0198,B18,Li₅.₅PS₄.₅Cl₁.₅,~0.15,0.00015,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0199,B18,Li₅.₅PS₄.₅Cl₁.₅,~0.9,0.0009,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0200,B18,Li₅.₅PS₄.₅Cl₁.₅,~7.35,0.00735,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0201,B18,Li₅.₅PS₄.₅Cl₁.₅,8.92,0.00892,RT,25,0.325,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0202,B18,Li₅.₅PS₄.₅Cl₁.₅,~3.0,0.003,RT,25,0.376,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0203,B18,Li₅.₅PS₄.₅Cl₁.₅,2.04,0.00204,RT,25,未报道,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0204,B18,Li₅.₃PS₄.₃Cl₁.₇,~0.1,0.0001,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0205,B18,Li₅.₃PS₄.₃Cl₁.₇,~0.8,0.0008,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0206,B18,Li₅.₃PS₄.₃Cl₁.₇,~2.45,0.00245,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0207,B18,Li₅.₃PS₄.₃Cl₁.₇,3.65,0.00365,RT,25,0.386,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0208,B18,Li₅.₃PS₄.₃Cl₁.₇,~1.45,0.00145,RT,25,未报道,approximate;unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0209,B18,Li₅.₃PS₄.₃Cl₁.₇,0.85,0.00085,RT,25,未报道,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C;ea_missing
+sul_0210,B19,Li₆PS₅Cl,≈5.8（读图估算）,0.0058,30 ℃（由 Fig. 3b 端点 1000/T = 3.3 推定）,30,0.298,approximate;read_from_figure;unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0211,B19,Li₅.₉₇P₀.₉₉Zr₀.₀₁S₄.₉₆Cl₁.₀₄,≈6.6（高频截距 R≈37 Ω 换算；x=0.04 的 7.43 为标定基准）,0.0066,室温（约 30 ℃）,30,未报道,approximate;converted_from_intercept;unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0212,B19,Li₅.₉₄P₀.₉₈Zr₀.₀₂S₄.₉₂Cl₁.₀₈,≈6.8（高频截距 R≈36 Ω 换算；x=0.04 的 7.43 为标定基准）,0.0068,室温（约 30 ℃）,30,未报道,approximate;converted_from_intercept;unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0213,B19,Li₅.₉₁P₀.₉₇Zr₀.₀₃S₄.₈₈Cl₁.₁₂,≈7.0（高频截距 R≈35 Ω 换算；x=0.04 的 7.43 为标定基准）,0.007,室温（约 30 ℃）,30,未报道,approximate;converted_from_intercept;unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0214,B19,Li₅.₈₈P₀.₉₆Zr₀.₀₄S₄.₈₄Cl₁.₁₆,7.43,0.00743,室温（由 Fig. 3b 判定约 30 ℃）,30,0.296,unit_assumed_from_header;converted_from_mS;explicit_celsius
+sul_0215,B19,Li₅.₈₅P₀.₉₅Zr₀.₀₅S₄.₈₀Cl₁.₂₀（含二次相）,≈4.1（高频截距 R≈60 Ω 换算；x=0.04 的 7.43 为标定基准）,0.0041,室温（约 30 ℃）,30,未报道,approximate;converted_from_intercept;unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0216,B19,Li₅.₈₂P₀.₉₄Zr₀.₀₆S₄.₇₆Cl₁.₂₄（含二次相）,≈3.8（高频截距 R≈65 Ω 换算；x=0.04 的 7.43 为标定基准）,0.0038,室温（约 30 ℃）,30,未报道,approximate;converted_from_intercept;unit_assumed_from_header;converted_from_mS;explicit_celsius;ea_missing
+sul_0217,B20,Li₆PS₅(OH),0.052,5.2e-05,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0218,B20,Li₆PS₅Cl₀.₇₅(OH)₀.₂₅,4.61,0.00461,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0219,B20,Li₅.₇₅PS₄.₇₅Cl(OH)₀.₂₅,5.45,0.00545,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0220,B20,Li₅.₆PS₄.₆Cl(OH)₀.₄,3.56,0.00356,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0221,B20,Li₅.₅PS₄.₅Cl(OH)₀.₅,5.26,0.00526,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0222,B20,Li₅.₄PS₄.₄Cl(OH)₀.₆,6.26,0.00626,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0223,B20,Li₅.₃PS₄.₃Cl(OH)₀.₇,6.08,0.00608,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0224,B20,Li₅PS₄Cl(OH),6.2,0.0062,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0225,B20,Li₅.₄PS₄.₄Cl(OH)₀.₆ 电解质膜（+0.3 wt% PTFE，80 °C 辊压，~200 μm）,2.8,0.0028,室温 (RT),25,,unit_assumed_from_header;converted_from_mS;room_temperature_assumed_25C
+sul_0226,B21,Li₅.₅PS₄.₅Cl₁.₅ (LPSC1.5),7.8 mS cm⁻¹,0.0078,25 °C（室温，EIS 0.1 Hz–1 MHz，5 mV）,25,,converted_from_mS;explicit_celsius
+sul_0227,B21,Li₅.₅₅Si₀.₀₅P₀.₉₅S₄.₄Cl₀.₇₅Br₀.₇₅O₀.₁ (LSiPSClBrO),7.5 mS cm⁻¹,0.0075,25 °C（室温）,25,,converted_from_mS;explicit_celsius
+sul_0228,B21,Li₅.₇Si₀.₂P₀.₈S₄.₁Cl₁.₅O₀.₄（即 x = 0.2 的 Li₅.₅₊ₓSiₓP₁₋ₓS₄.₅₋₂ₓCl₁.₅O₂ₓ）,2.03 mS cm⁻¹,0.00203,25 °C（室温）,25,,converted_from_mS;explicit_celsius
+sul_0229,B22,"Li₆PS₅Cl (LPSC, 未掺杂)",1.9 × 10⁻³ S cm⁻¹,0.0019,25 °C（EIS，0.1 Hz–1 MHz）,25,,explicit_celsius
+sul_0230,B22,Li₆PS₅Cl–0.05SnI₄ (LPSC-0.05SnI₄),3.9 × 10⁻³ S cm⁻¹,0.0039,25 °C,25,,formula_not_plain;explicit_celsius
+sul_0231,B23,Li₆PS₅Cl（由 1.0Li₃PS₄·Li₂S·LiCl 前驱体，x = 1.0）,9.2 × 10⁻⁵ S cm⁻¹,9.2e-05,25 °C（AC 阻抗）,25,,explicit_celsius
+sul_0232,B23,Li₆PS₅Cl（由 1.2Li₃PS₄·Li₂S·LiCl 前驱体，x = 1.2，最优）,1.2 × 10⁻³ S cm⁻¹,0.0012,25 °C,25,,explicit_celsius
+sul_0233,B23,x = 1.2 前驱体（未热处理）,2.8 × 10⁻⁶ S cm⁻¹,2.8e-06,25 °C,25,,formula_not_plain;explicit_celsius
+sul_0234,B23,Li₆PS₅Cl（市售，Sigma-Aldrich，对照）,1.6 × 10⁻³ S cm⁻¹,0.0016,25 °C,25,,explicit_celsius
+sul_0235,B24,Li₆PS₅Br (LPSBr_H400),1.28 mS cm⁻¹,0.00128,室温（RT；EIS 0.1 mHz–7 MHz，10 mV，RT–80 °C 变温）,80,,converted_from_mS;explicit_celsius
+sul_0236,B24,Li₆PS₅Br (LPSBr_H500，即优化 LPSBr),2.06 mS cm⁻¹,0.00206,室温（RT）,25,,converted_from_mS;room_temperature_assumed_25C
+sul_0237,B24,Li₆.₃Si₀.₃P₀.₇S₄.₄O₀.₆Br (LPSBr-0.3),3.37 mS cm⁻¹,0.00337,室温（RT）,25,,converted_from_mS;room_temperature_assumed_25C
+sul_0238,B25,"Li₆PS₅Cl (LPSCl, x = 0)",5.20 mS cm⁻¹,0.0052,30 °C（见 Fig. 4a 正文）／实验部分记为 25 °C — 原文自相矛盾,30,,converted_from_mS;source_self_conflicting;explicit_celsius
+sul_0239,B25,LPSCl-MoO₂-0.025 (x = 0.025),4.75 mS cm⁻¹,0.00475,30 °C（见 Fig. 4a 正文）／实验部分记为 25 °C — 原文自相矛盾,30,,converted_from_mS;source_self_conflicting;explicit_celsius
+sul_0240,B25,LPSCl-MoO₂-0.05 (x = 0.05，最优),4.16 mS cm⁻¹,0.00416,30 °C（见 Fig. 4a 正文）／实验部分记为 25 °C — 原文自相矛盾,30,,converted_from_mS;source_self_conflicting;explicit_celsius
+sul_0241,B25,LPSCl-MoO₂-0.10 (x = 0.10),3.10 mS cm⁻¹,0.0031,30 °C（见 Fig. 4a 正文）／实验部分记为 25 °C — 原文自相矛盾,30,,converted_from_mS;source_self_conflicting;explicit_celsius
+sul_0242,B25,LPSCl-MoO₂-0.15 (x = 0.15),2.84 mS cm⁻¹,0.00284,30 °C（见 Fig. 4a 正文）／实验部分记为 25 °C — 原文自相矛盾,30,,converted_from_mS;source_self_conflicting;explicit_celsius
+sul_0243,B26,LPSC (x = 0),1.33 mS cm⁻¹（正文数值，与图一致）,0.00133,室温,25,,formula_not_plain;converted_from_mS;room_temperature_assumed_25C
+sul_0244,B26,LPSC-0.05Ga₂O₃,1.81 mS cm⁻¹（正文数值，与图一致）,0.00181,室温,25,,converted_from_mS;room_temperature_assumed_25C
+sul_0245,B26,LPSC-0.10Ga₂O₃,≈0.45 mS cm⁻¹,0.00045,室温,25,,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0246,B26,LPSC-0.15Ga₂O₃,≈0.72 mS cm⁻¹,0.00072,室温,25,,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0247,B26,LPSC-0.20Ga₂O₃,≈0.50 mS cm⁻¹,0.0005,室温,25,,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0248,B27,Li₆PS₅Cl,2.235 mS cm⁻¹（正文值，与图一致）,0.002235,室温,25,≈0.257 eV,converted_from_mS;room_temperature_assumed_25C
+sul_0249,B27,Li₆.₀₆P₀.₉₇In₀.₀₃S₄.₉₅₅O₀.₀₄₅Cl,≈2.42 mS cm⁻¹,0.00242,室温,25,≈0.252 eV,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0250,B27,Li₆.₁₂P₀.₉₄In₀.₀₆S₄.₉₁O₀.₀₉Cl,3.981 mS cm⁻¹（正文值，与图一致）,0.003981,室温,25,0.238 eV（正文值，与图一致）,converted_from_mS;room_temperature_assumed_25C
+sul_0251,B27,Li₆.₁₈P₀.₉₁In₀.₀₉S₄.₈₆₅O₀.₁₃₅Cl,≈3.55 mS cm⁻¹,0.00355,室温,25,≈0.239 eV,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0252,B27,Li₆.₂₄P₀.₈₈In₀.₁₂S₄.₈₂O₀.₁₈Cl,≈2.83 mS cm⁻¹,0.00283,室温,25,≈0.243 eV,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0253,B27,Li₆.₃P₀.₈₅In₀.₁₅S₄.₇₇₅O₀.₂₂₅Cl,≈2.35 mS cm⁻¹,0.00235,室温,25,≈0.247 eV,approximate;converted_from_mS;room_temperature_assumed_25C
+sul_0254,B27,Li₆.₃₆P₀.₈₂In₀.₁₈S₄.₇₃O₀.₂₇Cl,≈1.35 mS cm⁻¹,0.00135,室温,25,≈0.249 eV,approximate;converted_from_mS;room_temperature_assumed_25C

@@ -1,0 +1,2 @@
+model,status,tuning_weighted_mae,validation_weighted_mae,validation_weighted_rmse,validation_weighted_r2,validation_r2,validation_sign_accuracy,best_trial,elapsed_minutes
+lightgbm,ok,0.33644085737903795,0.21027484567761615,0.30132119885473313,0.4586189153012207,0.40044298144733226,0.7073170731707317,43,2.958408854083488

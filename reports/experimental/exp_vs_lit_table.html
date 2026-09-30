@@ -1,0 +1,353 @@
+<title>实验-文献偏差对照</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+/* ── Tokens ── */
+:root {
+  --bg:        #0C1628;
+  --surface:   #152038;
+  --surface2:  #1A2845;
+  --border:    #1E3258;
+  --text:      #B8CFEA;
+  --muted:     #547090;
+  --star:      #F0A030;
+  --neg:       #E05060;
+  --pos:       #38B06E;
+  --halide:    #2A4878;
+  --argyr:     #2A5848;
+  --lgps:      #4A3870;
+  --halide-t:  #7EB0E8;
+  --argyr-t:   #6EC8A0;
+  --lgps-t:    #B898E8;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:        #EEF3FA;
+    --surface:   #FFFFFF;
+    --surface2:  #F4F7FC;
+    --border:    #C8D8EC;
+    --text:      #1A2840;
+    --muted:     #6080A0;
+    --star:      #C07000;
+    --neg:       #C03040;
+    --pos:       #1A7040;
+    --halide:    #D8E8F8;
+    --argyr:     #D0EDE0;
+    --lgps:      #E0D8F4;
+    --halide-t:  #2050A0;
+    --argyr-t:   #1A6040;
+    --lgps-t:    #5030A0;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg:        #EEF3FA;
+  --surface:   #FFFFFF;
+  --surface2:  #F4F7FC;
+  --border:    #C8D8EC;
+  --text:      #1A2840;
+  --muted:     #6080A0;
+  --star:      #C07000;
+  --neg:       #C03040;
+  --pos:       #1A7040;
+  --halide:    #D8E8F8;
+  --argyr:     #D0EDE0;
+  --lgps:      #E0D8F4;
+  --halide-t:  #2050A0;
+  --argyr-t:   #1A6040;
+  --lgps-t:    #5030A0;
+  color-scheme: light;
+}
+:root[data-theme="dark"] { color-scheme: dark; }
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding-inline: 20px;
+  padding-block: 28px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── Header ── */
+.page-header {
+  max-width: 960px;
+  margin: 0 auto 22px;
+}
+.page-header h1 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.page-header p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.legend span { display: flex; align-items: center; gap: 5px; }
+.dot {
+  width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+}
+.dot-neg { background: var(--neg); }
+.dot-pos { background: var(--pos); }
+
+/* ── Table wrapper ── */
+.table-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+thead tr {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+thead th {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+thead th.num { text-align: right; }
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:nth-child(even) { background: var(--surface2); }
+tbody tr:hover { background: color-mix(in srgb, var(--text) 5%, var(--surface)); }
+
+td {
+  padding: 9px 14px;
+  vertical-align: middle;
+}
+td.num { text-align: right; }
+
+/* ── Formula cell ── */
+.formula-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.star-badge {
+  font-size: 0.9rem;
+  color: var(--star);
+  flex-shrink: 0;
+  width: 14px;
+}
+.formula {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+.formula sub { font-size: 0.7em; }
+
+/* ── Conductivity values ── */
+.val-cell {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  color: var(--text);
+}
+.val-cell sup { font-size: 0.72em; }
+
+/* ── Delta ── */
+.delta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+}
+.delta.neg { color: var(--neg); }
+.delta.pos { color: var(--pos); }
+
+/* ── Family chip ── */
+.chip {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+.chip-halide { background: var(--halide); color: var(--halide-t); }
+.chip-argyr  { background: var(--argyr);  color: var(--argyr-t);  }
+.chip-lgps   { background: var(--lgps);   color: var(--lgps-t);   }
+
+/* ── DOI link ── */
+.doi-link {
+  font-size: 0.76rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  word-break: break-all;
+}
+.doi-link:hover { color: var(--text); text-decoration: underline; }
+
+/* ── Footer stats ── */
+.stats-row {
+  max-width: 960px;
+  margin: 14px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.stat span { font-weight: 600; color: var(--text); font-family: 'JetBrains Mono', monospace; }
+
+@media (max-width: 600px) {
+  .chip { display: none; }
+  td, th { padding: 8px 9px; }
+}
+</style>
+
+<div class="page-header">
+  <h1>实验测量 vs. 文献报道</h1>
+  <p>同成分偏差对照 · 仅展示 |Δlog<sub>10</sub>| ≥ 0.30 的条目 · 文献值取 v3 库同成分最高记录</p>
+  <div class="legend">
+    <span><span class="dot dot-neg"></span>实验值低于文献（Δ < 0）</span>
+    <span><span class="dot dot-pos"></span>实验值高于文献（Δ > 0）</span>
+    <span>★ &nbsp;本批次最大偏差</span>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table id="mainTable">
+    <thead>
+      <tr>
+        <th style="width:32px"></th>
+        <th>实验成分</th>
+        <th class="num">实验值（S/cm）</th>
+        <th class="num">文献值（S/cm）</th>
+        <th class="num">Δlog<sub>10</sub></th>
+        <th>体系</th>
+        <th>文献 DOI</th>
+        <th>DOI</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<div class="stats-row" id="stats"></div>
+
+<script>
+const DATA = [
+  { formula:"Li2ZrCl5Br",          exp:8.90e-5, lit:3.20e-4, delta:-0.56, family:"halide",    doi:"10.1002/smll.202505926",              star:true  },
+  { formula:"Li2.5Y0.75W0.25Cl3.5Br2.5", exp:1.80e-3, lit:6.38e-3, delta:-0.55, family:"halide",  doi:"10.1002/aenm.71299",              star:false },
+  { formula:"Li2.4Zr0.8Zn0.2Cl6",  exp:3.00e-4, lit:1.00e-3, delta:-0.52, family:"halide",    doi:"10.1002/aenm.202405760",              star:false },
+  { formula:"Li2.25Zr0.75In0.25Cl6",exp:3.70e-4, lit:1.08e-3, delta:-0.47, family:"halide",   doi:"10.1016/j.cclet.2021.12.048",         star:false },
+  { formula:"Li2.5Y0.5Zr0.5Cl6",   exp:7.40e-4, lit:2.10e-3, delta:-0.45, family:"halide",    doi:"10.1016/j.cej.2021.130630",           star:false },
+  { formula:"Li6.6Sb0.4Si0.6S5I",   exp:8.84e-3, lit:2.40e-2, delta:-0.43, family:"argyrodites", doi:"10.1021/jacs.9b08357",           star:false },
+  { formula:"Li1.75ZrCl4.75O0.5",   exp:1.01e-3, lit:2.42e-3, delta:-0.38, family:"halide",   doi:"10.1038/s41467-023-39522-1",          star:false },
+  { formula:"Li9.54(Si0.6Ge0.4)1.74P1.44S11.1Br0.3O0.6", exp:1.36e-2, lit:3.20e-2, delta:-0.37, family:"lgps", doi:"10.1126/science.add7138", star:false },
+  { formula:"Li6.75Sb0.25Si0.75S5I", exp:6.31e-3, lit:1.31e-2, delta:-0.32, family:"argyrodites", doi:"10.1021/acssuschemeng.0c05549", star:false },
+  { formula:"Li5.3PS4.3Cl1.7",      exp:7.30e-3, lit:3.65e-3, delta:+0.30, family:"argyrodites", doi:"10.1016/j.est.2024.113723",      star:false },
+];
+
+/* Chemical formula → HTML subscripts */
+function fmtFormula(s) {
+  let out = '', i = 0;
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === '(' || ch === '[') { out += ch; i++; }
+    else if (ch === ')' || ch === ']') {
+      out += ch; i++;
+      let n = '';
+      while (i < s.length && /[\d.]/.test(s[i])) n += s[i++];
+      if (n) out += '<sub>' + n + '</sub>';
+    } else if (/[A-Z]/.test(ch)) {
+      let el = ch; i++;
+      while (i < s.length && /[a-z]/.test(s[i])) el += s[i++];
+      out += el;
+      let n = '';
+      while (i < s.length && /[\d.]/.test(s[i])) n += s[i++];
+      if (n) out += '<sub>' + n + '</sub>';
+    } else { out += ch; i++; }
+  }
+  return out;
+}
+
+/* Scientific notation → HTML */
+function fmtSci(v) {
+  if (!v) return '—';
+  const e = Math.floor(Math.log10(Math.abs(v)));
+  const m = v / Math.pow(10, e);
+  const mStr = m.toFixed(2).replace(/\.?0+$/, '');
+  const mClean = parseFloat(m.toFixed(2));
+  return `${mClean.toFixed(2)}&thinsp;&times;&thinsp;10<sup>${e}</sup>`;
+}
+
+/* Family chip */
+function chip(f) {
+  if (f === 'halide' || f === 'halides') return `<span class="chip chip-halide">卤化物</span>`;
+  if (f === 'argyrodites') return `<span class="chip chip-argyr">argyrodites</span>`;
+  if (f === 'lgps') return `<span class="chip chip-lgps">LGPS</span>`;
+  return `<span class="chip">${f}</span>`;
+}
+
+const tbody = document.getElementById('tbody');
+DATA.forEach(row => {
+  const dCls = row.delta < 0 ? 'neg' : 'pos';
+  const dSign = row.delta > 0 ? '+' : '';
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><span class="star-badge">${row.star ? '★' : ''}</span></td>
+    <td><div class="formula-cell"><span class="formula">${fmtFormula(row.formula)}</span></div></td>
+    <td class="num"><span class="val-cell">${fmtSci(row.exp)}</span></td>
+    <td class="num"><span class="val-cell">${fmtSci(row.lit)}</span></td>
+    <td class="num"><span class="delta ${dCls}">${dSign}${row.delta.toFixed(2)}</span></td>
+    <td>${chip(row.family)}</td>
+    <td><a href="https://doi.org/${row.doi}" target="_blank" rel="noopener" class="doi-link">${row.doi}</a></td>
+    <td><span class="doi-link" style="user-select:all">${row.doi}</span></td>
+  `;
+  tbody.appendChild(tr);
+});
+
+/* Footer stats */
+const deltas = DATA.map(d => d.delta);
+const negRows = DATA.filter(d => d.delta < 0);
+const median = [...deltas].sort((a,b)=>a-b)[Math.floor(deltas.length/2)];
+const mean = deltas.reduce((s,v)=>s+v,0)/deltas.length;
+document.getElementById('stats').innerHTML = `
+  <div class="stat">共 <span>${DATA.length}</span> 条（|Δlog₁₀| ≥ 0.30）</div>
+  <div class="stat">偏低行 <span>${negRows.length}</span>（实验 &lt; 文献）</div>
+  <div class="stat">中位 Δlog₁₀ <span>${median.toFixed(2)}</span></div>
+  <div class="stat">均值 Δlog₁₀ <span>${mean.toFixed(2)}</span></div>
+`;
+</script>

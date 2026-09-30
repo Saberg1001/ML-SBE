@@ -35,6 +35,20 @@ from main.paths import EXPERIMENTAL_ANNOTATIONS_DIR, portable_path
 DEFAULT_EXPERIMENTAL_FAMILY_BLOCKS = EXPERIMENTAL_ANNOTATIONS_DIR / "family_blocks_legacy.csv"
 DUMMY_CONDUCTIVITY = 1e-6
 
+# Ordinal codes for the optional synthesis-method feature (F38 lab-halide model).
+# literature / unknown -> 0, ball-milled -> 1, solid-state -> 2. Accepts the
+# Chinese labels used in the in-house tables as well as English aliases.
+SYNTH_METHOD_COLUMN = "synth_method_code"
+
+
+def _synth_method_code(value) -> int:
+    text = str(value).strip()
+    if text in ("球磨",) or text.lower() in ("ball_mill", "ball mill", "ballmill"):
+        return 1
+    if text in ("固相",) or text.lower() in ("solid_state", "solid state", "solidstate"):
+        return 2
+    return 0
+
 
 @dataclass
 class PredictConfig:
@@ -250,6 +264,9 @@ def _read_input(input_data, config: PredictConfig) -> pd.DataFrame:
             raise ValueError("Could not determine formula column")
     id_column = config.id_column or _find_column(columns, ("ID", "id", "sample_id", "name"))
     family_column = config.family_column or _find_column(columns, ("Family", "family"))
+    method_column = _find_column(
+        columns, ("synth_method", "synthesis_method", "制备方式", "method")
+    )
 
     output = pd.DataFrame()
     output["ID"] = frame[id_column].astype(str) if id_column else [f"pred_{index:04d}" for index in range(1, len(frame) + 1)]
@@ -257,10 +274,45 @@ def _read_input(input_data, config: PredictConfig) -> pd.DataFrame:
     output[TARGET_COLUMN] = DUMMY_CONDUCTIVITY
     if family_column is not None:
         output["Family"] = frame[family_column].astype(str).str.strip()
+    if method_column is not None:
+        output["synth_method"] = frame[method_column].astype(str).str.strip()
     for column in ("base_formula", "reference_mS_cm", "source_row"):
         if column in frame.columns:
             output[column] = frame[column].to_numpy()
     return output
+
+
+def _predict_log10_sigma(model, X, artifact: dict | None = None) -> np.ndarray | None:
+    """Return the predictive std in log10 space when the run provides one.
+
+    Probabilistic models such as NGBoost implement ``pred_dist`` and return a
+    per-row distribution; for the Normal case ``scale`` is the standard
+    deviation. Deterministic models (LightGBM, RF, ...) have no such method;
+    for them train.py can store a bootstrap ``ensemble`` plus an
+    ``aleatoric_sigma`` floor in the artifact (``TrainConfig.n_bootstrap``),
+    and sigma^2 = var(ensemble predictions) + aleatoric_sigma^2. Otherwise we
+    return None and the caller omits the uncertainty columns.
+    """
+    pred_dist = getattr(model, "pred_dist", None)
+    if pred_dist is not None:
+        try:
+            dist = pred_dist(X)
+        except Exception:
+            return None
+        params = getattr(dist, "params", None)
+        if isinstance(params, dict) and "scale" in params:
+            return np.asarray(params["scale"], dtype=float)
+        scale = getattr(dist, "scale", None)
+        if scale is not None:
+            return np.asarray(scale, dtype=float)
+        return None
+    ensemble = list((artifact or {}).get("ensemble") or [])
+    if not ensemble:
+        return None
+    from main.absolute.train import ensemble_sigma
+
+    total, _ = ensemble_sigma(ensemble, X, (artifact or {}).get("aleatoric_sigma") or 0.0)
+    return total
 
 
 def _find_column(columns: list[str], candidates: tuple[str, ...]) -> str | None:
@@ -353,6 +405,15 @@ def predict_formulas(
         features[f"family__{category}"] = (
             features["Family"].astype(str).eq(category).astype(float)
         )
+    # F38 lab-halide model: derive the ordinal synthesis-method feature from an
+    # optional input column (default 0 = literature/unknown when absent).
+    if SYNTH_METHOD_COLUMN in feature_columns:
+        if "synth_method" in formulas.columns:
+            method_source = formulas.set_index("ID")["synth_method"]
+            method_values = features["ID"].map(method_source).map(_synth_method_code)
+        else:
+            method_values = pd.Series(0, index=features.index)
+        features[SYNTH_METHOD_COLUMN] = pd.to_numeric(method_values, errors="coerce").fillna(0).astype(float)
     X = features.reindex(columns=feature_columns).copy()
     numeric_columns = [
         column for column in feature_columns if column not in categorical_features
@@ -375,6 +436,8 @@ def predict_formulas(
     if scaler is not None:
         predict_X = pd.DataFrame(scaler.transform(X), columns=feature_columns, index=X.index)
     pred_log10 = model.predict(predict_X)
+    # Predictive std in log10 space: NGBoost pred_dist, or a saved bootstrap ensemble.
+    pred_sigma = _predict_log10_sigma(model, predict_X, artifact)
 
     metadata_columns = [
         column
@@ -385,6 +448,19 @@ def predict_formulas(
     predictions["model_name"] = model_name
     predictions["pred_log10_conductivity"] = pred_log10
     predictions["pred_conductivity_S_cm-1"] = np.power(10.0, pred_log10)
+    if pred_sigma is not None:
+        # 95% two-sided normal quantile; log10-space sigma is symmetric there but
+        # asymmetric once mapped back to S/cm, so we expose both bounds directly.
+        z95 = 1.959963984540054
+        predictions["pred_log10_sigma"] = pred_sigma
+        predictions["pred_log10_lower95"] = pred_log10 - z95 * pred_sigma
+        predictions["pred_log10_upper95"] = pred_log10 + z95 * pred_sigma
+        predictions["pred_conductivity_lower95_S_cm-1"] = np.power(
+            10.0, pred_log10 - z95 * pred_sigma
+        )
+        predictions["pred_conductivity_upper95_S_cm-1"] = np.power(
+            10.0, pred_log10 + z95 * pred_sigma
+        )
     evaluation = {
         "status": "not_available",
         "reason": "Input data does not contain reference_mS_cm values.",

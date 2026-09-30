@@ -9,19 +9,25 @@
     "min_conductivity": 1e-06,
     "liverpool_temperature_min_c": 20.0,
     "liverpool_temperature_max_c": 30.0,
+    "temperature_filtered_sources": [
+      "liverpool"
+    ],
+    "temperature_required_sources": [
+      "liverpool"
+    ],
     "excluded_caltech_ids": [
       "caltech_icsd_65051",
       "caltech_icsd_100169"
     ]
   },
   "input_rows": 1249,
-  "eligible_rows_after_threshold_and_temperature": 949,
-  "output_rows": 826,
-  "unique_output_formulas": 826,
+  "eligible_rows_after_threshold_and_temperature": 950,
+  "output_rows": 827,
+  "unique_output_formulas": 827,
   "invalid_or_nonpositive_rows": 0,
-  "below_conductivity_threshold_rows": 300,
+  "below_conductivity_threshold_rows": 299,
   "liverpool_temperature_rows_removed": 0,
-  "initial_policy_rows_removed_after_overlap": 300,
+  "initial_policy_rows_removed_after_overlap": 299,
   "duplicate_formula_groups_resolved": 73,
   "duplicate_formula_rows_removed": 123,
   "normalized_family_conflict_groups": 3,

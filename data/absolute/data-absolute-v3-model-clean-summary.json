@@ -1,0 +1,35 @@
+{
+  "input_rows": 1391,
+  "eligible_rows": 1104,
+  "output_rows": 1082,
+  "unique_formulas": 1082,
+  "removed_below_threshold": 283,
+  "removed_invalid": 0,
+  "removed_temperature": 4,
+  "dup_rows_dropped": 12,
+  "exp_rows_in_output": 126,
+  "source_bucket_counts": {
+    "db_obelix": 472,
+    "curated_lit": 186,
+    "db_caltech": 143,
+    "db_liverpool": 155,
+    "experimental": 126
+  },
+  "top_family_counts": {
+    "halides": 201,
+    "argyrodites": 175,
+    "nasicon": 140,
+    "garnet": 113,
+    "perovskites": 95,
+    "unknown": 95,
+    "oxyhalides": 41,
+    "lgps": 39,
+    "thio_lisicon": 33,
+    "sulfides": 27,
+    "lisicon": 18,
+    "thio_phosphate": 15,
+    "chalcogenidotetrelates": 14,
+    "glass": 13,
+    "glass_ceramic": 13
+  }
+}

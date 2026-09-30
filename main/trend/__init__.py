@@ -1,4 +1,4 @@
-"""Trend-classification pipeline (pair -> feature -> split -> train -> predict).
+"""Pairwise conductivity classification and log-delta regression pipelines.
 
 Reusable library/entry points for the conductivity *trend* (increase / unchanged /
 decrease) modeling. Shares the composition feature engine with the absolute
@@ -21,6 +21,8 @@ from .features import (
 )
 from .pipeline import TrendPredictConfig, default_trend_predict_config
 from .predict import predict_trend
+from .predict_regression import predict_conductivity_delta
+from .regression_v3 import PairRegressionConfig
 from .split import (
     DEFAULT_TRAIN,
     DEFAULT_VALIDATION,
@@ -45,5 +47,7 @@ __all__ = [
     "default_trend_predict_config",
     "feature_schema",
     "predict_trend",
+    "PairRegressionConfig",
+    "predict_conductivity_delta",
     "split_feature_file",
 ]
